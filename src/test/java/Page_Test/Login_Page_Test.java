@@ -23,22 +23,25 @@ public class Login_Page_Test extends Base_Utility {
 
 	public Login_page ob;
 	public Select_Vehicle_Page ob1;
-
+	String device = config_getdata("Platform_name");
 	@Test(priority = 0)
 	public void TC001_Verify_Login_with_Invalid_credential() {
 		Message("************************Login page test**************************");
 		ob = new Login_page();
-		// below 6 lines for pCloudy
+		if (device.equalsIgnoreCase("pcloudy")) {
 		Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to access your phone call logs");
 		Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to access your contacts");
 		Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to make and manage phone calls");
 		Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to send and view SMS messages");
 //		Custom_click(ob.Allow(), ob.Allow().getText()
 //				+ " Hero App to find, connect to, and determine the relative position of nearby devices");
-		Custom_click(ob.ok(), "OK");			
+		Custom_click(ob.ok(), "OK");
 //		Custom_click(ob.Allow(), "Allow notification");  //this line is for pcloudy	
-//	Custom_click(ob.open(), "Open");	//This line for real device
-//		Custom_click(ob.close(), "Close button"); // for emulator and real device
+		}
+	 else if (device.equalsIgnoreCase("emulator") || device.equalsIgnoreCase("realdevice")) {
+      //	Custom_click(ob.open(), "Open");	//This line for real device
+		    Custom_click(ob.close(), "Close button"); // for emulator and real device
+	     }
 	}
 
 	@Test(priority = 1)
@@ -74,9 +77,13 @@ public class Login_Page_Test extends Base_Utility {
 	public void TC005_Terms_of_use_button() throws InterruptedException {
 		Custom_click(ob.Terms_of_Use(), "Terms of use button");
 		Thread.sleep(8000);
-//		msg(ob.Terms_of_Use_condition(), "Terms of use: First condition = " + ob.Terms_of_Use_condition().getText());
-		// above line for emulator and below one for real device & pCloudy
-		msg(ob.Terms_of_Use_condition_for_real_device(),"Terms of use: First condition = " + ob.Terms_of_Use_condition_for_real_device().getText()); 
+		if (device.equalsIgnoreCase("emulator")) {
+		msg(ob.Terms_of_Use_condition(), "Terms of use: First condition = " + ob.Terms_of_Use_condition().getText());
+		}
+		 else if (device.equalsIgnoreCase("emulator") || device.equalsIgnoreCase("realdevice")) {
+		msg(ob.Terms_of_Use_condition_for_real_device(),
+				"Terms of use: First condition = " + ob.Terms_of_Use_condition_for_real_device().getText());
+		 }
 		Custom_click(ob.back_page(), "back terms of use page ");
 	}
 
@@ -84,9 +91,13 @@ public class Login_Page_Test extends Base_Utility {
 	public void TC006_Privacy_policy() throws InterruptedException {
 		Custom_click(ob.Privacy_Policy(), "Privacy Policy");
 		Thread.sleep(5000);
-//		msg(ob.Privacy_Policy_condition(),"Privacy policy : First Condition = " + ob.Privacy_Policy_condition().getText());
-		// above line for emulator and below one for real device & pCloudy
-		msg(ob.Terms_of_Use_condition_for_real_device(),"Privacy policy : First Condition = " + ob.Terms_of_Use_condition_for_real_device().getText());
+		if (device.equalsIgnoreCase("emulator")) {
+		msg(ob.Privacy_Policy_condition(),"Privacy policy : First Condition = " + ob.Privacy_Policy_condition().getText());
+		}
+		 else if(device.equalsIgnoreCase("emulator") || device.equalsIgnoreCase("realdevice")) {
+		msg(ob.Terms_of_Use_condition_for_real_device(),
+				"Privacy policy : First Condition = " + ob.Terms_of_Use_condition_for_real_device().getText());
+		 }
 		Custom_click(ob.back_page(), "back Privacy Policy page ");
 
 	}
@@ -141,43 +152,43 @@ public class Login_Page_Test extends Base_Utility {
 	public void login() throws InterruptedException {
 		ob = new Login_page();
 		ob1 = new Select_Vehicle_Page();
-//			Custom_click(ob.deny(), "Deny");
-//			Custom_click(ob.allow(), "Allow Now");
-//			Custom_click(ob.open(), "Open"); 	// this line for real device
-			// *****************************Below 8 line for Pcloudy
-			// **********************************
+		if (device.equalsIgnoreCase("pcloudy")) {
 			Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to access your phone call logs");
 			Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to access your contacts");
 			Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to make and manage phone calls");
 			Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to send and view SMS messages");
-//			Custom_click(ob.Allow(), ob.Allow().getText()
+//			Custom_click(ob.Allow(), ob.Allow().getText()   //this line is all other version except 11.0.0
 //					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
-			Custom_click(ob.ok(), "OK");			//this line is for pcloudy	
-//			Custom_click(ob.Allow(), "Allow notification");  //this line is for pcloudy	
-//			Custom_click(ob.close(), "Close button"); // this line for real device and emulator
-			custom_sendkeys(ob.mobile_No(), "8726494540", "Login with Registerd mobile number");
-			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
-			Custom_click(ob.continue_button(), "Coninue button");
-			Thread.sleep(15000);
-			ob.enter_Valid_OTP();
-			Custom_click(ob.verify_button(), "Verify Button");
+			Custom_click(ob.ok(), "OK");
+//			Custom_click(ob.Allow(), "Allow notification");  //this line is all other version except 11.0.0
+		} else if (device.equalsIgnoreCase("emulator") || device.equalsIgnoreCase("realdevice")) {
+//			Custom_click(ob.open(), "Open"); 	// this line for real device
+			Custom_click(ob.close(), "Close button");
+		}
+		custom_sendkeys(ob.mobile_No(), "8726494540", "Login with Registerd mobile number");
+		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
+		Custom_click(ob.continue_button(), "Coninue button");
+		Thread.sleep(15000);
+		ob.enter_Valid_OTP();
+		Custom_click(ob.verify_button(), "Verify Button");
+		Thread.sleep(2000);
+		// when excute select vehicle page class then need to comment below 7 line.
+		Custom_click(ob1.click_first_vehicle(), " Select first vehicle");
+		Custom_click(ob1.continue_button(), "Continue Button after select vehicle");
+		Thread.sleep(2000);
+		if (device.equalsIgnoreCase("emulator")) {
+			Custom_click(ob1.Allow(), ob.Allow().getText() + " Hero App to access your phone call logs");
+			Custom_click(ob1.Allow(), ob.Allow().getText() + " Hero App to access your contacts");
+			Custom_click(ob1.Allow(), ob.Allow().getText() + " Hero App to make and manage phone calls");
+			Custom_click(ob1.Allow(), ob.Allow().getText() + " Hero App to send and view SMS messages");
 			Thread.sleep(2000);
-			// when excute select vehicle page class then need to comment below 7 line.
-			Custom_click(ob1.click_first_vehicle(), " Select first vehicle");
-			Custom_click(ob1.continue_button(), "Continue Button after select vehicle");
-			Thread.sleep(2000);
-			// *****************************below 6 line for emulator
-			// **********************************
-//			Custom_click(ob1.Allow(), ob.Allow().getText() + " Hero App to access your phone call logs");
-//			Custom_click(ob1.Allow(), ob.Allow().getText() + " Hero App to access your contacts");
-//			Custom_click(ob1.Allow(), ob.Allow().getText() + " Hero App to make and manage phone calls");
-//			Custom_click(ob1.Allow(), ob.Allow().getText() + " Hero App to send and view SMS messages");
-//			Thread.sleep(2000);
-//			Custom_click(ob1.Allow(), ob.Allow().getText()
-//					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
-//			Custom_click(ob1.banner_Img_close(), " Banner Img close");
-		Custom_click(ob1.While_using_the_app(), "While using the app"); //this line is for pcloudy
-		
+			Custom_click(ob1.Allow(), ob.Allow().getText()
+					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
+		}
+			if (device.equalsIgnoreCase("pcloudy")) {
+			Custom_click(ob1.While_using_the_app(), "While using the app");
+		}
+		Custom_click(ob1.banner_Img_close(), " Banner Img close");
 	}
 
 }

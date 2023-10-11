@@ -48,10 +48,11 @@ public class Base_Utility
 	public static listner lis;
 	public static WebDriverWait wait;
 	String confipath = System.getProperty("user.dir") + "\\config_data\\config.properties";
-	String excelpath = System.getProperty("user.dir") + "\\data\\data1.xlsx";
+	String excelpath = System.getProperty("user.dir") + "\\Data\\data1.xlsx";
 	public static AndroidDriver driver;
 	
 	@BeforeTest
+
 	// ******************Automatic server start code ************************
 //	public void appiumTest() throws Exception {
 //		
@@ -81,36 +82,33 @@ public class Base_Utility
 //		db.setCapability("appium:ensureWebviewsHavePages", true);
 //		db.setCapability("appium:nativeWebScreenshot", true);
 //		db.setCapability("appium:newCommandTimeout", 6600);
-//
 //	}
 	// ******************Automatic server end code ************************
-	 //-----for virtual device---------
-//	public void OPEN_AND_INSTALL_APP() {
-//		try {
-//			//  DesiredCapabilities db = new DesiredCapabilities();
-//			UiAutomator2Options db = new UiAutomator2Options();
-//			db.setCapability("appium:automationName", "uiautomator2");
-//			db.setCapability("platformName", "Android");
-//			db.setCapability("appium:deviceName", "Pixel_6_API_31");
-//			db.setCapability("appium:udid", "emulator-5554");
-//			db.setCapability("appium:avdLaunchTimeout", 900000);
-//			db.setCapability("appium:app", (System.getProperty("user.dir") + "\\apk\\app-debug_33.apk"));
-//			driver = new AndroidDriver(new URL(config_getdata("IpAddress")), db);
-//			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-//			db.setCapability("appium:ensureWebviewsHavePages", true);
-//			db.setCapability("appium:nativeWebScreenshot", true);
-//			db.setCapability("appium:newCommandTimeout", 9600);
-//			log = LogManager.getLogger("Hero_App");
-//			lis = new listner();
-//		} catch (Exception e) {
-//			System.out.println(e);
-//		}
-//	}
-
-	// *************************pCloudy************************************************
-	
 	public void OPEN_AND_INSTALL_APP() {
+		String Device_name = config_getdata("Platform_name");
+		if(Device_name.equalsIgnoreCase("emulator")) {
 		try {
+			//  DesiredCapabilities db = new DesiredCapabilities();
+			UiAutomator2Options db = new UiAutomator2Options();
+			db.setCapability("appium:automationName", "uiautomator2");
+			db.setCapability("platformName", "Android");
+			db.setCapability("appium:deviceName", "Pixel_6_API_31");
+			db.setCapability("appium:udid", "emulator-5554");
+			db.setCapability("appium:avdLaunchTimeout", 900000);
+			db.setCapability("appium:app", (System.getProperty("user.dir") + "\\apk\\app-debug_33.apk"));
+			driver = new AndroidDriver(new URL(config_getdata("IpAddress")), db);
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+			db.setCapability("appium:ensureWebviewsHavePages", true);
+			db.setCapability("appium:nativeWebScreenshot", true);
+			db.setCapability("appium:newCommandTimeout", 9600);
+			log = LogManager.getLogger("Hero_App");
+			lis = new listner();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+		else if(Device_name.equalsIgnoreCase("pcloudy")) {
+     try {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			capabilities.setCapability("pCloudy_Username", "randhir.kumar@heromotocorp.com");
 			capabilities.setCapability("pCloudy_ApiKey", "2gdc5pv55mh54mqtwmvj4xbr");
@@ -137,31 +135,31 @@ public class Base_Utility
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+		}
+	else if(Device_name.equalsIgnoreCase("realdevice")) {
+		try {
+			UiAutomator2Options db = new UiAutomator2Options();
+			db.setCapability("appium:automationName", "uiautomator2");
+			db.setCapability("platformName", "Android");
+			db.setCapability("appium:deviceName", "realme C33 2023");
+			db.setCapability("appium:udid", "192.168.1.2:5555"); //3323262910AA04DS //192.168.1.2:5555
+			db.setCapability("appium:avdLaunchTimeout", 600000);
+			db.setCapability("appPackage", "com.customerapp.hero");
+			db.setCapability("appActivity", "com.customerapp.hero.views.activity.HmcDashboard");
+			db.setCapability("appium:noReset", "false");
+//			db.setCapability("appium:app", (System.getProperty("user.dir") + "\\apk\\app-debug-connected.apk"));
+			driver = new AndroidDriver(new URL(config_getdata("IpAddress")), db);
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+			db.setCapability("appium:ensureWebviewsHavePages", true);
+			db.setCapability("appium:nativeWebScreenshot", true);
+			db.setCapability("appium:newCommandTimeout", 6600);
+			log = LogManager.getLogger("Hero_App");
+			lis = new listner();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
-	// -------- for real device----------
-//	public void OPEN_AND_INSTALL_APP() {
-//		try {
-//			UiAutomator2Options db = new UiAutomator2Options();
-//			db.setCapability("appium:automationName", "uiautomator2");
-//			db.setCapability("platformName", "Android");
-//			db.setCapability("appium:deviceName", "realme C33 2023");
-//			db.setCapability("appium:udid", "192.168.1.2:5555"); //3323262910AA04DS //192.168.1.2:5555
-//			db.setCapability("appium:avdLaunchTimeout", 600000);
-//			db.setCapability("appPackage", "com.customerapp.hero");
-//			db.setCapability("appActivity", "com.customerapp.hero.views.activity.HmcDashboard");
-//			db.setCapability("appium:noReset", "false");
-////			db.setCapability("appium:app", (System.getProperty("user.dir") + "\\apk\\app-debug-connected.apk"));
-//			driver = new AndroidDriver(new URL(config_getdata("IpAddress")), db);
-//			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-//			db.setCapability("appium:ensureWebviewsHavePages", true);
-//			db.setCapability("appium:nativeWebScreenshot", true);
-//			db.setCapability("appium:newCommandTimeout", 6600);
-//			log = LogManager.getLogger("Hero_App");
-//			lis = new listner();
-//		} catch (Exception e) {
-//			System.out.println(e);
-//		}
-//	}
+	}
 	@Override
 	public String config_getdata(String key) {
 		String value = "";
@@ -243,7 +241,7 @@ public class Base_Utility
 		report = new ExtentSparkReporter(path);
 		report.config().setDocumentTitle("Hero_App Test Report");
 		report.config().setReportName("Hero_App");
-		report.config().setTheme(Theme.STANDARD);
+		report.config().setTheme(Theme.DARK);
 		extent = new ExtentReports();
 		extent.attachReporter(report);
 		extent.setSystemInfo("Project Name", "Hero App");
@@ -320,10 +318,10 @@ public class Base_Utility
 		public static void Scroll_UP_page_Action(String fieldname) {  	
 		    try {
 		    	Dimension dim = driver.manage().window().getSize();	    	
-		    	int startx = (int) (dim.width*0.5);
-		    	int starty = (int) (dim.height*0.8);	    	
-		    	int endx   =  (int) (dim.width*0.2);  	
-		    	int endy   = (int) (dim.height*0.2);
+		    	int startx = (int) (dim.width/2);
+		    	int starty = (int) (dim.height/2);	    	
+		    	int endx   =  (int) (dim.width*0);  	
+		    	int endy   = (int) (dim.height*0);
 		    	TouchAction action = new TouchAction(driver);
 		    	for(int i=0;i<=1;i++) {
 		    	action.press(PointOption.point(startx ,starty)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1))).moveTo(PointOption.point(endx ,endy))
@@ -423,7 +421,7 @@ public class Base_Utility
 	@Override
 	public void msg(WebElement ele , String filedname) {
 		try {
-			if(ele.isDisplayed() == true)
+			if(ele.isDisplayed())
 			{
 				wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 				wait.until(ExpectedConditions.visibilityOf(ele));
@@ -433,7 +431,7 @@ public class Base_Utility
 		} catch (Exception e) {
 			test.log(Status.FAIL, filedname +" is not readable" +e);
 			test.addScreenCaptureFromPath(lis.getcapcture(filedname));
-			log.error(filedname+" is not readable");
+			log.error(filedname+" is not readable" +e);
 		}
 
 	}

@@ -17,6 +17,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 	public Map<String, String> map;
 	public Login_Page_Test login;
 	public My_Profile_Page ob;
+	String device = config_getdata("Platform_name");
 
 	@Test(priority = 0)
 	public void TC030_Verify_My_Profile() throws InterruptedException {
@@ -77,8 +78,12 @@ public class My_Profile_Page_Test extends Base_Utility {
 			ob.gender_selection();
 			driver.navigate().back();
 			custom_sendkeys(ob.edit_email_id(), config_getdata("edit_email_id"), " Change Email id");
-			driver.navigate().back(); 												//for pCloudy
-//			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB)); 		//for emulator
+			if (device.equalsIgnoreCase("pcloudy")) {
+			driver.navigate().back(); 				//for pCloudy 
+			}
+			else if(device.equalsIgnoreCase("emulator") || device.equalsIgnoreCase("realdevice")){
+			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB)); 		//for emulator
+			}
 			Custom_click(ob.edit_date_of_birth(), " Date of Birth");
 			Custom_click(ob.DOB_edit_button(), "Edit DOB");
 			ob.send_dob().clear();
@@ -89,7 +94,9 @@ public class My_Profile_Page_Test extends Base_Utility {
 				Message("DOB is not accepted " + config_getdata("edit_DOB"));
 				Custom_click(ob.Cancel_dob(), " Cancel DOB");
 			}
-			driver.navigate().back(); 													//for pCloudy
+			if (device.equalsIgnoreCase("pcloudy")) {
+			driver.navigate().back(); 								//for pCloudy
+			}
 			custom_sendkeys(ob.blood_group(), "B+", "Blood group");
 			Custom_click(ob.blood_group(), " Blood group");
 			Scroll_down_page_Action("Street name");

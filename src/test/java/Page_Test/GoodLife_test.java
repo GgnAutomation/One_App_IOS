@@ -9,13 +9,14 @@ public class GoodLife_test extends Base_Utility {
 
 	public GoodLife ob;
 	public Login_Page_Test login;
-
+	String version = config_getdata("version");
+	String device = config_getdata("Platform_name");
 	@Test(priority = 0)
 	public void TC095_verify_image_in_goodlife_page() throws InterruptedException {
 		Message("*********************Goodlife_page**************************");
 		ob = new GoodLife();
-		login = new Login_Page_Test();
-		login.login();
+//		login = new Login_Page_Test();
+//		login.login();
 		Thread.sleep(3000);
 		Custom_click(ob.goodLife(), ob.goodLife().getText());
 		Thread.sleep(2000);
@@ -75,7 +76,9 @@ public class GoodLife_test extends Base_Utility {
 	public void TC101_Verify_refer_friend_in_Goodlife() throws InterruptedException
 	{
 		msg(ob.Referral_Offer(),ob.Referral_Offer().getText());
+		if(version.equalsIgnoreCase("11")) {
 		scrollByText("Points Earning & Redemption");  //for pCloudy version 11.0.0 only
+		}
 		Custom_click(ob.Know_more(), ob.Know_more().getText());
 		ob.Referral_all_offer();
 		Thread.sleep(2000);
@@ -86,8 +89,9 @@ public class GoodLife_test extends Base_Utility {
 	}
 	@Test(priority = 7)
 	public void TC102_verify_Winner_informaton()
-	{
-//		scrollByText("Points Earning & Redemption"); // All device except version 11.0.0
+	{	if(version.equalsIgnoreCase("allother")) {
+		scrollByText("Points Earning & Redemption"); // All device version 
+	}
 		Custom_click(ob.winner_of_month(), ob.winner_of_month().getText());
 		msg(ob.winner_month(),"Winner month =" +ob.winner_month().getText());
 			ob.Winner_info();
@@ -108,26 +112,38 @@ public class GoodLife_test extends Base_Utility {
 	}
 	@Test(priority = 9)
 	public void TC104_verify_Service_Privilegers() {
-		scrollByText("Show More"); // for version 11.0.0
+		if(version.equalsIgnoreCase("11")) {
+		Scroll_down_page_Action("Service_Privilegers"); // for version 11.0.0
+		}
 		Custom_click(ob.show_more_service_privilegers(), ob.show_more_service_privilegers().getText());
 		ob.service_previleges_all_message();
-//		scrollByText("Show Less"); // for all other device
+		if(version.equalsIgnoreCase("allother")) {
+		scrollByText("Show Less"); // for all other device
+		}
 		Custom_click(ob.show_more_service_privilegers(), ob.show_more_service_privilegers().getText());
 
 	}
 	@Test(priority = 10)
 	public void TC105_verify_Benefits_and_Experiences()
 	{
-		Scroll_down_page_Action("Benefits and Experiences");
+		if(version.equalsIgnoreCase("allother")) {
+		Scroll_down_page_Action("Benefits and Experiences");  // for all other device
+		}	
 		Custom_click(ob.show_more_Benefits_and_Experiences(), ob.show_more_Benefits_and_Experiences().getText() +" in Benefits & Experiences" );
+		if(version.equalsIgnoreCase("11")) {
+		scrollByText("Show Less");   // for version 11.0.0
+		}
 		ob.Benefits_message();
 		Custom_click(ob.show_more_Benefits_and_Experiences(), ob.show_more_Benefits_and_Experiences().getText() +" in Benefits & Experiences" );
 	}
 	@Test(priority = 11)
 	public void TC106_verify_Remarkable_Rewards()
 	{
+		if(version.equalsIgnoreCase("11")) {
+		Scroll_down_page_Action("Remarkable show more"); // for version 11.0.0
+		}
 		Custom_click(ob.Show_more_in_remarkable_rewards(), ob.Show_more_in_remarkable_rewards().getText());
-		Scroll_down_page_Action("Remarkable show more");
+		Scroll_down_page_Action("Remarkable show Less"); 
 		ob.Remarkable_Rewards_message();
 		Custom_click(ob.show_more_Benefits_and_Experiences(), ob.show_more_Benefits_and_Experiences().getText());
 		Custom_click(ob.back_button(), " Back from Hero GoodLife ");

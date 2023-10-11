@@ -29,33 +29,22 @@ public class listner extends Base_Utility implements ITestListener {
 	
 		public void onTestSuccess(ITestResult result) {
 			test.log(Status.PASS, "Test Case Pass" );
-//			if(result.getStatus()==ITestResult.SUCCESS)
-//			{
-//				test.addScreenCaptureFromPath(getcapcture(result.getName()));
-//			}
 		}
 	
 		public void onTestFailure(ITestResult result) {
 			test.log(Status.FAIL, "Test Case Fail");
 			test.addScreenCaptureFromPath(getcapcture(result.getName()));
-//			if(result.getStatus()==ITestResult.FAILURE)
-//			{
-//				test.addScreenCaptureFromPath(getcapcture(result.getName()));
-//			}
-		}
+		 }
 	
 		public void onTestSkipped(ITestResult result) {
 			test.log(Status.SKIP, "Test Case Skip");
 			test.addScreenCaptureFromPath(getcapcture(result.getName()));
-//			if(result.getStatus()==ITestResult.SKIP)
-//			{
-//				test.addScreenCaptureFromPath(getcapcture(result.getName()));
-//			}
 		}
 	
 	
 		public void onFinish(ITestContext context) {
 			extent.flush();
+	
 		}
 		
 		

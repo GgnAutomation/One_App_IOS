@@ -13,7 +13,9 @@ import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class Refer_a_friend_and_Contact_us extends Base_Utility {
-
+	
+	String version = config_getdata("version");
+	String header;
 	public Refer_a_friend_and_Contact_us() {
 		PageFactory.initElements(driver, this);
 	}
@@ -163,7 +165,9 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 	private WebElement whatsapp_back;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/fb_text']")
 	private List<WebElement> Visit_page_text;
-	@FindBy(xpath = "//android.widget.Button[@text ='Log in']")
+	@FindBy(xpath ="//android.widget.EditText[@resource-id ='m_login_email']")
+	private WebElement emailid;
+	@FindBy(xpath = "//android.widget.Button[contains(@text, 'Log')]")
 	private WebElement facebook_login;
 	@FindBy(xpath = "//android.view.View[@content-desc=\"Log in\"]/android.widget.TextView")
 	private WebElement instagram_login;
@@ -193,10 +197,11 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 	}
 	public void facebook() throws InterruptedException {
 		try {
-			String header = social_media_header.get(0).getText();
+			 header = social_media_header.get(0).getText();
 			Message(Visit_page_text.get(0).getText());
 			Custom_click(visit_Page.get(0), header);
 			Thread.sleep(2000);
+			custom_sendkeys(emailid, "Renu@gmail.com", "Email id");
 			Custom_click(facebook_login, header + " Login");
 			Custom_click(back, " Back from " + header); 
 		} catch (Exception e) {
@@ -207,7 +212,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 
 	public void instagram() throws InterruptedException {
 		try {
-			String header = social_media_header.get(1).getText();
+			 header = social_media_header.get(1).getText();
 			Message(Visit_page_text.get(1).getText());
 			Custom_click(visit_Page.get(1), header);
 			Thread.sleep(4000);
@@ -222,7 +227,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 
 	public void Whatsapp() {
 		try {
-			String header = social_media_header.get(2).getText();
+			 header = social_media_header.get(2).getText();
 			Message(Visit_page_text.get(2).getText());
 			Message(" Whatsapp number =" + whatsapp_visit_page.getText());
 			Custom_click(whatsapp_visit_page, header);
@@ -247,7 +252,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 
 	public void youTube() throws InterruptedException {
 		try {
-			String header = social_media_header.get(3).getText();
+			 header = social_media_header.get(3).getText();
 			Message(Visit_page_text.get(3).getText());
 			Custom_click(visit_Page.get(2), header);
 			Thread.sleep(2000);
@@ -262,13 +267,17 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 
 	public void Linkedin() throws InterruptedException {
 		try {
+			if(version.equalsIgnoreCase("11")) {
 			Scroll_down_page_Action("Twitter"); // for version 11.0.0
-			String header = social_media_header.get(2).getText(); // for version 11.0.0
+			 header = social_media_header.get(2).getText(); // for version 11.0.0
 			Message(Visit_page_text.get(3).getText());   // for version 11.0.0
 			Custom_click(visit_Page.get(2), header);   // for version 11.0.0
-//			String header = social_media_header.get(4).getText(); // for all other device.
-//			Message(Visit_page_text.get(4).getText());            // for all other device.
-//			Custom_click(visit_Page.get(3), header);      // for all other device.
+			}
+			else {
+			 header = social_media_header.get(4).getText(); // for all other device.
+			Message(Visit_page_text.get(4).getText());            // for all other device.
+			Custom_click(visit_Page.get(3), header);      // for all other device.
+			}
 			Thread.sleep(2000);
 			Custom_click(Close_linkedin_pop_message, "Close linkedin pop message");
 			try {
@@ -287,12 +296,20 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 
 	public void twitter() throws InterruptedException {
 		try {
-//			Scroll_down_page_Action("Twitter");               // for all other device.
-//			String header = social_media_header.get(4).getText();  // for all other device.
-			String header = social_media_header.get(3).getText();  // for version 11.0.0
+			if(version.equalsIgnoreCase("allother")) {
+			Scroll_down_page_Action("Twitter");               // for all other device.
+			 header = social_media_header.get(4).getText();  // for all other device.
+			}
+			if(version.equalsIgnoreCase("11")) {
+			 header = social_media_header.get(3).getText();  // for version 11.0.0
+			}
 			Message(Visit_page_text.get(4).getText());
+			if(version.equalsIgnoreCase("11")) {
 			Custom_click(visit_Page.get(3), header);			// for version 11.0.0
-//			Custom_click(visit_Page.get(4), header);     // for all other device.
+			}
+			else {
+			Custom_click(visit_Page.get(4), header);     // for all other device.
+			}
 			Thread.sleep(7000);
 			Message(" Total Followers = " +Twiter_Followers.getText());
 			Custom_click(Twiter_Follow, Twiter_Follow.getText());

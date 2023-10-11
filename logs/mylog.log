@@ -1,108 +1,60 @@
-[INFO ] 2023-10-03 17:01:38.984 [main] Hero_App - *********************Goodlife_page**************************
-[INFO ] 2023-10-03 17:01:42.496 [main] Hero_App - Allow Hero App to access your phone call logs is clickable
-[INFO ] 2023-10-03 17:01:44.949 [main] Hero_App - Allow Hero App to access your contacts is clickable
-[INFO ] 2023-10-03 17:01:47.201 [main] Hero_App - Allow Hero App to make and manage phone calls is clickable
-[INFO ] 2023-10-03 17:01:49.558 [main] Hero_App - Allow Hero App to send and view SMS messages is clickable
-[INFO ] 2023-10-03 17:01:51.411 [main] Hero_App - OK is clickable
-[INFO ] 2023-10-03 17:01:56.215 [main] Hero_App - Login with Registerd mobile number send successfully
-[INFO ] 2023-10-03 17:02:00.615 [main] Hero_App - Coninue button is clickable
-[INFO ] 2023-10-03 17:02:21.607 [main] Hero_App - enterOTP =1 send successfully
-[INFO ] 2023-10-03 17:02:23.691 [main] Hero_App - enterOTP =2 send successfully
-[INFO ] 2023-10-03 17:02:25.805 [main] Hero_App - enterOTP =3 send successfully
-[INFO ] 2023-10-03 17:02:28.163 [main] Hero_App - enterOTP =4 send successfully
-[INFO ] 2023-10-03 17:02:30.231 [main] Hero_App - enterOTP =5 send successfully
-[INFO ] 2023-10-03 17:02:32.468 [main] Hero_App - enterOTP =6 send successfully
-[INFO ] 2023-10-03 17:02:35.231 [main] Hero_App - Verify Button is clickable
-[INFO ] 2023-10-03 17:02:40.654 [main] Hero_App -  Select first vehicle is clickable
-[INFO ] 2023-10-03 17:02:42.396 [main] Hero_App - Continue Button after select vehicle is clickable
-[INFO ] 2023-10-03 17:02:45.894 [main] Hero_App - While using the app is clickable
-[INFO ] 2023-10-03 17:02:55.297 [main] Hero_App - GoodLife is clickable
-[INFO ] 2023-10-03 17:02:59.701 [main] Hero_App - Image available on Goodlife page
-[INFO ] 2023-10-03 17:03:01.246 [main] Hero_App - Every Journey is a Reward
-[INFO ] 2023-10-03 17:03:02.914 [main] Hero_App - Plan Name =Pro Membership
-[INFO ] 2023-10-03 17:03:04.308 [main] Hero_App - 199 
-[INFO ] 2023-10-03 17:03:06.050 [main] Hero_App - Points reached
-[INFO ] 2023-10-03 17:03:09.541 [main] Hero_App - Show More is clickable
-[INFO ] 2023-10-03 17:03:11.413 [main] Hero_App - Membership Valid Till = Jul 19 2026
-[INFO ] 2023-10-03 17:03:12.632 [main] Hero_App - Membership No. :  = 1037523390001855
-[INFO ] 2023-10-03 17:03:13.860 [main] Hero_App - Milestone Redeemed : = 0 of 0
-[INFO ] 2023-10-03 17:03:15.789 [main] Hero_App - Earning & Redemption History is clickable
-[INFO ] 2023-10-03 17:03:19.668 [main] Hero_App - Earning History is clickable
-[INFO ] 2023-10-03 17:03:20.521 [main] Hero_App - Date = 19 Jul 2023
-[INFO ] 2023-10-03 17:03:21.651 [main] Hero_App - Amount = ₹ 199 
-[INFO ] 2023-10-03 17:03:22.843 [main] Hero_App - Type = BON
-[INFO ] 2023-10-03 17:03:24.004 [main] Hero_App - Points = ₹199
-[INFO ] 2023-10-03 17:03:26.427 [main] Hero_App - Redemption History is clickable
-[INFO ] 2023-10-03 17:03:28.270 [main] Hero_App - No redemption history
-[INFO ] 2023-10-03 17:03:30.129 [main] Hero_App -  Back from Transaction History is clickable
-[INFO ] 2023-10-03 17:03:34.320 [main] Hero_App - Show Less is clickable
-[INFO ] 2023-10-03 17:03:36.157 [main] Hero_App - Complete your profile and win upto 500 points
-[INFO ] 2023-10-03 17:03:39.127 [main] Hero_App - Update Profile is clickable
-[INFO ] 2023-10-03 17:03:40.865 [main] Hero_App - Complete Profile Rewards
-[INFO ] 2023-10-03 17:03:42.746 [main] Hero_App - Hero GoodLife
-[INFO ] 2023-10-03 17:03:45.620 [main] Hero_App -  Back from Complete Profile Rewards is clickable
-[INFO ] 2023-10-03 17:03:47.215 [main] Hero_App - Check your welcome rewards & redemption status.
-[INFO ] 2023-10-03 17:03:50.710 [main] Hero_App - View Details is clickable
-[INFO ] 2023-10-03 17:03:52.130 [main] Hero_App - Welcome Rewards
-[INFO ] 2023-10-03 17:03:53.463 [main] Hero_App - Hero GoodLife
-[INFO ] 2023-10-03 17:03:55.001 [main] Hero_App -  Back from Complete Profile Rewards is clickable
-[INFO ] 2023-10-03 17:03:56.545 [main] Hero_App - Refer your near ones to buy a Hero 2-wheeler and Earn GoodLife Reward Points
-[INFO ] 2023-10-03 17:04:03.295 [main] Hero_App - Know More is clickable
-[INFO ] 2023-10-03 17:04:05.340 [main] Hero_App - Referrals
-[INFO ] 2023-10-03 17:04:06.876 [main] Hero_App - Amazing Benefits
-[INFO ] 2023-10-03 17:04:08.346 [main] Hero_App - ONLY for YOU
-[INFO ] 2023-10-03 17:04:09.744 [main] Hero_App - Easiest way to Earn Reward Points get even more exciting with Remarkable Reward Points when you refer a friend or yourself for another Hero 2 Wheeler
-[INFO ] 2023-10-03 17:04:10.898 [main] Hero_App - Use Referral For
-[INFO ] 2023-10-03 17:04:12.222 [main] Hero_App - Upgrade your 2 Wheeler
-[INFO ] 2023-10-03 17:04:13.532 [main] Hero_App - Upgrade to a New Hero 2 Wheeler and Earn double Reward points of 3000 points
-[INFO ] 2023-10-03 17:04:15.203 [main] Hero_App - Refer is clickable
-[INFO ] 2023-10-03 17:04:19.486 [main] Hero_App -  Back from Vehicle Purchase Referral is clickable
-[INFO ] 2023-10-03 17:04:22.032 [main] Hero_App - *T&C Apply is clickable
-[INFO ] 2023-10-03 17:04:24.285 [main] Hero_App -  Back from Terms of Use is clickable
-[INFO ] 2023-10-03 17:04:27.051 [main] Hero_App -  Back from Referrals is clickable
-[INFO ] 2023-10-03 17:04:29.937 [main] Hero_App - Winner Of The Month is clickable
-[INFO ] 2023-10-03 17:04:32.066 [main] Hero_App - Winner month =August's Winner
-[INFO ] 2023-10-03 17:04:32.067 [main] Hero_App - ******** Please look some winner name********
-[INFO ] 2023-10-03 17:04:33.911 [main] Hero_App - VEERENDRA KUMAR
-[INFO ] 2023-10-03 17:04:35.552 [main] Hero_App - From Lucknow, Uttar Pradesh
-[INFO ] 2023-10-03 17:04:37.083 [main] Hero_App - ₹50,000 prize money
-[INFO ] 2023-10-03 17:04:38.753 [main] Hero_App - For Hero Two-wheeler
-[INFO ] 2023-10-03 17:04:40.171 [main] Hero_App - SARJERAO TUKARAM BENADE
-[INFO ] 2023-10-03 17:04:41.419 [main] Hero_App - Pune, Maharashtra
-[INFO ] 2023-10-03 17:04:43.025 [main] Hero_App - IYAPPAN P
-[INFO ] 2023-10-03 17:04:44.563 [main] Hero_App - Chennai, Tamil Nadu
-[INFO ] 2023-10-03 17:04:46.012 [main] Hero_App - Amit Kumar Yadav
-[INFO ] 2023-10-03 17:04:47.849 [main] Hero_App - Varanasi, Uttar Pradesh
-[INFO ] 2023-10-03 17:04:49.611 [main] Hero_App - SHRI DEVNANDAN RAJWADE
-[INFO ] 2023-10-03 17:04:51.346 [main] Hero_App - Raipur, Chhattisgarh
-[INFO ] 2023-10-03 17:04:52.693 [main] Hero_App - PANKAJ GERA
-[INFO ] 2023-10-03 17:04:54.194 [main] Hero_App - Haryana, Haryana
-[INFO ] 2023-10-03 17:04:55.660 [main] Hero_App - BASHANTI LAL VADERA
-[INFO ] 2023-10-03 17:04:57.160 [main] Hero_App - Jaipur, Rajasthan
-[INFO ] 2023-10-03 17:04:59.764 [main] Hero_App - Total =₹8,000 Digital Voucher Winners
-[INFO ] 2023-10-03 17:05:02.625 [main] Hero_App -  Back from Winner Of The Month  is clickable
-[INFO ] 2023-10-03 17:05:04.629 [main] Hero_App - Make the most of your Hero GoodLife Membership, earn Points at various steps
-[INFO ] 2023-10-03 17:05:08.343 [main] Hero_App - points earning redemptionView Details is clickable
-[INFO ] 2023-10-03 17:05:31.971 [main] Hero_App - Points Earning & Redemption
-[INFO ] 2023-10-03 17:05:34.455 [main] Hero_App -   Tier 1 (₹1 Spent = 1 Point earned)
-[INFO ] 2023-10-03 17:05:37.296 [main] Hero_App - Milestone Rewards
-[INFO ] 2023-10-03 17:05:39.576 [main] Hero_App - 500 = Service Voucher ₹50
-[INFO ] 2023-10-03 17:05:42.621 [main] Hero_App - 1,000 = Service Voucher INR 50
-[INFO ] 2023-10-03 17:05:45.698 [main] Hero_App - 2,000 = Executive Pen / Service Voucher/ Online Vouchers INR 80
-[INFO ] 2023-10-03 17:05:48.458 [main] Hero_App - 3,500 = Color set/ Service Voucher/ Online Shopping Vouchers INR 100
-[INFO ] 2023-10-03 17:05:51.252 [main] Hero_App - 5,000 = Sling Bag/ Service Voucher/ Online Shopping Vouchers INR 150
-[INFO ] 2023-10-03 17:05:53.577 [main] Hero_App -   Tier 2 (₹1 Spent = 1.25 Points earned)
-[INFO ] 2023-10-03 17:05:56.034 [main] Hero_App - 7,500 = Casserole/ Service Voucher/ Online Shopping Vouchers INR 150
-[INFO ] 2023-10-03 17:05:58.596 [main] Hero_App - 10,000 = Lunch Box/ Service Voucher/ Online Shopping Vouchers INR 180
-[INFO ] 2023-10-03 17:06:00.848 [main] Hero_App - 15,000 = Duffle Bag/ Service Voucher/ Online Shopping Vouchers INR 250
-[INFO ] 2023-10-03 17:06:03.013 [main] Hero_App - 20,000 = Water Jug/ Service Voucher/ Online Shopping Vouchers INR 300
-[INFO ] 2023-10-03 17:06:05.387 [main] Hero_App - 30,000 = Power Bank/ Service/ Sales Voucher/ Online Vouchers INR 500
-[INFO ] 2023-10-03 17:06:08.071 [main] Hero_App - 40,000 = Service Voucher/ Sales Voucher/ Online Vouchers INR 500
-[INFO ] 2023-10-03 17:06:20.643 [main] Hero_App - Successfully  Scroll page down Action Become a GoodLife Member
-[INFO ] 2023-10-03 17:06:22.593 [main] Hero_App -   Tier 3 (₹1 Spent = 1.5 Points earned)
-[INFO ] 2023-10-03 17:06:24.607 [main] Hero_App - 50,000 = Bag pack or Wrist-Watch/ Service Voucher/Sales Voucher/Online Shopping Vouchers INR 500
-[INFO ] 2023-10-03 17:06:26.575 [main] Hero_App - The Program shall continue even after you reach 50,000 milestone points. For every 10,000 points added thereafter, you can earn vouchers INR 500/-.
-[INFO ] 2023-10-03 17:06:30.252 [main] Hero_App -  Back from points earning redemption  is clickable
-[INFO ] 2023-10-03 17:06:36.279 [main] Hero_App - Show More is clickable
-[INFO ] 2023-10-03 17:07:00.038 [main] Hero_App - Show Less is clickable
-[INFO ] 2023-10-03 17:07:11.710 [main] Hero_App - Successfully  Scroll page down Action Benefits and Experiences
+[INFO ] 2023-10-10 12:48:20.490 [main] Hero_App - ************************Book_Service_Page_Test**************************
+[INFO ] 2023-10-10 12:48:23.773 [main] Hero_App - Allow Hero App to access your phone call logs is clickable
+[INFO ] 2023-10-10 12:48:26.921 [main] Hero_App - Allow Hero App to access your contacts is clickable
+[INFO ] 2023-10-10 12:48:29.742 [main] Hero_App - Allow Hero App to make and manage phone calls is clickable
+[INFO ] 2023-10-10 12:48:32.923 [main] Hero_App - Allow Hero App to send and view SMS messages is clickable
+[INFO ] 2023-10-10 12:48:35.522 [main] Hero_App - OK is clickable
+[INFO ] 2023-10-10 12:48:41.281 [main] Hero_App - Login with Registerd mobile number send successfully
+[INFO ] 2023-10-10 12:48:47.111 [main] Hero_App - Coninue button is clickable
+[INFO ] 2023-10-10 12:49:07.627 [main] Hero_App - enterOTP =1 send successfully
+[INFO ] 2023-10-10 12:49:10.339 [main] Hero_App - enterOTP =2 send successfully
+[INFO ] 2023-10-10 12:49:12.983 [main] Hero_App - enterOTP =3 send successfully
+[INFO ] 2023-10-10 12:49:15.611 [main] Hero_App - enterOTP =4 send successfully
+[INFO ] 2023-10-10 12:49:17.988 [main] Hero_App - enterOTP =5 send successfully
+[INFO ] 2023-10-10 12:49:20.655 [main] Hero_App - enterOTP =6 send successfully
+[INFO ] 2023-10-10 12:49:23.469 [main] Hero_App - Verify Button is clickable
+[INFO ] 2023-10-10 12:49:31.343 [main] Hero_App -  Select first vehicle is clickable
+[INFO ] 2023-10-10 12:49:34.854 [main] Hero_App - Continue Button after select vehicle is clickable
+[INFO ] 2023-10-10 12:49:40.264 [main] Hero_App - While using the app is clickable
+[INFO ] 2023-10-10 12:49:42.335 [main] Hero_App -  Banner Img close is clickable
+[INFO ] 2023-10-10 12:49:47.295 [main] Hero_App - Services button is clickable
+[INFO ] 2023-10-10 12:49:49.872 [main] Hero_App - Service was due on
+[INFO ] 2023-10-10 12:49:51.888 [main] Hero_App - 30 Jul, 2014
+[INFO ] 2023-10-10 12:49:55.039 [main] Hero_App - Book Service is clickable
+[INFO ] 2023-10-10 12:49:57.761 [main] Hero_App - HF DELUXE
+[INFO ] 2023-10-10 12:50:02.772 [main] Hero_App - Ak
+[INFO ] 2023-10-10 12:50:23.151 [main] Hero_App - Vehicle License number is not given
+[INFO ] 2023-10-10 12:50:25.862 [main] Hero_App - Select a Date
+[INFO ] 2023-10-10 12:50:29.555 [main] Hero_App - 11 is clickable
+[INFO ] 2023-10-10 12:50:33.529 [main] Hero_App - 12 is clickable
+[INFO ] 2023-10-10 12:50:37.131 [main] Hero_App - 13 is clickable
+[INFO ] 2023-10-10 12:50:40.959 [main] Hero_App - 14 is clickable
+[INFO ] 2023-10-10 12:50:44.388 [main] Hero_App - 15 is clickable
+[INFO ] 2023-10-10 12:50:48.346 [main] Hero_App - 16 is clickable
+[INFO ] 2023-10-10 12:50:51.912 [main] Hero_App - Selected date = 16/10/2023
+[INFO ] 2023-10-10 12:50:54.878 [main] Hero_App - Select a Time
+[INFO ] 2023-10-10 12:50:56.389 [main] Hero_App - Successfully  Swipe page direction Action Pick time
+[INFO ] 2023-10-10 12:50:58.829 [main] Hero_App - Selected Time =9:00 AM
+[INFO ] 2023-10-10 12:51:02.529 [main] Hero_App - Service Centre Name =Ramesh Kapoor
+[INFO ] 2023-10-10 12:51:05.064 [main] Hero_App - Service Centre Address =A-19 JHILMIL IND AREA GT Road  EAST DELHI DELHI DELHI 110095
+[INFO ] 2023-10-10 12:51:09.134 [main] Hero_App - Center keyArrow is clickable
+[INFO ] 2023-10-10 12:51:12.354 [main] Hero_App - Select Service Center
+[INFO ] 2023-10-10 12:51:14.555 [main] Hero_App - Back from Select service center is clickable
+[INFO ] 2023-10-10 12:51:17.342 [main] Hero_App - Service Type Paid Service
+[INFO ] 2023-10-10 12:51:29.287 [main] Hero_App - Successfully  Scroll page down Action Additional Instructions
+[INFO ] 2023-10-10 12:51:29.288 [main] Hero_App - Customer Requests
+[INFO ] 2023-10-10 12:51:31.632 [main] Hero_App - Service is clickable
+[INFO ] 2023-10-10 12:51:36.069 [main] Hero_App - Starting trouble is clickable
+[INFO ] 2023-10-10 12:51:39.384 [main] Hero_App - Clutch cable hard is clickable
+[INFO ] 2023-10-10 12:51:43.975 [main] Hero_App - Engine Oil leakage is clickable
+[INFO ] 2023-10-10 12:51:56.962 [main] Hero_App - Successfully  Scroll page down Action Review Service Details button
+[INFO ] 2023-10-10 12:52:01.697 [main] Hero_App - Another issue send successfully
+[INFO ] 2023-10-10 12:52:05.559 [main] Hero_App - Review Service Details is clickable
+[INFO ] 2023-10-10 12:52:07.624 [main] Hero_App - HF DELUXE
+[INFO ] 2023-10-10 12:52:09.125 [main] Hero_App - Paid Service
+[INFO ] 2023-10-10 12:52:10.637 [main] Hero_App - Service Scheduled
+[INFO ] 2023-10-10 12:52:12.188 [main] Hero_App - 09:00 AM, 16 Oct, 2023
+[INFO ] 2023-10-10 12:52:13.872 [main] Hero_App - Ramesh Kapoor
+[INFO ] 2023-10-10 12:52:15.475 [main] Hero_App - A-19 JHILMIL IND AREA GT Road  EAST DELHI DELHI DELHI 110095
+[INFO ] 2023-10-10 12:52:17.872 [main] Hero_App - Cnacel Button is clickable
+[INFO ] 2023-10-10 12:52:21.265 [main] Hero_App - Back from Book Service page is clickable

@@ -13,7 +13,8 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 
 	public Feedback_and_About_Hero ob;
 	public Login_Page_Test login;
-
+	String version = config_getdata("version");
+	String device = config_getdata("Platform_name");
 	@Test(priority = 0)
 	public void TC057_verify_Feedback() throws InterruptedException {
 		Message("************************Feedback and About Hero test**************************");
@@ -46,10 +47,14 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	public void TC058_verify_About_Hero() throws InterruptedException {
 			Custom_click(ob.about_hero(), ob.about_hero().getText());
 			Thread.sleep(10000);
-//			msg(ob.about_hero_message_1(),ob.about_hero_message_1().getText());      // For emulator
-//			msg(ob.about_hero_message_2(),ob.about_hero_message_2().getText());		// For emulator
+			if (device.equalsIgnoreCase("emulator")) {
+			msg(ob.about_hero_message_1(),ob.about_hero_message_1().getText());      // For emulator
+			msg(ob.about_hero_message_2(),ob.about_hero_message_2().getText());		// For emulator
+			}
+			else {
 			msg(ob.about_hero_message_1_real(),ob.about_hero_message_1_real().getText());// For Real device & pCloudy
 			msg(ob.about_hero_message_2_real(),ob.about_hero_message_2_real().getText());// For Real device & pCloudy
+			}
 			Custom_click(ob.back_btn(), "Back from About Hero page");
  }
 
@@ -126,44 +131,60 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 		Custom_click(ob.Start_normally(), ob.Start_normally().getText());
 		msg(ob.Light_Indicators(),ob.Light_Indicators().getText());
 		Custom_click(ob.Light_Indicators_condition(), ob.Light_Indicators_condition().getText());
+		if(version.equalsIgnoreCase("11")) {
 		Scroll_down_page_Action("Next");  // for pCloudy version 11.0.0 only
+		}
 		msg(ob.Front_Tyre(),ob.Front_Tyre().getText());
 		Custom_click(ob.Front_Tyre_condition(), ob.Front_Tyre_condition().getText());
-//		Scroll_down_page_Action("Next");    // all other device except version 11.0.0
+		if(version.equalsIgnoreCase("allother")) {
+		Scroll_down_page_Action("Next");    // all other device except version 11.0.0
+		}
 		msg(ob.Rear_Tyre(),ob.Rear_Tyre().getText());
 		Custom_click(ob.Rear_Tyre_condition(), ob.Rear_Tyre_condition().getText());
+		if(version.equalsIgnoreCase("11")) {
 		Scroll_down_page_Action("Next");       // for pCloudy version 11.0.0 only
+		}
 		msg(ob.Body_Parts(),ob.Body_Parts().getText());
 		Custom_click(ob.Body_Parts_condition(), ob.Body_Parts_condition().getText());
-//		Custom_click(ob.How_to_check_all_issue(), "How to check all issue instraction ");     //For emulator
-//		msg(ob.issue_message(),ob.issue_message().getText());							//For emulator
-//		Custom_click(ob.close_issue_instraction(), "close issue instraction message");   	   //For emulator
-		Custom_click(ob.How_to_check_all_issue_real(), "How to check all issue instraction ");//For real device
-		msg(ob.issue_message_real(),ob.issue_message_real().getText());				 //For real device
-		Custom_click(ob.close_issue_instraction_real(), "close issue instraction message");  //For real device
+		if (device.equalsIgnoreCase("emulator")) {
+		Custom_click(ob.How_to_check_all_issue(), "How to check all issue instraction ");     
+		msg(ob.issue_message(),ob.issue_message().getText());							
+		Custom_click(ob.close_issue_instraction(), "close issue instraction message");   	  
+		}
+		else {
+		Custom_click(ob.How_to_check_all_issue_real(), "How to check all issue instraction ");
+		msg(ob.issue_message_real(),ob.issue_message_real().getText());				 
+		Custom_click(ob.close_issue_instraction_real(), "close issue instraction message"); 
+		}
 		Custom_click(ob.next_button(), ob.next_button().getText());
 	}
 	@Test(priority = 8)
 	public void TC065_Verify_Your_Details_Through_WhatsApp_in_Wheels_of_trust() throws InterruptedException
 	{
-		//first four line for emulator only
-//		msg(ob.sign_in(),ob.sign_in().getText());
-//		Custom_click(ob.whatsapp_button(), ob.whatsapp_button().getText());
-//		Thread.sleep(5000);
-//		ob.whatsapp_info();
-//		Custom_click(ob.whatsapp_close(), "Whatsapp close");
-		//below four line for real device and pCloudy.
+		if (device.equalsIgnoreCase("emulator")) {
+		msg(ob.sign_in(),ob.sign_in().getText());
+		Custom_click(ob.whatsapp_button(), ob.whatsapp_button().getText());
+		Thread.sleep(5000);
+		ob.whatsapp_info();
+		Custom_click(ob.whatsapp_close(), "Whatsapp close");
+		}
+		else {
 		msg(ob.sign_in_real(),ob.sign_in_real().getText());
 		Custom_click(ob.whatsapp_button(), ob.whatsapp_button().getText());
 		Thread.sleep(5000);
 		ob.whatsapp_info_real();
 		Custom_click(ob.whatsapp_close_real(), "Whatsapp close");
 	}
+	}
 	@Test(priority = 9)
 	public void TC066_Verify_Your_Details_Through_OTP_in_Wheels_of_trust() throws InterruptedException
 	{
-//		msg(ob.Login(),ob.Login().getText());          //For Emulator
-		msg(ob.Login_real(),ob.Login_real().getText());     //For Real Device
+		if (device.equalsIgnoreCase("emulator")) {
+		msg(ob.Login(),ob.Login().getText());          
+		}
+		else {
+		msg(ob.Login_real(),ob.Login_real().getText());    
+		}
 		custom_sendkeys(ob.name(), "Kundan Singh", "Name");
 		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
 		custom_sendkeys(ob.number(), "8767980978", "Contact number");
@@ -173,8 +194,12 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 		custom_sendkeys(ob.otp(), "1234", "OTP");
 		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
 		Custom_click(ob.submit(), "Submit Button");
-//		msg(ob.otp_message(),ob.otp_message().getText());         //For Emulator
-		msg(ob.otp_message_real(),ob.otp_message_real().getText());     //For Real Device
+		if (device.equalsIgnoreCase("emulator")) {
+		msg(ob.otp_message(),ob.otp_message().getText());        
+		}
+		else {
+		msg(ob.otp_message_real(),ob.otp_message_real().getText());     
+		}
 		Custom_click(ob.back_btn(), "Back from wheels of trust page");
 	}
 	
