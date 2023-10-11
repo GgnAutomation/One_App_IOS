@@ -1,0 +1,51 @@
+[INFO ] 2023-10-09 10:50:09.656 [main] Hero_App - ************************E Shop**************************
+[INFO ] 2023-10-09 10:50:12.790 [main] Hero_App - Allow Hero App to access your phone call logs is clickable
+[INFO ] 2023-10-09 10:50:15.237 [main] Hero_App - Allow Hero App to access your contacts is clickable
+[INFO ] 2023-10-09 10:50:17.564 [main] Hero_App - Allow Hero App to make and manage phone calls is clickable
+[INFO ] 2023-10-09 10:50:19.850 [main] Hero_App - Allow Hero App to send and view SMS messages is clickable
+[INFO ] 2023-10-09 10:50:21.872 [main] Hero_App - OK is clickable
+[INFO ] 2023-10-09 10:50:26.610 [main] Hero_App - Login with Registerd mobile number send successfully
+[INFO ] 2023-10-09 10:50:31.615 [main] Hero_App - Coninue button is clickable
+[INFO ] 2023-10-09 10:50:51.667 [main] Hero_App - enterOTP =1 send successfully
+[INFO ] 2023-10-09 10:50:53.826 [main] Hero_App - enterOTP =2 send successfully
+[INFO ] 2023-10-09 10:50:55.835 [main] Hero_App - enterOTP =3 send successfully
+[INFO ] 2023-10-09 10:50:57.968 [main] Hero_App - enterOTP =4 send successfully
+[INFO ] 2023-10-09 10:51:00.829 [main] Hero_App - enterOTP =5 send successfully
+[INFO ] 2023-10-09 10:51:02.987 [main] Hero_App - enterOTP =6 send successfully
+[INFO ] 2023-10-09 10:51:05.756 [main] Hero_App - Verify Button is clickable
+[INFO ] 2023-10-09 10:51:12.330 [main] Hero_App -  Select first vehicle is clickable
+[INFO ] 2023-10-09 10:51:14.740 [main] Hero_App - Continue Button after select vehicle is clickable
+[INFO ] 2023-10-09 10:51:18.174 [main] Hero_App - While using the app is clickable
+[INFO ] 2023-10-09 10:51:23.807 [main] Hero_App -  Banner Img close is clickable
+[INFO ] 2023-10-09 10:51:34.516 [main] Hero_App - E-Shop is clickable
+[INFO ] 2023-10-09 10:51:48.373 [main] Hero_App - Shoping Cart list is clickable
+[INFO ] 2023-10-09 10:51:52.231 [main] Hero_App - You have no items in your shopping cart.
+[INFO ] 2023-10-09 10:51:54.535 [main] Hero_App - wishlist is clickable
+[INFO ] 2023-10-09 10:51:58.475 [main] Hero_App - for Registered Customers 
+[INFO ] 2023-10-09 10:52:00.708 [main] Hero_App - If you have an account, sign in with your email address.
+[INFO ] 2023-10-09 10:52:03.976 [main] Hero_App - Email ID send successfully
+[INFO ] 2023-10-09 10:52:07.296 [main] Hero_App - Continue button is clickable
+[INFO ] 2023-10-09 10:52:11.261 [main] Hero_App - Verify your mobile
+[INFO ] 2023-10-09 10:52:13.181 [main] Hero_App - Please enter 4-Digit OTP which is sent to given email id.
+[INFO ] 2023-10-09 10:52:15.238 [main] Hero_App - OTP Pop Up close is clickable
+[INFO ] 2023-10-09 10:52:20.941 [main] Hero_App - E-Shop is clickable
+[INFO ] 2023-10-09 10:52:35.207 [main] Hero_App - User account is clickable
+[INFO ] 2023-10-09 10:52:40.075 [main] Hero_App - Checkout as a new customer
+[INFO ] 2023-10-09 10:52:41.523 [main] Hero_App - Creating an account has many benefits:
+[INFO ] 2023-10-09 10:52:42.945 [main] Hero_App - See order and shipping status
+[INFO ] 2023-10-09 10:52:44.510 [main] Hero_App - Track order history
+[INFO ] 2023-10-09 10:52:46.196 [main] Hero_App - Check out faster
+[INFO ] 2023-10-09 10:52:49.037 [main] Hero_App - Create an Account is clickable
+[INFO ] 2023-10-09 10:52:52.798 [main] Hero_App -  First name  send successfully
+[INFO ] 2023-10-09 10:52:57.518 [main] Hero_App -  Last name  send successfully
+[INFO ] 2023-10-09 10:53:02.368 [main] Hero_App - Sign Up for Newsletter is clickable
+[INFO ] 2023-10-09 10:53:05.607 [main] Hero_App -  Mobile number  send successfully
+[INFO ] 2023-10-09 10:53:10.426 [main] Hero_App -  Email  send successfully
+[INFO ] 2023-10-09 10:53:13.687 [main] Hero_App -  Tearms and Condition check Box  is clickable
+[INFO ] 2023-10-09 10:53:16.624 [main] Hero_App - Get OTP is clickable
+[INFO ] 2023-10-09 10:53:18.965 [main] Hero_App - Verify your mobile
+[INFO ] 2023-10-09 10:53:20.651 [main] Hero_App - Please enter 4-Digit OTP which is sent to given number.
+[INFO ] 2023-10-09 10:53:22.797 [main] Hero_App - OTP Pop Up close is clickable
+[INFO ] 2023-10-09 10:53:25.419 [main] Hero_App - CREATE AN ACCOUNT is clickable
+[INFO ] 2023-10-09 10:53:35.283 [main] Hero_App - Back from Create New Customer Account is clickable
+[INFO ] 2023-10-09 10:53:37.724 [main] Hero_App -  Back from E-shop  is clickable
