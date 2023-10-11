@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-10-11T16:16:47 IST" name="Hero_App" finished-at="2023-10-11T16:27:04 IST" duration-ms="617026">
+    <groups>
+    </groups>
+    <test started-at="2023-10-11T16:16:47 IST" name="Home_Page_Test" finished-at="2023-10-11T16:27:04 IST" duration-ms="617026">
+      <class name="Page_Test.Home_Page_Test">
+        <test-method is-config="true" signature="OPEN_AND_INSTALL_APP()[pri:0, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:16:47 IST" name="OPEN_AND_INSTALL_APP" finished-at="2023-10-11T16:18:54 IST" duration-ms="127040" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OPEN_AND_INSTALL_APP -->
+        <test-method signature="TC017_Home_page_verify()[pri:0, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:18:54 IST" name="TC017_Home_page_verify" finished-at="2023-10-11T16:20:44 IST" duration-ms="110507" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC017_Home_page_verify -->
+        <test-method signature="TC018__verify_Navigate()[pri:1, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:20:44 IST" name="TC018__verify_Navigate" finished-at="2023-10-11T16:20:56 IST" duration-ms="11880" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC018__verify_Navigate -->
+        <test-method signature="TC019_Verify_Documents()[pri:2, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:20:56 IST" name="TC019_Verify_Documents" finished-at="2023-10-11T16:22:47 IST" duration-ms="110715" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC019_Verify_Documents -->
+        <test-method signature="TC020_Verify_Relationship_Manager()[pri:3, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:22:47 IST" name="TC020_Verify_Relationship_Manager" finished-at="2023-10-11T16:23:10 IST" duration-ms="23347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC020_Verify_Relationship_Manager -->
+        <test-method signature="TC021_Verify_RSA()[pri:4, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:23:10 IST" name="TC021_Verify_RSA" finished-at="2023-10-11T16:23:28 IST" duration-ms="17969" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC021_Verify_RSA -->
+        <test-method signature="TC022_Select_State_For_Nearest_Dealer()[pri:5, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:23:28 IST" name="TC022_Select_State_For_Nearest_Dealer" finished-at="2023-10-11T16:24:02 IST" duration-ms="33507" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC022_Select_State_For_Nearest_Dealer -->
+        <test-method signature="TC023_Select_City_For_Nearest_Dealer()[pri:6, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:24:02 IST" name="TC023_Select_City_For_Nearest_Dealer" finished-at="2023-10-11T16:24:56 IST" depends-on-methods="TC022_Select_State_For_Nearest_Dealer()" duration-ms="53812" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC023_Select_City_For_Nearest_Dealer -->
+        <test-method signature="TC024_Select_Locality_For_Nearest_Dealer()[pri:7, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:24:56 IST" name="TC024_Select_Locality_For_Nearest_Dealer" finished-at="2023-10-11T16:25:22 IST" depends-on-methods="TC022_Select_State_For_Nearest_Dealer()" duration-ms="25985" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC024_Select_Locality_For_Nearest_Dealer -->
+        <test-method signature="TC025_Verify_Nearest_Dealer_info()[pri:8, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:25:22 IST" name="TC025_Verify_Nearest_Dealer_info" finished-at="2023-10-11T16:25:45 IST" depends-on-methods="TC022_Select_State_For_Nearest_Dealer()" duration-ms="23633" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC025_Verify_Nearest_Dealer_info -->
+        <test-method signature="TC026_Verify_Technical_Support_Manager()[pri:9, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:25:45 IST" name="TC026_Verify_Technical_Support_Manager" finished-at="2023-10-11T16:25:55 IST" duration-ms="9134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC026_Verify_Technical_Support_Manager -->
+        <test-method signature="TC027_Verify_Dealer_Locator()[pri:10, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:25:55 IST" name="TC027_Verify_Dealer_Locator" finished-at="2023-10-11T16:26:09 IST" duration-ms="14501" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC027_Verify_Dealer_Locator -->
+        <test-method signature="TC028_Select_city()[pri:11, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:26:09 IST" name="TC028_Select_city" finished-at="2023-10-11T16:26:46 IST" duration-ms="36822" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC028_Select_city -->
+        <test-method signature="TC029_View_dealer_name_and_address()[pri:12, instance:Page_Test.Home_Page_Test@3d2ee678]" started-at="2023-10-11T16:26:46 IST" name="TC029_View_dealer_name_and_address" finished-at="2023-10-11T16:27:04 IST" duration-ms="17925" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC029_View_dealer_name_and_address -->
+      </class> <!-- Page_Test.Home_Page_Test -->
+    </test> <!-- Home_Page_Test -->
+  </suite> <!-- Hero_App -->
+</testng-results>

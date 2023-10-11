@@ -1,0 +1,60 @@
+[INFO ] 2023-10-10 12:48:20.490 [main] Hero_App - ************************Book_Service_Page_Test**************************
+[INFO ] 2023-10-10 12:48:23.773 [main] Hero_App - Allow Hero App to access your phone call logs is clickable
+[INFO ] 2023-10-10 12:48:26.921 [main] Hero_App - Allow Hero App to access your contacts is clickable
+[INFO ] 2023-10-10 12:48:29.742 [main] Hero_App - Allow Hero App to make and manage phone calls is clickable
+[INFO ] 2023-10-10 12:48:32.923 [main] Hero_App - Allow Hero App to send and view SMS messages is clickable
+[INFO ] 2023-10-10 12:48:35.522 [main] Hero_App - OK is clickable
+[INFO ] 2023-10-10 12:48:41.281 [main] Hero_App - Login with Registerd mobile number send successfully
+[INFO ] 2023-10-10 12:48:47.111 [main] Hero_App - Coninue button is clickable
+[INFO ] 2023-10-10 12:49:07.627 [main] Hero_App - enterOTP =1 send successfully
+[INFO ] 2023-10-10 12:49:10.339 [main] Hero_App - enterOTP =2 send successfully
+[INFO ] 2023-10-10 12:49:12.983 [main] Hero_App - enterOTP =3 send successfully
+[INFO ] 2023-10-10 12:49:15.611 [main] Hero_App - enterOTP =4 send successfully
+[INFO ] 2023-10-10 12:49:17.988 [main] Hero_App - enterOTP =5 send successfully
+[INFO ] 2023-10-10 12:49:20.655 [main] Hero_App - enterOTP =6 send successfully
+[INFO ] 2023-10-10 12:49:23.469 [main] Hero_App - Verify Button is clickable
+[INFO ] 2023-10-10 12:49:31.343 [main] Hero_App -  Select first vehicle is clickable
+[INFO ] 2023-10-10 12:49:34.854 [main] Hero_App - Continue Button after select vehicle is clickable
+[INFO ] 2023-10-10 12:49:40.264 [main] Hero_App - While using the app is clickable
+[INFO ] 2023-10-10 12:49:42.335 [main] Hero_App -  Banner Img close is clickable
+[INFO ] 2023-10-10 12:49:47.295 [main] Hero_App - Services button is clickable
+[INFO ] 2023-10-10 12:49:49.872 [main] Hero_App - Service was due on
+[INFO ] 2023-10-10 12:49:51.888 [main] Hero_App - 30 Jul, 2014
+[INFO ] 2023-10-10 12:49:55.039 [main] Hero_App - Book Service is clickable
+[INFO ] 2023-10-10 12:49:57.761 [main] Hero_App - HF DELUXE
+[INFO ] 2023-10-10 12:50:02.772 [main] Hero_App - Ak
+[INFO ] 2023-10-10 12:50:23.151 [main] Hero_App - Vehicle License number is not given
+[INFO ] 2023-10-10 12:50:25.862 [main] Hero_App - Select a Date
+[INFO ] 2023-10-10 12:50:29.555 [main] Hero_App - 11 is clickable
+[INFO ] 2023-10-10 12:50:33.529 [main] Hero_App - 12 is clickable
+[INFO ] 2023-10-10 12:50:37.131 [main] Hero_App - 13 is clickable
+[INFO ] 2023-10-10 12:50:40.959 [main] Hero_App - 14 is clickable
+[INFO ] 2023-10-10 12:50:44.388 [main] Hero_App - 15 is clickable
+[INFO ] 2023-10-10 12:50:48.346 [main] Hero_App - 16 is clickable
+[INFO ] 2023-10-10 12:50:51.912 [main] Hero_App - Selected date = 16/10/2023
+[INFO ] 2023-10-10 12:50:54.878 [main] Hero_App - Select a Time
+[INFO ] 2023-10-10 12:50:56.389 [main] Hero_App - Successfully  Swipe page direction Action Pick time
+[INFO ] 2023-10-10 12:50:58.829 [main] Hero_App - Selected Time =9:00 AM
+[INFO ] 2023-10-10 12:51:02.529 [main] Hero_App - Service Centre Name =Ramesh Kapoor
+[INFO ] 2023-10-10 12:51:05.064 [main] Hero_App - Service Centre Address =A-19 JHILMIL IND AREA GT Road  EAST DELHI DELHI DELHI 110095
+[INFO ] 2023-10-10 12:51:09.134 [main] Hero_App - Center keyArrow is clickable
+[INFO ] 2023-10-10 12:51:12.354 [main] Hero_App - Select Service Center
+[INFO ] 2023-10-10 12:51:14.555 [main] Hero_App - Back from Select service center is clickable
+[INFO ] 2023-10-10 12:51:17.342 [main] Hero_App - Service Type Paid Service
+[INFO ] 2023-10-10 12:51:29.287 [main] Hero_App - Successfully  Scroll page down Action Additional Instructions
+[INFO ] 2023-10-10 12:51:29.288 [main] Hero_App - Customer Requests
+[INFO ] 2023-10-10 12:51:31.632 [main] Hero_App - Service is clickable
+[INFO ] 2023-10-10 12:51:36.069 [main] Hero_App - Starting trouble is clickable
+[INFO ] 2023-10-10 12:51:39.384 [main] Hero_App - Clutch cable hard is clickable
+[INFO ] 2023-10-10 12:51:43.975 [main] Hero_App - Engine Oil leakage is clickable
+[INFO ] 2023-10-10 12:51:56.962 [main] Hero_App - Successfully  Scroll page down Action Review Service Details button
+[INFO ] 2023-10-10 12:52:01.697 [main] Hero_App - Another issue send successfully
+[INFO ] 2023-10-10 12:52:05.559 [main] Hero_App - Review Service Details is clickable
+[INFO ] 2023-10-10 12:52:07.624 [main] Hero_App - HF DELUXE
+[INFO ] 2023-10-10 12:52:09.125 [main] Hero_App - Paid Service
+[INFO ] 2023-10-10 12:52:10.637 [main] Hero_App - Service Scheduled
+[INFO ] 2023-10-10 12:52:12.188 [main] Hero_App - 09:00 AM, 16 Oct, 2023
+[INFO ] 2023-10-10 12:52:13.872 [main] Hero_App - Ramesh Kapoor
+[INFO ] 2023-10-10 12:52:15.475 [main] Hero_App - A-19 JHILMIL IND AREA GT Road  EAST DELHI DELHI DELHI 110095
+[INFO ] 2023-10-10 12:52:17.872 [main] Hero_App - Cnacel Button is clickable
+[INFO ] 2023-10-10 12:52:21.265 [main] Hero_App - Back from Book Service page is clickable
