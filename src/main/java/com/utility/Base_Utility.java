@@ -47,7 +47,7 @@ public class Base_Utility
 	public static ExtentTest test;
 	public static listner lis;
 	public static WebDriverWait wait;
-	String confipath = System.getProperty("user.dir") + "\\config_data\\config.properties";
+	String confipath = System.getProperty("user.dir") + "/config_data/config.properties";
 	String excelpath = System.getProperty("user.dir") + "\\Data\\data1.xlsx";
 	public static AndroidDriver driver;
 	
