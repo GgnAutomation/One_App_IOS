@@ -11,7 +11,7 @@ pool:
 
 steps:
 - task: Maven@3
-  timeoutInMinutes: 100
+  timeoutInMinutes: 150
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'clean install'
