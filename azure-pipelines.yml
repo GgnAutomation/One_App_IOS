@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 schedules:
-- cron: '50 3 * * *'
+- cron: '54 5 * * *'
   displayName: Daily build
   branches:
     include:
