@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Services_Page_Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>27/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>25/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Sep 28 16:02:01 IST 2023</td>
+<td>Started on:</td><td>Thu Nov 02 08:52:51 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>1814 seconds (1814912 ms)</td>
+<tr><td>Total time:</td><td>2067 seconds (2067613 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,136 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC068_Vehicle_details_on_service_page()'><b>TC068_Vehicle_details_on_service_page</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.utility.listner.getcapcture(String)&quot; because &quot;com.utility.Base_Utility.lis&quot; is null
+	at com.utility.Base_Utility.Custom_click(Base_Utility.java:286)
+	at Page_Test.Login_Page_Test.login(Login_Page_Test.java:181)
+	at Page_Test.Services_Page_Test.TC068_Vehicle_details_on_service_page(Services_Page_Test.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1707179576", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1707179576'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.utility.listner.getcapcture(String)&quot; because &quot;com.utility.Base_Utility.lis&quot; is null
+	at com.utility.Base_Utility.Custom_click(Base_Utility.java:286)
+	at Page_Test.Login_Page_Test.login(Login_Page_Test.java:181)
+	at Page_Test.Services_Page_Test.TC068_Vehicle_details_on_service_page(Services_Page_Test.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>82</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC069_verify_service_type()'><b>TC069_verify_service_type</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Time out after waiting for element //android.widget.TextView[@resource-id =&apos;com.customerapp.hero:id/tv_service_type&apos;] for 10000 ms
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19.0.1&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [af81ed3c-5506-4d63-8f6d-6edc5da9cc05, findElement {using=xpath, value=//android.widget.TextView[@resource-id =&apos;com.customerapp.hero:id/tv_service_type&apos;]}]
+Capabilities {appium:app: /opt/raid-data/data/userV2/..., appium:appActivity: com.customerapp.hero.views...., appium:appPackage: com.customerapp.hero, appium:appiumVersion: 2.0.0, appium:automationName: uiautomator2, appium:chromedriverPort: 30482, appium:databaseEnabled: false, appium:desired: {app: /opt/raid-data/data/userV2/..., appActivity: com.customerapp.hero.views...., appPackage: com.customerapp.hero, appiumVersion: 2.0.0, automationName: uiautomator2, chromedriverPort: 30482, deviceName: 617, launchTimeout: 90000, newCommandTimeout: 600, pCloudy_ApiKey: 2gdc5pv55mh54mqtwmvj4xbr, pCloudy_DeviceManufacturer: GOOGLE, pCloudy_DeviceVersion: 11.0.0, pCloudy_DurationInMinutes: 90, pCloudy_EnableDeviceLogs: true, pCloudy_EnablePerformanceData: false, pCloudy_EnableVideo: true, pCloudy_Username: randhir.kumar@heromotocorp.com, pCloudy_WildNet: false, platformName: android, platformVersion: 11.0.0, systemPort: 30484, udid: 803KPRW1598286}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 2 XL, appium:deviceName: 803KPRW1598286, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x2880, appium:deviceUDID: 803KPRW1598286, appium:javascriptEnabled: true, appium:launchTimeout: 90000, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 600, appium:pCloudy_ApiKey: 2gdc5pv55mh54mqtwmvj4xbr, appium:pCloudy_DeviceManufacturer: GOOGLE, appium:pCloudy_DeviceVersion: 11.0.0, appium:pCloudy_DurationInMinutes: 90, appium:pCloudy_EnableDeviceLogs: true, appium:pCloudy_EnablePerformanceData: false, appium:pCloudy_EnableVideo: true, appium:pCloudy_Username: randhir.kumar@heromotocorp.com, appium:pCloudy_WildNet: false, appium:pixelRatio: 3.5, appium:platformVersion: 11, appium:statBarHeight: 98, appium:systemPort: 30484, appium:takesScreenshot: true, appium:udid: 803KPRW1598286, appium:viewportRect: {height: 2614, left: 0, top: 98, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: af81ed3c-5506-4d63-8f6d-6edc5da9cc05
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.isDisplayed(Unknown Source)
+	at Page_Test.Services_Page_Test.TC069_verify_service_type(Services_Page_Test.java:34)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace8039120", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace8039120'><pre>org.openqa.selenium.NoSuchElementException: Time out after waiting for element //android.widget.TextView[@resource-id =&apos;com.customerapp.hero:id/tv_service_type&apos;] for 10000 ms
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19.0.1&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [af81ed3c-5506-4d63-8f6d-6edc5da9cc05, findElement {using=xpath, value=//android.widget.TextView[@resource-id =&apos;com.customerapp.hero:id/tv_service_type&apos;]}]
+Capabilities {appium:app: /opt/raid-data/data/userV2/..., appium:appActivity: com.customerapp.hero.views...., appium:appPackage: com.customerapp.hero, appium:appiumVersion: 2.0.0, appium:automationName: uiautomator2, appium:chromedriverPort: 30482, appium:databaseEnabled: false, appium:desired: {app: /opt/raid-data/data/userV2/..., appActivity: com.customerapp.hero.views...., appPackage: com.customerapp.hero, appiumVersion: 2.0.0, automationName: uiautomator2, chromedriverPort: 30482, deviceName: 617, launchTimeout: 90000, newCommandTimeout: 600, pCloudy_ApiKey: 2gdc5pv55mh54mqtwmvj4xbr, pCloudy_DeviceManufacturer: GOOGLE, pCloudy_DeviceVersion: 11.0.0, pCloudy_DurationInMinutes: 90, pCloudy_EnableDeviceLogs: true, pCloudy_EnablePerformanceData: false, pCloudy_EnableVideo: true, pCloudy_Username: randhir.kumar@heromotocorp.com, pCloudy_WildNet: false, platformName: android, platformVersion: 11.0.0, systemPort: 30484, udid: 803KPRW1598286}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 2 XL, appium:deviceName: 803KPRW1598286, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x2880, appium:deviceUDID: 803KPRW1598286, appium:javascriptEnabled: true, appium:launchTimeout: 90000, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 600, appium:pCloudy_ApiKey: 2gdc5pv55mh54mqtwmvj4xbr, appium:pCloudy_DeviceManufacturer: GOOGLE, appium:pCloudy_DeviceVersion: 11.0.0, appium:pCloudy_DurationInMinutes: 90, appium:pCloudy_EnableDeviceLogs: true, appium:pCloudy_EnablePerformanceData: false, appium:pCloudy_EnableVideo: true, appium:pCloudy_Username: randhir.kumar@heromotocorp.com, appium:pCloudy_WildNet: false, appium:pixelRatio: 3.5, appium:platformVersion: 11, appium:statBarHeight: 98, appium:systemPort: 30484, appium:takesScreenshot: true, appium:udid: 803KPRW1598286, appium:viewportRect: {height: 2614, left: 0, top: 98, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: af81ed3c-5506-4d63-8f6d-6edc5da9cc05
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.isDisplayed(Unknown Source)
+	at Page_Test.Services_Page_Test.TC069_verify_service_type(Services_Page_Test.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>10</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,140 +206,130 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Page_Test.Services_Page_Test.TC073_View_Service_schedule_3500()'><b>TC073_View_Service_schedule_3500</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td title='Page_Test.Services_Page_Test.TC078_View_Service_schedule_18500()'><b>TC078_View_Service_schedule_18500</b><br>Test class: Page_Test.Services_Page_Test</td>
 <td></td>
-<td>73</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
+<td>68</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
 <tr>
 <td title='Page_Test.Services_Page_Test.TC076_View_Service_schedule_12500()'><b>TC076_View_Service_schedule_12500</b><br>Test class: Page_Test.Services_Page_Test</td>
 <td></td>
-<td>74</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
+<td>78</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
 <tr>
-<td title='Page_Test.Services_Page_Test.TC085_View_Service_schedule_360_days()'><b>TC085_View_Service_schedule_360_days</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td title='Page_Test.Services_Page_Test.TC079_View_Service_schedule_21500()'><b>TC079_View_Service_schedule_21500</b><br>Test class: Page_Test.Services_Page_Test</td>
 <td></td>
-<td>64</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
+<td>81</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
 <tr>
-<td title='Page_Test.Services_Page_Test.TC077_View_Service_schedule_15500()'><b>TC077_View_Service_schedule_15500</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td title='Page_Test.Services_Page_Test.TC082_View_Service_schedule_60_days()'><b>TC082_View_Service_schedule_60_days</b><br>Test class: Page_Test.Services_Page_Test</td>
 <td></td>
-<td>73</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
+<td>68</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
 <tr>
-<td title='Page_Test.Services_Page_Test.TC090_View_Service_schedule_860_days()'><b>TC090_View_Service_schedule_860_days</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td title='Page_Test.Services_Page_Test.TC071_Verify_dealer_manager_info()'><b>TC071_Verify_dealer_manager_info</b><br>Test class: Page_Test.Services_Page_Test</td>
 <td></td>
-<td>62</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
+<td>35</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
 <tr>
 <td title='Page_Test.Services_Page_Test.TC084_View_Service_schedule_260_days()'><b>TC084_View_Service_schedule_260_days</b><br>Test class: Page_Test.Services_Page_Test</td>
 <td></td>
 <td>66</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC080_View_Service_schedule_24500()'><b>TC080_View_Service_schedule_24500</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>59</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC088_View_Service_schedule_660_days()'><b>TC088_View_Service_schedule_660_days</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>64</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC082_View_Service_schedule_60_days()'><b>TC082_View_Service_schedule_60_days</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>66</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC078_View_Service_schedule_18500()'><b>TC078_View_Service_schedule_18500</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>69</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC068_Vehicle_details_on_service_page()'><b>TC068_Vehicle_details_on_service_page</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>79</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC069_verify_service_type()'><b>TC069_verify_service_type</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>4</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC087_View_Service_schedule_560_days()'><b>TC087_View_Service_schedule_560_days</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>70</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC089_View_Service_schedule_760_days()'><b>TC089_View_Service_schedule_760_days</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>71</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
 <tr>
 <td title='Page_Test.Services_Page_Test.TC091_View_Service_schedule_960_days()'><b>TC091_View_Service_schedule_960_days</b><br>Test class: Page_Test.Services_Page_Test</td>
 <td></td>
-<td>74</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC079_View_Service_schedule_21500()'><b>TC079_View_Service_schedule_21500</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>76</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC075_View_Service_schedule_9500()'><b>TC075_View_Service_schedule_9500</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>69</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC072_View_Service_schedule_750()'><b>TC072_View_Service_schedule_750</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>80</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC070_verify_Dealer_information()'><b>TC070_verify_Dealer_information</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>8</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC094_Verify_all_DIY_Videos_list()'><b>TC094_Verify_all_DIY_Videos_list</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>94</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC086_View_Service_schedule_460_days()'><b>TC086_View_Service_schedule_460_days</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>70</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
-<tr>
-<td title='Page_Test.Services_Page_Test.TC071_Verify_dealer_manager_info()'><b>TC071_Verify_dealer_manager_info</b><br>Test class: Page_Test.Services_Page_Test</td>
-<td></td>
-<td>8</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
+<td>101</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
 <tr>
 <td title='Page_Test.Services_Page_Test.TC093_Verify_all_tips_list()'><b>TC093_Verify_all_tips_list</b><br>Test class: Page_Test.Services_Page_Test</td>
 <td></td>
-<td>110</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
+<td>53</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
 <tr>
-<td title='Page_Test.Services_Page_Test.TC092_Verify_Last_Serviced()'><b>TC092_Verify_Last_Serviced</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td title='Page_Test.Services_Page_Test.TC075_View_Service_schedule_9500()'><b>TC075_View_Service_schedule_9500</b><br>Test class: Page_Test.Services_Page_Test</td>
 <td></td>
-<td>10</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
+<td>64</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
 <tr>
-<td title='Page_Test.Services_Page_Test.TC074_View_Service_schedule_6500()'><b>TC074_View_Service_schedule_6500</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td title='Page_Test.Services_Page_Test.TC090_View_Service_schedule_860_days()'><b>TC090_View_Service_schedule_860_days</b><br>Test class: Page_Test.Services_Page_Test</td>
 <td></td>
-<td>74</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
+<td>68</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
 <tr>
-<td title='Page_Test.Services_Page_Test.TC081_View_Service_schedule_27500()'><b>TC081_View_Service_schedule_27500</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td title='Page_Test.Services_Page_Test.TC077_View_Service_schedule_15500()'><b>TC077_View_Service_schedule_15500</b><br>Test class: Page_Test.Services_Page_Test</td>
 <td></td>
-<td>77</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
+<td>59</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
 <tr>
 <td title='Page_Test.Services_Page_Test.TC083_View_Service_schedule_160_days()'><b>TC083_View_Service_schedule_160_days</b><br>Test class: Page_Test.Services_Page_Test</td>
 <td></td>
 <td>65</td>
-<td>Page_Test.Services_Page_Test@74c79fa2</td></tr>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC088_View_Service_schedule_660_days()'><b>TC088_View_Service_schedule_660_days</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>70</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC074_View_Service_schedule_6500()'><b>TC074_View_Service_schedule_6500</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>75</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC092_Verify_Last_Serviced()'><b>TC092_Verify_Last_Serviced</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>280</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC087_View_Service_schedule_560_days()'><b>TC087_View_Service_schedule_560_days</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>72</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC080_View_Service_schedule_24500()'><b>TC080_View_Service_schedule_24500</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>69</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC072_View_Service_schedule_750()'><b>TC072_View_Service_schedule_750</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>74</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC070_verify_Dealer_information()'><b>TC070_verify_Dealer_information</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>21</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC089_View_Service_schedule_760_days()'><b>TC089_View_Service_schedule_760_days</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>70</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC081_View_Service_schedule_27500()'><b>TC081_View_Service_schedule_27500</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>76</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC086_View_Service_schedule_460_days()'><b>TC086_View_Service_schedule_460_days</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>69</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC094_Verify_all_DIY_Videos_list()'><b>TC094_Verify_all_DIY_Videos_list</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>68</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC085_View_Service_schedule_360_days()'><b>TC085_View_Service_schedule_360_days</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>64</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
+<tr>
+<td title='Page_Test.Services_Page_Test.TC073_View_Service_schedule_3500()'><b>TC073_View_Service_schedule_3500</b><br>Test class: Page_Test.Services_Page_Test</td>
+<td></td>
+<td>63</td>
+<td>Page_Test.Services_Page_Test@1e0f9063</td></tr>
 </table><p>
 </body>
 </html>

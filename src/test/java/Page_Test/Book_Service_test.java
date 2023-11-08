@@ -9,7 +9,7 @@ public class Book_Service_test extends Base_Utility {
 	public Login_Page_Test login;
 	public Book_Service ob;
 	@Test(priority = 0)
-	public void TC109_previous_service_info() throws InterruptedException {
+	public void TC106_previous_service_info() throws InterruptedException {
 		Message("************************Book_Service_Page_Test**************************");
 		ob = new Book_Service();
 		login = new Login_Page_Test();
@@ -29,7 +29,7 @@ public class Book_Service_test extends Base_Utility {
 	}
 
 	@Test(priority = 1)
-	public void TC110_Book_service() throws InterruptedException {
+	public void TC107_Book_service() throws InterruptedException {
 		msg(ob.select_date(),ob.select_date().getText());
 		ob.pick_date();
 		msg(ob.Selected_date(),"Selected date = " + ob.Selected_date().getText());
@@ -52,7 +52,7 @@ public class Book_Service_test extends Base_Utility {
 	}
 
 	@Test(priority = 2)
-	public void TC111_Review_Service_Details() {
+	public void TC108_Review_Service_Details() {
 		Custom_click(ob.Review_Service_Details_button(), ob.Review_Service_Details_button().getText());
 		ob.Service_Details();
 		Custom_click(ob.cancel_button(), "Cnacel Button");

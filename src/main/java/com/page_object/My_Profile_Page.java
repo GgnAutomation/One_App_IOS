@@ -137,7 +137,7 @@ public class My_Profile_Page extends Base_Utility {
 	private WebElement confirm_dob;
 	@FindBy(xpath ="//android.widget.Button[@resource-id ='com.customerapp.hero:id/cancel_button']")
 	private WebElement Cancel_dob;
-	@FindBy(xpath ="//android.widget.Spinner[@resource-id = 'com.customerapp.hero:id/filled_exposed']")
+	@FindBy(xpath ="//android.widget.ImageButton[@resource-id ='com.customerapp.hero:id/text_input_end_icon']")
 	private WebElement blood_group;
 	@FindBy(xpath ="//android.widget.EditText[@resource-id ='com.customerapp.hero:id/address_input_editext']")
 	private WebElement Street_name;
@@ -214,6 +214,8 @@ public class My_Profile_Page extends Base_Utility {
 	private WebElement Choose_License_from_library;
 	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[2]")
 	private WebElement Take_License_Photo;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[3]")
+	private WebElement Choose_from_Digilocker;
 	@FindBy(xpath ="//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/cross_btn']")
 	private WebElement close_button_for_license_upload;
 	public WebElement manage_license()
@@ -235,6 +237,10 @@ public class My_Profile_Page extends Base_Utility {
 	public WebElement Take_License_Photo()
 	{
 		return Take_License_Photo;
+	}
+	public WebElement Choose_from_Digilocker()
+	{
+		return Choose_from_Digilocker;
 	}
 	public WebElement close_button_for_license_upload()
 	{

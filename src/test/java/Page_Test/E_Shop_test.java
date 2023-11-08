@@ -14,13 +14,13 @@ public class E_Shop_test extends Base_Utility{
 	public E_Shop ob;
 	String device = config_getdata("Platform_name");
 	@Test(priority = 0)
-	public void TC107_registered_customers() throws InterruptedException
+	public void TC104_registered_customers() throws InterruptedException
 	{
 		Message("************************E Shop**************************");
 		ob = new E_Shop();
 //		login = new Login_Page_Test();
 //		login.login();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		if (device.equalsIgnoreCase("pcloudy")) {
 			Custom_click(ob.E_shop_pCloudy(), ob.E_shop_pCloudy().getText());     
 		}
@@ -63,7 +63,7 @@ public class E_Shop_test extends Base_Utility{
 		}
 	}
 	@Test(priority = 1)
-	public void TC108_new_customers() throws InterruptedException {
+	public void TC105_new_customers() throws InterruptedException {
 		driver.navigate().back();
 		Thread.sleep(2000);
 		Custom_click(ob.E_shop_pCloudy(), ob.E_shop_pCloudy().getText());

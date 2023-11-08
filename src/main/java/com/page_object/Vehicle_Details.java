@@ -26,8 +26,10 @@ public class Vehicle_Details extends Base_Utility {
 	private WebElement vehicle_number_1;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/vehicle_detail_btn']")
 	private WebElement Vehicle_Details;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/sp_selected_vehicle']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/tv_model']")
 	private WebElement Selected_vehicle;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/bike_name_lbl'])[1]")
+	private WebElement choose_vehicle;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/img_vehicle']")
 	private WebElement Vehicle_img;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_primary_vehicle']")
@@ -69,7 +71,10 @@ public class Vehicle_Details extends Base_Utility {
 	public WebElement Selected_vehicle() {
 		return Selected_vehicle;
 	}
-
+	public WebElement choose_vehicle()
+	{
+		return choose_vehicle;
+	}
 	public WebElement Vehicle_img() {
 		return Vehicle_img;
 	}
@@ -142,8 +147,10 @@ public class Vehicle_Details extends Base_Utility {
 //******************************************My vehicle documents *****************************
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_documents']")
 	private WebElement my_vehicle_documents;
-	@FindBy(xpath = "//android.widget.TextView[@text ]")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_name']")
 	private List<WebElement> Documents_list;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	private List<WebElement> Documents_status;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/title']")
 	private WebElement Document_Check;
 //	@FindBy(xpath = "//android.widget.TextView[@text ='Add now']")
@@ -171,18 +178,15 @@ public class Vehicle_Details extends Base_Utility {
 
 	public void Documents_list() throws InterruptedException {
 
-		for (int i = 1; i < Documents_list.size(); i++) {
+		for (int i = 0; i < Documents_list.size(); i++) {
 			String name = Documents_list.get(i).getText();
-			Custom_click(Documents_list.get(i), name);
-			Thread.sleep(2000);
-			try {
-				if (Document_Check != null) {
-					Message(Document_Check.getText());
-					Custom_click(Back, name + " Back Document");
-				}
-			} catch (Exception e) {
-				Message(name + " is already available");
-				Custom_click(Back, name + " Back Document");
+			String doc = Documents_status.get(i).getText();
+			if(doc.equalsIgnoreCase("Upload")) {
+				Message(name +" document is not uploaded yet");
+			}
+			else
+			{
+				Message(name +" document is already uploaded");
 			}
 		}
 	}
@@ -240,7 +244,7 @@ public class Vehicle_Details extends Base_Utility {
 	}
 
 	public void Service_history() throws InterruptedException {
-		for (int i = 0; i < Service_history.size(); i++) {
+		for (int i = 11; i < Service_history.size(); i++) {
 			try {
 				String service_info = Service_history.get(i).getText();
 				if (service_info.equalsIgnoreCase("Details")) {
@@ -291,9 +295,9 @@ public class Vehicle_Details extends Base_Utility {
 	// ***********************************
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/rv_item_lbl'])[2]")
 	private WebElement Tips_and_DIY_videos;
-	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"Tips\"]/android.widget.TextView")
+	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc= 'Tips']/android.widget.TextView")
 	private WebElement Tips_info;
-	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"DIY Videos\"]/android.widget.TextView")
+	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc='DIY Videos']/android.widget.TextView")
 	private WebElement DIY_Videos;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/cross']")
 	private WebElement close_my_profile_page;

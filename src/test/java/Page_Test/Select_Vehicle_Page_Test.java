@@ -23,6 +23,7 @@ public class Select_Vehicle_Page_Test extends Base_Utility {
 		ob = new Select_Vehicle_Page();
 //		login = new Login_Page_Test();
 //		login.login();
+		Thread.sleep(5000);
 		Custom_click(ob.edit_nickame_button(), "Tap on pencil for Nick name ");
 		VerifyElementPresent(ob.save_button(), "Save button before updating the nick name is ");
 		ob.edit_nickame_text().clear();
@@ -111,9 +112,9 @@ public class Select_Vehicle_Page_Test extends Base_Utility {
 					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
 		}
 		if (device.equalsIgnoreCase("pcloudy")) {
-			Custom_click(ob.While_using_the_app(), "While using the app");
+//			Custom_click(ob.While_using_the_app(), "While using the app");
 		}
-		Custom_click(ob.banner_Img_close(), " Banner Img close");
+//		Custom_click(ob.banner_Img_close(), " Banner Img close");
 	
 		}
 }

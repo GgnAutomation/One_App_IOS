@@ -377,9 +377,10 @@ public class Services_Page extends Base_Utility {
 	}
 
 	public void tips_list() throws InterruptedException {
+		String tips="";
 		for (int i = 1; i < tips_list.size(); i++) {
 			try {
-			String tips = tips_list.get(i).getText();
+			 tips = tips_list.get(i).getText();
 			Message(tips);
 			Custom_click(tips_list.get(i), tips);
 			Thread.sleep(5000);
@@ -393,7 +394,7 @@ public class Services_Page extends Base_Utility {
 			}catch(Exception e)
 			{
 				Message(""+e);
-				
+				Custom_click(back_button, "Back from " +tips);
 			}
 		}
 	}
@@ -404,12 +405,13 @@ public class Services_Page extends Base_Utility {
 
 	public void DIY_Videos_list() throws InterruptedException {
 		for (int i = 2; i < DIY_Videos_list.size(); i++) {
-			try {
+			
 				String video = DIY_Videos_list.get(i).getText();
 				Message(video + " Video");
 				i++;
 				Custom_click(DIY_Videos_list.get(i), video);
 				Thread.sleep(3000);
+				try {
 				Custom_click(play_video, video + " Play video");
 				Thread.sleep(1000);
 				Custom_click(Video_close_button, video + " close");
@@ -417,7 +419,7 @@ public class Services_Page extends Base_Utility {
 
 			} catch (Exception e) {
 				Message("" + e);
-
+				Custom_click(Video_close_button, video + " close");
 			}
 		}
 	}

@@ -16,10 +16,14 @@ public class Login_page extends Base_Utility {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath ="//android.widget.ImageView[@content-desc=\"Cancel\"]")
+	@FindBy(xpath ="//android.widget.ImageView[@content-desc='Cancel']")
 	private WebElement close;
 	@FindBy(id = "com.customerapp.hero:id/text_input_editext")
 	private WebElement mobile_No;
+	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_title']")
+	private WebElement registerd_message;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[1]")
+	private WebElement cancel_button;
 	@FindBy(xpath = "//android.widget.Button[@resource-id = 'com.android.permissioncontroller:id/permission_allow_foreground_only_button']")
 	private WebElement While_using_the_app;
 	@FindBy(xpath ="//android.widget.Button[@resource-id ='com.android.permissioncontroller:id/permission_deny_button']")
@@ -75,6 +79,14 @@ public class Login_page extends Base_Utility {
 	public WebElement open()
 	{
 		return open;
+	}
+	public WebElement registerd_message()
+	{
+		return registerd_message;
+	}
+	public WebElement Cancel_not_registered()
+	{
+		return cancel_button;
 	}
 	public WebElement ok()
 	{

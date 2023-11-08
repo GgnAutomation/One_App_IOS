@@ -27,7 +27,7 @@ public class Safety_Measures_and_Symbols_Glossary extends Base_Utility{
 	}
 	public void Safety_message()
 	{
-		for(int i=0;i<Safety_message.size();i++)
+		for(int i=11;i<Safety_message.size();i++)
 		{
 			msg(Safety_message.get(i),Safety_message.get(i).getText());
 		}
@@ -59,7 +59,7 @@ public class Safety_Measures_and_Symbols_Glossary extends Base_Utility{
 	}
 	public void Symbols_Glossary_message()
 	{
-		for(int i=0,j=0;i<Symbols_Glossary_message.size();i++)
+		for(int i=11,j=0;i<Symbols_Glossary_message.size();i++)
 		{
 			msg(Symbols_Glossary_message.get(i),Symbols_Glossary_message.get(i).getText());
 		if(i==Symbols_Glossary_message.size()-1)
@@ -79,7 +79,7 @@ public class Safety_Measures_and_Symbols_Glossary extends Base_Utility{
 				}
 			Scroll_down_page_Action(name);
 			j++;
-			i=5;
+			i=15;
 			}
 		}
 		}

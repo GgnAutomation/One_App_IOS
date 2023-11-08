@@ -16,13 +16,13 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	String version = config_getdata("version");
 	String device = config_getdata("Platform_name");
 	@Test(priority = 0)
-	public void TC057_verify_Feedback() throws InterruptedException {
+	public void TC055_verify_Feedback() throws InterruptedException {
 		Message("************************Feedback and About Hero test**************************");
 		ob = new Feedback_and_About_Hero();
 //		login = new Login_Page_Test();
 //		login.login();
+		Thread.sleep(3000);
 		Custom_click(ob.home(), "Home");
-		Thread.sleep(2000);
 		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.feedback(), ob.feedback().getText());
 		Thread.sleep(2000);
@@ -44,7 +44,8 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 1)
-	public void TC058_verify_About_Hero() throws InterruptedException {
+	public void TC056_verify_About_Hero() throws InterruptedException {
+			Custom_click(ob.side_menu_button(), "Side menu button");
 			Custom_click(ob.about_hero(), ob.about_hero().getText());
 			Thread.sleep(10000);
 			if (device.equalsIgnoreCase("emulator")) {
@@ -59,7 +60,8 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
  }
 
 	@Test(priority = 2)
-	public void TC059_verify_Side_menu_page_function() throws InterruptedException {
+	public void TC057_verify_Side_menu_page_function() throws InterruptedException {
+			Custom_click(ob.side_menu_button(), "Side menu button");
 			Custom_click(ob.goodlife(), "Goodlife");
 			Thread.sleep(6000);
 			msg(ob.goodlife_page_test(),"goodlife page test =" + ob.goodlife_page_test().getText());
@@ -67,17 +69,19 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 3)
-	public void TC060_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
+	public void TC058_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
+		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.wheels_of_trust(), "Wheels of trust");
 		Thread.sleep(5000);
 		try {
-			if(ob.Language_select().isDisplayed()) {
 			Custom_click(ob.Language_select(), "English language");
 			Thread.sleep(2000);
 			msg(ob.cookieNotice(),ob.cookieNotice().getText());
-			Custom_click(ob.Accept_cookie(), ob.Accept_cookie().getText()); }
+			Custom_click(ob.Accept_cookie(), ob.Accept_cookie().getText());
 		} catch (Exception e) {
 			Message("Language poup is not populate");
+			msg(ob.cookieNotice(),ob.cookieNotice().getText());
+			Custom_click(ob.Accept_cookie(), ob.Accept_cookie().getText());
 		}
 		Custom_click(ob.Vehicle_Details(), ob.Vehicle_Details().getText());
 		Custom_click(ob.State(), ob.State().getText());
@@ -86,7 +90,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 4)
-	public void TC061_Chose_city_in_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
+	public void TC059_Chose_city_in_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
 		Custom_click(ob.City(), ob.City().getText());
 		ob.Select_city("New Delhi");
 		Thread.sleep(2000);
@@ -96,14 +100,14 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 5)
-	public void TC062_Select_company_in_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
+	public void TC060_Select_company_in_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
 		Custom_click(ob.Company(), ob.Company().getText());
 		ob.Select_Company("Hero");
 		Thread.sleep(2000);
 	}
 
 	@Test(priority = 6)
-	public void TC063_Select_Model_in_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
+	public void TC061_Select_Model_in_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
 		Custom_click(ob.Model(), ob.Model().getText());
 		ob.Select_Model("GLAMOUR");
 		Thread.sleep(2000);
@@ -123,7 +127,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 		}
 	}
 	@Test(priority = 7)
-	public void TC064_Verify_Vehicle_Condition_in_Wheels_of_trust()
+	public void TC062_Verify_Vehicle_Condition_in_Wheels_of_trust()
 	{
 		msg(ob.silencer(),ob.silencer().getText());
 		Custom_click(ob.silencer_smoke(), ob.silencer_smoke().getText());
@@ -159,7 +163,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 		Custom_click(ob.next_button(), ob.next_button().getText());
 	}
 	@Test(priority = 8)
-	public void TC065_Verify_Your_Details_Through_WhatsApp_in_Wheels_of_trust() throws InterruptedException
+	public void TC063_Verify_Your_Details_Through_WhatsApp_in_Wheels_of_trust() throws InterruptedException
 	{
 		if (device.equalsIgnoreCase("emulator")) {
 		msg(ob.sign_in(),ob.sign_in().getText());
@@ -177,7 +181,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 	}
 	@Test(priority = 9)
-	public void TC066_Verify_Your_Details_Through_OTP_in_Wheels_of_trust() throws InterruptedException
+	public void TC064_Verify_Your_Details_Through_OTP_in_Wheels_of_trust() throws InterruptedException
 	{
 		if (device.equalsIgnoreCase("emulator")) {
 		msg(ob.Login(),ob.Login().getText());          
@@ -204,13 +208,14 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 	
 	@Test(priority = 10)
-	public void TC067_Verify_joyride() {
+	public void TC065_Verify_joyride() {
+		Custom_click(ob.side_menu_button(), "Side menu button");
 			Custom_click(ob.Joyride(), "Joyride");
 			ob.Joyride_info();
 			Custom_click(ob.nearest_dealer(), ob.nearest_dealer().getText());
 			Custom_click(ob.back_btn(), "Back from Dealer Locator");
 			Custom_click(ob.back_btn(), "Back from Joyride page");
-			driver.navigate().back();
+//			driver.navigate().back();
 		
 	}
 }

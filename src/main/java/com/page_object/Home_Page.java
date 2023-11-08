@@ -132,8 +132,10 @@ public class Home_Page extends Base_Utility {
 	private WebElement Navigate_menu;
 	@FindBy(xpath = "//android.widget.TextView[@text ='Search Destination']")
 	private WebElement Search_destination;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl']")
+	@FindBy(xpath = "//android.widget.EditText[@resource-id ='com.customerapp.hero:id/edittext_search']")
 	private WebElement Search_here;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_place_name'])[1]")
+	private WebElement chose_place_name;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/service_center_lbl']")
 	private WebElement Searched_name;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/service_center_address_lbl']")
@@ -142,6 +144,10 @@ public class Home_Page extends Base_Utility {
 	private WebElement Navigate_button;
 	@FindBy(xpath = "//android.widget.FrameLayout[@resource-id ='com.customerapp.hero:id/navigate']")
 	private WebElement Start;
+	@FindBy(xpath ="//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_start']")
+	private WebElement Start_button;
+	@FindBy(xpath ="//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/stop_navigation']")
+	private WebElement stop_navigation;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id= 'com.customerapp.hero:id/lbl']")
 	private WebElement change_search;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/back_btn']")
@@ -158,7 +164,10 @@ public class Home_Page extends Base_Utility {
 	public WebElement Search_here() {
 		return Search_here;
 	}
-
+	public WebElement chose_place_name()
+	{
+		return chose_place_name;
+	}
 	public WebElement Searched_name() {
 		return Searched_name;
 	}
@@ -175,7 +184,14 @@ public class Home_Page extends Base_Utility {
 		return Start;
 
 	}
-
+	public WebElement Start_button()
+	{
+		return Start_button;
+	}
+	public WebElement stop_navigation()
+	{
+		return stop_navigation;
+	}
 	public WebElement change_search() {
 		return change_search;
 	}
@@ -201,10 +217,13 @@ public class Home_Page extends Base_Utility {
 	private WebElement Choose_Document_from_library;
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[2]")
 	private WebElement Take_a_Photo;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[3]")
+	private WebElement Choose_from_Digilocker;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/cross_btn']")
 	private WebElement document_upload_close_button;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/back_btn']")
 	private WebElement Back;
+
 
 	public WebElement Documents_Menu() {
 		return Documents_Menu;
@@ -222,32 +241,59 @@ public class Home_Page extends Base_Utility {
 
 		for (int i = 1; i < Documents_list.size(); i++) {
 			String name = Documents_list.get(i).getText();
-			Custom_click(Documents_list.get(i), name);
+//			Custom_click(Documents_list.get(i), name);
+			Message(name);
+			i++;
+			String doc = Documents_list.get(i).getText();
+			if(doc.equalsIgnoreCase("Upload")) {
+			Custom_click(Documents_list.get(i), name +" "+ Documents_list.get(i).getText());
 			Thread.sleep(2000);
+			if (i == 2) {
+				Custom_click(While_using_the_app, "While using the app");
+				Custom_click(Allow, "Allow");
+				Thread.sleep(2000);
+				Custom_click(Documents_list.get(i), name +" "+Documents_list.get(i).getText());
+			}
+//			try {
+//				if (Document_Check != null) {
+//					Message(Document_Check.getText());
+//					Custom_click(Add_Now, name + " Add now");
+//					if (i == 1) {
+//						Custom_click(While_using_the_app, "While using the app");
+//						Custom_click(Allow, "Allow");
+//						Thread.sleep(2000);
+//						Custom_click(Add_Now, name + " Add now");
+//					}
 			try {
-				if (Document_Check != null) {
-					Message(Document_Check.getText());
-					Custom_click(Add_Now, name + " Add now");
-					if (i == 1) {
-						Custom_click(While_using_the_app, "While using the app");
-						Custom_click(Allow, "Allow");
-						Thread.sleep(2000);
-						Custom_click(Add_Now, name + " Add now");
-					}
 					Custom_click(Choose_Document_from_library, name + " Document frmo library");
 					Thread.sleep(2000);
 					driver.navigate().back();
-					Custom_click(Add_Now, name + " Add now");
+					Custom_click(Documents_list.get(i), name +" "+Documents_list.get(i).getText());
+//					Custom_click(Add_Now, name + " Add now");
 					Custom_click(Take_a_Photo, "Take a Photo");
 					Thread.sleep(2000);
 					driver.navigate().back();
-					Custom_click(Add_Now, name + " Add now");
+//					Custom_click(Add_Now, name + " Add now");
+					if(i!=6) {
+					Custom_click(Documents_list.get(i), name +" "+Documents_list.get(i).getText());
+					Custom_click(Choose_from_Digilocker, "Choose from Digilocker");
+					Thread.sleep(2000);
+					Custom_click(Back,  " Back from Digilocker Login");
+					}
+					Custom_click(Documents_list.get(i), name +" "+Documents_list.get(i).getText());
 					Custom_click(document_upload_close_button, "Close upload document page");
-					Custom_click(Back, name + " Back Document");
-				}
+//				}
 			} catch (Exception e) {
 				Message(name + " is already available");
 				Custom_click(Back, name + " Back Document");
+			}
+			}
+			else
+			{
+				Message(name + " is already available");
+				Custom_click(Documents_list.get(i), name +" "+ Documents_list.get(i).getText());
+				Thread.sleep(3000);
+				Custom_click(Back, "Back from " +name + " page");
 			}
 		}
 	}
@@ -296,8 +342,12 @@ public class Home_Page extends Base_Utility {
 //****************************RSA************************************
 	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[4]")
 	private WebElement RSA;
-	@FindBy(xpath = "//android.widget.TextView[@text ='Locate nearest dealer']")
+	@FindBy(xpath ="//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv')]")
+	private List<WebElement> RSA_info;
+	@FindBy(xpath = "//android.view.View[@content-desc='Locate nearest dealer']/android.widget.TextView")
 	private WebElement locate_nearest_dealer;
+//	@FindBy(xpath = "//android.widget.TextView[@text ='Locate nearest dealer']")
+//	private WebElement locate_nearest_dealer;
 	@FindBy(xpath = "//android.view.View[@text ='Locate nearest dealer']")
 	private WebElement locate_nearest_dealer_real_device;
 	@FindBy(xpath = "//android.view.View[@text ='LOCATE THE NEAREST DEALER']")
@@ -306,6 +356,10 @@ public class Home_Page extends Base_Utility {
 	private WebElement locate_the_nearest_dealer_real;
 	@FindBy(xpath ="//android.view.View[@resource-id ='OutletState']")
 	private WebElement State;
+	@FindBy(xpath ="//android.widget.EditText[@resource-id ='com.customerapp.hero:id/text_input_editext']")
+	private WebElement registration_number;
+	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	private WebElement renew_rsa;
 	@FindBy(xpath ="(//android.widget.CheckedTextView[@resource-id ='android:id/text1'])[3]")
 	private WebElement State_check;
 	@FindBy(xpath ="//android.widget.CheckedTextView[@resource-id ='android:id/text1']")
@@ -328,6 +382,10 @@ public class Home_Page extends Base_Utility {
 	private WebElement Local_dealer_address;
 	@FindBy(xpath ="//android.widget.TextView[contains(@text,'No')]")
 	private WebElement Local_dealer_address_real;
+	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_title']")
+	private List<WebElement> asked_questions;
+	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_ans']")
+	private WebElement answer;
 	public WebElement RSA() {
 		return RSA;
 	}
@@ -351,6 +409,10 @@ public class Home_Page extends Base_Utility {
 	{
 		return Local_dealer_address;
 	}
+	public WebElement registration_number()
+	{
+		return registration_number;
+	}
 	public WebElement Local_dealer_address_real()
 	{
 		return Local_dealer_address_real;
@@ -358,7 +420,10 @@ public class Home_Page extends Base_Utility {
 	public WebElement locate_nearest_dealer() {
 		return locate_nearest_dealer;
 	}
-
+	public WebElement renew_rsa()
+	{
+		return renew_rsa;
+	}
 	public WebElement locate_nearest_dealer_real_device() {
 		return locate_nearest_dealer_real_device;
 	}
@@ -385,9 +450,36 @@ public class Home_Page extends Base_Utility {
 	{
 		return Locality;
 	}
+	public void asked_questions()
+	{
+		try {
+	Custom_click(asked_questions.get(2), "Open question = "+asked_questions.get(2).getText());
+	msg(answer, "Answer ="+ answer.getText());
+	Custom_click(asked_questions.get(2),"Close question = "+asked_questions.get(2).getText());
+	Custom_click(asked_questions.get(3), "Open question = "+asked_questions.get(3).getText());
+	Scroll_down_page_Action("Answer");
+	msg(answer, "Answer ="+answer.getText());
+	Custom_click(asked_questions.get(2), "Close question = "+ asked_questions.get(2).getText());
+	Custom_click(asked_questions.get(4), "Open question = "+asked_questions.get(4).getText());
+	Scroll_down_page_Action("Answer");
+	msg(answer, "Answer ="+answer.getText());
+	Custom_click(asked_questions.get(3), "Close question = "+asked_questions.get(3).getText());
+		}catch(Exception e)	{
+			Message("No question is available");
+		}
+		
+	}
+ 
 	public WebElement Search_button()
 	{
 		return Search_button;
+	}
+	public void RSA_info()
+	{
+		for(int i=0;i<RSA_info.size();i++)
+		{
+			msg(RSA_info.get(i), RSA_info.get(i).getText());
+		}
 	}
 	public void select_state(String State_name)
 	{

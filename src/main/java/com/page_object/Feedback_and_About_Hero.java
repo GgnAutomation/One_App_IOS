@@ -534,7 +534,12 @@ public class Feedback_and_About_Hero extends Base_Utility{
 	{
 		for(int i=1;i<Joyride_info.size()-1;i++)
 		{
-		msg(Joyride_info.get(i),Joyride_info.get(i).getText());
+			String value = Joyride_info.get(i).getText();
+			if(value.equalsIgnoreCase("Locate Nearest Dealer"))
+			{
+				break;
+			}
+		msg(Joyride_info.get(i),value);
 		}
 	}
 	public WebElement nearest_dealer()
