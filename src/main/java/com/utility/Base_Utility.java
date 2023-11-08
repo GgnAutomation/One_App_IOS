@@ -47,8 +47,8 @@ public class Base_Utility
 	public static ExtentTest test;
 	public static listner lis;
 	public static WebDriverWait wait;
-	String confipath = System.getProperty("user.dir") + "\\config_data\\config.properties";
-	String excelpath = System.getProperty("user.dir") + "\\Data\\data1.xlsx";
+	String confipath = System.getProperty("user.dir") + "/config_data/config.properties";
+	String excelpath = System.getProperty("user.dir") + "/Data/data1.xlsx";
 	public static AndroidDriver driver;
 	
 	@BeforeTest
@@ -95,7 +95,7 @@ public class Base_Utility
 			db.setCapability("appium:deviceName", "Pixel_6_API_31");
 			db.setCapability("appium:udid", "emulator-5554");
 			db.setCapability("appium:avdLaunchTimeout", 900000);
-			db.setCapability("appium:app", (System.getProperty("user.dir") + "\\apk\\app-debug.apk"));
+			db.setCapability("appium:app", (System.getProperty("user.dir") + "/apk/app-debug.apk"));
 			driver = new AndroidDriver(new URL(config_getdata("IpAddress")), db);
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 			db.setCapability("appium:ensureWebviewsHavePages", true);
