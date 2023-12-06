@@ -123,6 +123,15 @@ public WebElement deny()
 			custom_sendkeys(OTP.get(i), ""+(i+1), "enterOTP =" +(i+1));
 		}
 	}
+		public void enter_Valid_OTP_prod()
+		{
+			custom_sendkeys(OTP.get(0),""+4 , "enterOTP =" +4);
+			custom_sendkeys(OTP.get(1),""+3 , "enterOTP =" +3);
+			custom_sendkeys(OTP.get(2),""+4 , "enterOTP =" +4);
+			custom_sendkeys(OTP.get(3),""+2 , "enterOTP =" +2);
+			custom_sendkeys(OTP.get(4),""+4 , "enterOTP =" +4);
+			custom_sendkeys(OTP.get(5),""+1 , "enterOTP =" +1);
+		}
 		public void enter_inavalid_OTP()
 		{
 			for(int i=0,j=3;i<OTP.size();i++,j++)

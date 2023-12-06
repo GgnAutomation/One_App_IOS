@@ -35,6 +35,7 @@ public class GoodLife_test extends Base_Utility {
 		ob.plan_info();
 		Custom_click(ob.show_more_service_privilegers(), ob.show_more_service_privilegers().getText());
 		ob.pro_membership_plan_info();
+		Custom_click(ob.E_and_R_History(), ob.E_and_R_History().getText());
 	}
 	@Test(priority = 2)
 	public void TC095_Verify_Earning_History_in_Pro_Membership()

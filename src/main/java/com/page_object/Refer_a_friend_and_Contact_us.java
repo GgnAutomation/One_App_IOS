@@ -52,7 +52,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 	}
 
 //************************************	Select_state **********************************
-	@FindBy(xpath = "//android.widget.Spinner[@resource-id ='com.customerapp.hero:id/state_sp']")
+	@FindBy(xpath = "//android.widget.Spinner[@resource-id ='com.customerapp.hero:id/state_sp']/android.widget.TextView")
 	private WebElement Select_state;
 	@FindBy(xpath = "//android.widget.TextView[@text]")
 	private List<WebElement> Select_State_list;
@@ -79,7 +79,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 	}
 
 //************************************	Select_City **********************************
-	@FindBy(xpath = "//android.widget.Spinner[@resource-id ='com.customerapp.hero:id/city_sp']")
+	@FindBy(xpath = "//android.widget.Spinner[@resource-id ='com.customerapp.hero:id/city_sp']//android.widget.TextView")
 	private WebElement Select_City;
 
 	public WebElement Select_City() {
@@ -103,7 +103,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 	}
 
 //************************************	Select_Model **********************************
-	@FindBy(xpath = "//android.widget.Spinner[@resource-id ='com.customerapp.hero:id/spinner_vehicle']")
+	@FindBy(xpath = "//android.widget.Spinner[@resource-id ='com.customerapp.hero:id/spinner_vehicle']/android.widget.TextView")
 	private WebElement Select_Model;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
 	private WebElement Submit_button;
@@ -151,6 +151,12 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 	public WebElement Refer_yourself() {
 		return Refer_yourself;
 	}
+	public void Select_State_in_refer_yourself() {
+		Custom_click(Select_State_list.get(5),Select_State_list.get(5).getText());
+		}
+	public void Select_City_in_refer_yourself() {
+		Custom_click(Select_State_list.get(1),Select_State_list.get(1).getText());
+		}
 
 	// ************************************ Contact Us **********************************
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/rv_item_lbl'])[6]")
@@ -161,13 +167,15 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 	private List<WebElement> social_media_header;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/whatsapp_visit_page']")
 	private WebElement whatsapp_visit_page;
-	@FindBy(xpath ="//android.widget.ImageView[@resource-id ='com.whatsapp:id/whatsapp_toolbar_home']")
+	@FindBy(xpath ="//android.widget.Button[@resource-id ='com.whatsapp:id/whatsapp_toolbar_home']")
 	private WebElement whatsapp_back;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/fb_text']")
 	private List<WebElement> Visit_page_text;
+	@FindBy(xpath ="//android.widget.Button[@resource-id='com.android.chrome:id/negative_button']")
+	private WebElement chrome_notification;
 	@FindBy(xpath ="//android.widget.EditText[@resource-id ='m_login_email']")
 	private WebElement emailid;
-	@FindBy(xpath = "//android.widget.Button[contains(@text, 'Log')]")
+	@FindBy(xpath = "(//android.widget.Button[contains(@text, 'Log')])[2]")
 	private WebElement facebook_login;
 	@FindBy(xpath = "//android.view.View[@content-desc='Log in']/android.widget.TextView")
 	private WebElement instagram_login;
@@ -202,13 +210,23 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 			Custom_click(visit_Page.get(0), header);
 			Thread.sleep(4000);
 			try {
-			custom_sendkeys(emailid, "Renu@gmail.com", "Email id");
+			Custom_click(chrome_notification, chrome_notification.getText());
+			} catch (Exception e) { Message("No chrome notification is given");}
+			try {
 			Custom_click(facebook_login, header + " Login");
-			Custom_click(back, " Back from " + header); 
+			custom_sendkeys(emailid, "Renu@gmail.com", "Email id");
+			driver.navigate().back();
+			Thread.sleep(1000);
+			driver.navigate().back();
+			Thread.sleep(3000);
+			driver.navigate().back();
+			Thread.sleep(3000);
+//			Custom_click(back, " Back from " + header); 
 		} catch (Exception e) {
 			Message("Facebook is not visible" + e);
 			test.addScreenCaptureFromPath(lis.getcapcture("facebook"));
-			Custom_click(back, " Back from " + header);
+			driver.navigate().back();
+			Thread.sleep(3000);
 		}
 	}
 
@@ -242,18 +260,19 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 				} 
 			} catch (Exception e) {
 				Message("WhatsApp on your device is available");
-				Custom_click(whatsapp_back, " whatsapp back button");
+//				Custom_click(whatsapp_back, " whatsapp back button");
+				driver.navigate().back();
 				driver.navigate().back();
 			} 
 		} catch (Exception e) {
 			Message("Whatsapp is not visible" + e);
 			test.addScreenCaptureFromPath(lis.getcapcture("Whatsapp"));
-			Custom_click(back, " Back from Whatsapp" );
+			driver.navigate().back();
 		}
 	}
 
 	public void youTube() throws InterruptedException {
-	        header = social_media_header.get(3).getText();
+			header = social_media_header.get(3).getText();
 			Message(Visit_page_text.get(3).getText());
 			Custom_click(visit_Page.get(2), header);
 			Thread.sleep(4000);
@@ -313,8 +332,8 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 			Custom_click(visit_Page.get(4), header);     // for all other device.
 			}
 			Thread.sleep(7000);
-			Message(" Total Followers = " +Twiter_Followers.getText());
-			Custom_click(Twiter_Follow, Twiter_Follow.getText());
+//			Message(" Total Followers = " +Twiter_Followers.getText());
+//			Custom_click(Twiter_Follow, Twiter_Follow.getText());
 			Custom_click(back, " Back from " + header);
 		} catch (Exception e) {
 			Message("twitter is not visible" + e);

@@ -67,145 +67,151 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 			msg(ob.goodlife_page_test(),"goodlife page test =" + ob.goodlife_page_test().getText());
 			Custom_click(ob.back_btn(), "Back from GoodLife page");
 	}
-
 	@Test(priority = 3)
-	public void TC058_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
-		Custom_click(ob.side_menu_button(), "Side menu button");
+	public void TC058_Wheels_of_Trust() throws InterruptedException {		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.wheels_of_trust(), "Wheels of trust");
 		Thread.sleep(5000);
-		try {
-			Custom_click(ob.Language_select(), "English language");
-			Thread.sleep(2000);
-			msg(ob.cookieNotice(),ob.cookieNotice().getText());
-			Custom_click(ob.Accept_cookie(), ob.Accept_cookie().getText());
-		} catch (Exception e) {
-			Message("Language poup is not populate");
-			msg(ob.cookieNotice(),ob.cookieNotice().getText());
-			Custom_click(ob.Accept_cookie(), ob.Accept_cookie().getText());
-		}
-		Custom_click(ob.Vehicle_Details(), ob.Vehicle_Details().getText());
-		Custom_click(ob.State(), ob.State().getText());
-		ob.Select_State("Delhi");
-		Thread.sleep(2000);
+		ob.exchange_info();
+		Custom_click(ob.back_btn(), "Back from Exchange page");
 	}
-
-	@Test(priority = 4)
-	public void TC059_Chose_city_in_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
-		Custom_click(ob.City(), ob.City().getText());
-		ob.Select_city("New Delhi");
-		Thread.sleep(2000);
-		custom_sendkeys(ob.Pincode(), "110037", "Pincode");
-		msg(ob.Two_Wheeler(),"Please " + ob.Two_Wheeler().getText());
-		Custom_click(ob.motorcycle(), ob.motorcycle().getText());
-	}
-
-	@Test(priority = 5)
-	public void TC060_Select_company_in_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
-		Custom_click(ob.Company(), ob.Company().getText());
-		ob.Select_Company("Hero");
-		Thread.sleep(2000);
-	}
-
-	@Test(priority = 6)
-	public void TC061_Select_Model_in_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
-		Custom_click(ob.Model(), ob.Model().getText());
-		ob.Select_Model("GLAMOUR");
-		Thread.sleep(2000);
-		custom_sendkeys(ob.enter_registraction_months_and_Years(), "2012-09", "Registraction Months and Year");
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
-		Thread.sleep(2000);
-		if(ob.next_button().isDisplayed()==true)
-		{
-		Custom_click(ob.next_button(), ob.next_button().getText());
-		}
-		else
-		{
-			Custom_click(ob.Accept_cookie(), ob.Accept_cookie().getText());
-			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
-			Custom_click(ob.next_button(), ob.next_button().getText());
-		}
-	}
-	@Test(priority = 7)
-	public void TC062_Verify_Vehicle_Condition_in_Wheels_of_trust()
-	{
-		msg(ob.silencer(),ob.silencer().getText());
-		Custom_click(ob.silencer_smoke(), ob.silencer_smoke().getText());
-		msg(ob.Starting_Vehicle(),ob.Starting_Vehicle().getText());
-		Custom_click(ob.Start_normally(), ob.Start_normally().getText());
-		msg(ob.Light_Indicators(),ob.Light_Indicators().getText());
-		Custom_click(ob.Light_Indicators_condition(), ob.Light_Indicators_condition().getText());
-		if(version.equalsIgnoreCase("11")) {
-		Scroll_down_page_Action("Next");  // for pCloudy version 11.0.0 only
-		}
-		msg(ob.Front_Tyre(),ob.Front_Tyre().getText());
-		Custom_click(ob.Front_Tyre_condition(), ob.Front_Tyre_condition().getText());
-		if(version.equalsIgnoreCase("allother")) {
-		Scroll_down_page_Action("Next");    // all other device except version 11.0.0
-		}
-		msg(ob.Rear_Tyre(),ob.Rear_Tyre().getText());
-		Custom_click(ob.Rear_Tyre_condition(), ob.Rear_Tyre_condition().getText());
-		if(version.equalsIgnoreCase("11")) {
-		Scroll_down_page_Action("Next");       // for pCloudy version 11.0.0 only
-		}
-		msg(ob.Body_Parts(),ob.Body_Parts().getText());
-		Custom_click(ob.Body_Parts_condition(), ob.Body_Parts_condition().getText());
-		if (device.equalsIgnoreCase("emulator")) {
-		Custom_click(ob.How_to_check_all_issue(), "How to check all issue instraction ");     
-		msg(ob.issue_message(),ob.issue_message().getText());							
-		Custom_click(ob.close_issue_instraction(), "close issue instraction message");   	  
-		}
-		else {
-		Custom_click(ob.How_to_check_all_issue_real(), "How to check all issue instraction ");
-		msg(ob.issue_message_real(),ob.issue_message_real().getText());				 
-		Custom_click(ob.close_issue_instraction_real(), "close issue instraction message"); 
-		}
-		Custom_click(ob.next_button(), ob.next_button().getText());
-	}
-	@Test(priority = 8)
-	public void TC063_Verify_Your_Details_Through_WhatsApp_in_Wheels_of_trust() throws InterruptedException
-	{
-		if (device.equalsIgnoreCase("emulator")) {
-		msg(ob.sign_in(),ob.sign_in().getText());
-		Custom_click(ob.whatsapp_button(), ob.whatsapp_button().getText());
-		Thread.sleep(5000);
-		ob.whatsapp_info();
-		Custom_click(ob.whatsapp_close(), "Whatsapp close");
-		}
-		else {
-		msg(ob.sign_in_real(),ob.sign_in_real().getText());
-		Custom_click(ob.whatsapp_button(), ob.whatsapp_button().getText());
-		Thread.sleep(5000);
-		ob.whatsapp_info_real();
-		Custom_click(ob.whatsapp_close_real(), "Whatsapp close");
-	}
-	}
-	@Test(priority = 9)
-	public void TC064_Verify_Your_Details_Through_OTP_in_Wheels_of_trust() throws InterruptedException
-	{
-		if (device.equalsIgnoreCase("emulator")) {
-		msg(ob.Login(),ob.Login().getText());          
-		}
-		else {
-		msg(ob.Login_real(),ob.Login_real().getText());    
-		}
-		custom_sendkeys(ob.name(), "Kundan Singh", "Name");
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
-		custom_sendkeys(ob.number(), "8767980978", "Contact number");
-		Custom_click(ob.otp(), "OTP");
-		Custom_click(ob.send_otp(), "Send OTP");
-		Thread.sleep(2000);
-		custom_sendkeys(ob.otp(), "1234", "OTP");
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
-		Custom_click(ob.submit(), "Submit Button");
-		if (device.equalsIgnoreCase("emulator")) {
-		msg(ob.otp_message(),ob.otp_message().getText());        
-		}
-		else {
-		msg(ob.otp_message_real(),ob.otp_message_real().getText());     
-		}
-		Custom_click(ob.back_btn(), "Back from wheels of trust page");
-	}
+//	@Test(priority = 3)
+//	public void TC058_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
+//		Custom_click(ob.side_menu_button(), "Side menu button");
+//		Custom_click(ob.wheels_of_trust(), "Wheels of trust");
+//		Thread.sleep(5000);
+//		try {
+//			Custom_click(ob.Language_select(), "English language");
+//			Thread.sleep(2000);
+//			msg(ob.cookieNotice(),ob.cookieNotice().getText());
+//			Custom_click(ob.Accept_cookie(), ob.Accept_cookie().getText());
+//		} catch (Exception e) {
+//			Message("Language poup is not populate");
+//			msg(ob.cookieNotice(),ob.cookieNotice().getText());
+//			Custom_click(ob.Accept_cookie(), ob.Accept_cookie().getText());
+//		}
+//		Custom_click(ob.Vehicle_Details(), ob.Vehicle_Details().getText());
+//		Custom_click(ob.State(), ob.State().getText());
+//		ob.Select_State("Delhi");
+//		Thread.sleep(2000);
+//	}
+//
+//	@Test(priority = 4)
+//	public void TC059_Chose_city_in_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
+//		Custom_click(ob.City(), ob.City().getText());
+//		ob.Select_city("New Delhi");
+//		Thread.sleep(2000);
+//		custom_sendkeys(ob.Pincode(), "110037", "Pincode");
+//		msg(ob.Two_Wheeler(),"Please " + ob.Two_Wheeler().getText());
+//		Custom_click(ob.motorcycle(), ob.motorcycle().getText());
+//	}
+//
+//	@Test(priority = 5)
+//	public void TC060_Select_company_in_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
+//		Custom_click(ob.Company(), ob.Company().getText());
+//		ob.Select_Company("Hero");
+//		Thread.sleep(2000);
+//	}
+//
+//	@Test(priority = 6)
+//	public void TC061_Select_Model_in_Vehicle_Details_in_Wheels_of_trust() throws InterruptedException {
+//		Custom_click(ob.Model(), ob.Model().getText());
+//		ob.Select_Model("GLAMOUR");
+//		Thread.sleep(2000);
+//		custom_sendkeys(ob.enter_registraction_months_and_Years(), "2012-09", "Registraction Months and Year");
+//		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
+//		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
+//		Thread.sleep(2000);
+//		if(ob.next_button().isDisplayed()==true)
+//		{
+//		Custom_click(ob.next_button(), ob.next_button().getText());
+//		}
+//		else
+//		{
+//			Custom_click(ob.Accept_cookie(), ob.Accept_cookie().getText());
+//			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
+//			Custom_click(ob.next_button(), ob.next_button().getText());
+//		}
+//	}
+//	@Test(priority = 7)
+//	public void TC062_Verify_Vehicle_Condition_in_Wheels_of_trust()
+//	{
+//		msg(ob.silencer(),ob.silencer().getText());
+//		Custom_click(ob.silencer_smoke(), ob.silencer_smoke().getText());
+//		msg(ob.Starting_Vehicle(),ob.Starting_Vehicle().getText());
+//		Custom_click(ob.Start_normally(), ob.Start_normally().getText());
+//		msg(ob.Light_Indicators(),ob.Light_Indicators().getText());
+//		Custom_click(ob.Light_Indicators_condition(), ob.Light_Indicators_condition().getText());
+//		if(version.equalsIgnoreCase("11")) {
+//		Scroll_down_page_Action("Next");  // for pCloudy version 11.0.0 only
+//		}
+//		msg(ob.Front_Tyre(),ob.Front_Tyre().getText());
+//		Custom_click(ob.Front_Tyre_condition(), ob.Front_Tyre_condition().getText());
+//		if(version.equalsIgnoreCase("allother")) {
+//		Scroll_down_page_Action("Next");    // all other device except version 11.0.0
+//		}
+//		msg(ob.Rear_Tyre(),ob.Rear_Tyre().getText());
+//		Custom_click(ob.Rear_Tyre_condition(), ob.Rear_Tyre_condition().getText());
+//		if(version.equalsIgnoreCase("11")) {
+//		Scroll_down_page_Action("Next");       // for pCloudy version 11.0.0 only
+//		}
+//		msg(ob.Body_Parts(),ob.Body_Parts().getText());
+//		Custom_click(ob.Body_Parts_condition(), ob.Body_Parts_condition().getText());
+//		if (device.equalsIgnoreCase("emulator")) {
+//		Custom_click(ob.How_to_check_all_issue(), "How to check all issue instraction ");     
+//		msg(ob.issue_message(),ob.issue_message().getText());							
+//		Custom_click(ob.close_issue_instraction(), "close issue instraction message");   	  
+//		}
+//		else {
+//		Custom_click(ob.How_to_check_all_issue_real(), "How to check all issue instraction ");
+//		msg(ob.issue_message_real(),ob.issue_message_real().getText());				 
+//		Custom_click(ob.close_issue_instraction_real(), "close issue instraction message"); 
+//		}
+//		Custom_click(ob.next_button(), ob.next_button().getText());
+//	}
+//	@Test(priority = 8)
+//	public void TC063_Verify_Your_Details_Through_WhatsApp_in_Wheels_of_trust() throws InterruptedException
+//	{
+//		if (device.equalsIgnoreCase("emulator")) {
+//		msg(ob.sign_in(),ob.sign_in().getText());
+//		Custom_click(ob.whatsapp_button(), ob.whatsapp_button().getText());
+//		Thread.sleep(5000);
+//		ob.whatsapp_info();
+//		Custom_click(ob.whatsapp_close(), "Whatsapp close");
+//		}
+//		else {
+//		msg(ob.sign_in_real(),ob.sign_in_real().getText());
+//		Custom_click(ob.whatsapp_button(), ob.whatsapp_button().getText());
+//		Thread.sleep(5000);
+//		ob.whatsapp_info_real();
+//		Custom_click(ob.whatsapp_close_real(), "Whatsapp close");
+//	}
+//	}
+//	@Test(priority = 9)
+//	public void TC064_Verify_Your_Details_Through_OTP_in_Wheels_of_trust() throws InterruptedException
+//	{
+//		if (device.equalsIgnoreCase("emulator")) {
+//		msg(ob.Login(),ob.Login().getText());          
+//		}
+//		else {
+//		msg(ob.Login_real(),ob.Login_real().getText());    
+//		}
+//		custom_sendkeys(ob.name(), "Kundan Singh", "Name");
+//		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
+//		custom_sendkeys(ob.number(), "8767980978", "Contact number");
+//		Custom_click(ob.otp(), "OTP");
+//		Custom_click(ob.send_otp(), "Send OTP");
+//		Thread.sleep(2000);
+//		custom_sendkeys(ob.otp(), "1234", "OTP");
+//		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
+//		Custom_click(ob.submit(), "Submit Button");
+//		if (device.equalsIgnoreCase("emulator")) {
+//		msg(ob.otp_message(),ob.otp_message().getText());        
+//		}
+//		else {
+//		msg(ob.otp_message_real(),ob.otp_message_real().getText());     
+//		}
+//		Custom_click(ob.back_btn(), "Back from wheels of trust page");
+//	}
 	
 	@Test(priority = 10)
 	public void TC065_Verify_joyride() {

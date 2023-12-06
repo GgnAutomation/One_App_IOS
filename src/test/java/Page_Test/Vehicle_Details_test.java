@@ -21,7 +21,7 @@ public class Vehicle_Details_test extends Base_Utility {
 		ob = new Vehicle_Details();
 //		login = new Login_Page_Test();
 //		login.login();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		Custom_click(ob.home(), "Home");
 		Custom_click(ob.side_menu_button(), "Side menu button");
 		msg(ob.user_name(),ob.user_name().getText());
