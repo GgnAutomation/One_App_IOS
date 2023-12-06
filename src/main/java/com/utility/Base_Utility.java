@@ -3,8 +3,12 @@ package com.utility;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Properties;
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
@@ -47,9 +51,10 @@ public class Base_Utility
 	public static ExtentTest test;
 	public static listner lis;
 	public static WebDriverWait wait;
-	String confipath = System.getProperty("user.dir") + "/config_data/config.properties";
-	String excelpath = System.getProperty("user.dir") + "/Data/data1.xlsx";
+	String confipath = System.getProperty("user.dir") + "\\config_data\\config.properties";
+	String excelpath = System.getProperty("user.dir") + "\\Data\\data1.xlsx";
 	public static AndroidDriver driver;
+	String enveronment = config_getdata("env");
 	
 	@BeforeTest
 
@@ -95,7 +100,7 @@ public class Base_Utility
 			db.setCapability("appium:deviceName", "Pixel_6_API_31");
 			db.setCapability("appium:udid", "emulator-5554");
 			db.setCapability("appium:avdLaunchTimeout", 900000);
-			db.setCapability("appium:app", (System.getProperty("user.dir") + "/apk/app-debug.apk"));
+			db.setCapability("appium:app", (System.getProperty("user.dir") + "\\apk\\app-debug.apk"));
 			driver = new AndroidDriver(new URL(config_getdata("IpAddress")), db);
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 			db.setCapability("appium:ensureWebviewsHavePages", true);
@@ -120,7 +125,12 @@ public class Base_Utility
 			capabilities.setCapability("platformVersion", "13.0.0");
 			capabilities.setCapability("platformName", "Android");
 			capabilities.setCapability("automationName", "uiautomator2");
-			capabilities.setCapability("pCloudy_ApplicationName", "app-debug.apk");
+			if(enveronment.equalsIgnoreCase("prod")) {
+			capabilities.setCapability("pCloudy_ApplicationName", "app-release-prod-r8-21nov.apk");
+			}
+			else {
+				capabilities.setCapability("pCloudy_ApplicationName", "app-debug_9.apk");	
+			}
 			capabilities.setCapability("appPackage", "com.customerapp.hero");
 			capabilities.setCapability("appActivity", "com.customerapp.hero.views.activity.HmcDashboard");
 			capabilities.setCapability("pCloudy_WildNet", "false");
@@ -132,6 +142,31 @@ public class Base_Utility
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 			 log = LogManager.getLogger("Hero_App");
 			 
+//    	 DesiredCapabilities capabilities = new DesiredCapabilities();
+//    	 capabilities.setCapability("appium:newCommandTimeout", 600);
+//    	 capabilities.setCapability("appium:launchTimeout", 90000);
+//    	 capabilities.setCapability("appium:platformVersion", "13.0.0");
+//    	 capabilities.setCapability("appium:platformName", "Android");
+//    	 capabilities.setCapability("appium:automationName", "uiautomator2");
+//    	 capabilities.setCapability("appium:appPackage", "com.customerapp.hero");
+//    	 capabilities.setCapability("appium:appActivity", "com.customerapp.hero.views.activity.HmcDashboard");
+//    	 HashMap<String, Object> pcloudyOptions = new HashMap<String, Object>();
+//    	 pcloudyOptions.put("pCloudy_Username", "randhir.kumar@heromotocorp.com");
+//    	 pcloudyOptions.put("pCloudy_ApiKey", "2gdc5pv55mh54mqtwmvj4xbr");
+//    	 pcloudyOptions.put("pCloudy_DurationInMinutes", 120);
+//    	 pcloudyOptions.put("pCloudy_DeviceManufacturer", "GOOGLE");
+//    	 pcloudyOptions.put("pCloudy_DeviceVersion", "13.0.0");
+//    	 pcloudyOptions.put("pCloudy_ApplicationName", "app-debug.apk");
+//    	 pcloudyOptions.put("pCloudy_WildNet", "false");
+//    	 pcloudyOptions.put("pCloudy_EnableVideo", "true");
+//    	 pcloudyOptions.put("pCloudy_EnablePerformanceData", "true");
+//    	 pcloudyOptions.put("pCloudy_EnableDeviceLogs", "true");
+//    	 pcloudyOptions.put("appiumVersion", "2.0.0");
+//    	 capabilities.setCapability("pcloudy:options", pcloudyOptions);
+//    	 driver = new AndroidDriver(new URL("https://ind-west.pcloudy.com/appiumcloud/wd/hub"), capabilities);
+//    		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+//			 log = LogManager.getLogger("Hero_App");
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -142,7 +177,7 @@ public class Base_Utility
 			db.setCapability("appium:automationName", "uiautomator2");
 			db.setCapability("platformName", "Android");
 			db.setCapability("appium:deviceName", "realme C33 2023");
-			db.setCapability("appium:udid", "192.168.1.2:5555"); //3323262910AA04DS //192.168.1.2:5555
+			db.setCapability("appium:udid", "3323262910AA04DS"); //3323262910AA04DS //192.168.1.2:5555
 			db.setCapability("appium:avdLaunchTimeout", 600000);
 			db.setCapability("appPackage", "com.customerapp.hero");
 			db.setCapability("appActivity", "com.customerapp.hero.views.activity.HmcDashboard");
@@ -163,6 +198,8 @@ public class Base_Utility
 	@Override
 	public String config_getdata(String key) {
 		String value = "";
+//		ResourceBundle ro = ResourceBundle.getBundle("config");
+//		value=ro.getString(key);
 		try {
 			FileInputStream fis = new FileInputStream(confipath);
 			Properties prop = new Properties();
@@ -237,7 +274,8 @@ public class Base_Utility
 
 	@Override
 	public ExtentReports getreports() {
-		String path = System.getProperty("user.dir") + "\\Report\\index.html";
+		String currenttime = new SimpleDateFormat("dd.MM.YYYY.HH.mm.ss").format(new Date());
+		String path = System.getProperty("user.dir") + "\\Report\\Test-Report -"+currenttime +".html";
 		report = new ExtentSparkReporter(path);
 		report.config().setDocumentTitle("Hero_App Test Report");
 		report.config().setReportName("Hero_App");
@@ -423,7 +461,7 @@ public class Base_Utility
 		try {
 			if(ele.isDisplayed())
 			{
-				wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+				wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 				wait.until(ExpectedConditions.visibilityOf(ele));
 			test.log(Status.PASS, filedname);
 			log.info(filedname);

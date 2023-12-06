@@ -37,8 +37,10 @@ public class GoodLife extends Base_Utility {
 	private WebElement plan_name;
 	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/point')]")
 	private List<WebElement> plan_info;
-	@FindBy(xpath = "//android.widget.TextView[@text]")
+	@FindBy(xpath = "//android.widget.LinearLayout[contains(@resource-id , 'com.customerapp.hero:id/tv')]/android.widget.TextView")
 	private List<WebElement> pro_membership_plan_info;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[2]")
+	private WebElement E_and_R_History;
 
 	public WebElement plan_name() {
 		return plan_name;
@@ -51,18 +53,19 @@ public class GoodLife extends Base_Utility {
 	}
 
 	public void pro_membership_plan_info() {
-		for (int i = 6; i <= 12; i++) {
-			if (i < 12) {
+		for (int i = 0; i < pro_membership_plan_info.size(); i++) {
+		
 				Message(pro_membership_plan_info.get(i).getText() + " = " + pro_membership_plan_info.get(i + 1).getText());
 				i++;
-			} else if (i == 12) {
-				Custom_click(pro_membership_plan_info.get(i), pro_membership_plan_info.get(i).getText());
+				}
 			}
-		}
+	public WebElement E_and_R_History()
+	{
+		return E_and_R_History;
 	}
 
 	// ******************************Earning History*******************************
-	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"Earning History\"]/android.widget.TextView")
+	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc='Earning History']/android.widget.TextView")
 	private WebElement Earning_History;
 	@FindBy(xpath = "//android.widget.LinearLayout[@resource-id ='com.customerapp.hero:id/linearLayout19']//android.widget.TextView")
 	private List<WebElement> Earning_History_value;
@@ -75,17 +78,21 @@ public class GoodLife extends Base_Utility {
 
 	public void earning_history() {
 		try {
-			for (int i = 0; i < Earning_History_heading.size(); i++) {
-				Message(Earning_History_heading.get(i).getText() + " = " + Earning_History_value.get(i).getText());
+			for (int i = 0,j=0; i <Earning_History_value.size(); i++) {
+				Message(Earning_History_heading.get(j).getText() + " = " + Earning_History_value.get(i).getText());
+				if(j==3)
+				{
+					j = -1;
+				}
+				j++;
 			}
 		} catch (Exception e) {
 			Message(" No Earning history ");
 		}
 	}
 
-	// ******************************Redemption
-	// History*******************************
-	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"Redemption History\"]/android.widget.TextView")
+	// ******************************Redemption History*******************************
+	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc='Redemption History']/android.widget.TextView")
 	private WebElement Redemption_History;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/title']")
 	private WebElement Redemption_History_value;

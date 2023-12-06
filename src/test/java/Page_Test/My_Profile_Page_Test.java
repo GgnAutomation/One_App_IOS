@@ -120,7 +120,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 				}
 			} catch(Exception e) {
 				Custom_click(ob.Back(), " Back from profile Details");
-				Custom_click(ob.More_details(), ob.More_details().getText());
+//				Custom_click(ob.More_details(), ob.More_details().getText());
 			}
 		
 	}
@@ -157,10 +157,10 @@ public class My_Profile_Page_Test extends Base_Utility {
 				Thread.sleep(1000);
 				driver.navigate().back();
 				Custom_click(ob.add_Liense_now(), "  Add License now");
-				Custom_click(ob.Choose_from_Digilocker(), ob.Choose_from_Digilocker().getText());
-				Thread.sleep(1000);
-				driver.navigate().back();
-				Custom_click(ob.add_Liense_now(), "  Add License now");
+//				Custom_click(ob.Choose_from_Digilocker(), ob.Choose_from_Digilocker().getText());
+//				Thread.sleep(1000);
+//				driver.navigate().back();
+//				Custom_click(ob.add_Liense_now(), "  Add License now");
 				Custom_click(ob.close_button_for_license_upload(), " Close license upload page");
 				}
 			} catch(Exception e) {

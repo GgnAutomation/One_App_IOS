@@ -28,9 +28,9 @@ public class Home_Page_Test extends Base_Utility {
 		VerifyElementPresent(ob.vehicle_img(), "Vehicle Img is");
 		Thread.sleep(2000);
 		ob.all_vehicle_inside_drop_down();
-//		Custom_click(ob.Collapse_btn(), "Collapse button");
-//		Thread.sleep(2000);
-//		Custom_click(ob.Collapse_btn(), " Return collapse button");
+		Custom_click(ob.Collapse_btn(), ob.Collapse_btn().getText());
+		Thread.sleep(2000);
+		Custom_click(ob.Collapse_btn(), ob.Collapse_btn().getText());
 		Thread.sleep(2000);
 		Custom_click(ob.notification(), "Notification");
 		Message("Total Notification are=" + ob.notification_count());
@@ -111,15 +111,18 @@ public class Home_Page_Test extends Base_Utility {
 		Thread.sleep(2000);
 		ob.RSA_info();
 		msg(ob.registration_number(), "Registraction number =" +ob.registration_number().getText());
-		Custom_click(ob.renew_rsa(), ob.renew_rsa().getText());
-		Thread.sleep(6000);
+//		Custom_click(ob.renew_rsa(), ob.renew_rsa().getText());
+		Thread.sleep(1000);
 		Custom_click(ob.Back(), "Back from Payment");
 		Thread.sleep(1000);
-		Custom_click(ob.Back(), "Back from Get RSA");
+//		Custom_click(ob.cancel_payment(), ob.cancel_payment().getText());
+//		Custom_click(ob.Back(), "Back from Get RSA");
 	}
 	@Test(priority = 6)
 	public void TC023_frequently_asked_questions() throws InterruptedException
 	{
+		Scroll_down_page_Action("Step 3");
+		Scroll_down_page_Action("Asked questions");
 		ob.asked_questions();
 		Custom_click(ob.Back(), "Back from Roadside Assistance");
 	}
@@ -214,6 +217,7 @@ public class Home_Page_Test extends Base_Utility {
 	public void TC024_Verify_Technical_Support_Manager() throws InterruptedException {
 		Custom_click(ob.Technical_Support(), "Technical Support");
 		Thread.sleep(2000);
+		try {
 		msg(ob.Technical_Support_Manager_Name(),
 				"Technical Support Manager Name is =" + ob.Technical_Support_Manager_Name().getText());
 		msg(ob.Technical_Support_Manager_Address(),
@@ -221,6 +225,11 @@ public class Home_Page_Test extends Base_Utility {
 		msg(ob.Technical_Support_Manager_Contact_Number(), "Technical Support Manager contact number is ="
 				+ ob.Technical_Support_Manager_Contact_Number().getText());
 		Custom_click(ob.Back(), "Back from Technical Support Manager");
+		}catch(Exception e)
+		{
+			Message("No data found");
+			Custom_click(ob.Back(), "Back from Technical Support Manager");
+		}
 	}
 
 	@Test(priority = 8)

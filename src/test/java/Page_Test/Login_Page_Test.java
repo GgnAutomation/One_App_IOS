@@ -25,27 +25,27 @@ public class Login_Page_Test extends Base_Utility {
 	public Select_Vehicle_Page ob1;
 	String device = config_getdata("Platform_name");
 	String version = config_getdata("version");
+	String enveronment = config_getdata("env");
 	@Test(priority = 0)
 	public void TC001_Verify_Login_with_Invalid_credential() {
 		Message("************************Login page test**************************");
 		ob = new Login_page();
 		ob1 = new Select_Vehicle_Page();
-		if (device.equalsIgnoreCase("pcloudy")) {
+		if (device.equalsIgnoreCase("pcloudy")|| device.equalsIgnoreCase("realdevice")) {
 		Custom_click(ob1.While_using_the_app(), "While using the app");
 		Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to access your phone call logs");
 		Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to access your contacts");
 		Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to make and manage phone calls");
 		Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to send and view SMS messages");
-		if(version.equalsIgnoreCase("allother")) {
 		Custom_click(ob.Allow(), ob.Allow().getText()
 				+ " Hero App to find, connect to, and determine the relative position of nearby devices");
-		}
 		Custom_click(ob.ok(), "OK");
 		if(version.equalsIgnoreCase("allother")) {
 		Custom_click(ob.Allow(), "Allow notification");  //this line is for pcloudy	
 		}
+		  Custom_click(ob.close(), "Close button");
 	}
-	 else if (device.equalsIgnoreCase("emulator") || device.equalsIgnoreCase("realdevice")) {
+	 else if (device.equalsIgnoreCase("emulator")) {
       //	Custom_click(ob.open(), "Open");	//This line for real device
 		    Custom_click(ob.close(), "Close button"); // for emulator and real device
 	     }
@@ -122,22 +122,31 @@ public class Login_Page_Test extends Base_Utility {
 
 	@Test(priority = 7)
 	public void TC008_Verify_Login_with_valid_credential() throws InterruptedException {
-		custom_sendkeys(ob.mobile_No(), config_getdata("mobileno"), "Login with Registerd mobile number");
+		if(enveronment.equalsIgnoreCase("prod")) {
+		custom_sendkeys(ob.mobile_No(), config_getdata("prod_mobileno"), "Login with Registerd mobile number");
+		}
+		else {
+		custom_sendkeys(ob.mobile_No(), config_getdata("Stage_mobileno"), "Login with Registerd mobile number");
+		}
 		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
 		VerifyElementPresent(ob.continue_button(), "Coninue button is");
 		Custom_click(ob.continue_button(), "Coninue button");
 		String registered_mob = ob.registered_mobile_no().getText();
 		String[] mob = registered_mob.split(" ");
 		System.out.println(mob[1]);
-		assertEquals(config_getdata("mobileno"), mob[1]);
-		Thread.sleep(15000);
+		if(enveronment.equalsIgnoreCase("prod")) {
+		assertEquals(config_getdata("prod_mobileno"), mob[1]);}
+		else {
+			assertEquals(config_getdata("Stage_mobileno"), mob[1]);
+		}
+		Thread.sleep(30000);
 	}
 
 	@Test(priority = 8)
 	public void TC009_resend_butn() throws InterruptedException {
 		VerifyElementPresent(ob.resend_button(), "Resend button is");
 		Custom_click(ob.resend_button(), "Resend button");
-		Thread.sleep(15000);
+		Thread.sleep(18000);
 	}
 
 	@Test(priority = 9)
@@ -150,36 +159,62 @@ public class Login_Page_Test extends Base_Utility {
 	@Test(priority = 10)
 	public void TC011_edit_moble() throws InterruptedException {
 		Custom_click(ob.edit_moble_button(), "Edit Mobile Number");
-		custom_sendkeys(ob.mobile_No(), config_getdata("mobileno"), "Login with Registerd mobile number");
+		if(enveronment.equalsIgnoreCase("prod")) {
+			custom_sendkeys(ob.mobile_No(), config_getdata("prod_mobileno"), "Login with Registerd mobile number");
+		}
+		else {
+		custom_sendkeys(ob.mobile_No(), config_getdata("Stage_mobileno"), "Login with Registerd mobile number");
+		}
 		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
 		Custom_click(ob.continue_button(), "Coninue button");
 		Thread.sleep(15000);
-		ob.enter_Valid_OTP();
+
+		if(enveronment.equalsIgnoreCase("prod")) 
+		{
+		ob.enter_Valid_OTP_prod(); 
+		}
+		else {
+			ob.enter_Valid_OTP();	
+			}
 		Custom_click(ob.verify_button(), "Verify Button");
 	}
 
 	public void login() throws InterruptedException {
 		ob = new Login_page();
 		ob1 = new Select_Vehicle_Page();
-		if (device.equalsIgnoreCase("pcloudy")) {
+		if (device.equalsIgnoreCase("pcloudy")|| device.equalsIgnoreCase("realdevice")) {
 			Custom_click(ob1.While_using_the_app(), "While using the app");
 			Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to access your phone call logs");
 			Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to access your contacts");
 			Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to make and manage phone calls");
 			Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to send and view SMS messages");
-//			Custom_click(ob.Allow(), ob.Allow().getText()   //this line is all other version except 11.0.0
-//					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
+			Custom_click(ob.Allow(), ob.Allow().getText()   
+					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
 			Custom_click(ob.ok(), "OK");
 //			Custom_click(ob.Allow(), "Allow notification");  //this line is all other version except 11.0.0
-		} else if (device.equalsIgnoreCase("emulator") || device.equalsIgnoreCase("realdevice")) {
-//			Custom_click(ob.open(), "Open"); 	// this line for real device
+			if(device.equalsIgnoreCase("realdevice")) {
+				Custom_click(ob.close(), "Close button");
+			}
+		} else if (device.equalsIgnoreCase("emulator")) {
+			Custom_click(ob.open(), "Open"); 	// this line for real device
 			Custom_click(ob.close(), "Close button");
 		}
-		custom_sendkeys(ob.mobile_No(), "8726494540", "Login with Registerd mobile number");
+		if(enveronment.equalsIgnoreCase("prod")) {
+			custom_sendkeys(ob.mobile_No(), config_getdata("prod_mobileno"), "Login with Registerd mobile number");
+		}
+		else {
+		custom_sendkeys(ob.mobile_No(), config_getdata("Stage_mobileno"), "Login with Registerd mobile number");
+		}
 		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
 		Custom_click(ob.continue_button(), "Coninue button");
 		Thread.sleep(15000);
-		ob.enter_Valid_OTP();
+		if(enveronment.equalsIgnoreCase("prod")) 
+		{
+		ob.enter_Valid_OTP_prod(); 
+		}
+		else {
+			ob.enter_Valid_OTP();	
+			}
 		Custom_click(ob.verify_button(), "Verify Button");
 		Thread.sleep(5000);
 		// when excute select vehicle page class then need to comment below 7 line.

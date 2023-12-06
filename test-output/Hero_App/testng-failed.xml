@@ -6,22 +6,6 @@
   </listeners>
   <test thread-count="5" name="All test class(failed)">
     <classes>
-      <class name="Page_Test.GoodLife_test">
-        <methods>
-          <include name="TC103_verify_Benefits_and_Experiences"/>
-          <include name="TC097_Verify_Complete_profile"/>
-          <include name="TC095_Verify_Earning_History_in_Pro_Membership"/>
-          <include name="TC098_Verify_Welcome_Rewards"/>
-          <include name="TC099_Verify_refer_friend_in_Goodlife"/>
-          <include name="TC096_Verify_Redemption_History_in_Pro_Membership"/>
-          <include name="TC102_verify_Service_Privilegers"/>
-          <include name="TC094_Verify_Pro_Membership"/>
-          <include name="TC101_verify_Points_Earning_and_Redemption"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC100_verify_Winner_informaton"/>
-          <include name="TC093_verify_image_in_goodlife_page"/>
-        </methods>
-      </class> <!-- Page_Test.GoodLife_test -->
       <class name="Page_Test.E_Shop_test">
         <methods>
           <include name="TC105_new_customers"/>
@@ -31,141 +15,34 @@
       </class> <!-- Page_Test.E_Shop_test -->
       <class name="Page_Test.Services_Page_Test">
         <methods>
-          <include name="TC071_View_Service_schedule_3500"/>
           <include name="TC086_View_Service_schedule_660_days"/>
-          <include name="TC067_verify_service_type"/>
-          <include name="TC079_View_Service_schedule_27500"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC083_View_Service_schedule_360_days"/>
-          <include name="TC069_Verify_dealer_manager_info"/>
-          <include name="TC072_View_Service_schedule_6500"/>
-          <include name="TC066_Vehicle_details_on_service_page"/>
-          <include name="TC074_View_Service_schedule_12500"/>
-          <include name="TC087_View_Service_schedule_760_days"/>
-          <include name="TC091_Verify_all_tips_list"/>
-          <include name="TC082_View_Service_schedule_260_days"/>
           <include name="TC084_View_Service_schedule_460_days"/>
           <include name="TC088_View_Service_schedule_860_days"/>
-          <include name="TC068_verify_Dealer_information"/>
-          <include name="TC073_View_Service_schedule_9500"/>
-          <include name="TC077_View_Service_schedule_21500"/>
-          <include name="TC092_Verify_all_DIY_Videos_list"/>
-          <include name="TC080_View_Service_schedule_60_days"/>
           <include name="TC089_View_Service_schedule_960_days"/>
-          <include name="TC070_View_Service_schedule_750"/>
           <include name="TC085_View_Service_schedule_560_days"/>
-          <include name="TC081_View_Service_schedule_160_days"/>
-          <include name="TC075_View_Service_schedule_15500"/>
-          <include name="TC078_View_Service_schedule_24500"/>
           <include name="TC090_Verify_Last_Serviced"/>
-          <include name="TC076_View_Service_schedule_18500"/>
+          <include name="TC091_Verify_all_tips_list"/>
+          <include name="OPEN_AND_INSTALL_APP"/>
+          <include name="TC087_View_Service_schedule_760_days"/>
+          <include name="TC092_Verify_all_DIY_Videos_list"/>
         </methods>
       </class> <!-- Page_Test.Services_Page_Test -->
-      <class name="Page_Test.Refer_a_friend_and_Contact_us_test">
+      <class name="Page_Test.GoodLife_test">
         <methods>
-          <include name="TC051_Verify_twitter_in_Contact_us_page"/>
-          <include name="TC045_Verify_Refer_yourself"/>
-          <include name="TC043_Verify_Select_City"/>
-          <include name="TC042_Verify_Select_State"/>
-          <include name="TC052_Verify_Contact_via_Email"/>
-          <include name="TC044_Verify_Select_Model"/>
-          <include name="TC049_Verify_youTube_in_Contact_us_page"/>
+          <include name="TC103_verify_Benefits_and_Experiences"/>
+          <include name="TC095_Verify_Earning_History_in_Pro_Membership"/>
+          <include name="TC097_Verify_Complete_profile"/>
+          <include name="TC098_Verify_Welcome_Rewards"/>
+          <include name="TC099_Verify_refer_friend_in_Goodlife"/>
+          <include name="TC096_Verify_Redemption_History_in_Pro_Membership"/>
+          <include name="TC102_verify_Service_Privilegers"/>
+          <include name="TC094_Verify_Pro_Membership"/>
           <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC046_Verify_Facebook_in_Contact_us_page"/>
-          <include name="TC041_Refer_a_friend"/>
-          <include name="TC047_Verify_instagram_in_Contact_us_page"/>
-          <include name="TC048_Verify_Whatsapp_in_Contact_us_page"/>
-          <include name="TC050_Verify_Linkedin_in_Contact_us_page"/>
+          <include name="TC101_verify_Points_Earning_and_Redemption"/>
+          <include name="TC100_verify_Winner_informaton"/>
+          <include name="TC093_verify_image_in_goodlife_page"/>
         </methods>
-      </class> <!-- Page_Test.Refer_a_friend_and_Contact_us_test -->
-      <class name="Page_Test.Vehicle_Details_test">
-        <methods>
-          <include name="TC040_Verify_Tips_and_DIY_videos_inside_sideMenu"/>
-          <include name="TC038_Verify_Owners_Manual"/>
-          <include name="TC035_Verify_My_Vehicle"/>
-          <include name="TC036_Verify_My_Vehicle_more_details"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC037_Verify_My_Vehicle_Documents"/>
-          <include name="TC039_Verify_my_Vehicle_service_History"/>
-        </methods>
-      </class> <!-- Page_Test.Vehicle_Details_test -->
-      <class name="Page_Test.Home_Page_Test">
-        <methods>
-          <include name="TC017_Home_page_verify"/>
-          <include name="TC023_frequently_asked_questions"/>
-          <include name="TC024_Verify_Technical_Support_Manager"/>
-          <include name="TC027_View_dealer_name_and_address"/>
-          <include name="TC020_Verify_Relationship_Manager"/>
-          <include name="TC021_Verify_RSA"/>
-          <include name="TC022_Renew_RSA"/>
-          <include name="TC026_Select_city"/>
-          <include name="TC025_Verify_Dealer_Locator"/>
-          <include name="TC019_Verify_Documents"/>
-          <include name="TC018__verify_Navigate"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-        </methods>
-      </class> <!-- Page_Test.Home_Page_Test -->
-      <class name="Page_Test.My_Profile_Page_Test">
-        <methods>
-          <include name="TC030_edit_profile_button"/>
-          <include name="TC034_Verify_emergency_contacts"/>
-          <include name="TC031_edit_Personal_Details"/>
-          <include name="TC033_Manage_License"/>
-          <include name="TC028_Verify_My_Profile"/>
-          <include name="TC029_verify_more_detais_button"/>
-          <include name="TC032_change_original_Personal_Details"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-        </methods>
-      </class> <!-- Page_Test.My_Profile_Page_Test -->
-      <class name="Page_Test.Select_Vehicle_Page_Test">
-        <methods>
-          <include name="TC014_Verify_With_31_letter_nick_name"/>
-          <include name="TC016_Select_Vehicle"/>
-          <include name="TC012_verify_Nick_Name"/>
-          <include name="TC013_Verify_With_30_letter_nick_name"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC015_Verify_With_29_letter_nick_name"/>
-        </methods>
-      </class> <!-- Page_Test.Select_Vehicle_Page_Test -->
-      <class name="Page_Test.Safety_Measures_and_Symbols_Glossary_Test">
-        <methods>
-          <include name="TC054_Verify_Symbols_Glossary"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC053_Verify_Safety_Measures"/>
-        </methods>
-      </class> <!-- Page_Test.Safety_Measures_and_Symbols_Glossary_Test -->
-      <class name="Page_Test.Login_Page_Test">
-        <methods>
-          <include name="TC007_contact_Us"/>
-          <include name="TC006_Privacy_policy"/>
-          <include name="TC004_max_digit_mobile_number"/>
-          <include name="TC003_Verify_Login_with_short_length_of_mobile_number_credential"/>
-          <include name="TC005_Terms_of_use_button"/>
-          <include name="TC001_Verify_Login_with_Invalid_credential"/>
-          <include name="TC002_invalidmobileno"/>
-          <include name="TC009_resend_butn"/>
-          <include name="TC011_edit_moble"/>
-          <include name="TC010_inavalid_OTP"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC008_Verify_Login_with_valid_credential"/>
-        </methods>
-      </class> <!-- Page_Test.Login_Page_Test -->
-      <class name="Page_Test.Feedback_and_About_Hero_test">
-        <methods>
-          <include name="TC057_verify_Side_menu_page_function"/>
-          <include name="TC065_Verify_joyride"/>
-          <include name="TC061_Select_Model_in_Vehicle_Details_in_Wheels_of_trust"/>
-          <include name="TC055_verify_Feedback"/>
-          <include name="TC059_Chose_city_in_Vehicle_Details_in_Wheels_of_trust"/>
-          <include name="TC056_verify_About_Hero"/>
-          <include name="TC064_Verify_Your_Details_Through_OTP_in_Wheels_of_trust"/>
-          <include name="TC058_Vehicle_Details_in_Wheels_of_trust"/>
-          <include name="TC062_Verify_Vehicle_Condition_in_Wheels_of_trust"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC060_Select_company_in_Vehicle_Details_in_Wheels_of_trust"/>
-          <include name="TC063_Verify_Your_Details_Through_WhatsApp_in_Wheels_of_trust"/>
-        </methods>
-      </class> <!-- Page_Test.Feedback_and_About_Hero_test -->
+      </class> <!-- Page_Test.GoodLife_test -->
     </classes>
   </test> <!-- All test class(failed) -->
 </suite> <!-- Failed suite [Hero_App] -->

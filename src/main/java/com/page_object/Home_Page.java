@@ -128,7 +128,7 @@ public class Home_Page extends Base_Utility {
 	}
 
 //*************************Navigate Page**********************
-	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[1]")
+	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[3]")
 	private WebElement Navigate_menu;
 	@FindBy(xpath = "//android.widget.TextView[@text ='Search Destination']")
 	private WebElement Search_destination;
@@ -201,8 +201,22 @@ public class Home_Page extends Base_Utility {
 	}
 
 //****************************Documents Page************************************
-	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[2]")
+	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[4]")
 	private WebElement Documents_Menu;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_name'])[1]")
+	private WebElement document_name1;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_name'])[2]")
+	private WebElement document_name2;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_name'])[3]")
+	private WebElement document_name3;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[1]")
+	private WebElement RC_Status;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[2]")
+	private WebElement Insurance_Status;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[3]")
+	private WebElement PUC_Status;
+	@FindBy(xpath= "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/icon2']")
+	private WebElement Document_sideicon;
 	@FindBy(xpath = "//android.widget.TextView[@text ]")
 	private List<WebElement> Documents_list;
 	@FindBy(xpath = "//android.widget.TextView[@text ='Add now']")
@@ -223,6 +237,8 @@ public class Home_Page extends Base_Utility {
 	private WebElement document_upload_close_button;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/back_btn']")
 	private WebElement Back;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[1]")
+	private WebElement cancel_payment;
 
 
 	public WebElement Documents_Menu() {
@@ -232,7 +248,10 @@ public class Home_Page extends Base_Utility {
 	public WebElement Back() {
 		return Back;
 	}
-
+	public WebElement cancel_payment()
+	{
+		return cancel_payment;
+	}
 	public WebElement While_using_the_app() {
 		return While_using_the_app;
 	}
@@ -293,13 +312,14 @@ public class Home_Page extends Base_Utility {
 				Message(name + " is already available");
 				Custom_click(Documents_list.get(i), name +" "+ Documents_list.get(i).getText());
 				Thread.sleep(3000);
+				Custom_click(Document_sideicon, "Document sideicon");
 				Custom_click(Back, "Back from " +name + " page");
 			}
 		}
 	}
 
 //****************************Relationship Manager************************************
-	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[3]")
+	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[5]")
 	private WebElement Relationship_Manager;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1']")
 	private WebElement Relationship_Manager_name;
@@ -340,7 +360,7 @@ public class Home_Page extends Base_Utility {
 	}
 
 //****************************RSA************************************
-	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[4]")
+	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[1]")
 	private WebElement RSA;
 	@FindBy(xpath ="//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv')]")
 	private List<WebElement> RSA_info;
@@ -457,11 +477,11 @@ public class Home_Page extends Base_Utility {
 	msg(answer, "Answer ="+ answer.getText());
 	Custom_click(asked_questions.get(2),"Close question = "+asked_questions.get(2).getText());
 	Custom_click(asked_questions.get(3), "Open question = "+asked_questions.get(3).getText());
-	Scroll_down_page_Action("Answer");
+//	Scroll_down_page_Action("Answer");
 	msg(answer, "Answer ="+answer.getText());
 	Custom_click(asked_questions.get(2), "Close question = "+ asked_questions.get(2).getText());
 	Custom_click(asked_questions.get(4), "Open question = "+asked_questions.get(4).getText());
-	Scroll_down_page_Action("Answer");
+//	Scroll_down_page_Action("Answer");
 	msg(answer, "Answer ="+answer.getText());
 	Custom_click(asked_questions.get(3), "Close question = "+asked_questions.get(3).getText());
 		}catch(Exception e)	{
@@ -545,7 +565,7 @@ public class Home_Page extends Base_Utility {
 		}
 	}
 //****************************Technical Support************************************
-	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[5]")
+	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[6]")
 	private WebElement Technical_Support;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/lbl1']")
 	private WebElement Technical_Support_Manager_Name;
@@ -571,7 +591,7 @@ public class Home_Page extends Base_Utility {
 	}
 
 //****************************Dealer Locator************************************
-	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[6]")
+	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[7]")
 	private WebElement Dealer_Locator;
 	@FindBy(xpath = "(//android.widget.TextView[@text])[2]")
 	private WebElement Select_State;

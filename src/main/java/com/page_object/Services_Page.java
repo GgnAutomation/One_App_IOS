@@ -78,13 +78,13 @@ public class Services_Page extends Base_Utility {
 			Message("Dealer Address =" + dealer_info.get(1).getText());
 			Custom_click(dealer_info.get(0), dealer_info.get(0).getText());
 			Custom_click(navigate_button, navigate_button.getText());
+			driver.navigate().back();
 //	Custom_click(navigate_button, navigate_button.getText());	// for pcloudy comment this line and below one
 //	msg("Dealer distance =" +dealer_distance.getText());
 		} catch (Exception e) {
 			Message("Dealer name is not given" +e);
 				}
-		driver.navigate().back();
-	}
+		}
 
 	public WebElement back_button() {
 		return back_button;
@@ -206,17 +206,17 @@ public class Services_Page extends Base_Utility {
 		int i =0;
 		try {
 			Thread.sleep(2000);
-		for(i=4;i<Service_schedule.size();i++)
+		for(i=5;i<Service_schedule.size();i++)
 		{
-			if(i<10)
+			if(i<11)
 			{
 			Message(Service_schedule.get(i).getText() + " = " +Service_schedule.get(i+3).getText());
-			if(i==6)
+			if(i==7)
 			{
-				i=9;
+				i=10;
 			}
 			}
-			else if(i>=10)
+			else if(i>=11)
 			{
 				String Service_heading = Service_schedule.get(i).getText();
 				Custom_click(Service_schedule.get(i), Service_heading);
@@ -238,17 +238,17 @@ public class Services_Page extends Base_Utility {
 		int i =0;
 		try {
 			Thread.sleep(2000);
-			for(i=5;i<Service_schedule.size();i++)
+			for(i=6;i<Service_schedule.size();i++)
 		{
-			if(i<11)
+			if(i<12)
 			{
 				Message(Service_schedule.get(i).getText() + " = " +Service_schedule.get(i+3).getText());
-			if(i==7)
+			if(i==8)
 			{
-				i=10;
+				i=11;
 			}
 			}
-			else if(i>=11)
+			else if(i>=12)
 			{
 				String Service_heading = Service_schedule.get(i).getText();
 				Custom_click(Service_schedule.get(i), Service_heading);

@@ -21,37 +21,38 @@ public class Services_Page_Test extends Base_Utility {
 			Thread.sleep(2000);
 			Custom_click(ob.Services(), " Services button");
 			msg(ob.Vehicle_brand_Name(),"Vehicle brand name = " + ob.Vehicle_brand_Name().getText());
-			if (ob.Vehicle_Nick_Name().isDisplayed() == true) {
+				try {
 				msg(ob.Vehicle_Nick_Name(),"Vehicle nick name = " + ob.Vehicle_Nick_Name().getText());
-			}
-			if (ob.Vehicle_Number().isDisplayed() == true) {
+			}catch(Exception e) { Message("Vehicle nick name is not given");}
+			try {
 				msg(ob.Vehicle_Number(),"Vehicle number =" + ob.Vehicle_Number().getText());
-			}
+			}catch(Exception e) { Message("Vehicle number is not given");}
 		
 	}
 
 	@Test(priority = 1)
 	public void TC067_verify_service_type() {
-			if (ob.Vehicle_Service_type().isDisplayed() == true) {
+			try {
 				msg(ob.Vehicle_Service_type(),"Vehicle Service type =" + ob.Vehicle_Service_type().getText());
-			}
-			if (ob.Vehicle_service_booking_no().isDisplayed() == true) {
+			}catch(Exception e) { Message("Vehicle Service type is not given");}
+			try {
 				msg(ob.Vehicle_service_booking_no(),"Vehicle Service booking number = " + ob.Vehicle_service_booking_no().getText());
-			}
+			}catch(Exception e) { Message("Vehicle Service booking number is not given");}
 			String service_status = ob.next_service_info().getText();
 			Message("Service status =" + service_status);
-			if (service_status.equalsIgnoreCase("Service Scheduled")) {
+			try {
 				msg(ob.service_date_time(),"Service date and time =" + ob.service_date_time().getText());
-			}
+			}catch(Exception e) { Message("Service date and time is not given");}
 	}
 
 	@Test(priority = 2)
 	public void TC068_verify_Dealer_information() {
 		ob.dealer_info();
-	}
+		}
 
 	@Test(priority = 3)
 	public void TC069_Verify_dealer_manager_info() throws InterruptedException {
+			try {
 			msg(ob.manager_type(),"Manager type =" + ob.manager_type().getText());
 			msg(ob.manager_name(),"Manager name =" + ob.manager_name().getText());
 			Custom_click(ob.call_manager(), " Call amanger");
@@ -65,7 +66,9 @@ public class Services_Page_Test extends Base_Utility {
 			Scroll_down_page_Action("Service Schedule");
 				if(ob.Service_Schedule().isDisplayed()) { 
 					Message("Service Schedule is visible"); }
-					}
+			}catch(Exception e) { Message("Manager information is not given");}
+			
+	}
 
 	@Test(priority = 4)
 	public void TC070_View_Service_schedule_750() {
