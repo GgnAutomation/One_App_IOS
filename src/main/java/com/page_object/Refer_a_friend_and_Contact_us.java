@@ -159,7 +159,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 		}
 
 	// ************************************ Contact Us **********************************
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/rv_item_lbl'])[6]")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/rv_item_lbl' and starts-with(@text,'Contact')]")
 	private WebElement Contact_us;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/lbl3']")
 	private List<WebElement> visit_Page;
@@ -207,27 +207,27 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 		
 			header = social_media_header.get(0).getText();
 			Message(Visit_page_text.get(0).getText());
-			Custom_click(visit_Page.get(0), header);
-			Thread.sleep(4000);
-			try {
-			Custom_click(chrome_notification, chrome_notification.getText());
-			} catch (Exception e) { Message("No chrome notification is given");}
-			try {
-			Custom_click(facebook_login, header + " Login");
-			custom_sendkeys(emailid, "Renu@gmail.com", "Email id");
-			driver.navigate().back();
-			Thread.sleep(1000);
-			driver.navigate().back();
-			Thread.sleep(3000);
-			driver.navigate().back();
-			Thread.sleep(3000);
-//			Custom_click(back, " Back from " + header); 
-		} catch (Exception e) {
-			Message("Facebook is not visible" + e);
-			test.addScreenCaptureFromPath(lis.getcapcture("facebook"));
-			driver.navigate().back();
-			Thread.sleep(3000);
-		}
+//			Custom_click(visit_Page.get(0), header);
+//			Thread.sleep(4000);
+//			try {
+//			Custom_click(chrome_notification, chrome_notification.getText());
+//			} catch (Exception e) { Message("No chrome notification is given");}
+//			try {
+//			Custom_click(facebook_login, header + " Login");
+//			custom_sendkeys(emailid, "Renu@gmail.com", "Email id");
+//			driver.navigate().back();
+//			Thread.sleep(1000);
+//			driver.navigate().back();
+//			Thread.sleep(3000);
+//			driver.navigate().back();
+//			Thread.sleep(3000);
+////			Custom_click(back, " Back from " + header); 
+//		} catch (Exception e) {
+//			Message("Facebook is not visible" + e);
+//			test.addScreenCaptureFromPath(lis.getcapcture("facebook"));
+//			driver.navigate().back();
+//			Thread.sleep(3000);
+//		}
 	}
 
 	public void instagram() throws InterruptedException {
@@ -251,6 +251,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 			Message(Visit_page_text.get(2).getText());
 			Message(" Whatsapp number =" + whatsapp_visit_page.getText());
 			Custom_click(whatsapp_visit_page, header);
+			Thread.sleep(3000);
 			try {
 				if (whatsapp_visit_page.isDisplayed() == true) {
 					Message("We can’t find WhatsApp on your device. Please install for better experience");
@@ -260,7 +261,6 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 				} 
 			} catch (Exception e) {
 				Message("WhatsApp on your device is available");
-//				Custom_click(whatsapp_back, " whatsapp back button");
 				driver.navigate().back();
 				driver.navigate().back();
 			} 
@@ -290,9 +290,9 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 		try {
 			if(version.equalsIgnoreCase("11")) {
 			Scroll_down_page_Action("Twitter"); // for version 11.0.0
-			 header = social_media_header.get(2).getText(); // for version 11.0.0
+			 header = social_media_header.get(3).getText(); // for version 11.0.0
 			Message(Visit_page_text.get(3).getText());   // for version 11.0.0
-			Custom_click(visit_Page.get(2), header);   // for version 11.0.0
+			Custom_click(visit_Page.get(3), header);   // for version 11.0.0
 			}
 			else {
 			 header = social_media_header.get(4).getText(); // for all other device.
@@ -322,11 +322,11 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 			 header = social_media_header.get(4).getText();  // for all other device.
 			}
 			if(version.equalsIgnoreCase("11")) {
-			 header = social_media_header.get(3).getText();  // for version 11.0.0
+			 header = social_media_header.get(4).getText();  // for version 11.0.0
 			}
 			Message(Visit_page_text.get(4).getText());
 			if(version.equalsIgnoreCase("11")) {
-			Custom_click(visit_Page.get(3), header);			// for version 11.0.0
+			Custom_click(visit_Page.get(4), header);			// for version 11.0.0
 			}
 			else {
 			Custom_click(visit_Page.get(4), header);     // for all other device.

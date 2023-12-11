@@ -32,7 +32,9 @@ public class My_Profile_Page_Test extends Base_Utility {
 			Custom_click(ob.my_profile(), "My profile");
 			msg(ob.user_name(),"User name = " + ob.user_name().getText());
 			msg(ob.user_mobile_no(),"User mobile number =" + ob.user_mobile_no().getText());
+			try {
 			msg(ob.user_email(),"User email =" + ob.user_email().getText());
+			}catch(Exception e) { error_message("Email id does not given");  }
 		}
 
 	@Test(priority = 1)
@@ -85,7 +87,10 @@ public class My_Profile_Page_Test extends Base_Utility {
 			else if(device.equalsIgnoreCase("emulator") || device.equalsIgnoreCase("realdevice")){
 			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB)); 		//for emulator
 			}
+			Thread.sleep(2000);
+			try {
 			Custom_click(ob.edit_date_of_birth(), " Date of Birth");
+			}catch(Exception e) {Custom_click(ob.edit_date_of_birth(), " Date of Birth");}
 			Custom_click(ob.DOB_edit_button(), "Edit DOB");
 			ob.send_dob().clear();
 			custom_sendkeys(ob.send_dob(), config_getdata("edit_DOB"), "change dob in mm/dd/yyyy");
@@ -96,23 +101,19 @@ public class My_Profile_Page_Test extends Base_Utility {
 				Custom_click(ob.Cancel_dob(), " Cancel DOB");
 			}
 			if (device.equalsIgnoreCase("pcloudy")) {
-			driver.navigate().back(); 								//for pCloudy
+			driver.navigate().back(); 							
 			}
-//			custom_sendkeys(ob.blood_group(), "B+", "Blood group");
 			Custom_click(ob.blood_group(), " Blood group");
 			Thread.sleep(2000);
 			Custom_click(ob.blood_group(), " Blood group");
 			Scroll_down_page_Action("Street name");
 			custom_sendkeys(ob.Street_name(), "Jindal colony", "Street name");
-			driver.navigate().back();
-//			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));			 
-//			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB)); 			
+			driver.navigate().back();			
 			Thread.sleep(2000);
 			Custom_click(ob.pin_code(), "Pin code");
 			ob.pin_code().clear();
 			custom_sendkeys(ob.pin_code(), "110027", "Pin code");
-//			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
-			driver.navigate().back();
+			Thread.sleep(2000);
 			Custom_click(ob.Save_button(), "Save button");
 			try {
 				if (ob.More_details().isDisplayed()) {
@@ -120,7 +121,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 				}
 			} catch(Exception e) {
 				Custom_click(ob.Back(), " Back from profile Details");
-//				Custom_click(ob.More_details(), ob.More_details().getText());
+
 			}
 		
 	}
@@ -132,9 +133,14 @@ public class My_Profile_Page_Test extends Base_Utility {
 			custom_sendkeys(ob.edit_full_name(), map.get("Name"), " Original Name");
 			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
 			driver.navigate().back();
-			custom_sendkeys(ob.edit_email_id(), map.get("Email ID"), "Original Email id");
+			String email = map.get("Email ID");
+			if(email.isBlank()) {
+				custom_sendkeys(ob.edit_email_id(), "name@gmail.com", "Original Email id");
+			} else {
+			custom_sendkeys(ob.edit_email_id(), map.get("Email ID"), "Original Email id"); }
 			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
 			driver.navigate().back();
+			Thread.sleep(2000);
 			Custom_click(ob.Save_button(), "Save button");
 			Thread.sleep(3000);
 			Custom_click(ob.More_details(), ob.More_details().getText());
@@ -145,8 +151,14 @@ public class My_Profile_Page_Test extends Base_Utility {
 	public void TC033_Manage_License() throws InterruptedException {
 			Custom_click(ob.manage_license(), " Manage License");
 			Thread.sleep(2000);
-			try {
-				if(ob.License_verify().isDisplayed()) {
+			try {	
+				if(ob.licence_image().isDisplayed())
+				{
+					Message("Manage License is already given");
+					Custom_click(ob.License_kebab_icon(), "Licence kebab icon");
+				}
+			} catch(Exception e) {
+				Message("Manage License is not given");
 				msg(ob.License_verify(),ob.License_verify().getText());
 				Custom_click(ob.add_Liense_now(), "  Add License now");
 				Custom_click(ob.Choose_License_from_library(), ob.Choose_License_from_library().getText());
@@ -160,15 +172,11 @@ public class My_Profile_Page_Test extends Base_Utility {
 //				Custom_click(ob.Choose_from_Digilocker(), ob.Choose_from_Digilocker().getText());
 //				Thread.sleep(1000);
 //				driver.navigate().back();
-//				Custom_click(ob.add_Liense_now(), "  Add License now");
+//				Custom_click(ob.add_Liense_now(), "  Add License n	c
 				Custom_click(ob.close_button_for_license_upload(), " Close license upload page");
 				}
-			} catch(Exception e) {
-				Message("Manage License is already given");
+				Custom_click(ob.Back(), " Back from Driver License");
 			}
-			Custom_click(ob.Back(), " Back from Driver License");
-	
-	}
 
 	@Test(priority = 6)
 	public void TC034_Verify_emergency_contacts() throws InterruptedException {
@@ -185,6 +193,6 @@ public class My_Profile_Page_Test extends Base_Utility {
 			}
 			Custom_click(ob.Back(), " Back from Emergency Contacts page");
 			Custom_click(ob.Back(), " Back from profile Details");
-//			driver.navigate().back();	
+	
 	}
 }

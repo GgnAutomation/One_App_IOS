@@ -217,7 +217,6 @@ public class Login_Page_Test extends Base_Utility {
 			}
 		Custom_click(ob.verify_button(), "Verify Button");
 		Thread.sleep(5000);
-		// when excute select vehicle page class then need to comment below 7 line.
 		Custom_click(ob1.click_first_vehicle(), " Select first vehicle");
 		Custom_click(ob1.continue_button(), "Continue Button after select vehicle");
 		Thread.sleep(2000);
@@ -230,10 +229,6 @@ public class Login_Page_Test extends Base_Utility {
 			Custom_click(ob1.Allow(), ob.Allow().getText()
 					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
 		}
-			if (device.equalsIgnoreCase("pcloudy")) {
-//			Custom_click(ob1.While_using_the_app(), "While using the app");
-		}
-//		Custom_click(ob1.banner_Img_close(), " Banner Img close");
 	}
 
 }

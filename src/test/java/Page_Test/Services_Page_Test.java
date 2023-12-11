@@ -66,7 +66,7 @@ public class Services_Page_Test extends Base_Utility {
 			Scroll_down_page_Action("Service Schedule");
 				if(ob.Service_Schedule().isDisplayed()) { 
 					Message("Service Schedule is visible"); }
-			}catch(Exception e) { Message("Manager information is not given");}
+			}catch(Exception e) {error_message("Manager information is not given");}
 			
 	}
 
@@ -223,7 +223,11 @@ public class Services_Page_Test extends Base_Utility {
 			Custom_click(ob.Days(), ob.Days().getText());
 			if (device.equalsIgnoreCase("emulator")) {
 			swipe_page_direction(1002, 412, 69, 412, "60 Days"); // for Emulator
-			} else if(device.equalsIgnoreCase("pcloudy")) {
+			}else if(device.equalsIgnoreCase("realdevice"))
+			{
+				swipe_page_direction(675, 295, 46, 295, "60 Days");
+			}
+			else {
 				if(version.equalsIgnoreCase("11")) {
 			swipe_page_direction(1357, 565, 98, 565, "60 Days"); // for pCloudy -11
 				}

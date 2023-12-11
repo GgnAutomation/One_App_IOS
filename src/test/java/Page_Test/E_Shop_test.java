@@ -21,7 +21,7 @@ public class E_Shop_test extends Base_Utility{
 //		login = new Login_Page_Test();
 //		login.login();
 		Thread.sleep(3000);
-		if (device.equalsIgnoreCase("pcloudy")) {
+		if (device.equalsIgnoreCase("pcloudy")|| device.equalsIgnoreCase("realdevice")) {
 			Custom_click(ob.E_shop_pCloudy(), ob.E_shop_pCloudy().getText());     
 		}
 		else {

@@ -177,7 +177,7 @@ public class Base_Utility
 			db.setCapability("appium:automationName", "uiautomator2");
 			db.setCapability("platformName", "Android");
 			db.setCapability("appium:deviceName", "realme C33 2023");
-			db.setCapability("appium:udid", "3323262910AA04DS"); //3323262910AA04DS //192.168.1.2:5555
+			db.setCapability("appium:udid", "192.168.1.3:5555"); //3323262910AA04DS //192.168.1.3:55555
 			db.setCapability("appium:avdLaunchTimeout", 600000);
 			db.setCapability("appPackage", "com.customerapp.hero");
 			db.setCapability("appActivity", "com.customerapp.hero.views.activity.HmcDashboard");
@@ -479,4 +479,10 @@ public class Base_Utility
 		test.log(Status.PASS, message);
 		log.info(message);
 		}
+	public void error_message(String message)
+	{
+		test.log(Status.FAIL, message);
+		log.error("");
+		test.addScreenCaptureFromPath(lis.getcapcture(message));
+	}
 }

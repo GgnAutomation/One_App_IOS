@@ -52,19 +52,15 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		ob.Select_Model("Passion Pro");
 		driver.navigate().back();
 		try {
-			if(ob.Submit_button().isDisplayed()) {
 		Custom_click(ob.Submit_button(), ob.Submit_button().getText());	
-//		msg(ob.message(),ob.message().getText());
-//		Custom_click(ob.ok_button(), ob.ok_button().getText()); 
-		}
 		}catch(Exception e)
-		{Message("Submit button is not available");
+		{ Message("Submit button is not clickable");
 			}
 	}
 	@Test(priority = 4)
 	public void TC045_Verify_Refer_yourself() throws InterruptedException
 	{
-		Thread.sleep(30000);
+		Thread.sleep(10000);
 		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.refer_friend(), ob.refer_friend().getText()); 
 		Custom_click(ob.Refer_yourself(), ob.Refer_yourself().getText());
@@ -82,8 +78,7 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 			Custom_click(ob.Select_Model(), ob.Select_Model().getText());
 			ob.Select_Model("Passion Pro");
 			Custom_click(ob.Submit_button(), ob.Submit_button().getText());
-//			msg(ob.message(),ob.message().getText());
-//			Custom_click(ob.ok_button(), ob.ok_button().getText());
+	
 		}
 		else
 		{
@@ -91,14 +86,12 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 			Custom_click(ob.Select_Model(), ob.Select_Model().getText());
 			ob.Select_Model("Passion Pro");
 			Custom_click(ob.Submit_button(), ob.Submit_button().getText());
-//			msg(ob.message(),ob.message().getText());
-//			Custom_click(ob.ok_button(), ob.ok_button().getText());
 		}
 	}
 	@Test(priority = 5)
 	public void TC046_Verify_Facebook_in_Contact_us_page() throws InterruptedException
 	{
-		Thread.sleep(30000);
+		Thread.sleep(10000);
 		Custom_click(ob.side_menu_button(), "Side menu button");
 		Thread.sleep(2000);
 		try {

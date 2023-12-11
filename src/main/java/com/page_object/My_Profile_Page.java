@@ -206,6 +206,10 @@ public class My_Profile_Page extends Base_Utility {
 //	*******************************Manage License *****************************************
 	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/manage_license']")
 	private WebElement manage_license;
+	@FindBy(xpath ="//android.widget.ImageView[@resource-id='com.customerapp.hero:id/imageView']")
+	private WebElement licence_image;
+	@FindBy(xpath ="//android.widget.ImageView[@resource-id='com.customerapp.hero:id/ic_notification']")
+	private WebElement License_kebab_icon;
 	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/title']")
 	private WebElement License_verify;
 	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/subtitle']")
@@ -221,6 +225,14 @@ public class My_Profile_Page extends Base_Utility {
 	public WebElement manage_license()
 	{
 		return manage_license;
+	}
+	public WebElement licence_image()
+	{
+		return licence_image;
+	}
+	public WebElement License_kebab_icon()
+	{
+		return License_kebab_icon;
 	}
 	public WebElement License_verify()
 	{

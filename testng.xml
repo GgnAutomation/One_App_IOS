@@ -75,7 +75,7 @@
 			<class name="Page_Test.Safety_Measures_and_Symbols_Glossary_Test" />
 			<class name="Page_Test.Feedback_and_About_Hero_test" />
 			<class name="Page_Test.Services_Page_Test" />
-			<class name="Page_Test.GoodLife_test" /> 
+		<!-- 	<class name="Page_Test.GoodLife_test" /> -->
 			<class name="Page_Test.E_Shop_test" />
 		</classes>
 	</test>

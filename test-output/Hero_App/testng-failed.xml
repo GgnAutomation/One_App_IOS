@@ -6,43 +6,13 @@
   </listeners>
   <test thread-count="5" name="All test class(failed)">
     <classes>
-      <class name="Page_Test.E_Shop_test">
+      <class name="Page_Test.My_Profile_Page_Test">
         <methods>
-          <include name="TC105_new_customers"/>
-          <include name="TC104_registered_customers"/>
+          <include name="TC031_edit_Personal_Details"/>
+          <include name="TC032_change_original_Personal_Details"/>
           <include name="OPEN_AND_INSTALL_APP"/>
         </methods>
-      </class> <!-- Page_Test.E_Shop_test -->
-      <class name="Page_Test.Services_Page_Test">
-        <methods>
-          <include name="TC086_View_Service_schedule_660_days"/>
-          <include name="TC084_View_Service_schedule_460_days"/>
-          <include name="TC088_View_Service_schedule_860_days"/>
-          <include name="TC089_View_Service_schedule_960_days"/>
-          <include name="TC085_View_Service_schedule_560_days"/>
-          <include name="TC090_Verify_Last_Serviced"/>
-          <include name="TC091_Verify_all_tips_list"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC087_View_Service_schedule_760_days"/>
-          <include name="TC092_Verify_all_DIY_Videos_list"/>
-        </methods>
-      </class> <!-- Page_Test.Services_Page_Test -->
-      <class name="Page_Test.GoodLife_test">
-        <methods>
-          <include name="TC103_verify_Benefits_and_Experiences"/>
-          <include name="TC095_Verify_Earning_History_in_Pro_Membership"/>
-          <include name="TC097_Verify_Complete_profile"/>
-          <include name="TC098_Verify_Welcome_Rewards"/>
-          <include name="TC099_Verify_refer_friend_in_Goodlife"/>
-          <include name="TC096_Verify_Redemption_History_in_Pro_Membership"/>
-          <include name="TC102_verify_Service_Privilegers"/>
-          <include name="TC094_Verify_Pro_Membership"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC101_verify_Points_Earning_and_Redemption"/>
-          <include name="TC100_verify_Winner_informaton"/>
-          <include name="TC093_verify_image_in_goodlife_page"/>
-        </methods>
-      </class> <!-- Page_Test.GoodLife_test -->
+      </class> <!-- Page_Test.My_Profile_Page_Test -->
     </classes>
   </test> <!-- All test class(failed) -->
 </suite> <!-- Failed suite [Hero_App] -->
