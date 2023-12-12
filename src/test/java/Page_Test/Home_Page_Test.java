@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import com.page_object.Home_Page;
 import com.utility.Base_Utility;
 
+import io.appium.java_client.AppiumBy;
+
 @Listeners(com.utility.listner.class)
 public class Home_Page_Test extends Base_Utility {
 
@@ -16,8 +18,8 @@ public class Home_Page_Test extends Base_Utility {
 	public void TC017_Home_page_verify() throws InterruptedException {
 		Message("************************Home_Page_Test**************************");
 		ob = new Home_Page();
-//		login = new Login_Page_Test();
-//		login.login();
+		login = new Login_Page_Test();
+		login.login();
 		Thread.sleep(15000);
 		msg(ob.temperature(), "Current Temperature is =" + ob.temperature().getText());
 		VerifyElementPresent(ob.vehicle_img(), "Vehicle Img is");
@@ -254,6 +256,9 @@ public class Home_Page_Test extends Base_Utility {
 //	public void verify_Service_at_home_page()
 //	{
 //		scrollByText("Latest");
+//		driver.findElement(
+//		new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)"
+//				+ ".instance(0))"+".scrollIntView(new UiSelector()" +".textMatches(\""+"Latest"+ "\").instance(0))"));
 //		msg("Service status =" +ob.Service_status().getText());
 //		Custom_click(ob.View_details_button(), ob.View_details_button().getText());
 //		msg(ob.Vehicle_service().getText()+" for " +ob.Vehicle_name().getText());
