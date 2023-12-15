@@ -29,6 +29,8 @@ public class Home_Page extends Base_Utility {
 	private WebElement vehicle_drop_down;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/bike_name_lbl']")
 	private List<WebElement> all_vehicle_inside_drop_down;
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.customerapp.hero:id/iv_close']")
+	private WebElement select_vehicle_close_btn;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/vehicle_img']")
 	private WebElement vehicle_img;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/ic_notification']")
@@ -50,7 +52,8 @@ public class Home_Page extends Base_Utility {
 
 		Custom_click(vehicle_drop_down, " Drop down");
 		Custom_click(all_vehicle_inside_drop_down.get(0), "Select Vehicle");
-
+		Custom_click(vehicle_drop_down, " Drop down");
+		Custom_click(select_vehicle_close_btn, "select vehicle close button");
 	}
 
 	public WebElement vehicle_img() {
@@ -61,8 +64,11 @@ public class Home_Page extends Base_Utility {
 		return notification;
 	}
 
-	public int notification_count() {
-		return notification_count.size();
+	public void notification_count() {
+		for (int i = 0; i < notification_count.size(); i++) {
+			msg(notification_count.get(i), notification_count.get(i).getText());
+		}
+
 	}
 
 	public WebElement notification_back() {
@@ -71,6 +77,40 @@ public class Home_Page extends Base_Utility {
 
 	public WebElement Collapse_btn() {
 		return Collapse_btn;
+	}
+
+	// **************************************SOS********************************
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.customerapp.hero:id/ic_sos']")
+	private WebElement SOS_icon;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/text')]")
+	private List<WebElement> SOS_message;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl']")
+	private WebElement sent_alert_btn;
+	@FindBy(xpath = "//android.widget.LinearLayout[@resource-id='com.customerapp.hero:id/safe']/android.widget.TextView")
+	private List<WebElement> dont_send;
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.customerapp.hero:id/custom_radius_close']")
+	private WebElement SOS_close_btn;
+
+	public WebElement SOS_icon() {
+		return SOS_icon;
+	}
+
+	public void SOS_message() {
+		for (int i = 0; i < SOS_message.size(); i++) {
+			msg(SOS_message.get(i), SOS_message.get(i).getText());
+		}
+	}
+
+	public WebElement sent_alert_btn() {
+		return sent_alert_btn;
+	}
+
+	public void dont_send() {
+		Custom_click(dont_send.get(0), dont_send.get(0).getText() + " " + dont_send.get(1).getText());
+	}
+
+	public WebElement SOS_close_btn() {
+		return SOS_close_btn;
 	}
 
 	// **************************************Service********************************
@@ -200,6 +240,157 @@ public class Home_Page extends Base_Utility {
 
 	public WebElement Back_button() {
 		return Back_button;
+	}
+
+	// ****************************Exchange Page*******************************
+	@FindBy(xpath = "//android.widget.TextView[starts-with(@text,'Exchange')]/parent::android.view.ViewGroup")
+	private WebElement Exchange_Menu;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/')]")
+	private List<WebElement> exchange_info;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/lbl1']")
+	private WebElement Exchange_vehicle_name;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/lbl']")
+	private WebElement real_value_msg;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/tV1']")
+	private WebElement vehicle_msg;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/registrationDateTv']")
+	private WebElement choose_city;
+	@FindBy(xpath = "//android.widget.EditText[@resource-id='com.customerapp.hero:id/text_input_editext']")
+	private WebElement city_sell;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/vehicle_nameTV']")
+	private WebElement choose_city_sell;
+	@FindBy(xpath = "//android.widget.EditText[contains(@resource-id,'com.customerapp.hero:id') and starts-with(@text,'PIN Code')]")
+	private WebElement city_pin_code;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl']")
+	private WebElement next_btn;
+
+	public WebElement Exchange_Menu() {
+		return Exchange_Menu;
+	}
+
+	public void exchange_info() {
+		for (int i = 0; i < exchange_info.size(); i++) {
+			msg(exchange_info.get(i), exchange_info.get(i).getText());
+		}
+	}
+
+	public WebElement Exchange_vehicle_name() {
+		return Exchange_vehicle_name;
+	}
+
+	public WebElement real_value_msg() {
+		return real_value_msg;
+	}
+
+	public WebElement vehicle_msg() {
+		return vehicle_msg;
+	}
+
+	public WebElement choose_city() {
+		return choose_city;
+	}
+
+	public WebElement city_sell() {
+		return city_sell;
+	}
+
+	public WebElement choose_city_sell() {
+		return choose_city_sell;
+	}
+
+	public WebElement city_pin_code() {
+		return city_pin_code;
+	}
+
+	public WebElement next_btn() {
+		return next_btn;
+	}
+
+//****************************Vehicle Condition************************************
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/tV2']")
+	private WebElement vehicle_condition;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/identify_tv1']")
+	private WebElement condition_msg;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Smoke']")
+	private WebElement Smoke;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and starts-with(@text,'Is there any Smoke')]")
+	private WebElement Smoke_msg;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option1RadioButton' and @text='No Smoke']")
+	private WebElement no_smok_radio_btn;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option2RadioButton' and @text='Smoke']")
+	private WebElement smok_radio_btn;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Starting']")
+	private WebElement Starting;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and starts-with(@text,'Is there any problem in Starting')]")
+	private WebElement Starting_msg;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option1RadioButton' and @text='Starts Normally']")
+	private WebElement Starts_normal_radio_btn;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option2RadioButton' and @text='Not Starting']")
+	private WebElement not_starts_btn;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Light Indicator']")
+	private WebElement Light_indicator;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and starts-with(@text,'Is there any problem in the working of Li')]")
+	private WebElement Light_indicator_msg;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option1RadioButton' and @text='Working']")
+	private WebElement Working_radio_btn;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option2RadioButton' and @text='Not Working']")
+	private WebElement not_working_radio_btn;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Front Tyre']")
+	private WebElement front_tyre;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and starts-with(@text,'What is the condition of the Front')]")
+	private WebElement front_tyre_msg;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option1RadioButton' and @text='OK']")
+	private WebElement ok_radio_btn;
+	@FindBy(xpath = "//android.widget.RadioButton[contains(@resource-id,'com.customerapp.hero:id/option') and starts-with(@text,'Worn out')]")
+	private WebElement worn_out_radio_btn;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Rear Tyre']")
+	private WebElement rear_tyre;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and starts-with(@text,'What is the condition of the Rear')]")
+	private WebElement rear_tyre_msg;
+	@FindBy(xpath ="(//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option1RadioButton'])[2]")
+	private WebElement ok_rear_radion_btn;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Body Part']")
+	private WebElement body_part;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and @text='What is the condition of the Body Parts?']")
+	private WebElement body_part_msg;
+	@FindBy(xpath = "//android.widget.RadioButton[contains(@resource-id,'com.customerapp.hero:id/option') and starts-with(@text,'No Scratch')]")
+	private WebElement no_scrtch_radio_btn;
+	@FindBy(xpath = "//android.widget.RadioButton[contains(@resource-id,'com.customerapp.hero:id/option') and starts-with(@text,'Scratch')]")
+	private WebElement scrtch_radio_btn;
+
+	public WebElement vehicle_condition() {
+		return vehicle_condition;
+	}
+
+	public WebElement condition_msg() {
+		return condition_msg;
+	}
+
+	public void all_question() {
+		msg(Smoke, Smoke.getText());
+		msg(Smoke_msg, Smoke_msg.getText());
+		Custom_click(no_smok_radio_btn, no_smok_radio_btn.getText()+" radio button");
+		Custom_click(smok_radio_btn, smok_radio_btn.getText()+" radio button");
+		msg(Starting, Starting.getText());
+		msg(Starting_msg, Starting_msg.getText());
+		Custom_click(Starts_normal_radio_btn, Starts_normal_radio_btn.getText()+" radio button");
+		Custom_click(not_starts_btn, not_starts_btn.getText()+" radio button");
+		msg(Light_indicator, Light_indicator.getText());
+		msg(Light_indicator_msg, Light_indicator_msg.getText());
+		Custom_click(Working_radio_btn, Working_radio_btn.getText()+" radio button");
+		Custom_click(not_working_radio_btn, not_working_radio_btn.getText()+" radio button");
+		msg(front_tyre, front_tyre.getText());
+		msg(front_tyre_msg, front_tyre_msg.getText());
+		Custom_click(ok_radio_btn, ok_radio_btn.getText()+" radio button");
+		Custom_click(worn_out_radio_btn, worn_out_radio_btn.getText()+" radio button");
+		msg(rear_tyre, rear_tyre.getText());
+		msg(rear_tyre_msg, rear_tyre_msg.getText());
+		Custom_click(ok_rear_radion_btn, ok_rear_radion_btn.getText()+" radio button");
+		Custom_click(worn_out_radio_btn, worn_out_radio_btn.getText()+" radio button");
+		msg(body_part, body_part.getText());
+		msg(body_part_msg, body_part_msg.getText());
+		Custom_click(no_scrtch_radio_btn, no_scrtch_radio_btn.getText()+" radio button");
+		Custom_click(scrtch_radio_btn, scrtch_radio_btn.getText()+" radio button");
 	}
 
 //****************************Documents Page************************************
@@ -480,12 +671,17 @@ public class Home_Page extends Base_Utility {
 			for (int i = 0; i < asked_questions.size(); i++) {
 				Custom_click(asked_questions.get(i), "Open question = " + asked_questions.get(i).getText());
 				try {
-				msg(answer, "Answer =" + answer.getText());
-				} catch (Exception e) { Scroll_down_page_Action("Answer"); }
+					msg(answer, "Answer =" + answer.getText());
+				} catch (Exception e) {
+					Scroll_down_page_Action("Answer");
+					msg(answer, "Answer =" + answer.getText());
+				}
 				Custom_click(asked_questions.get(i), "Close question = " + asked_questions.get(i).getText());
 			}
-		} catch (Exception e) { Message("Asked question is not available");}
+		} catch (Exception e) {
+			Message("Asked question is not available");
 		}
+	}
 
 	public WebElement Search_button() {
 		return Search_button;

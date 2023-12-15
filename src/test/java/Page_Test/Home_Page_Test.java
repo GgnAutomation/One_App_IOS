@@ -18,9 +18,9 @@ public class Home_Page_Test extends Base_Utility {
 	public void TC017_Home_page_verify() throws InterruptedException {
 		Message("************************Home_Page_Test**************************");
 		ob = new Home_Page();
-		login = new Login_Page_Test();
-		login.login();
-		Thread.sleep(15000);
+//		login = new Login_Page_Test();
+//		login.login();
+		Thread.sleep(10000);
 		msg(ob.temperature(), "Current Temperature is =" + ob.temperature().getText());
 		VerifyElementPresent(ob.vehicle_img(), "Vehicle Img is");
 		Thread.sleep(2000);
@@ -30,12 +30,24 @@ public class Home_Page_Test extends Base_Utility {
 		Custom_click(ob.Collapse_btn(), ob.Collapse_btn().getText());
 		Thread.sleep(2000);
 		Custom_click(ob.notification(), "Notification");
-		Message("Total Notification are=" + ob.notification_count());
+		ob.notification_count();
 		Custom_click(ob.notification_back(), "Notification back");
 	}
-
 	@Test(priority = 1)
-	public void TC018__verify_Navigate() {
+	public void TC018_verify_SOS() throws InterruptedException
+	{
+		Custom_click(ob.SOS_icon(), "SOS icon");
+		ob.SOS_message();
+		Custom_click(ob.sent_alert_btn(), ob.sent_alert_btn().getText());
+		Thread.sleep(2000);
+		Custom_click(ob.SOS_icon(), "SOS icon");
+		ob.dont_send();
+		Thread.sleep(2000);
+		Custom_click(ob.SOS_icon(), "SOS icon");
+		Custom_click(ob.SOS_close_btn(), "SOS close button");
+	}
+	@Test(priority = 2)
+	public void TC019_verify_Navigate() {
 		Custom_click(ob.Navigate_menu(), "Navigate menu");
 		if (device.equalsIgnoreCase("emulator")) {
 			try {
@@ -61,9 +73,43 @@ public class Home_Page_Test extends Base_Utility {
 //		Custom_click(ob.Back_button(), "Back from Search here");
 //		Custom_click(ob.Back_button(), "Back from Navigation");
 	}
-
-	@Test(priority = 2)
-	public void TC019_Verify_Documents() throws InterruptedException {
+	@Test(priority = 3)
+	public void TC020_verify_Exchange() throws InterruptedException
+	{
+		Custom_click(ob.Exchange_Menu(), "Exchange menu");
+		Thread.sleep(2000);
+		ob.exchange_info();
+		Custom_click(ob.Exchange_vehicle_name(), ob.Exchange_vehicle_name().getText());
+		Thread.sleep(2000);
+		msg(ob.real_value_msg(), ob.real_value_msg().getText());
+	}
+	@Test(dependsOnMethods = "TC020_verify_Exchange()" ,priority = 4)
+	public void TC021_verify_Vehicle_details() {
+		msg(ob.vehicle_msg(), ob.vehicle_msg().getText());
+		msg(ob.choose_city(), ob.choose_city().getText());
+		custom_sendkeys(ob.city_sell(), config_getdata("City_to_sell_vehicle"), "City name where sell vehicle");
+		Custom_click(ob.choose_city_sell(), ob.choose_city_sell().getText());
+		custom_sendkeys(ob.city_pin_code(), "110037", "PIN code");
+		Custom_click(ob.next_btn(), ob.next_btn().getText());
+	}
+	@Test(dependsOnMethods = "TC020_verify_Exchange()" ,priority = 5)
+	public void TC022_verify_Vehicle_condition()
+	{
+		msg(ob.vehicle_condition(), ob.vehicle_condition().getText());
+		msg(ob.condition_msg(), ob.condition_msg().getText());
+		ob.all_question();
+		Custom_click(ob.next_btn(), ob.next_btn().getText());
+	}
+	@Test(dependsOnMethods = "TC020_verify_Exchange()" ,priority = 6)
+	public void TC023_verify_Vehicle_valution() throws InterruptedException
+	{
+		ob.exchange_info();
+		Custom_click(ob.Back(), "Back from estimated resell value page");
+		Thread.sleep(2000);
+		Custom_click(ob.Back(), "Back from Exchange page");
+	}
+	@Test(priority = 7)
+	public void TC024_Verify_Documents() throws InterruptedException {
 
 		Custom_click(ob.Documents_Menu(), "Document menu");
 		Thread.sleep(2000);
@@ -71,8 +117,8 @@ public class Home_Page_Test extends Base_Utility {
 		Custom_click(ob.Back(), "Back from Documents");
 	}
 
-	@Test(priority = 3)
-	public void TC020_Verify_Relationship_Manager() throws InterruptedException {
+	@Test(priority = 8)
+	public void TC025_Verify_Relationship_Manager() throws InterruptedException {
 		Thread.sleep(2000);
 		Custom_click(ob.Relationship_Manager(), "Relationship Manager");
 		Thread.sleep(4000);
@@ -97,15 +143,15 @@ public class Home_Page_Test extends Base_Utility {
 		Custom_click(ob.Back(), "Back from Relationship Manager");
 
 	}
-	@Test(priority = 4)
-	public void TC021_Verify_RSA() throws InterruptedException
+	@Test(priority = 9)
+	public void TC026_Verify_RSA() throws InterruptedException
 	{
 		Custom_click(ob.RSA(), "RSA");
 		Thread.sleep(4000);
 		ob.RSA_info();
 	}
-	@Test(priority = 5)
-	public void TC022_Renew_RSA() throws InterruptedException
+	@Test(priority = 10)
+	public void TC027_Renew_RSA() throws InterruptedException
 	{
 		Custom_click(ob.renew_rsa(), ob.renew_rsa().getText());
 		Thread.sleep(2000);
@@ -117,8 +163,8 @@ public class Home_Page_Test extends Base_Utility {
 		Custom_click(ob.Back(), "Back from Payment");
 		Thread.sleep(1000);
 	}
-	@Test(priority = 6)
-	public void TC023_frequently_asked_questions() throws InterruptedException
+	@Test(priority = 11)
+	public void TC028_frequently_asked_questions() throws InterruptedException
 	{
 		Scroll_down_page_Action("Step 3");
 		Scroll_down_page_Action("Asked questions");
@@ -212,8 +258,8 @@ public class Home_Page_Test extends Base_Utility {
 //	}
 
 	
-	@Test(priority = 7)
-	public void TC024_Verify_Technical_Support_Manager() throws InterruptedException {
+	@Test(priority = 12)
+	public void TC029_Verify_Technical_Support_Manager() throws InterruptedException {
 		Custom_click(ob.Technical_Support(), "Technical Support");
 		Thread.sleep(2000);
 		try {
@@ -231,8 +277,8 @@ public class Home_Page_Test extends Base_Utility {
 		}
 	}
 
-	@Test(priority = 8)
-	public void TC025_Verify_Dealer_Locator() throws InterruptedException {
+	@Test(priority = 13)
+	public void TC030_Verify_Dealer_Locator() throws InterruptedException {
 
 		Custom_click(ob.Dealer_Locator(), "Dealer Locator");
 		Thread.sleep(2000);
@@ -240,26 +286,26 @@ public class Home_Page_Test extends Base_Utility {
 		ob.Select_State("BIHAR");
 	}
 
-	@Test(priority = 9)
-	public void TC026_Select_city() {
+	@Test(priority = 14)
+	public void TC031_Select_city() {
 		Custom_click(ob.Select_City(), "Select city");
 		ob.Select_City("BAGAHA");
 	}
 
-	@Test(priority = 10)
-	public void TC027_View_dealer_name_and_address() {
+	@Test(priority = 15)
+	public void TC032_View_dealer_name_and_address() {
 		Custom_click(ob.map_view(), "Map View dealer name and address");
 		ob.Dealer_info();
 		Custom_click(ob.Back(), "Back from Dealer Locator");
 	}
-//	@Test(priority = 13)
+//	@Test(priority = 16)
 //	public void verify_Service_at_home_page()
 //	{
 //		scrollByText("Latest");
 //		driver.findElement(
 //		new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)"
 //				+ ".instance(0))"+".scrollIntView(new UiSelector()" +".textMatches(\""+"Latest"+ "\").instance(0))"));
-//		msg("Service status =" +ob.Service_status().getText());
+//		msg(ob.Service_status(),ob.Service_status().getText());
 //		Custom_click(ob.View_details_button(), ob.View_details_button().getText());
 //		msg(ob.Vehicle_service().getText()+" for " +ob.Vehicle_name().getText());
 //		driver.navigate().back();

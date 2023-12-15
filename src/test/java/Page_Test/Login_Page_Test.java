@@ -84,8 +84,12 @@ public class Login_Page_Test extends Base_Utility {
 
 	@Test(priority = 4)
 	public void TC005_Terms_of_use_button() throws InterruptedException {
+		long startclicktime = System.currentTimeMillis();
 		Custom_click(ob.Terms_of_Use(), "Terms of use button");
-		Thread.sleep(8000);
+		long endclicktime = System.currentTimeMillis();
+		Message("Click time in Tearms of use ="+(endclicktime-startclicktime)+" MS");
+		long starreadtime = System.currentTimeMillis();
+		Thread.sleep(5000);
 		if (device.equalsIgnoreCase("emulator")) {
 			msg(ob.Terms_of_Use_condition(),
 					"Terms of use: First condition = " + ob.Terms_of_Use_condition().getText());
@@ -93,13 +97,19 @@ public class Login_Page_Test extends Base_Utility {
 			msg(ob.Terms_of_Use_condition_for_real_device(),
 					"Terms of use: First condition = " + ob.Terms_of_Use_condition_for_real_device().getText());
 		}
+		long endreadtime = System.currentTimeMillis();
+		Message("Raad time in Tearms of use =" +(endreadtime-starreadtime)+" MS");
 		Custom_click(ob.back_page(), "back terms of use page ");
 	}
 
 	@Test(priority = 5)
 	public void TC006_Privacy_policy() throws InterruptedException {
+		long startclicktime = System.currentTimeMillis();
 		Custom_click(ob.Privacy_Policy(), "Privacy Policy");
-		Thread.sleep(5000);
+		long endclicktime = System.currentTimeMillis();
+		Message("Click time in Privacy policy ="+(endclicktime-startclicktime)+" MS");
+		Thread.sleep(4000);
+		long starreadtime = System.currentTimeMillis();
 		if (device.equalsIgnoreCase("emulator")) {
 			msg(ob.Privacy_Policy_condition(),
 					"Privacy policy : First Condition = " + ob.Privacy_Policy_condition().getText());
@@ -107,6 +117,8 @@ public class Login_Page_Test extends Base_Utility {
 			msg(ob.Terms_of_Use_condition_for_real_device(),
 					"Privacy policy : First Condition = " + ob.Terms_of_Use_condition_for_real_device().getText());
 		}
+		long endreadtime = System.currentTimeMillis();
+		Message("Raad time in Privacy policy =" +(endreadtime-starreadtime)+" MS");
 		Custom_click(ob.back_page(), "back Privacy Policy page ");
 
 	}
@@ -174,7 +186,7 @@ public class Login_Page_Test extends Base_Utility {
 		}
 		Custom_click(ob.verify_button(), "Verify Button");
 	}
-
+	
 	public void login() throws InterruptedException {
 		ob = new Login_page();
 		ob1 = new Select_Vehicle_Page();

@@ -14,7 +14,7 @@
 			<class name="Page_Test.Select_Vehicle_Page_Test" />
 		</classes>
 	</test>
-	<test name="Home_Page_Test" enabled="true">
+	<test name="Home_Page_Test" enabled="false">
 		<classes>
 			<class name="Page_Test.Home_Page_Test" />
 		</classes>
@@ -64,7 +64,7 @@
 			<class name="Page_Test.Book_Service_test" />
 		</classes>
 	</test>
-	<test name="All test class" enabled="false">
+	<test name="All test class" enabled="true">
 		<classes>
 		<class name="Page_Test.Login_Page_Test" />
 			<class name="Page_Test.Select_Vehicle_Page_Test" />

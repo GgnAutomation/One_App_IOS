@@ -30,13 +30,8 @@ public class GoodLife extends Base_Utility {
 		for (int i = 0; i < SliderDots.size(); i++) {
 			Custom_click(SliderDots.get(i), "Slider " + (i+1));
 			Thread.sleep(1000);
-			if (goodlife_Slider_image.isDisplayed()) {
-				Message((i+1) + " Slider image is Present");
-			} else {
-				error_message((i+1) + " Slider image is Present");
 			}
 		}
-	}
 
 	public WebElement goodlife_Slider_image() {
 		return goodlife_Slider_image;

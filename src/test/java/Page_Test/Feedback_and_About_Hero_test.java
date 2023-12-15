@@ -16,7 +16,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	String version = config_getdata("version");
 	String device = config_getdata("Platform_name");
 	@Test(priority = 0)
-	public void TC055_verify_Feedback() throws InterruptedException {
+	public void TC060_verify_Feedback() throws InterruptedException {
 		Message("************************Feedback and About Hero test**************************");
 		ob = new Feedback_and_About_Hero();
 //		login = new Login_Page_Test();
@@ -44,7 +44,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 1)
-	public void TC056_verify_About_Hero() throws InterruptedException {
+	public void TC061_verify_About_Hero() throws InterruptedException {
 			Custom_click(ob.side_menu_button(), "Side menu button");
 			Custom_click(ob.about_hero(), ob.about_hero().getText());
 			Thread.sleep(10000);
@@ -60,7 +60,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
  }
 
 	@Test(priority = 2)
-	public void TC057_verify_Side_menu_page_function() throws InterruptedException {
+	public void TC062_verify_Side_menu_page_function() throws InterruptedException {
 			Custom_click(ob.side_menu_button(), "Side menu button");
 			Custom_click(ob.goodlife(), "Goodlife");
 			Thread.sleep(6000);
@@ -68,7 +68,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 			Custom_click(ob.back_btn(), "Back from GoodLife page");
 	}
 	@Test(priority = 3)
-	public void TC058_Wheels_of_Trust() throws InterruptedException {		Custom_click(ob.side_menu_button(), "Side menu button");
+	public void TC063_Wheels_of_Trust() throws InterruptedException {		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.wheels_of_trust(), "Wheels of trust");
 		Thread.sleep(5000);
 		ob.exchange_info();
@@ -213,8 +213,8 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 //		Custom_click(ob.back_btn(), "Back from wheels of trust page");
 //	}
 	
-	@Test(priority = 10)
-	public void TC065_Verify_joyride() {
+	@Test(priority = 4)
+	public void TC064_Verify_joyride() {
 		Custom_click(ob.side_menu_button(), "Side menu button");
 			Custom_click(ob.Joyride(), "Joyride");
 			ob.Joyride_info();

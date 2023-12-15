@@ -20,7 +20,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 	String device = config_getdata("Platform_name");
 
 	@Test(priority = 0)
-	public void TC028_Verify_My_Profile() throws InterruptedException {
+	public void TC033_Verify_My_Profile() throws InterruptedException {
 		Message("************************My_Profile_Page_Test**************************");
 		ob = new My_Profile_Page();
 //		login = new Login_Page_Test();
@@ -40,13 +40,13 @@ public class My_Profile_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 1)
-	public void TC029_verify_more_detais_button() {
+	public void TC034_verify_more_detais_button() {
 		Custom_click(ob.More_details(), ob.More_details().getText());
 		ob.user_info();
 	}
 
 	@Test(priority = 2)
-	public void TC030_edit_profile_button() throws InterruptedException {
+	public void TC035_edit_profile_button() throws InterruptedException {
 		Custom_click(ob.edit_profile_details_button(), "Edit profile details button");
 		Custom_click(ob.profile_pic_edit_btn(), "profile pic edit button");
 		try {
@@ -72,7 +72,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 3)
-	public void TC031_edit_Personal_Details() throws InterruptedException {
+	public void TC036_edit_Personal_Details() throws InterruptedException {
 		map = new LinkedHashMap<>();
 		map.put("Name", ob.edit_full_name().getText());
 		map.put("Email ID", ob.edit_email_id().getText());
@@ -129,8 +129,8 @@ public class My_Profile_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC031_edit_Personal_Details()", priority = 4)
-	public void TC032_change_original_Personal_Details() throws InterruptedException {
+	@Test(dependsOnMethods = "TC036_edit_Personal_Details()", priority = 4)
+	public void TC037_change_original_Personal_Details() throws InterruptedException {
 //			Custom_click(ob.More_details(), ob.More_details().getText());
 		Custom_click(ob.edit_profile_details_button(), "Edit profile details button");
 		custom_sendkeys(ob.edit_full_name(), map.get("Name"), " Original Name");
@@ -152,7 +152,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 5)
-	public void TC033_Manage_License() throws InterruptedException {
+	public void TC038_Manage_License() throws InterruptedException {
 		Custom_click(ob.manage_license(), " Manage License");
 		Thread.sleep(2000);
 		try {
@@ -182,7 +182,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 6)
-	public void TC034_Verify_emergency_contacts() throws InterruptedException {
+	public void TC039_Verify_emergency_contacts() throws InterruptedException {
 		Custom_click(ob.emergency_contacts(), "Emergency contacts");
 		Thread.sleep(2000);
 		try {

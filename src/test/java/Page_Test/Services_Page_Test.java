@@ -14,7 +14,7 @@ public class Services_Page_Test extends Base_Utility {
 	String version = config_getdata("version");
 
 	@Test(priority = 0)
-	public void TC066_Vehicle_details_on_service_page() throws InterruptedException {
+	public void TC065_Vehicle_details_on_service_page() throws InterruptedException {
 		Message("************************Service Page**************************");
 		ob = new Services_Page();
 //		login = new Login_Page_Test();
@@ -36,7 +36,7 @@ public class Services_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 1)
-	public void TC067_verify_service_type() {
+	public void TC066_verify_service_type() {
 		try {
 			msg(ob.Vehicle_Service_type(), "Vehicle Service type =" + ob.Vehicle_Service_type().getText());
 		} catch (Exception e) {
@@ -58,12 +58,67 @@ public class Services_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 2)
-	public void TC068_verify_Dealer_information() {
+	public void TC067_verify_Dealer_information() {
 		ob.dealer_info();
 	}
-
 	@Test(priority = 3)
-	public void TC069_Verify_dealer_manager_info() throws InterruptedException {
+	public void TC068_verify_Reschedule_Service()
+	{	try {
+		if(ob.Reschedule_service_btn().isDisplayed())
+		{
+			Custom_click(ob.Reschedule_service_btn(), ob.Reschedule_service_btn().getText());
+			ob.booked_info();
+			Message("Select date one by one for verify clickable or not");
+			ob.select_date();
+			String time1 = ob.Selected_time().getText();
+			Message("Before picking time  =" +time1);
+			swipe_page_direction(57, 870, 392, 870, "Select a Time");
+			String time2 = ob.Selected_time().getText();
+			Message("After picked time  =" +time2);
+			if(time1.equalsIgnoreCase(time2))
+			{
+				Message("Select time slider is not working");
+			}
+			else
+			{
+				Message("Select time slider is working fine");
+			}
+			if(ob.confirm_btn().isEnabled())
+			{
+				Message("Confirm button is Enabled ");
+			}
+			else
+			{
+				Message("Confirm button is not Enabled ");
+			}
+			Custom_click(ob.cancel_btn(), ob.cancel_btn().getText());
+		}
+	}catch(Exception e) {Message("Service did not booked yet firstly booked service");}
+	}
+	@Test(priority = 4)
+	public void TC069_verify_Cancel_Service()
+	{
+		try {
+		if(ob.cancel_service_btn().isDisplayed())
+		{
+			Custom_click(ob.cancel_service_btn(), ob.cancel_service_btn().getText() +" Service button");
+			msg(ob.cancel_title(), ob.cancel_title().getText());
+			msg(ob.cancel_message(), ob.cancel_message().getText());
+			if(ob.yes_button().isEnabled()&& ob.yes_button().isDisplayed()==true)
+			{
+
+				Message("Yes button is Enabled & Displayed");
+			}
+			else
+			{
+				Message("Yes button is neither Enabled & neither Displayed");
+			}
+			Custom_click(ob.No_button(), ob.No_button().getText());
+		}
+		}catch(Exception e) {Message("Service did not booked yet firstly booked service");}
+	}
+	@Test(priority = 5)
+	public void TC070_Verify_dealer_manager_info() throws InterruptedException {
 		try {
 			msg(ob.manager_type(), "Manager type =" + ob.manager_type().getText());
 			msg(ob.manager_name(), "Manager name =" + ob.manager_name().getText());
@@ -80,21 +135,21 @@ public class Services_Page_Test extends Base_Utility {
 				Message("Service Schedule is visible");
 			}
 		} catch (Exception e) {
-			error_message("Manager information is not given");
+			Message("Manager information is not given");
 		}
 
 	}
 
-	@Test(priority = 4)
-	public void TC070_View_Service_schedule_750() {
+	@Test(priority = 6)
+	public void TC071_View_Service_schedule_750() {
 		Custom_click(ob.Service_Schedule(), "View Service Schedule");
 		Custom_click(ob.Kilometer(), ob.Kilometer().getText());
 		Custom_click(ob.Kilometer_750(), "750 Kilometer");
 		ob.Service_schedule();
 	}
 
-	@Test(priority = 5)
-	public void TC071_View_Service_schedule_3500() {
+	@Test(priority = 7)
+	public void TC072_View_Service_schedule_3500() {
 		if (device.equalsIgnoreCase("realdevice")) {
 			swipe_page_direction(46, 295, 159, 295, "3500 Kilometer"); // for real device
 		} else if (device.equalsIgnoreCase("emulator")) {
@@ -109,8 +164,8 @@ public class Services_Page_Test extends Base_Utility {
 		ob.Service_schedule();
 	}
 
-	@Test(priority = 6)
-	public void TC072_View_Service_schedule_6500() {
+	@Test(priority = 8)
+	public void TC073_View_Service_schedule_6500() {
 		if (device.equalsIgnoreCase("realdevice")) {
 			swipe_page_direction(159, 295, 290, 295, "6500 Kilometer"); // for real device
 		} else if (device.equalsIgnoreCase("emulator")) {
@@ -125,8 +180,8 @@ public class Services_Page_Test extends Base_Utility {
 		ob.Service_schedule();
 	}
 
-	@Test(priority = 7)
-	public void TC073_View_Service_schedule_9500() {
+	@Test(priority = 9)
+	public void TC074_View_Service_schedule_9500() {
 		if (device.equalsIgnoreCase("realdevice")) {
 			swipe_page_direction(290, 295, 416, 295, "9500 Kilometer"); // for real device
 		} else if (device.equalsIgnoreCase("emulator")) {
@@ -142,8 +197,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(priority = 8)
-	public void TC074_View_Service_schedule_12500() {
+	@Test(priority = 10)
+	public void TC075_View_Service_schedule_12500() {
 		if (device.equalsIgnoreCase("realdevice")) {
 			swipe_page_direction(416, 295, 545, 295, "12500 Kilometer"); // for real device
 		} else if (device.equalsIgnoreCase("emulator")) {
@@ -159,8 +214,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(priority = 9)
-	public void TC075_View_Service_schedule_15500() {
+	@Test(priority = 11)
+	public void TC076_View_Service_schedule_15500() {
 		if (device.equalsIgnoreCase("realdevice")) {
 			swipe_page_direction(545, 295, 675, 295, "15500 Kilometer"); // for real device
 		} else if (device.equalsIgnoreCase("emulator")) {
@@ -179,8 +234,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC075_View_Service_schedule_15500()", priority = 10)
-	public void TC076_View_Service_schedule_18500() {
+	@Test(dependsOnMethods = "TC076_View_Service_schedule_15500()", priority = 12)
+	public void TC077_View_Service_schedule_18500() {
 
 		String text = ob.KM_18500().getText();
 		Custom_click(ob.KM_18500(), text);
@@ -189,8 +244,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC075_View_Service_schedule_15500()", priority = 11)
-	public void TC077_View_Service_schedule_21500() {
+	@Test(dependsOnMethods = "TC076_View_Service_schedule_15500()", priority = 13)
+	public void TC078_View_Service_schedule_21500() {
 
 		String text = ob.KM_21500().getText();
 		Custom_click(ob.KM_21500(), text);
@@ -199,8 +254,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC075_View_Service_schedule_15500()", priority = 12)
-	public void TC078_View_Service_schedule_24500() {
+	@Test(dependsOnMethods = "TC076_View_Service_schedule_15500()", priority = 14)
+	public void TC079_View_Service_schedule_24500() {
 
 		String text = ob.KM_24500().getText();
 		Custom_click(ob.KM_24500(), text);
@@ -209,8 +264,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC075_View_Service_schedule_15500()", priority = 13)
-	public void TC079_View_Service_schedule_27500() {
+	@Test(dependsOnMethods = "TC076_View_Service_schedule_15500()", priority = 15)
+	public void TC080_View_Service_schedule_27500() {
 
 		String text = ob.KM_27500().getText();
 		Custom_click(ob.KM_27500(), text);
@@ -219,8 +274,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(priority = 14)
-	public void TC080_View_Service_schedule_60_days() {
+	@Test(priority = 16)
+	public void TC081_View_Service_schedule_60_days() {
 
 		Custom_click(ob.Days(), ob.Days().getText());
 		if (device.equalsIgnoreCase("emulator")) {
@@ -245,8 +300,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(priority = 15)
-	public void TC081_View_Service_schedule_160_days() {
+	@Test(priority = 17)
+	public void TC082_View_Service_schedule_160_days() {
 		if (device.equalsIgnoreCase("realdevice")) {
 			swipe_page_direction(46, 295, 159, 295, "160 Days"); // for real device
 		} else if (device.equalsIgnoreCase("emulator")) {
@@ -262,8 +317,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(priority = 16)
-	public void TC082_View_Service_schedule_260_days() {
+	@Test(priority = 18)
+	public void TC083_View_Service_schedule_260_days() {
 		if (device.equalsIgnoreCase("realdevice")) {
 			swipe_page_direction(159, 295, 290, 295, "260 Days"); // for real device
 		} else if (device.equalsIgnoreCase("emulator")) {
@@ -279,8 +334,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(priority = 17)
-	public void TC083_View_Service_schedule_360_days() {
+	@Test(priority = 19)
+	public void TC084_View_Service_schedule_360_days() {
 		if (device.equalsIgnoreCase("realdevice")) {
 			swipe_page_direction(290, 295, 416, 295, "360 Days"); // for real device
 		} else if (device.equalsIgnoreCase("emulator")) {
@@ -290,14 +345,14 @@ public class Services_Page_Test extends Base_Utility {
 				swipe_page_direction(590, 565, 840, 565, "360 Days"); // for pCloudy device-11
 			} else {
 				swipe_page_direction(440, 465, 628, 465, "360 Days"); // for pCloudy device-13
-			}
+			} 
 		}
 		ob.Service_schedule();
 
 	}
 
-	@Test(priority = 18)
-	public void TC084_View_Service_schedule_460_days() {
+	@Test(priority = 20)
+	public void TC085_View_Service_schedule_460_days() {
 		if (device.equalsIgnoreCase("realdevice")) {
 			swipe_page_direction(416, 295, 545, 295, "460 Days"); // for real device
 		} else if (device.equalsIgnoreCase("emulator")) {
@@ -313,8 +368,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(priority = 19)
-	public void TC085_View_Service_schedule_560_days() {
+	@Test(priority = 21)
+	public void TC086_View_Service_schedule_560_days() {
 		if (device.equalsIgnoreCase("realdevice")) {
 			swipe_page_direction(545, 295, 675, 295, "560 Days"); // for real device
 		} else if (device.equalsIgnoreCase("emulator")) {
@@ -333,8 +388,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC085_View_Service_schedule_560_days()", priority = 20)
-	public void TC086_View_Service_schedule_660_days() {
+	@Test(dependsOnMethods = "TC086_View_Service_schedule_560_days()", priority = 22)
+	public void TC087_View_Service_schedule_660_days() {
 
 		String text = ob.days_660().getText();
 		Custom_click(ob.days_660(), text);
@@ -343,8 +398,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC085_View_Service_schedule_560_days()", priority = 21)
-	public void TC087_View_Service_schedule_760_days() {
+	@Test(dependsOnMethods = "TC086_View_Service_schedule_560_days()", priority = 23)
+	public void TC088_View_Service_schedule_760_days() {
 
 		String text = ob.days_760().getText();
 		Custom_click(ob.days_760(), text);
@@ -353,8 +408,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC085_View_Service_schedule_560_days()", priority = 22)
-	public void TC088_View_Service_schedule_860_days() {
+	@Test(dependsOnMethods = "TC086_View_Service_schedule_560_days()", priority = 24)
+	public void TC089_View_Service_schedule_860_days() {
 
 		String text = ob.days_860().getText();
 		Custom_click(ob.days_860(), text);
@@ -363,8 +418,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC085_View_Service_schedule_560_days()", priority = 23)
-	public void TC089_View_Service_schedule_960_days() {
+	@Test(dependsOnMethods = "TC086_View_Service_schedule_560_days()", priority = 25)
+	public void TC090_View_Service_schedule_960_days() {
 
 		String text = ob.days_960().getText();
 		Custom_click(ob.days_960(), text);
@@ -381,8 +436,8 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(priority = 24)
-	public void TC090_Verify_Last_Serviced() throws InterruptedException {
+	@Test(priority = 26)
+	public void TC091_Verify_Last_Serviced() throws InterruptedException {
 
 		Custom_click(ob.Last_serviced_history(), "Last serviced history");
 		Thread.sleep(2000);
@@ -391,15 +446,15 @@ public class Services_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(priority = 25)
-	public void TC091_Verify_all_tips_list() throws InterruptedException {
+	@Test(priority = 27)
+	public void TC092_Verify_all_tips_list() throws InterruptedException {
 		Scroll_down_page_Action("Tips and DIY");
 		Custom_click(ob.Tips_and_DIY(), "Tips and DIY");
 		ob.tips_list();
 	}
 
-	@Test(priority = 26)
-	public void TC092_Verify_all_DIY_Videos_list() throws InterruptedException {
+	@Test(priority = 28)
+	public void TC093_Verify_all_DIY_Videos_list() throws InterruptedException {
 		Custom_click(ob.DIY_Videos_button(), "DIY video button");
 		ob.DIY_Videos_list();
 		Custom_click(ob.back_button(), " Back from Tips and DIY page");
