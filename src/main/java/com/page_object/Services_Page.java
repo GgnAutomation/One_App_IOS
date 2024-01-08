@@ -196,6 +196,18 @@ public class Services_Page extends Base_Utility {
 	private WebElement Days;
 	@FindBy(xpath = "//android.widget.SeekBar[@content-desc ='Value, 0']")
 	private WebElement Kilometer_750;
+	@FindBy(xpath ="//android.widget.TextView[@text ='750']")
+	private WebElement value_750;
+	@FindBy(xpath ="//android.widget.TextView[@text ='3500']")
+	private WebElement value_3500;
+	@FindBy(xpath = "//android.widget.TextView[@text ='6500']")
+	private WebElement value_6500;
+	@FindBy(xpath = "//android.widget.TextView[@text ='9500']")
+	private WebElement value_9500;
+	@FindBy(xpath = "//android.widget.TextView[@text ='12500']")
+	private WebElement value_12500;
+	@FindBy(xpath = "//android.widget.TextView[starts-with(@text ,'+12.5')]")
+	private WebElement value_12500k;
 	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id')]")
 	private List<WebElement> Service_schedule;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_subtitle']")
@@ -210,6 +222,18 @@ public class Services_Page extends Base_Utility {
 	private WebElement KM_24500;
 	@FindBy(xpath = "//android.widget.TextView[@text ='27.5k km']")
 	private WebElement KM_27500;
+	@FindBy(xpath ="//android.widget.TextView[@text ='60']")
+	private WebElement days_60;
+	@FindBy(xpath ="//android.widget.TextView[@text ='160']")
+	private WebElement days_160;
+	@FindBy(xpath = "//android.widget.TextView[@text ='260']")
+	private WebElement days_260;
+	@FindBy(xpath = "//android.widget.TextView[@text ='360']")
+	private WebElement days_360;
+	@FindBy(xpath = "//android.widget.TextView[@text ='460']")
+	private WebElement days_460;
+	@FindBy(xpath = "//android.widget.TextView[starts-with(@text ,'+460')]")
+	private WebElement days_460_above;
 	@FindBy(xpath = "//android.widget.TextView[@text = '560+ days']")
 	private WebElement days_560;
 	@FindBy(xpath = "//android.widget.TextView[@text = '660+ days']")
@@ -275,6 +299,54 @@ public class Services_Page extends Base_Utility {
 
 	public WebElement Kilometer_750() {
 		return Kilometer_750;
+	}
+	public WebElement days_60()
+	{
+		return days_60;
+	}
+	public WebElement days_160()
+	{
+		return days_160;
+	}
+	public WebElement days_260()
+	{
+		return days_260;
+	}
+	public WebElement days_360()
+	{
+		return days_360;
+	}
+	public WebElement days_460()
+	{
+		return days_460;
+	}
+	public WebElement days_460_above()
+	{
+		return days_460_above;
+	}
+	public WebElement value_750()
+	{
+		return value_750;
+	}
+	public WebElement value_3500()
+	{
+		return value_3500;
+	}
+	public WebElement value_6500()
+	{
+		return value_6500;
+	}
+	public WebElement value_9500()
+	{
+		return value_9500;
+	}
+	public WebElement value_12500()
+	{
+		return value_12500;
+	}
+	public WebElement value_12500k()
+	{
+		return value_12500k;
 	}
 
 	public void Service_schedule() {
@@ -445,7 +517,7 @@ public class Services_Page extends Base_Utility {
 				tips = tips_list.get(i).getText();
 				Message(tips);
 				Custom_click(tips_list.get(i), tips);
-				Thread.sleep(5000);
+				Thread.sleep(6000);
 				if (image_verify.isDisplayed()) {
 					Message(tips + " PDF image is available for guide");
 				} else {

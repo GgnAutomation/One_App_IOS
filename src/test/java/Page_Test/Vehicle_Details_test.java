@@ -16,7 +16,7 @@ public class Vehicle_Details_test extends Base_Utility {
 	public Login_Page_Test login;
 
 	@Test(priority = 0)
-	public void TC040_Verify_My_Vehicle() throws InterruptedException {
+	public void TC046_Verify_My_Vehicle() throws InterruptedException {
 		Message("*********************My Vehicle page**************************");
 		ob = new Vehicle_Details();
 //		login = new Login_Page_Test();
@@ -54,7 +54,7 @@ public class Vehicle_Details_test extends Base_Utility {
 	}
 
 	@Test(priority = 1)
-	public void TC041_Verify_My_Vehicle_more_details() {
+	public void TC047_Verify_My_Vehicle_more_details() {
 		Custom_click(ob.more_details(), ob.more_details().getText());
 		ob.vehicle_info();
 		Custom_click(ob.nick_name_edit(), "Nick name");
@@ -65,7 +65,7 @@ public class Vehicle_Details_test extends Base_Utility {
 	}
 
 	@Test(priority = 2)
-	public void TC042_Verify_My_Vehicle_Documents() throws InterruptedException {
+	public void TC048_Verify_My_Vehicle_Documents() throws InterruptedException {
 		Custom_click(ob.my_vehicle_documents(), ob.my_vehicle_documents().getText());
 		Thread.sleep(2000);
 		ob.Documents_list();
@@ -73,7 +73,7 @@ public class Vehicle_Details_test extends Base_Utility {
 	}
 
 	@Test(priority = 3)
-	public void TC043_Verify_Owners_Manual() {
+	public void TC049_Verify_Owners_Manual() {
 		Custom_click(ob.owners_manual(), "Owners manual");
 		try {
 			if(ob.owners_title().isDisplayed()) {
@@ -86,7 +86,7 @@ public class Vehicle_Details_test extends Base_Utility {
 		}
 	}
 	@Test(priority = 4)
-	public void TC044_Verify_my_Vehicle_service_History() {
+	public void TC050_Verify_my_Vehicle_service_History() {
 		Custom_click(ob.My_vehicle_Service_history(), "My Vehicle Service history");
 		try {
 			ob.Service_history();
@@ -102,7 +102,7 @@ public class Vehicle_Details_test extends Base_Utility {
 		
 	}
 	@Test(priority = 5)
-	public void TC045_Verify_Tips_and_DIY_videos_inside_sideMenu() throws InterruptedException
+	public void TC051_Verify_Tips_and_DIY_videos_inside_sideMenu() throws InterruptedException
 	{
 		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.Tips_and_DIY_videos(), ob.Tips_and_DIY_videos().getText());

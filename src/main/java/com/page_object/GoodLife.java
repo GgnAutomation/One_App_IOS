@@ -464,7 +464,8 @@ public class GoodLife extends Base_Utility {
 	}
 
 	public void point_earn_condition() {
-		for (int i = 0; i <= point_earn_condition.size(); i++) {
+		try {
+		for (int i = 0; i < point_earn_condition.size()-1; i++) {
 			if (i < 3) {
 				msg(point_earn_condition.get(i), point_earn_condition.get(i).getText());
 			} else if (i >= 3 && i <= 12) {
@@ -473,14 +474,14 @@ public class GoodLife extends Base_Utility {
 				i++;
 			} else if (i == 13) {
 				msg(point_earn_condition.get(i), point_earn_condition.get(i).getText());
-			} else if (i >= 14 && i <= 25) {
+			} else if (i >= 14 && i <= 24) {
 				Message(point_earn_condition.get(i).getText() + " = " + point_earn_condition.get(i + 1).getText());
 				i++;
 			} else {
-				Scroll_down_page_Action("Become a GoodLife Member");
 				break;
 			}
 		}
+		}catch(Exception e) {Message(""+e); }
 	}
 
 	public void Tier3_distance_message() {

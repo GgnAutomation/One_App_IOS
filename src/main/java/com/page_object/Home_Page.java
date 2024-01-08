@@ -17,7 +17,7 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class Home_Page extends Base_Utility {
 	public Services_Page ob1;
-
+	String device = config_getdata("Platform_name");
 	public Home_Page() {
 		PageFactory.initElements(driver, this);
 	}
@@ -347,7 +347,7 @@ public class Home_Page extends Base_Utility {
 	private WebElement rear_tyre;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and starts-with(@text,'What is the condition of the Rear')]")
 	private WebElement rear_tyre_msg;
-	@FindBy(xpath ="(//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option1RadioButton'])[2]")
+	@FindBy(xpath = "(//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option1RadioButton'])[2]")
 	private WebElement ok_rear_radion_btn;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Body Part']")
 	private WebElement body_part;
@@ -369,28 +369,28 @@ public class Home_Page extends Base_Utility {
 	public void all_question() {
 		msg(Smoke, Smoke.getText());
 		msg(Smoke_msg, Smoke_msg.getText());
-		Custom_click(no_smok_radio_btn, no_smok_radio_btn.getText()+" radio button");
-		Custom_click(smok_radio_btn, smok_radio_btn.getText()+" radio button");
+		Custom_click(no_smok_radio_btn, no_smok_radio_btn.getText() + " radio button");
+		Custom_click(smok_radio_btn, smok_radio_btn.getText() + " radio button");
 		msg(Starting, Starting.getText());
 		msg(Starting_msg, Starting_msg.getText());
-		Custom_click(Starts_normal_radio_btn, Starts_normal_radio_btn.getText()+" radio button");
-		Custom_click(not_starts_btn, not_starts_btn.getText()+" radio button");
+		Custom_click(Starts_normal_radio_btn, Starts_normal_radio_btn.getText() + " radio button");
+		Custom_click(not_starts_btn, not_starts_btn.getText() + " radio button");
 		msg(Light_indicator, Light_indicator.getText());
 		msg(Light_indicator_msg, Light_indicator_msg.getText());
-		Custom_click(Working_radio_btn, Working_radio_btn.getText()+" radio button");
-		Custom_click(not_working_radio_btn, not_working_radio_btn.getText()+" radio button");
+		Custom_click(Working_radio_btn, Working_radio_btn.getText() + " radio button");
+		Custom_click(not_working_radio_btn, not_working_radio_btn.getText() + " radio button");
 		msg(front_tyre, front_tyre.getText());
 		msg(front_tyre_msg, front_tyre_msg.getText());
-		Custom_click(ok_radio_btn, ok_radio_btn.getText()+" radio button");
-		Custom_click(worn_out_radio_btn, worn_out_radio_btn.getText()+" radio button");
+		Custom_click(ok_radio_btn, ok_radio_btn.getText() + " radio button");
+		Custom_click(worn_out_radio_btn, worn_out_radio_btn.getText() + " radio button");
 		msg(rear_tyre, rear_tyre.getText());
 		msg(rear_tyre_msg, rear_tyre_msg.getText());
-		Custom_click(ok_rear_radion_btn, ok_rear_radion_btn.getText()+" radio button");
-		Custom_click(worn_out_radio_btn, worn_out_radio_btn.getText()+" radio button");
+		Custom_click(ok_rear_radion_btn, ok_rear_radion_btn.getText() + " radio button");
+		Custom_click(worn_out_radio_btn, worn_out_radio_btn.getText() + " radio button");
 		msg(body_part, body_part.getText());
 		msg(body_part_msg, body_part_msg.getText());
-		Custom_click(no_scrtch_radio_btn, no_scrtch_radio_btn.getText()+" radio button");
-		Custom_click(scrtch_radio_btn, scrtch_radio_btn.getText()+" radio button");
+		Custom_click(no_scrtch_radio_btn, no_scrtch_radio_btn.getText() + " radio button");
+		Custom_click(scrtch_radio_btn, scrtch_radio_btn.getText() + " radio button");
 	}
 
 //****************************Documents Page************************************
@@ -557,8 +557,6 @@ public class Home_Page extends Base_Utility {
 	private List<WebElement> RSA_info;
 	@FindBy(xpath = "//android.view.View[@content-desc='Locate nearest dealer']/android.widget.TextView")
 	private WebElement locate_nearest_dealer;
-//	@FindBy(xpath = "//android.widget.TextView[@text ='Locate nearest dealer']")
-//	private WebElement locate_nearest_dealer;
 	@FindBy(xpath = "//android.view.View[@text ='Locate nearest dealer']")
 	private WebElement locate_nearest_dealer_real_device;
 	@FindBy(xpath = "//android.view.View[@text ='LOCATE THE NEAREST DEALER']")
@@ -851,22 +849,34 @@ public class Home_Page extends Base_Utility {
 			Custom_click(Call_Dealer, (i + 1) + " Call Dealer button ");
 			driver.navigate().back();
 			driver.navigate().back();
-			driver.navigate().back();
+			if(device.equalsIgnoreCase("realdevice")) {
+			driver.navigate().back(); }
 		}
 	}
 
 	// ****************************Service_at_home_page************************************
-	@FindBy(xpath = "//android.widget.FrameLayout[@resource-id ='com.customerapp.hero:id/service_card_lay']//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1']")
-	private WebElement Service_status;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/book_now_btn']")
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv_ser')]")
+	private List<WebElement> service_info;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv_last')]")
+	private WebElement last_service;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv_history')]")
+	private WebElement last_service_date;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/tv_view1']")
 	private WebElement View_details_button;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/lbl']")
 	private WebElement Vehicle_service;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_name']")
 	private WebElement Vehicle_name;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/tv_service1_history1']")
+	public WebElement Service_history;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv_view1_sch')]")
+	public WebElement View_Schedule;
 
-	public WebElement Service_status() {
-		return Service_status;
+	public void service_info() {
+		for (int i = 0; i < service_info.size(); i++) {
+			msg(service_info.get(i), service_info.get(i).getText());
+		}
+		msg(last_service, last_service.getText() + " on " + last_service_date.getText());
 	}
 
 	public WebElement View_details_button() {
@@ -881,114 +891,40 @@ public class Home_Page extends Base_Utility {
 		return Vehicle_name;
 	}
 
+	public WebElement Service_history() {
+		return Service_history;
+	}
+
+	public WebElement View_Schedule() {
+		return View_Schedule;
+	}
+
 	// ****************************Latest_at_home_page************************************
 	@FindBy(xpath = "(//androidx.recyclerview.widget.RecyclerView[@resource-id ='com.customerapp.hero:id/recyclerView'])[1]")
 	private WebElement Latest_Vehicle;
 	@FindBy(xpath = "(//android.widget.TextView[@index ='1'])[1]")
 	private WebElement latest_vehicle_message;
-	@FindBy(xpath = "//android.view.View[contains(@text , 'THE LEGEND RETURNS')]")
-	private WebElement mute;
 
-//	@FindBy(xpath="//android.widget.Image[@text ='scroll_img']")
-//	private WebElement scroll_img;
-//	@FindBy(xpath ="//android.widget.Button[@resource-id ='notifyMeButton']")
-//	private WebElement Notify_me;
-//	@FindBy(xpath ="//android.widget.EditText[@resource-id='userName']")
-//	private WebElement user_name;
-//	@FindBy(xpath ="//android.widget.EditText[@resource-id='userEmail']")
-//	private WebElement user_email;
-//	@FindBy(xpath ="//android.widget.EditText[@resource-id='pincode']")
-//	private WebElement pincode;
-//	@FindBy(xpath ="//android.widget.EditText[@resource-id='userMobile']")
-//	private WebElement user_mobile;
-//	@FindBy(xpath ="//android.view.View[@content-desc='SEND OTP']/android.widget.TextView")
-//	private WebElement Send_OTP_button;
-//	@FindBy(xpath ="//android.widget.EditText[contains(@resource-id ,'digit')]")
-//	private List<WebElement> otp;
-//	@FindBy(xpath ="//android.view.View[@resource-id ='otperrormessage']")
-//	private WebElement otp_error_message;
-//	@FindBy(xpath ="//android.widget.Button[@resource-id ='lead-gen-submit-button']")
-//	private WebElement submit_button;
 	public WebElement Latest_Vehicle() {
 		return Latest_Vehicle;
 	}
 
-	public WebElement mute() {
-		return mute;
-	}
-
-//	public WebElement scroll_img()
-//	{
-//		return scroll_img;
-//	}
 	public WebElement latest_vehicle_message() {
 		return latest_vehicle_message;
 	}
 
-//	public WebElement Notify_me()
-//	{
-//		return Notify_me;
-//	}
-//	public WebElement user_name()
-//	{
-//		return user_name;
-//	}
-//	public WebElement user_email()
-//	{
-//		return user_email;
-//	}
-//	public WebElement pincode()
-//	{
-//		return pincode;
-//	}
-//	public WebElement user_mobile()
-//	{
-//		return user_mobile;
-//	}
-//	public WebElement Send_OTP_button()
-//	{
-//		return Send_OTP_button;
-//	}
-//	public WebElement submit_button()
-//	{
-//		return submit_button;
-//	}
-//	public WebElement otp_error_message()
-//	{
-//		return otp_error_message;
-//	}
-//	public void otp()
-//	{
-//		for(int i=0,j=3;i<otp.size();i++)
-//		{
-//			custom_sendkeys(otp.get(i), ""+j, " OTP " +j);
-//			j++;
-//		}
-//	}
 	// ****************************verify_EShop************************************
 	@FindBy(xpath = "(//androidx.recyclerview.widget.RecyclerView[@resource-id ='com.customerapp.hero:id/recyclerView'])[2]")
 	private WebElement E_shop;
-	@FindBy(xpath = "//android.view.View[@resource-id ='nav-global-location-slot']")
-	private WebElement E_shop_location;
-	@FindBy(xpath = "(//android.widget.Button[@text])[3]")
-	private WebElement Categories;
-	@FindBy(xpath = "//android.widget.Button[contains(@text,'BACK')]")
-	private WebElement BACK_TO_HERO_MOTOCORP;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/lbl']")
+	private WebElement E_shop_message;
 
 	public WebElement E_shop() {
 		return E_shop;
 	}
 
-	public WebElement E_shop_location() {
-		return E_shop_location;
-	}
-
-	public WebElement Categories() {
-		return Categories;
-	}
-
-	public WebElement BACK_TO_HERO_MOTOCORP() {
-		return BACK_TO_HERO_MOTOCORP;
+	public WebElement E_shop_message() {
+		return E_shop_message;
 	}
 
 	// ****************************Benifits_Vehicle_Exchange************************************
@@ -996,14 +932,8 @@ public class Home_Page extends Base_Utility {
 	private WebElement Benifits;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl']")
 	private WebElement goodlife;
-	@FindBy(xpath = "//android.widget.RadioButton[@resource-id ='eng_lang_select']")
-	private WebElement language;
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1'])[1]")
 	private WebElement goodlife_message;
-	@FindBy(xpath = "(//androidx.recyclerview.widget.RecyclerView[@resource-id ='com.customerapp.hero:id/recyclerView'])[4]")
-	private WebElement Vehicle_Exchange;
-	@FindBy(xpath = "(//android.widget.ListView)[1]//android.view.View[@index]")
-	private List<WebElement> Vehicle_Exchange_info;
 
 	public WebElement Benifits() {
 		return Benifits;
@@ -1013,22 +943,8 @@ public class Home_Page extends Base_Utility {
 		return goodlife;
 	}
 
-	public WebElement language() {
-		return language;
-	}
-
 	public WebElement goodlife_message() {
 		return goodlife_message;
-	}
-
-	public WebElement Vehicle_Exchange() {
-		return Vehicle_Exchange;
-	}
-
-	public void Vehicle_Exchange_info() {
-		for (int i = 0; i < Vehicle_Exchange_info.size() - 1; i++) {
-			msg(Vehicle_Exchange_info.get(i), Vehicle_Exchange_info.get(i).getText());
-		}
 	}
 
 	// ****************************Community_and_Tips************************************

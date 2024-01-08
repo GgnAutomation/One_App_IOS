@@ -16,6 +16,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 	
 	String version = config_getdata("version");
 	String header;
+	String device = config_getdata("Platform_name");
 	public Refer_a_friend_and_Contact_us() {
 		PageFactory.initElements(driver, this);
 	}
@@ -171,12 +172,14 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 	private WebElement whatsapp_back;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/fb_text']")
 	private List<WebElement> Visit_page_text;
-	@FindBy(xpath ="//android.widget.Button[@resource-id='com.android.chrome:id/negative_button']")
-	private WebElement chrome_notification;
+	@FindBy(xpath ="//android.view.View[@text='󱤅']")
+	private WebElement notification_close;
 	@FindBy(xpath ="//android.widget.EditText[@resource-id ='m_login_email']")
 	private WebElement emailid;
-	@FindBy(xpath = "(//android.widget.Button[contains(@text, 'Log')])[2]")
+	@FindBy(xpath = "(//android.view.View[@resource-id='screen-root']//android.widget.Button)[1]")
 	private WebElement facebook_login;
+	@FindBy(xpath ="//android.view.View[@content-desc='Log in']")
+	private WebElement facebook_login_p;
 	@FindBy(xpath = "//android.view.View[@content-desc='Log in']/android.widget.TextView")
 	private WebElement instagram_login;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
@@ -207,28 +210,23 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 		
 			header = social_media_header.get(0).getText();
 			Message(Visit_page_text.get(0).getText());
-//			Custom_click(visit_Page.get(0), header);
-//			Thread.sleep(4000);
-//			try {
-//			Custom_click(chrome_notification, chrome_notification.getText());
-//			} catch (Exception e) { Message("No chrome notification is given");}
-//			try {
-//			Custom_click(facebook_login, header + " Login");
-//			custom_sendkeys(emailid, "Renu@gmail.com", "Email id");
-//			driver.navigate().back();
-//			Thread.sleep(1000);
-//			driver.navigate().back();
-//			Thread.sleep(3000);
-//			driver.navigate().back();
-//			Thread.sleep(3000);
-////			Custom_click(back, " Back from " + header); 
-//		} catch (Exception e) {
-//			Message("Facebook is not visible" + e);
-//			test.addScreenCaptureFromPath(lis.getcapcture("facebook"));
-//			driver.navigate().back();
-//			Thread.sleep(3000);
-//		}
-	}
+			Custom_click(visit_Page.get(0), header);
+			Thread.sleep(9000);
+			try {
+				if(notification_close.isDisplayed()) {
+			Custom_click(notification_close, "Notification close ");
+			Custom_click(facebook_login, header + " Login");
+			Thread.sleep(2000);
+			driver.navigate().back();
+			Thread.sleep(1000);
+			driver.navigate().back();
+				}
+		} catch (Exception e) {
+			driver.navigate().back();
+			Thread.sleep(3000);
+		}
+			}
+	
 
 	public void instagram() throws InterruptedException {
 			header = social_media_header.get(1).getText();
@@ -292,7 +290,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 			Scroll_down_page_Action("Twitter"); // for version 11.0.0
 			 header = social_media_header.get(3).getText(); // for version 11.0.0
 			Message(Visit_page_text.get(3).getText());   // for version 11.0.0
-			Custom_click(visit_Page.get(3), header);   // for version 11.0.0
+			Custom_click(visit_Page.get(2), header);   // for version 11.0.0
 			}
 			else {
 			 header = social_media_header.get(4).getText(); // for all other device.
@@ -326,7 +324,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 			}
 			Message(Visit_page_text.get(4).getText());
 			if(version.equalsIgnoreCase("11")) {
-			Custom_click(visit_Page.get(4), header);			// for version 11.0.0
+			Custom_click(visit_Page.get(3), header);			// for version 11.0.0
 			}
 			else {
 			Custom_click(visit_Page.get(4), header);     // for all other device.

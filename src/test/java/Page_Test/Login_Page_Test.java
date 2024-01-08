@@ -41,10 +41,12 @@ public class Login_Page_Test extends Base_Utility {
 			Custom_click(ob.Allow(), ob.Allow().getText()
 					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
 			Custom_click(ob.ok(), "OK");
-			if (version.equalsIgnoreCase("allother")) {
-				Custom_click(ob.Allow(), "Allow notification"); // this line is for pcloudy
-			}
-			Custom_click(ob.close(), "Close button");
+			try {
+				if (ob.Allow().isDisplayed()) {
+				Custom_click(ob.Allow(), "Allow notification");
+				}
+			}catch(Exception e) {Message("Allow pop is over"); }
+//			Custom_click(ob.close(), "Close button");
 		} else if (device.equalsIgnoreCase("emulator")) {
 			// Custom_click(ob.open(), "Open"); //This line for real device
 			Custom_click(ob.close(), "Close button"); // for emulator and real device
@@ -87,7 +89,7 @@ public class Login_Page_Test extends Base_Utility {
 		long startclicktime = System.currentTimeMillis();
 		Custom_click(ob.Terms_of_Use(), "Terms of use button");
 		long endclicktime = System.currentTimeMillis();
-		Message("Click time in Tearms of use ="+(endclicktime-startclicktime)+" MS");
+		Message("Click time in Tearms of use =" + (endclicktime - startclicktime) + " MS");
 		long starreadtime = System.currentTimeMillis();
 		Thread.sleep(5000);
 		if (device.equalsIgnoreCase("emulator")) {
@@ -98,7 +100,7 @@ public class Login_Page_Test extends Base_Utility {
 					"Terms of use: First condition = " + ob.Terms_of_Use_condition_for_real_device().getText());
 		}
 		long endreadtime = System.currentTimeMillis();
-		Message("Raad time in Tearms of use =" +(endreadtime-starreadtime)+" MS");
+		Message("Raad time in Tearms of use =" + (endreadtime - starreadtime) + " MS");
 		Custom_click(ob.back_page(), "back terms of use page ");
 	}
 
@@ -107,7 +109,7 @@ public class Login_Page_Test extends Base_Utility {
 		long startclicktime = System.currentTimeMillis();
 		Custom_click(ob.Privacy_Policy(), "Privacy Policy");
 		long endclicktime = System.currentTimeMillis();
-		Message("Click time in Privacy policy ="+(endclicktime-startclicktime)+" MS");
+		Message("Click time in Privacy policy =" + (endclicktime - startclicktime) + " MS");
 		Thread.sleep(4000);
 		long starreadtime = System.currentTimeMillis();
 		if (device.equalsIgnoreCase("emulator")) {
@@ -118,7 +120,7 @@ public class Login_Page_Test extends Base_Utility {
 					"Privacy policy : First Condition = " + ob.Terms_of_Use_condition_for_real_device().getText());
 		}
 		long endreadtime = System.currentTimeMillis();
-		Message("Raad time in Privacy policy =" +(endreadtime-starreadtime)+" MS");
+		Message("Raad time in Privacy policy =" + (endreadtime - starreadtime) + " MS");
 		Custom_click(ob.back_page(), "back Privacy Policy page ");
 
 	}
@@ -186,7 +188,7 @@ public class Login_Page_Test extends Base_Utility {
 		}
 		Custom_click(ob.verify_button(), "Verify Button");
 	}
-	
+
 	public void login() throws InterruptedException {
 		ob = new Login_page();
 		ob1 = new Select_Vehicle_Page();
@@ -199,14 +201,12 @@ public class Login_Page_Test extends Base_Utility {
 			Custom_click(ob.Allow(), ob.Allow().getText()
 					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
 			Custom_click(ob.ok(), "OK");
-//			Custom_click(ob.Allow(), "Allow notification");  //this line is all other version except 11.0.0
-			if (device.equalsIgnoreCase("realdevice")) {
-				Custom_click(ob.close(), "Close button");
+			try {
+			if (ob.Allow().isDisplayed()) {
+				Custom_click(ob.Allow(), "Allow notification");
 			}
-		} else if (device.equalsIgnoreCase("emulator")) {
-			Custom_click(ob.open(), "Open"); // this line for real device
-			Custom_click(ob.close(), "Close button");
-		}
+			}catch(Exception e) {Message("Allow pop is over"); }
+			}
 		if (enveronment.equalsIgnoreCase("prod")) {
 			custom_sendkeys(ob.mobile_No(), config_getdata("prod_mobileno"), "Login with Registerd mobile number");
 		} else {

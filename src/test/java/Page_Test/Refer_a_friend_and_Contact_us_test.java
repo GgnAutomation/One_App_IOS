@@ -17,7 +17,7 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 	String device = config_getdata("Platform_name");
 	String enveronment = config_getdata("env"),mobileno;
 	@Test(priority = 0)
-	public void TC046_Refer_a_friend() throws InterruptedException
+	public void TC052_Refer_a_friend() throws InterruptedException
 	{
 		Message("************************Refer a Friend**************************");
 		ob = new Refer_a_friend_and_Contact_us();
@@ -33,24 +33,24 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		
 	}
 	@Test(priority = 1)
-	public void TC047_Verify_Select_State()
+	public void TC053_Verify_Select_State()
 	{
 		Custom_click(ob.Select_state(), ob.Select_state().getText());
 		ob.Select_State("DELHI");
 		
 	}
 	@Test(priority = 2)
-	public void TC048_Verify_Select_City()
+	public void TC054_Verify_Select_City()
 	{
 		Custom_click(ob.Select_City(), ob.Select_City().getText());
 		ob.Select_City("NEW DELHI");
+		driver.navigate().back();
 		}
 	@Test(priority = 3)
-	public void TC049_Verify_Select_Model()
+	public void TC055_Verify_Select_Model()
 	{
 		Custom_click(ob.Select_Model(), ob.Select_Model().getText());
 		ob.Select_Model("Passion Pro");
-		driver.navigate().back();
 		try {
 		Custom_click(ob.Submit_button(), ob.Submit_button().getText());	
 		}catch(Exception e)
@@ -58,7 +58,7 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 			}
 	}
 	@Test(priority = 4)
-	public void TC050_Verify_Refer_yourself() throws InterruptedException
+	public void TC056_Verify_Refer_yourself() throws InterruptedException
 	{
 		Thread.sleep(10000);
 		Custom_click(ob.side_menu_button(), "Side menu button");
@@ -89,7 +89,7 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		}
 	}
 	@Test(priority = 5)
-	public void TC051_Verify_Facebook_in_Contact_us_page() throws InterruptedException
+	public void TC057_Verify_Facebook_in_Contact_us_page() throws InterruptedException
 	{
 		Thread.sleep(10000);
 		Custom_click(ob.side_menu_button(), "Side menu button");
@@ -109,7 +109,7 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		}
 		}
 	@Test(priority = 6)
-	public void TC052_Verify_instagram_in_Contact_us_page() throws InterruptedException
+	public void TC058_Verify_instagram_in_Contact_us_page() throws InterruptedException
 	{try {
 		ob.instagram();
 	}catch(Exception e) {
@@ -118,7 +118,7 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 	}
 	}
 	@Test(priority = 7)
-	public void TC053_Verify_Whatsapp_in_Contact_us_page()
+	public void TC059_Verify_Whatsapp_in_Contact_us_page()
 	{
 		try {
 		ob.Whatsapp();
@@ -130,7 +130,7 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		}
 	}
 	@Test(priority = 8)
-	public void TC054_Verify_youTube_in_Contact_us_page() throws InterruptedException
+	public void TC060_Verify_youTube_in_Contact_us_page() throws InterruptedException
 	{
 		try {
 		ob.youTube();
@@ -140,7 +140,7 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		}
 	}
 	@Test(priority = 9)
-	public void TC055_Verify_Linkedin_in_Contact_us_page() throws InterruptedException
+	public void TC061_Verify_Linkedin_in_Contact_us_page() throws InterruptedException
 	{
 		try {
 		ob.Linkedin();
@@ -150,7 +150,7 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		}
 	}
 	@Test(priority = 10)
-	public void TC056_Verify_twitter_in_Contact_us_page() throws InterruptedException
+	public void TC062_Verify_twitter_in_Contact_us_page() throws InterruptedException
 	{
 		try {
 		ob.twitter();
@@ -160,7 +160,7 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		}
 	}
 	@Test(priority = 11)
-	public void TC057_Verify_Contact_via_Email() throws InterruptedException
+	public void TC063_Verify_Contact_via_Email() throws InterruptedException
 	{
 		Custom_click(ob.Contact_via_email(), ob.Contact_via_email().getText());
 		if (device.equalsIgnoreCase("emulator")) {

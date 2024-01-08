@@ -20,7 +20,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 	String device = config_getdata("Platform_name");
 
 	@Test(priority = 0)
-	public void TC033_Verify_My_Profile() throws InterruptedException {
+	public void TC039_Verify_My_Profile() throws InterruptedException {
 		Message("************************My_Profile_Page_Test**************************");
 		ob = new My_Profile_Page();
 //		login = new Login_Page_Test();
@@ -40,24 +40,22 @@ public class My_Profile_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 1)
-	public void TC034_verify_more_detais_button() {
+	public void TC040_verify_more_detais_button() { 
 		Custom_click(ob.More_details(), ob.More_details().getText());
 		ob.user_info();
 	}
 
 	@Test(priority = 2)
-	public void TC035_edit_profile_button() throws InterruptedException {
+	public void TC041_edit_profile_button() throws InterruptedException {
 		Custom_click(ob.edit_profile_details_button(), "Edit profile details button");
 		Custom_click(ob.profile_pic_edit_btn(), "profile pic edit button");
 		try {
-			if (ob.Choose_from_library().isDisplayed() == true) {
-				Custom_click(ob.Choose_from_library(), " Chose profile pic from liberary ");
-			}
-		} catch (Exception e) {
-			Message("while_using_the_app popup is given");
 			Custom_click(ob.while_using_the_app(), "while_using_the_app");
 			Custom_click(ob.allow(), "Allow");
 			Custom_click(ob.profile_pic_edit_btn(), "profile pic edit button");
+			Custom_click(ob.Choose_from_library(), " Chose profile pic from liberary ");
+		} catch (Exception e) {
+			Message("while_using_the_app popup is not given");
 			Custom_click(ob.Choose_from_library(), " Chose profile pic from liberary ");
 		}
 		Thread.sleep(2000);
@@ -72,7 +70,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 3)
-	public void TC036_edit_Personal_Details() throws InterruptedException {
+	public void TC042_edit_Personal_Details() throws InterruptedException {
 		map = new LinkedHashMap<>();
 		map.put("Name", ob.edit_full_name().getText());
 		map.put("Email ID", ob.edit_email_id().getText());
@@ -82,19 +80,15 @@ public class My_Profile_Page_Test extends Base_Utility {
 		ob.gender_selection();
 		driver.navigate().back();
 		custom_sendkeys(ob.edit_email_id(), config_getdata("edit_email_id"), " Change Email id");
-		if (device.equalsIgnoreCase("pcloudy")) {
-			driver.navigate().back(); // for pCloudy
-		} else if (device.equalsIgnoreCase("emulator") || device.equalsIgnoreCase("realdevice")) {
-			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
-			driver.navigate().back();
-		}
+		driver.navigate().back();
 		Thread.sleep(2000);
-		try {
 			Custom_click(ob.edit_date_of_birth(), " Date of Birth");
+		try {
+		Custom_click(ob.DOB_edit_button(), "Edit DOB");
 		} catch (Exception e) {
 			Custom_click(ob.edit_date_of_birth(), " Date of Birth");
+			Custom_click(ob.DOB_edit_button(), "Edit DOB");
 		}
-		Custom_click(ob.DOB_edit_button(), "Edit DOB");
 		ob.send_dob().clear();
 		custom_sendkeys(ob.send_dob(), config_getdata("edit_DOB"), "change dob in mm/dd/yyyy");
 		if (ob.confirm_dob().isEnabled()) {
@@ -103,12 +97,12 @@ public class My_Profile_Page_Test extends Base_Utility {
 			Message("DOB is not accepted " + config_getdata("edit_DOB"));
 			Custom_click(ob.Cancel_dob(), " Cancel DOB");
 		}
-		if (device.equalsIgnoreCase("pcloudy")) {
+	
 			driver.navigate().back();
-		}
 		Custom_click(ob.blood_group(), " Blood group");
 		Thread.sleep(2000);
 		Custom_click(ob.blood_group(), " Blood group");
+		Thread.sleep(2000);
 		Scroll_down_page_Action("Street name");
 		custom_sendkeys(ob.Street_name(), "Jindal colony", "Street name");
 		driver.navigate().back();
@@ -129,8 +123,8 @@ public class My_Profile_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC036_edit_Personal_Details()", priority = 4)
-	public void TC037_change_original_Personal_Details() throws InterruptedException {
+	@Test(dependsOnMethods = "TC042_edit_Personal_Details()", priority = 4)
+	public void TC043_change_original_Personal_Details() throws InterruptedException {
 //			Custom_click(ob.More_details(), ob.More_details().getText());
 		Custom_click(ob.edit_profile_details_button(), "Edit profile details button");
 		custom_sendkeys(ob.edit_full_name(), map.get("Name"), " Original Name");
@@ -152,7 +146,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 5)
-	public void TC038_Manage_License() throws InterruptedException {
+	public void TC044_Manage_License() throws InterruptedException {
 		Custom_click(ob.manage_license(), " Manage License");
 		Thread.sleep(2000);
 		try {
@@ -182,7 +176,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 6)
-	public void TC039_Verify_emergency_contacts() throws InterruptedException {
+	public void TC045_Verify_emergency_contacts() throws InterruptedException {
 		Custom_click(ob.emergency_contacts(), "Emergency contacts");
 		Thread.sleep(2000);
 		try {
