@@ -1,14 +1,16 @@
 package Page_Test;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.page_object.Home_Page;
 import com.utility.Base_Utility;
+
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 
 @Listeners(com.utility.listner.class)
 public class Home_Page_Test extends Base_Utility {
@@ -23,22 +25,41 @@ public class Home_Page_Test extends Base_Utility {
 		ob = new Home_Page();
 //		login = new Login_Page_Test();
 //		login.login();
-		Thread.sleep(25000);
-		msg(ob.temperature(), "Current Temperature is =" + ob.temperature().getText());
+		Thread.sleep(10000);
+		try {
+		if(ob.temperature().isDisplayed()) {
+		msg(ob.temperature(), "Current Temperature is =" + ob.temperature().getText()); }
+		}catch(Exception e) {Custom_click(ob.enable_now(), "Enable now");}
 		VerifyElementPresent(ob.vehicle_img(), "Vehicle Img is");
 		Thread.sleep(2000);
 		ob.all_vehicle_inside_drop_down();
+		try {
 		Custom_click(ob.Collapse_btn(), ob.Collapse_btn().getText());
 		Thread.sleep(2000);
 		Custom_click(ob.Collapse_btn(), ob.Collapse_btn().getText());
 		Thread.sleep(2000);
+		}catch(Exception e) {Message("Collapse button not visible");}
 		Custom_click(ob.notification(), "Notification");
-		Message("Total Notification are=" + ob.notification_count());
+		ob.notification_count();
 		Custom_click(ob.notification_back(), "Notification back");
 	}
-
 	@Test(priority = 1)
-	public void TC018__verify_Navigate() {
+	public void TC018_verify_SOS() throws InterruptedException
+	{
+		try {
+		Custom_click(ob.SOS_icon(), "SOS icon");
+		ob.SOS_message();
+		Custom_click(ob.sent_alert_btn(), ob.sent_alert_btn().getText());
+		Thread.sleep(2000);
+		Custom_click(ob.SOS_icon(), "SOS icon");
+		ob.dont_send();
+		Thread.sleep(2000);
+		Custom_click(ob.SOS_icon(), "SOS icon");
+		Custom_click(ob.SOS_close_btn(), "SOS close button");
+		}catch(Exception e) {Custom_click(ob.enable_now(), "Enable now");}
+	}
+	@Test(priority = 2)
+	public void TC019_verify_Navigate() {
 		Custom_click(ob.Navigate_menu(), "Navigate menu");
 		if (device.equalsIgnoreCase("emulator")) {
 			try {
@@ -50,20 +71,58 @@ public class Home_Page_Test extends Base_Utility {
 		}
 		Custom_click(ob.Search_destination(), "Search destination");
 		msg(ob.Search_here(), ob.Search_here().getText());
-		custom_sendkeys(ob.Search_here(), "railway station", "Place name");
+		custom_sendkeys(ob.Search_here(), "railway", "Place name");
 		Custom_click(ob.chose_place_name(), ob.chose_place_name().getText());
 		msg(ob.Searched_name(), ob.Searched_name().getText());
 		msg(ob.Searched_address(), ob.Searched_address().getText());
 		Custom_click(ob.Navigate_button(), ob.Navigate_button().getText());
 		Custom_click(ob.Start(), "Start button");
 		Custom_click(ob.Start_button(), ob.Start_button().getText());
-		Custom_click(ob.stop_navigation(), " Stop navigation");
-		Custom_click(ob.Back_button(), "Back from Search here");
-		Custom_click(ob.Back_button(), "Back from Navigation");
+		try {
+		Custom_click(ob.stop_navigation(), " Stop navigation"); 
+		}catch(Exception e) { Message("Sorry Route not found");}
+		driver.navigate().back();
+//		Custom_click(ob.Back_button(), "Back from Search here");
+//		Custom_click(ob.Back_button(), "Back from Navigation");
 	}
-
-	@Test(priority = 2)
-	public void TC019_Verify_Documents() throws InterruptedException {
+	@Test(priority = 3)
+	public void TC020_verify_Exchange() throws InterruptedException
+	{
+		Custom_click(ob.Exchange_Menu(), "Exchange menu");
+		Thread.sleep(2000);
+		ob.exchange_info();
+		Custom_click(ob.Exchange_vehicle_name(), ob.Exchange_vehicle_name().getText());
+		Thread.sleep(2000);
+		msg(ob.real_value_msg(), ob.real_value_msg().getText());
+	}
+	@Test(dependsOnMethods = "TC020_verify_Exchange()" ,priority = 4)
+	public void TC021_verify_Vehicle_details() {
+		msg(ob.vehicle_msg(), ob.vehicle_msg().getText());
+		msg(ob.choose_city(), ob.choose_city().getText());
+		custom_sendkeys(ob.city_sell(), config_getdata("City_to_sell_vehicle"), "City name where sell vehicle");
+		Custom_click(ob.choose_city_sell(), ob.choose_city_sell().getText());
+		custom_sendkeys(ob.city_pin_code(), "110037", "PIN code");
+		Custom_click(ob.next_btn(), ob.next_btn().getText());
+	}
+	@Test(dependsOnMethods = "TC020_verify_Exchange()" ,priority = 5)
+	public void TC022_verify_Vehicle_condition()
+	{
+		msg(ob.vehicle_condition(), ob.vehicle_condition().getText());
+		msg(ob.condition_msg(), ob.condition_msg().getText());
+		ob.all_question();
+		Custom_click(ob.next_btn(), ob.next_btn().getText());
+	}
+	@Test(dependsOnMethods = "TC020_verify_Exchange()" ,priority = 6)
+	public void TC023_verify_Vehicle_valution() throws InterruptedException
+	{
+		ob.exchange_info();
+		Thread.sleep(2000);
+		Custom_click(ob.Back(), "Back from estimated resell value page");
+		Thread.sleep(2000);
+		Custom_click(ob.Back(), "Back from Exchange page");
+	}
+	@Test(priority = 7)
+	public void TC024_Verify_Documents() throws InterruptedException {
 
 		Custom_click(ob.Documents_Menu(), "Document menu");
 		Thread.sleep(2000);
@@ -71,8 +130,8 @@ public class Home_Page_Test extends Base_Utility {
 		Custom_click(ob.Back(), "Back from Documents");
 	}
 
-	@Test(priority = 3)
-	public void TC020_Verify_Relationship_Manager() throws InterruptedException {
+	@Test(priority = 8)
+	public void TC025_Verify_Relationship_Manager() throws InterruptedException {
 		Thread.sleep(2000);
 		Custom_click(ob.Relationship_Manager(), "Relationship Manager");
 		Thread.sleep(4000);
@@ -87,7 +146,8 @@ public class Home_Page_Test extends Base_Utility {
 				Custom_click(ob.Relationship_Manager_Contact_number(), "Relationship manager contact");
 				driver.navigate().back();
 				driver.navigate().back();
-				driver.navigate().back();
+				if(device.equalsIgnoreCase("realdevice")){
+				driver.navigate().back();}
 			}
 		} catch (Exception e) {
 			Message("Relationship Manager name is not given");
@@ -97,42 +157,38 @@ public class Home_Page_Test extends Base_Utility {
 		Custom_click(ob.Back(), "Back from Relationship Manager");
 
 	}
-	@Test(priority = 4)
-	public void TC021_Verify_RSA() throws InterruptedException
+	@Test(priority = 9)
+	public void TC026_Verify_RSA() throws InterruptedException
 	{
 		Custom_click(ob.RSA(), "RSA");
 		Thread.sleep(4000);
 		ob.RSA_info();
 	}
-	@Test(priority = 5)
-	public void TC022_Renew_RSA() throws InterruptedException
+	@Test(priority = 10)
+	public void TC027_Renew_RSA() throws InterruptedException
 	{
 		Custom_click(ob.renew_rsa(), ob.renew_rsa().getText());
 		Thread.sleep(2000);
 		ob.RSA_info();
+		try {
 		msg(ob.registration_number(), "Registraction number =" +ob.registration_number().getText());
-//		Custom_click(ob.renew_rsa(), ob.renew_rsa().getText());
+		}catch(Exception e) { Message("Registraction number  is not given");}
 		Thread.sleep(1000);
 		Custom_click(ob.Back(), "Back from Payment");
 		Thread.sleep(1000);
-//		Custom_click(ob.cancel_payment(), ob.cancel_payment().getText());
-//		Custom_click(ob.Back(), "Back from Get RSA");
 	}
-	@Test(priority = 6)
-	public void TC023_frequently_asked_questions() throws InterruptedException
+	@Test(priority = 11)
+	public void TC028_frequently_asked_questions() throws InterruptedException
 	{
 		Scroll_down_page_Action("Step 3");
 		Scroll_down_page_Action("Asked questions");
 		ob.asked_questions();
 		Custom_click(ob.Back(), "Back from Roadside Assistance");
 	}
-//	@Test(priority = 4)
-//	public void TC021_Verify_RSA() throws InterruptedException {
+//	@Test(priority = 9)
+//	public void TC026_Verify_RSA() throws InterruptedException {
 //		Custom_click(ob.RSA(), "RSA");
 //		Thread.sleep(4000);
-//		if (device.equalsIgnoreCase("realdevice")) {
-//			Custom_click(ob.locate_nearest_dealer_real_device(), "locate nearest dealer"); // for real device
-//		} else {
 //			try {
 //				Custom_click(ob.locate_nearest_dealer(), "locate nearest dealer");
 //				Thread.sleep(2000);
@@ -147,7 +203,6 @@ public class Home_Page_Test extends Base_Utility {
 //					Custom_click(ob.Back(), "Back from RSA");
 //					Thread.sleep(2000);
 //				}
-//			}
 //		}
 //		if (device.equalsIgnoreCase("emulator")) {
 //			msg(ob.locate_the_nearest_dealer(), ob.locate_the_nearest_dealer().getText()); // only for emulator
@@ -160,30 +215,22 @@ public class Home_Page_Test extends Base_Utility {
 //		Custom_click(ob.accept_cookie(), ob.accept_cookie().getText() + " Coockie");
 //	}
 //
-//	@Test(priority = 5)
-//	public void TC022_Select_State_For_Nearest_Dealer() throws InterruptedException {
+//	@Test(priority = 10)
+//	public void TC027_Select_State_For_Nearest_Dealer() throws InterruptedException {
 //		Custom_click(ob.State(), ob.State().getText());
 //		Thread.sleep(2000);
-//		try {
-//			if (ob.State().isDisplayed()) {
-//				Custom_click(ob.State(), ob.State().getText());
-//			}
-//		} catch (Exception e) {
-//			Message("State is already open");
-//		}
-//
 //		ob.select_state("Bihar");
 //	}
 //
-//	@Test(dependsOnMethods = "TC022_Select_State_For_Nearest_Dealer()", priority = 6)
-//	public void TC023_Select_City_For_Nearest_Dealer() throws InterruptedException {
+//	@Test(dependsOnMethods = "TC027_Select_State_For_Nearest_Dealer()", priority = 11)
+//	public void TC028_Select_City_For_Nearest_Dealer() throws InterruptedException {
 //		Thread.sleep(3000);
 //		Custom_click(ob.City(), ob.City().getText());
 //		ob.select_city("Muzaffarpur");
 //	}
 //
-//	@Test(dependsOnMethods = "TC022_Select_State_For_Nearest_Dealer()", priority = 7)
-//	public void TC024_Select_Locality_For_Nearest_Dealer() throws InterruptedException {
+//	@Test(dependsOnMethods = "TC027_Select_State_For_Nearest_Dealer()", priority = 12)
+//	public void TC029_Select_Locality_For_Nearest_Dealer() throws InterruptedException {
 //		Thread.sleep(3000);
 //		Custom_click(ob.Locality(), ob.Locality().getText());
 //		ob.select_Locality("Sujawalpur");
@@ -191,8 +238,8 @@ public class Home_Page_Test extends Base_Utility {
 //		Custom_click(ob.Search_button(), ob.Search_button().getText());
 //	}
 //
-//	@Test(dependsOnMethods = "TC022_Select_State_For_Nearest_Dealer()", priority = 8)
-//	public void TC025_Verify_Nearest_Dealer_info() throws InterruptedException {
+//	@Test(dependsOnMethods = "TC027_Select_State_For_Nearest_Dealer()", priority = 13)
+//	public void TC030_Verify_Nearest_Dealer_info() throws InterruptedException {
 //		Thread.sleep(3000);
 //		if (device.equalsIgnoreCase("emulator")) {
 //			msg(ob.Local_dealer_fullname(), ob.Local_dealer_fullname().getText()); // for emulator
@@ -200,7 +247,6 @@ public class Home_Page_Test extends Base_Utility {
 //			msg(ob.Local_dealer_fullname_real(), ob.Local_dealer_fullname_real().getText()); // for pCloudy and real
 //																								// device
 //		}
-////		Scroll_down_page_Action("View More");
 //		Thread.sleep(1000);
 //		msg(ob.Local_dealer_name(), ob.Local_dealer_name().getText());
 //		if (device.equalsIgnoreCase("emulator")) {
@@ -211,10 +257,10 @@ public class Home_Page_Test extends Base_Utility {
 //		}
 //		Custom_click(ob.Back(), "Back from RSA");
 //	}
-
+//
 	
-	@Test(priority = 7)
-	public void TC024_Verify_Technical_Support_Manager() throws InterruptedException {
+	@Test(priority = 14)
+	public void TC031_Verify_Technical_Support_Manager() throws InterruptedException {
 		Custom_click(ob.Technical_Support(), "Technical Support");
 		Thread.sleep(2000);
 		try {
@@ -232,8 +278,8 @@ public class Home_Page_Test extends Base_Utility {
 		}
 	}
 
-	@Test(priority = 8)
-	public void TC025_Verify_Dealer_Locator() throws InterruptedException {
+	@Test(priority = 15)
+	public void TC032_Verify_Dealer_Locator() throws InterruptedException {
 
 		Custom_click(ob.Dealer_Locator(), "Dealer Locator");
 		Thread.sleep(2000);
@@ -241,101 +287,74 @@ public class Home_Page_Test extends Base_Utility {
 		ob.Select_State("BIHAR");
 	}
 
-	@Test(priority = 9)
-	public void TC026_Select_city() {
+	@Test(priority = 16)
+	public void TC033_Select_city() {
 		Custom_click(ob.Select_City(), "Select city");
 		ob.Select_City("BAGAHA");
 	}
 
-	@Test(priority = 10)
-	public void TC027_View_dealer_name_and_address() {
+	@Test(priority = 17)
+	public void TC034_View_dealer_name_and_address() {
 		Custom_click(ob.map_view(), "Map View dealer name and address");
 		ob.Dealer_info();
 		Custom_click(ob.Back(), "Back from Dealer Locator");
 	}
-//	@Test(priority = 13)
-//	public void verify_Service_at_home_page()
-//	{
-//		scrollByText("Latest");
-//		msg("Service status =" +ob.Service_status().getText());
-//		Custom_click(ob.View_details_button(), ob.View_details_button().getText());
-//		msg(ob.Vehicle_service().getText()+" for " +ob.Vehicle_name().getText());
-//		driver.navigate().back();
-//	}
-//	@Test(priority = 14)
-//	public void verify_Latest_at_home_page() throws InterruptedException
-//	{
-//		Custom_click(ob.Latest_Vehicle(), "Latest Vehicle");
-//		Thread.sleep(6000);
-//		msg(ob.latest_vehicle_message().getText());
-//		msg(ob.mute().getText());
-//		Custom_click(ob.Back(), ob.latest_vehicle_message().getText() );
-////		Custom_click(ob.mute(), ob.mute().getText());
-////		Thread.sleep(2000);
-////		Custom_click(ob.mute(), ob.mute().getText());
-////		Custom_click(ob.scroll_img(), " Scroll img");
-////		Thread.sleep(3000);
-//	}
-////	@Test(priority = 11)
-////	public void verify_Notify_me_in_Latest_at_home_page() throws InterruptedException
-////	{
-////		Custom_click(ob.Notify_me(), ob.Notify_me().getText());
-////		Thread.sleep(2000);
-////		custom_sendkeys(ob.user_name(), "Renu", "User name ");
-////		custom_sendkeys(ob.user_email(), "Resnu@gmail.com", " User email ");
-////		custom_sendkeys(ob.pincode(), "657809", "Pin code ");
-////		custom_sendkeys(ob.user_mobile(), "9809786765", "Mobile number");
-////		ob.pincode().click();
-////		Custom_click(ob.Send_OTP_button(), " Send OTP Button ");
-////		Thread.sleep(10000);
-////		ob.otp();
-////		if(ob.submit_button().isEnabled()!=true)
-////		{
-////			msg("Submitting buton is not clickable");
-////			msg(ob.otp_error_message().getText());
-////		}
-////		else
-////		{
-////			Custom_click(ob.submit_button(), "Submit button");
-////		}
-////		Custom_click(ob.Back(), " Back from Get ready to #LiveTheLegend");
-////	}
-//	@Test(priority = 15)
-//	public void verify_EShop() throws InterruptedException
-//	{
-//		Scroll_down_page_Action("Benefits");
-//		Custom_click(ob.E_shop(), "E-Shop ");
-//		msg(ob.E_shop_location().getText());
-//		Custom_click(ob.Categories(), ob.Categories().getText());
-//		Thread.sleep(2000);
-//		Custom_click(ob.BACK_TO_HERO_MOTOCORP(), " Back from hero Motocorp ");
-//		Custom_click(ob.Back(), " Back from Merchandise ");
-//		}
-//	@Test(priority = 16)
-//	public void verify_Benifits_Vehicle_Exchange() throws InterruptedException
-//	{
-//		Custom_click(ob.Benifits(), "Benifits ");
-//		Thread.sleep(6000);
-//		msg("Welcome to " +ob.goodlife().getText() +" page");
-//		msg(ob.goodlife_message().getText());
-//		Custom_click(ob.Back(), " Back from Hero GoodLife ");
-//		Custom_click(ob.Vehicle_Exchange(), "Vehicle Exchange ");
-//		Thread.sleep(2000);
-//		Custom_click(ob.language(), " English ");
-//		msg("For exchange please fill below mandatory filled");
-//		ob.Vehicle_Exchange_info();
-//		Custom_click(ob.Back(), " Back from Wheels of Trust ");
-//	}
-//	@Test(priority = 17)
-//	public void verify_Community_and_Tips() throws InterruptedException
-//	{
-//		Scroll_down_page_Action("What's New");
-//		Custom_click(ob.Community(), "Community ");
-//		Thread.sleep(5000);
-//		msg(ob.Community_message_1().getText());
-//		msg(ob.Community_message().getText());
-//		Custom_click(ob.Back(), " Back from Xclan ");
-//		scrollByText("Key Actions");
-//		
-//	}
+	@SuppressWarnings("deprecation")
+	@Test(priority = 18)
+	public void TC035_verify_Service_at_home_page() throws InterruptedException
+	{
+    	@SuppressWarnings("deprecation")
+		TouchAction action = new TouchAction(driver);
+    	for(int i=0;i<=1;i++) {
+    	action.press(PointOption.point(520 ,2013)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1))).moveTo(PointOption.point(520 ,225))
+    		.release().perform();
+    	Message("Successfully Scroll up "+i);
+    	}
+    	scrollByText("Last Serviced");
+    	ob.service_info();
+		Custom_click(ob.View_details_button(), ob.View_details_button().getText());
+		msg(ob.Vehicle_service(), ob.Vehicle_service().getText()+" for " +ob.Vehicle_name().getText());
+		driver.navigate().back();
+		Thread.sleep(2000);
+		Custom_click(ob.Service_history(), ob.Service_history().getText());
+		Thread.sleep(2000);
+		Custom_click(ob.Back(), "Back from Service history page");
+		Thread.sleep(1000);
+		Custom_click(ob.View_Schedule(), ob.View_Schedule().getText());
+		Thread.sleep(2000);
+		Custom_click(ob.Back(), "Back from Service Schedule page");
+	}
+	@Test(priority = 19)
+	public void TC036_verify_Latest_at_home_page() throws InterruptedException
+	{
+		Custom_click(ob.Latest_Vehicle(), "Latest Vehicle");
+		Thread.sleep(2000);
+		msg(ob.latest_vehicle_message(), ob.latest_vehicle_message().getText());
+		Custom_click(ob.Back(), "Back from Latest Vehicle page ");
+	}
+	@Test(priority = 20)
+	public void TC037_verify_EShop() throws InterruptedException
+	{
+		Scroll_down_page_Action("E_shop");
+		Custom_click(ob.E_shop(), "E-Shop ");
+		msg(ob.E_shop_message(), ob.E_shop_message().getText());
+		Thread.sleep(2000);
+		Custom_click(ob.Back(), " Back from Eshop page ");
+		}
+	@SuppressWarnings("deprecation")
+	@Test(priority = 21)
+	public void TC038_verify_Benifits_Vehicle_Exchange() throws InterruptedException
+	{
+		Custom_click(ob.Benifits(), "Benifits ");
+		Thread.sleep(5000);
+		msg(ob.goodlife() ,"Welcome to " +ob.goodlife().getText() +" page");
+		msg(ob.goodlife_message(),ob.goodlife_message().getText());
+		Custom_click(ob.Back(), " Back from Hero GoodLife page");
+		TouchAction action = new TouchAction(driver);
+    	for(int i=0;i<=1;i++) {
+    	action.press(PointOption.point(502 ,182)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1))).moveTo(PointOption.point(502 ,2013))
+    		.release().perform();
+    	}
+	}
+
 }

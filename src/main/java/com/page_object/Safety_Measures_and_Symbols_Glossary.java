@@ -72,7 +72,7 @@ public class Safety_Measures_and_Symbols_Glossary extends Base_Utility{
 			}
 			else
 			{
-				if(j==3)
+				if(j==4)
 				{
 					Message("All message priented successfully");
 					break;
