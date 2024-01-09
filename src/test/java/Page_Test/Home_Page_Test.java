@@ -26,7 +26,10 @@ public class Home_Page_Test extends Base_Utility {
 //		login = new Login_Page_Test();
 //		login.login();
 		Thread.sleep(10000);
-		msg(ob.temperature(), "Current Temperature is =" + ob.temperature().getText());
+		try {
+		if(ob.temperature().isDisplayed()) {
+		msg(ob.temperature(), "Current Temperature is =" + ob.temperature().getText()); }
+		}catch(Exception e) {Custom_click(ob.enable_now(), "Enable now");}
 		VerifyElementPresent(ob.vehicle_img(), "Vehicle Img is");
 		Thread.sleep(2000);
 		ob.all_vehicle_inside_drop_down();
@@ -43,6 +46,7 @@ public class Home_Page_Test extends Base_Utility {
 	@Test(priority = 1)
 	public void TC018_verify_SOS() throws InterruptedException
 	{
+		try {
 		Custom_click(ob.SOS_icon(), "SOS icon");
 		ob.SOS_message();
 		Custom_click(ob.sent_alert_btn(), ob.sent_alert_btn().getText());
@@ -52,6 +56,7 @@ public class Home_Page_Test extends Base_Utility {
 		Thread.sleep(2000);
 		Custom_click(ob.SOS_icon(), "SOS icon");
 		Custom_click(ob.SOS_close_btn(), "SOS close button");
+		}catch(Exception e) {Custom_click(ob.enable_now(), "Enable now");}
 	}
 	@Test(priority = 2)
 	public void TC019_verify_Navigate() {

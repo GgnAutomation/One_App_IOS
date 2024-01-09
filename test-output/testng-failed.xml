@@ -28,29 +28,33 @@
       <class name="Page_Test.Services_Page_Test">
         <methods>
           <include name="TC092_View_Service_schedule_560_days"/>
-          <include name="TC090_View_Service_schedule_360_days"/>
           <include name="TC085_View_Service_schedule_24500"/>
-          <include name="TC082_View_Service_schedule_15500"/>
+          <include name="TC076_Verify_dealer_manager_info"/>
+          <include name="TC075_verify_Cancel_Service"/>
           <include name="TC099_Verify_all_DIY_Videos_list"/>
           <include name="TC084_View_Service_schedule_21500"/>
           <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC080_View_Service_schedule_9500"/>
-          <include name="TC097_Verify_Last_Serviced"/>
-          <include name="TC093_View_Service_schedule_660_days"/>
           <include name="TC078_View_Service_schedule_3500"/>
-          <include name="TC077_View_Service_schedule_750"/>
+          <include name="TC073_verify_Dealer_information"/>
           <include name="TC098_Verify_all_tips_list"/>
-          <include name="TC086_View_Service_schedule_27500"/>
           <include name="TC091_View_Service_schedule_460_days"/>
-          <include name="TC081_View_Service_schedule_12500"/>
           <include name="TC095_View_Service_schedule_860_days"/>
-          <include name="TC089_View_Service_schedule_260_days"/>
           <include name="TC072_verify_service_type"/>
           <include name="TC087_View_Service_schedule_60_days"/>
           <include name="TC083_View_Service_schedule_18500"/>
           <include name="TC071_Vehicle_details_on_service_page"/>
           <include name="TC088_View_Service_schedule_160_days"/>
           <include name="TC079_View_Service_schedule_6500"/>
+          <include name="TC090_View_Service_schedule_360_days"/>
+          <include name="TC082_View_Service_schedule_15500"/>
+          <include name="TC074_verify_Reschedule_Service"/>
+          <include name="TC080_View_Service_schedule_9500"/>
+          <include name="TC097_Verify_Last_Serviced"/>
+          <include name="TC093_View_Service_schedule_660_days"/>
+          <include name="TC077_View_Service_schedule_750"/>
+          <include name="TC086_View_Service_schedule_27500"/>
+          <include name="TC081_View_Service_schedule_12500"/>
+          <include name="TC089_View_Service_schedule_260_days"/>
           <include name="TC094_View_Service_schedule_760_days"/>
         </methods>
       </class> <!-- Page_Test.Services_Page_Test -->
@@ -136,8 +140,12 @@
       <class name="Page_Test.Login_Page_Test">
         <methods>
           <include name="TC007_contact_Us"/>
+          <include name="TC004_max_digit_mobile_number"/>
           <include name="TC006_Privacy_policy"/>
+          <include name="TC003_Verify_Login_with_short_length_of_mobile_number_credential"/>
+          <include name="TC001_Verify_Login_with_Invalid_credential"/>
           <include name="TC005_Terms_of_use_button"/>
+          <include name="TC002_invalidmobileno"/>
           <include name="TC009_resend_butn"/>
           <include name="TC011_edit_moble"/>
           <include name="TC010_inavalid_OTP"/>

@@ -154,8 +154,9 @@ public class Base_Utility
 				pcloudyOptions.put("pCloudy_Username", "randhir.kumar@heromotocorp.com");
 				pcloudyOptions.put("pCloudy_ApiKey", "2gdc5pv55mh54mqtwmvj4xbr");
 				pcloudyOptions.put("pCloudy_DurationInMinutes", 120);
-				pcloudyOptions.put("pCloudy_DeviceManufacturer", "SAMSUNG");
-				pcloudyOptions.put("pCloudy_DeviceVersion", "13.0.0");
+				pcloudyOptions.put("pCloudy_DeviceFullName", "SAMSUNG_GalaxyF145G_Android_13.0.0_dd226");
+//				pcloudyOptions.put("pCloudy_DeviceManufacturer", "SAMSUNG");
+//				pcloudyOptions.put("pCloudy_DeviceVersion", "13.0.0");
 				pcloudyOptions.put("pCloudy_ApplicationName", "Oneapp-release-prod-r8-21nov.apk");
 				pcloudyOptions.put("pCloudy_WildNet", "false");
 				pcloudyOptions.put("pCloudy_EnableVideo", "true");

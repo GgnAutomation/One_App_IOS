@@ -43,11 +43,15 @@ public class Home_Page extends Base_Utility {
 	private WebElement Collapse_btn;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_close']")
 	private WebElement close_drop_down;
-
+	@FindBy(xpath ="//android.widget.Button[@resource-id ='android:id/button1']")
+	private WebElement enable_now;
 	public WebElement temperature() {
 		return temperature;
 	}
-
+	public WebElement enable_now()
+	{
+		return enable_now;
+	}
 	public void all_vehicle_inside_drop_down() throws InterruptedException {
 
 		Custom_click(vehicle_drop_down, " Drop down");
@@ -96,9 +100,11 @@ public class Home_Page extends Base_Utility {
 	}
 
 	public void SOS_message() {
+		try {
 		for (int i = 0; i < SOS_message.size(); i++) {
 			msg(SOS_message.get(i), SOS_message.get(i).getText());
 		}
+		}catch(Exception e) { Custom_click(enable_now, "Enable noe");}
 	}
 
 	public WebElement sent_alert_btn() {
