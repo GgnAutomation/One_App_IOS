@@ -10,7 +10,7 @@ public class Safety_Measures_and_Symbols_Glossary_Test extends Base_Utility{
 	public Safety_Measures_and_Symbols_Glossary ob;
 	public Login_Page_Test login;
 	@Test(priority = 0)
-	public void TC053_Verify_Safety_Measures() throws InterruptedException
+	public void TC064_Verify_Safety_Measures() throws InterruptedException
 	{
 		Message("************************Safety Measures and Symbols Glossary Test**************************");
 		ob = new Safety_Measures_and_Symbols_Glossary();
@@ -25,7 +25,7 @@ public class Safety_Measures_and_Symbols_Glossary_Test extends Base_Utility{
 		Custom_click(ob.back_button(), "Back from Stay Safe While Riding page");
 	}
 	@Test(priority = 1)
-	public void TC054_Verify_Symbols_Glossary()
+	public void TC065_Verify_Symbols_Glossary()
 	{
 		Custom_click(ob.side_menu_btn(), " Side Menu Button ");
 		Custom_click(ob.Symbols_Glossary(), ob.Symbols_Glossary().getText());

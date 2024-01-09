@@ -17,7 +17,7 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class Home_Page extends Base_Utility {
 	public Services_Page ob1;
-
+	String device = config_getdata("Platform_name");
 	public Home_Page() {
 		PageFactory.initElements(driver, this);
 	}
@@ -29,6 +29,8 @@ public class Home_Page extends Base_Utility {
 	private WebElement vehicle_drop_down;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/bike_name_lbl']")
 	private List<WebElement> all_vehicle_inside_drop_down;
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.customerapp.hero:id/iv_close']")
+	private WebElement select_vehicle_close_btn;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/vehicle_img']")
 	private WebElement vehicle_img;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/ic_notification']")
@@ -41,16 +43,21 @@ public class Home_Page extends Base_Utility {
 	private WebElement Collapse_btn;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_close']")
 	private WebElement close_drop_down;
-
+	@FindBy(xpath ="//android.widget.Button[@resource-id ='android:id/button1']")
+	private WebElement enable_now;
 	public WebElement temperature() {
 		return temperature;
 	}
-
+	public WebElement enable_now()
+	{
+		return enable_now;
+	}
 	public void all_vehicle_inside_drop_down() throws InterruptedException {
-	
-			Custom_click(vehicle_drop_down, " Drop down");
-			Custom_click(all_vehicle_inside_drop_down.get(0), "Select Vehicle");
-		
+
+		Custom_click(vehicle_drop_down, " Drop down");
+		Custom_click(all_vehicle_inside_drop_down.get(0), "Select Vehicle");
+		Custom_click(vehicle_drop_down, " Drop down");
+		Custom_click(select_vehicle_close_btn, "select vehicle close button");
 	}
 
 	public WebElement vehicle_img() {
@@ -61,8 +68,11 @@ public class Home_Page extends Base_Utility {
 		return notification;
 	}
 
-	public int notification_count() {
-		return notification_count.size();
+	public void notification_count() {
+		for (int i = 0; i < notification_count.size(); i++) {
+			msg(notification_count.get(i), notification_count.get(i).getText());
+		}
+
 	}
 
 	public WebElement notification_back() {
@@ -71,6 +81,42 @@ public class Home_Page extends Base_Utility {
 
 	public WebElement Collapse_btn() {
 		return Collapse_btn;
+	}
+
+	// **************************************SOS********************************
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.customerapp.hero:id/ic_sos']")
+	private WebElement SOS_icon;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/text')]")
+	private List<WebElement> SOS_message;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl']")
+	private WebElement sent_alert_btn;
+	@FindBy(xpath = "//android.widget.LinearLayout[@resource-id='com.customerapp.hero:id/safe']/android.widget.TextView")
+	private List<WebElement> dont_send;
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.customerapp.hero:id/custom_radius_close']")
+	private WebElement SOS_close_btn;
+
+	public WebElement SOS_icon() {
+		return SOS_icon;
+	}
+
+	public void SOS_message() {
+		try {
+		for (int i = 0; i < SOS_message.size(); i++) {
+			msg(SOS_message.get(i), SOS_message.get(i).getText());
+		}
+		}catch(Exception e) { Custom_click(enable_now, "Enable noe");}
+	}
+
+	public WebElement sent_alert_btn() {
+		return sent_alert_btn;
+	}
+
+	public void dont_send() {
+		Custom_click(dont_send.get(0), dont_send.get(0).getText() + " " + dont_send.get(1).getText());
+	}
+
+	public WebElement SOS_close_btn() {
+		return SOS_close_btn;
 	}
 
 	// **************************************Service********************************
@@ -128,13 +174,13 @@ public class Home_Page extends Base_Utility {
 	}
 
 //*************************Navigate Page**********************
-	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[1]")
+	@FindBy(xpath = "//android.widget.TextView[starts-with(@text,'Navigate')]/parent::android.view.ViewGroup")
 	private WebElement Navigate_menu;
 	@FindBy(xpath = "//android.widget.TextView[@text ='Search Destination']")
 	private WebElement Search_destination;
 	@FindBy(xpath = "//android.widget.EditText[@resource-id ='com.customerapp.hero:id/edittext_search']")
 	private WebElement Search_here;
-	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_place_name'])[1]")
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_place_name'])[1]")
 	private WebElement chose_place_name;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/service_center_lbl']")
 	private WebElement Searched_name;
@@ -144,9 +190,9 @@ public class Home_Page extends Base_Utility {
 	private WebElement Navigate_button;
 	@FindBy(xpath = "//android.widget.FrameLayout[@resource-id ='com.customerapp.hero:id/navigate']")
 	private WebElement Start;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_start']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_start']")
 	private WebElement Start_button;
-	@FindBy(xpath ="//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/stop_navigation']")
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/stop_navigation']")
 	private WebElement stop_navigation;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id= 'com.customerapp.hero:id/lbl']")
 	private WebElement change_search;
@@ -164,10 +210,11 @@ public class Home_Page extends Base_Utility {
 	public WebElement Search_here() {
 		return Search_here;
 	}
-	public WebElement chose_place_name()
-	{
+
+	public WebElement chose_place_name() {
 		return chose_place_name;
 	}
+
 	public WebElement Searched_name() {
 		return Searched_name;
 	}
@@ -184,14 +231,15 @@ public class Home_Page extends Base_Utility {
 		return Start;
 
 	}
-	public WebElement Start_button()
-	{
+
+	public WebElement Start_button() {
 		return Start_button;
 	}
-	public WebElement stop_navigation()
-	{
+
+	public WebElement stop_navigation() {
 		return stop_navigation;
 	}
+
 	public WebElement change_search() {
 		return change_search;
 	}
@@ -200,9 +248,174 @@ public class Home_Page extends Base_Utility {
 		return Back_button;
 	}
 
+	// ****************************Exchange Page*******************************
+	@FindBy(xpath = "//android.widget.TextView[starts-with(@text,'Exchange')]/parent::android.view.ViewGroup")
+	private WebElement Exchange_Menu;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/')]")
+	private List<WebElement> exchange_info;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/lbl1']")
+	private WebElement Exchange_vehicle_name;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/lbl']")
+	private WebElement real_value_msg;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/tV1']")
+	private WebElement vehicle_msg;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/registrationDateTv']")
+	private WebElement choose_city;
+	@FindBy(xpath = "//android.widget.EditText[@resource-id='com.customerapp.hero:id/text_input_editext']")
+	private WebElement city_sell;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/vehicle_nameTV']")
+	private WebElement choose_city_sell;
+	@FindBy(xpath = "//android.widget.EditText[contains(@resource-id,'com.customerapp.hero:id') and starts-with(@text,'PIN Code')]")
+	private WebElement city_pin_code;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl']")
+	private WebElement next_btn;
+
+	public WebElement Exchange_Menu() {
+		return Exchange_Menu;
+	}
+
+	public void exchange_info() {
+		for (int i = 0; i < exchange_info.size(); i++) {
+			msg(exchange_info.get(i), exchange_info.get(i).getText());
+		}
+	}
+
+	public WebElement Exchange_vehicle_name() {
+		return Exchange_vehicle_name;
+	}
+
+	public WebElement real_value_msg() {
+		return real_value_msg;
+	}
+
+	public WebElement vehicle_msg() {
+		return vehicle_msg;
+	}
+
+	public WebElement choose_city() {
+		return choose_city;
+	}
+
+	public WebElement city_sell() {
+		return city_sell;
+	}
+
+	public WebElement choose_city_sell() {
+		return choose_city_sell;
+	}
+
+	public WebElement city_pin_code() {
+		return city_pin_code;
+	}
+
+	public WebElement next_btn() {
+		return next_btn;
+	}
+
+//****************************Vehicle Condition************************************
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/tV2']")
+	private WebElement vehicle_condition;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/identify_tv1']")
+	private WebElement condition_msg;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Smoke']")
+	private WebElement Smoke;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and starts-with(@text,'Is there any Smoke')]")
+	private WebElement Smoke_msg;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option1RadioButton' and @text='No Smoke']")
+	private WebElement no_smok_radio_btn;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option2RadioButton' and @text='Smoke']")
+	private WebElement smok_radio_btn;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Starting']")
+	private WebElement Starting;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and starts-with(@text,'Is there any problem in Starting')]")
+	private WebElement Starting_msg;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option1RadioButton' and @text='Starts Normally']")
+	private WebElement Starts_normal_radio_btn;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option2RadioButton' and @text='Not Starting']")
+	private WebElement not_starts_btn;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Light Indicator']")
+	private WebElement Light_indicator;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and starts-with(@text,'Is there any problem in the working of Li')]")
+	private WebElement Light_indicator_msg;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option1RadioButton' and @text='Working']")
+	private WebElement Working_radio_btn;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option2RadioButton' and @text='Not Working']")
+	private WebElement not_working_radio_btn;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Front Tyre']")
+	private WebElement front_tyre;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and starts-with(@text,'What is the condition of the Front')]")
+	private WebElement front_tyre_msg;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option1RadioButton' and @text='OK']")
+	private WebElement ok_radio_btn;
+	@FindBy(xpath = "//android.widget.RadioButton[contains(@resource-id,'com.customerapp.hero:id/option') and starts-with(@text,'Worn out')]")
+	private WebElement worn_out_radio_btn;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Rear Tyre']")
+	private WebElement rear_tyre;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and starts-with(@text,'What is the condition of the Rear')]")
+	private WebElement rear_tyre_msg;
+	@FindBy(xpath = "(//android.widget.RadioButton[@resource-id='com.customerapp.hero:id/option1RadioButton'])[2]")
+	private WebElement ok_rear_radion_btn;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/titleTV' and @text='Body Part']")
+	private WebElement body_part;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/question_tv' and @text='What is the condition of the Body Parts?']")
+	private WebElement body_part_msg;
+	@FindBy(xpath = "//android.widget.RadioButton[contains(@resource-id,'com.customerapp.hero:id/option') and starts-with(@text,'No Scratch')]")
+	private WebElement no_scrtch_radio_btn;
+	@FindBy(xpath = "//android.widget.RadioButton[contains(@resource-id,'com.customerapp.hero:id/option') and starts-with(@text,'Scratch')]")
+	private WebElement scrtch_radio_btn;
+
+	public WebElement vehicle_condition() {
+		return vehicle_condition;
+	}
+
+	public WebElement condition_msg() {
+		return condition_msg;
+	}
+
+	public void all_question() {
+		msg(Smoke, Smoke.getText());
+		msg(Smoke_msg, Smoke_msg.getText());
+		Custom_click(no_smok_radio_btn, no_smok_radio_btn.getText() + " radio button");
+		Custom_click(smok_radio_btn, smok_radio_btn.getText() + " radio button");
+		msg(Starting, Starting.getText());
+		msg(Starting_msg, Starting_msg.getText());
+		Custom_click(Starts_normal_radio_btn, Starts_normal_radio_btn.getText() + " radio button");
+		Custom_click(not_starts_btn, not_starts_btn.getText() + " radio button");
+		msg(Light_indicator, Light_indicator.getText());
+		msg(Light_indicator_msg, Light_indicator_msg.getText());
+		Custom_click(Working_radio_btn, Working_radio_btn.getText() + " radio button");
+		Custom_click(not_working_radio_btn, not_working_radio_btn.getText() + " radio button");
+		msg(front_tyre, front_tyre.getText());
+		msg(front_tyre_msg, front_tyre_msg.getText());
+		Custom_click(ok_radio_btn, ok_radio_btn.getText() + " radio button");
+		Custom_click(worn_out_radio_btn, worn_out_radio_btn.getText() + " radio button");
+		msg(rear_tyre, rear_tyre.getText());
+		msg(rear_tyre_msg, rear_tyre_msg.getText());
+		Custom_click(ok_rear_radion_btn, ok_rear_radion_btn.getText() + " radio button");
+		Custom_click(worn_out_radio_btn, worn_out_radio_btn.getText() + " radio button");
+		msg(body_part, body_part.getText());
+		msg(body_part_msg, body_part_msg.getText());
+		Custom_click(no_scrtch_radio_btn, no_scrtch_radio_btn.getText() + " radio button");
+		Custom_click(scrtch_radio_btn, scrtch_radio_btn.getText() + " radio button");
+	}
+
 //****************************Documents Page************************************
-	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[2]")
+	@FindBy(xpath = "//android.widget.TextView[starts-with(@text,'Documents')]/parent::android.view.ViewGroup")
 	private WebElement Documents_Menu;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_name'])[1]")
+	private WebElement document_name1;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_name'])[2]")
+	private WebElement document_name2;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_name'])[3]")
+	private WebElement document_name3;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[1]")
+	private WebElement RC_Status;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[2]")
+	private WebElement Insurance_Status;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[3]")
+	private WebElement PUC_Status;
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/icon2']")
+	private WebElement Document_sideicon;
 	@FindBy(xpath = "//android.widget.TextView[@text ]")
 	private List<WebElement> Documents_list;
 	@FindBy(xpath = "//android.widget.TextView[@text ='Add now']")
@@ -223,7 +436,8 @@ public class Home_Page extends Base_Utility {
 	private WebElement document_upload_close_button;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/back_btn']")
 	private WebElement Back;
-
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[1]")
+	private WebElement cancel_payment;
 
 	public WebElement Documents_Menu() {
 		return Documents_Menu;
@@ -231,6 +445,10 @@ public class Home_Page extends Base_Utility {
 
 	public WebElement Back() {
 		return Back;
+	}
+
+	public WebElement cancel_payment() {
+		return cancel_payment;
 	}
 
 	public WebElement While_using_the_app() {
@@ -245,15 +463,15 @@ public class Home_Page extends Base_Utility {
 			Message(name);
 			i++;
 			String doc = Documents_list.get(i).getText();
-			if(doc.equalsIgnoreCase("Upload")) {
-			Custom_click(Documents_list.get(i), name +" "+ Documents_list.get(i).getText());
-			Thread.sleep(2000);
-			if (i == 2) {
-				Custom_click(While_using_the_app, "While using the app");
-				Custom_click(Allow, "Allow");
+			if (doc.equalsIgnoreCase("Upload")) {
+				Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
 				Thread.sleep(2000);
-				Custom_click(Documents_list.get(i), name +" "+Documents_list.get(i).getText());
-			}
+				if (i == 2) {
+					Custom_click(While_using_the_app, "While using the app");
+					Custom_click(Allow, "Allow");
+					Thread.sleep(2000);
+					Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
+				}
 //			try {
 //				if (Document_Check != null) {
 //					Message(Document_Check.getText());
@@ -264,42 +482,41 @@ public class Home_Page extends Base_Utility {
 //						Thread.sleep(2000);
 //						Custom_click(Add_Now, name + " Add now");
 //					}
-			try {
+				try {
 					Custom_click(Choose_Document_from_library, name + " Document frmo library");
 					Thread.sleep(2000);
 					driver.navigate().back();
-					Custom_click(Documents_list.get(i), name +" "+Documents_list.get(i).getText());
+					Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
 //					Custom_click(Add_Now, name + " Add now");
 					Custom_click(Take_a_Photo, "Take a Photo");
 					Thread.sleep(2000);
 					driver.navigate().back();
 //					Custom_click(Add_Now, name + " Add now");
-					if(i!=6) {
-					Custom_click(Documents_list.get(i), name +" "+Documents_list.get(i).getText());
-					Custom_click(Choose_from_Digilocker, "Choose from Digilocker");
-					Thread.sleep(2000);
-					Custom_click(Back,  " Back from Digilocker Login");
+					if (i != 6) {
+						Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
+						Custom_click(Choose_from_Digilocker, "Choose from Digilocker");
+						Thread.sleep(2000);
+						Custom_click(Back, " Back from Digilocker Login");
 					}
-					Custom_click(Documents_list.get(i), name +" "+Documents_list.get(i).getText());
+					Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
 					Custom_click(document_upload_close_button, "Close upload document page");
 //				}
-			} catch (Exception e) {
+				} catch (Exception e) {
+					Message(name + " is already available");
+					Custom_click(Back, name + " Back Document");
+				}
+			} else {
 				Message(name + " is already available");
-				Custom_click(Back, name + " Back Document");
-			}
-			}
-			else
-			{
-				Message(name + " is already available");
-				Custom_click(Documents_list.get(i), name +" "+ Documents_list.get(i).getText());
+				Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
 				Thread.sleep(3000);
-				Custom_click(Back, "Back from " +name + " page");
+				Custom_click(Document_sideicon, "Document sideicon");
+				Custom_click(Back, "Back from " + name + " page");
 			}
 		}
 	}
 
 //****************************Relationship Manager************************************
-	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[3]")
+	@FindBy(xpath = "//android.widget.TextView[starts-with(@text,'Relationship')]/parent::android.view.ViewGroup")
 	private WebElement Relationship_Manager;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1']")
 	private WebElement Relationship_Manager_name;
@@ -340,90 +557,91 @@ public class Home_Page extends Base_Utility {
 	}
 
 //****************************RSA************************************
-	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[4]")
+	@FindBy(xpath = "//android.widget.TextView[starts-with(@text,'RSA')]/parent::android.view.ViewGroup")
 	private WebElement RSA;
-	@FindBy(xpath ="//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv')]")
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv')]")
 	private List<WebElement> RSA_info;
 	@FindBy(xpath = "//android.view.View[@content-desc='Locate nearest dealer']/android.widget.TextView")
 	private WebElement locate_nearest_dealer;
-//	@FindBy(xpath = "//android.widget.TextView[@text ='Locate nearest dealer']")
-//	private WebElement locate_nearest_dealer;
 	@FindBy(xpath = "//android.view.View[@text ='Locate nearest dealer']")
 	private WebElement locate_nearest_dealer_real_device;
 	@FindBy(xpath = "//android.view.View[@text ='LOCATE THE NEAREST DEALER']")
 	private WebElement locate_the_nearest_dealer;
-	@FindBy(xpath ="//android.widget.TextView[contains(@text ,'LOCATE THE')]")
+	@FindBy(xpath = "//android.widget.TextView[contains(@text ,'LOCATE THE')]")
 	private WebElement locate_the_nearest_dealer_real;
-	@FindBy(xpath ="//android.view.View[@resource-id ='OutletState']")
+	@FindBy(xpath = "//android.view.View[@resource-id ='OutletState']")
 	private WebElement State;
-	@FindBy(xpath ="//android.widget.EditText[@resource-id ='com.customerapp.hero:id/text_input_editext']")
+	@FindBy(xpath = "//android.widget.EditText[@resource-id ='com.customerapp.hero:id/text_input_editext']")
 	private WebElement registration_number;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
 	private WebElement renew_rsa;
-	@FindBy(xpath ="(//android.widget.CheckedTextView[@resource-id ='android:id/text1'])[3]")
+	@FindBy(xpath = "(//android.widget.CheckedTextView[@resource-id ='android:id/text1'])[3]")
 	private WebElement State_check;
-	@FindBy(xpath ="//android.widget.CheckedTextView[@resource-id ='android:id/text1']")
+	@FindBy(xpath = "//android.widget.CheckedTextView[@resource-id ='android:id/text1']")
 	private List<WebElement> select_state;
-	@FindBy(xpath ="//android.view.View[@resource-id ='OutletCity']")
+	@FindBy(xpath = "//android.view.View[@resource-id ='OutletCity']")
 	private WebElement City;
-	@FindBy(xpath ="//android.view.View[@resource-id ='OutletLocality']")
+	@FindBy(xpath = "//android.view.View[@resource-id ='OutletLocality']")
 	private WebElement Locality;
-	@FindBy(xpath ="//android.widget.Button[@resource-id ='accept']")
+	@FindBy(xpath = "//android.widget.Button[@resource-id ='accept']")
 	private WebElement accept_cookie;
-	@FindBy(xpath ="//android.widget.Button[@text ='Search']")
+	@FindBy(xpath = "//android.widget.Button[@text ='Search']")
 	private WebElement Search_button;
-	@FindBy(xpath ="//android.view.View[contains(@text,'HERO MOTOCORP')]")
+	@FindBy(xpath = "//android.view.View[contains(@text,'HERO MOTOCORP')]")
 	private WebElement Local_dealer_fullname;
-	@FindBy(xpath ="//android.widget.TextView[contains(@text,'HERO MOTOCORP')]")
+	@FindBy(xpath = "//android.widget.TextView[contains(@text,'HERO MOTOCORP')]")
 	private WebElement Local_dealer_fullname_real;
-	@FindBy(xpath="//android.widget.TextView[contains(@text,'Hero Motocorp')]")
+	@FindBy(xpath = "//android.widget.TextView[contains(@text,'Hero Motocorp')]")
 	private WebElement Local_dealer_name;
-	@FindBy(xpath ="//android.view.View[contains(@text,'No')]")
+	@FindBy(xpath = "//android.view.View[contains(@text,'No')]")
 	private WebElement Local_dealer_address;
-	@FindBy(xpath ="//android.widget.TextView[contains(@text,'No')]")
+	@FindBy(xpath = "//android.widget.TextView[contains(@text,'No')]")
 	private WebElement Local_dealer_address_real;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_title']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/tv_title' and contains(@text,'?')]")
 	private List<WebElement> asked_questions;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_ans']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_ans']")
 	private WebElement answer;
+
 	public WebElement RSA() {
 		return RSA;
 	}
-	public WebElement accept_cookie()
-	{
+
+	public WebElement accept_cookie() {
 		return accept_cookie;
 	}
-	public WebElement Local_dealer_fullname()
-	{
+
+	public WebElement Local_dealer_fullname() {
 		return Local_dealer_fullname;
 	}
-	public WebElement Local_dealer_fullname_real()
-	{
+
+	public WebElement Local_dealer_fullname_real() {
 		return Local_dealer_fullname_real;
 	}
-	public WebElement Local_dealer_name()
-	{
+
+	public WebElement Local_dealer_name() {
 		return Local_dealer_name;
 	}
-	public WebElement Local_dealer_address()
-	{
+
+	public WebElement Local_dealer_address() {
 		return Local_dealer_address;
 	}
-	public WebElement registration_number()
-	{
+
+	public WebElement registration_number() {
 		return registration_number;
 	}
-	public WebElement Local_dealer_address_real()
-	{
+
+	public WebElement Local_dealer_address_real() {
 		return Local_dealer_address_real;
 	}
+
 	public WebElement locate_nearest_dealer() {
 		return locate_nearest_dealer;
 	}
-	public WebElement renew_rsa()
-	{
+
+	public WebElement renew_rsa() {
 		return renew_rsa;
 	}
+
 	public WebElement locate_nearest_dealer_real_device() {
 		return locate_nearest_dealer_real_device;
 	}
@@ -431,121 +649,107 @@ public class Home_Page extends Base_Utility {
 	public WebElement locate_the_nearest_dealer() {
 		return locate_the_nearest_dealer;
 	}
+
 	public WebElement locate_the_nearest_dealer_real() {
 		return locate_the_nearest_dealer_real;
 	}
-	public WebElement State()
-	{
+
+	public WebElement State() {
 		return State;
 	}
-	public WebElement State_check()
-	{
+
+	public WebElement State_check() {
 		return State_check;
 	}
-	public WebElement City()
-	{
+
+	public WebElement City() {
 		return City;
 	}
-	public WebElement Locality()
-	{
+
+	public WebElement Locality() {
 		return Locality;
 	}
-	public void asked_questions()
-	{
+
+	public void asked_questions() {
 		try {
-	Custom_click(asked_questions.get(2), "Open question = "+asked_questions.get(2).getText());
-	msg(answer, "Answer ="+ answer.getText());
-	Custom_click(asked_questions.get(2),"Close question = "+asked_questions.get(2).getText());
-	Custom_click(asked_questions.get(3), "Open question = "+asked_questions.get(3).getText());
-	Scroll_down_page_Action("Answer");
-	msg(answer, "Answer ="+answer.getText());
-	Custom_click(asked_questions.get(2), "Close question = "+ asked_questions.get(2).getText());
-	Custom_click(asked_questions.get(4), "Open question = "+asked_questions.get(4).getText());
-	Scroll_down_page_Action("Answer");
-	msg(answer, "Answer ="+answer.getText());
-	Custom_click(asked_questions.get(3), "Close question = "+asked_questions.get(3).getText());
-		}catch(Exception e)	{
-			Message("No question is available");
+			for (int i = 0; i < asked_questions.size(); i++) {
+				Custom_click(asked_questions.get(i), "Open question = " + asked_questions.get(i).getText());
+				try {
+					msg(answer, "Answer =" + answer.getText());
+				} catch (Exception e) {
+					Scroll_down_page_Action("Answer");
+					msg(answer, "Answer =" + answer.getText());
+				}
+				Custom_click(asked_questions.get(i), "Close question = " + asked_questions.get(i).getText());
+			}
+		} catch (Exception e) {
+			Message("Asked question is not available");
 		}
-		
 	}
- 
-	public WebElement Search_button()
-	{
+
+	public WebElement Search_button() {
 		return Search_button;
 	}
-	public void RSA_info()
-	{
-		for(int i=0;i<RSA_info.size();i++)
-		{
+
+	public void RSA_info() {
+		for (int i = 0; i < RSA_info.size(); i++) {
 			msg(RSA_info.get(i), RSA_info.get(i).getText());
 		}
 	}
-	public void select_state(String State_name)
-	{
-		for(int i=0;i<select_state.size();i++)
-		{
+
+	public void select_state(String State_name) {
+		for (int i = 0; i < select_state.size(); i++) {
 			String name = select_state.get(i).getText();
-			if(State_name.equalsIgnoreCase(name))
-			{
+			if (State_name.equalsIgnoreCase(name)) {
 				Custom_click(select_state.get(i), name);
 				break;
-			}
-			else {
-			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
-			if(i==(select_state.size()-1))
-			{
-			select_state.get(i).click();
-				State.click();
-				 i = 0;
-			}
-			}
-			}
-		}
-	public void select_city(String City_name)
-	{
-		for(int i=0;i<select_state.size();i++)
-		{
-			String name = select_state.get(i).getText();
-			if(City_name.equalsIgnoreCase(name))
-			{
-				Custom_click(select_state.get(i), name);
-				break;
-			}
-			else {
-			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
-			if(i==(select_state.size()-1))
-			{
-				select_state.get(i).click();
-				City.click();
-				 i = 0;
-			}
+			} else {
+				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+				if (i == (select_state.size() - 1)) {
+					select_state.get(i).click();
+					State.click();
+					i = 0;
+				}
 			}
 		}
 	}
-	public void select_Locality(String Locality_name)
-	{
-		for(int i=0;i<select_state.size();i++)
-		{
+
+	public void select_city(String City_name) {
+		for (int i = 0; i < select_state.size(); i++) {
 			String name = select_state.get(i).getText();
-			if(Locality_name.equalsIgnoreCase(name))
-			{
+			if (City_name.equalsIgnoreCase(name)) {
 				Custom_click(select_state.get(i), name);
 				break;
-			}
-			else {
-			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
-			if(i==(select_state.size()-1))
-			{
-				select_state.get(i).click();
-				Locality.click();
-				 i = 0;
-			}
+			} else {
+				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+				if (i == (select_state.size() - 1)) {
+					select_state.get(i).click();
+					City.click();
+					i = 0;
+				}
 			}
 		}
 	}
+
+	public void select_Locality(String Locality_name) {
+		for (int i = 0; i < select_state.size(); i++) {
+			String name = select_state.get(i).getText();
+			if (Locality_name.equalsIgnoreCase(name)) {
+				Custom_click(select_state.get(i), name);
+				break;
+			} else {
+				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+				if (i == (select_state.size() - 1)) {
+					select_state.get(i).click();
+					Locality.click();
+					i = 0;
+				}
+			}
+		}
+	}
+
 //****************************Technical Support************************************
-	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[5]")
+	@FindBy(xpath = "//android.widget.TextView[starts-with(@text,'Technical')]/parent::android.view.ViewGroup")
 	private WebElement Technical_Support;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/lbl1']")
 	private WebElement Technical_Support_Manager_Name;
@@ -571,13 +775,13 @@ public class Home_Page extends Base_Utility {
 	}
 
 //****************************Dealer Locator************************************
-	@FindBy(xpath = "(//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/root'])[6]")
+	@FindBy(xpath = "//android.widget.TextView[starts-with(@text,'Dealer')]/parent::android.view.ViewGroup")
 	private WebElement Dealer_Locator;
-	@FindBy(xpath = "(//android.widget.TextView[@text])[2]")
+	@FindBy(xpath = "//android.widget.Spinner[@resource-id='com.customerapp.hero:id/state_sp']//android.widget.TextView")
 	private WebElement Select_State;
-	@FindBy(xpath = "(//android.widget.TextView[@text])[3]")
+	@FindBy(xpath = "//android.widget.Spinner[@resource-id='com.customerapp.hero:id/city_sp']//android.widget.TextView")
 	private WebElement Select_City;
-	@FindBy(xpath = "//android.widget.TextView[@text]")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/textView']")
 	private List<WebElement> Select_State_list;
 	@FindBy(xpath = "//android.widget.ImageButton[@resource-id='com.customerapp.hero:id/floating_button2']")
 	private WebElement map_view;
@@ -651,204 +855,127 @@ public class Home_Page extends Base_Utility {
 			Custom_click(Call_Dealer, (i + 1) + " Call Dealer button ");
 			driver.navigate().back();
 			driver.navigate().back();
-			driver.navigate().back();
+			if(device.equalsIgnoreCase("realdevice")) {
+			driver.navigate().back(); }
 		}
 	}
-	//****************************Service_at_home_page************************************
-	@FindBy(xpath ="//android.widget.FrameLayout[@resource-id ='com.customerapp.hero:id/service_card_lay']//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1']")
-	private WebElement Service_status;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/book_now_btn']")
+
+	// ****************************Service_at_home_page************************************
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv_ser')]")
+	private List<WebElement> service_info;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv_last')]")
+	private WebElement last_service;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv_history')]")
+	private WebElement last_service_date;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/tv_view1']")
 	private WebElement View_details_button;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/lbl']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/lbl']")
 	private WebElement Vehicle_service;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_name']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_name']")
 	private WebElement Vehicle_name;
-	public WebElement Service_status()
-	{
-		return Service_status;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/tv_service1_history1']")
+	public WebElement Service_history;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv_view1_sch')]")
+	public WebElement View_Schedule;
+
+	public void service_info() {
+		for (int i = 0; i < service_info.size(); i++) {
+			msg(service_info.get(i), service_info.get(i).getText());
+		}
+		msg(last_service, last_service.getText() + " on " + last_service_date.getText());
 	}
-	public WebElement View_details_button()
-	{
+
+	public WebElement View_details_button() {
 		return View_details_button;
 	}
-	public WebElement Vehicle_service()
-	{
+
+	public WebElement Vehicle_service() {
 		return Vehicle_service;
 	}
+
 	public WebElement Vehicle_name() {
 		return Vehicle_name;
 	}
-	//****************************Latest_at_home_page************************************
-	@FindBy(xpath ="(//androidx.recyclerview.widget.RecyclerView[@resource-id ='com.customerapp.hero:id/recyclerView'])[1]")
+
+	public WebElement Service_history() {
+		return Service_history;
+	}
+
+	public WebElement View_Schedule() {
+		return View_Schedule;
+	}
+
+	// ****************************Latest_at_home_page************************************
+	@FindBy(xpath = "(//androidx.recyclerview.widget.RecyclerView[@resource-id ='com.customerapp.hero:id/recyclerView'])[1]")
 	private WebElement Latest_Vehicle;
-	@FindBy(xpath ="(//android.widget.TextView[@index ='1'])[1]")
+	@FindBy(xpath = "(//android.widget.TextView[@index ='1'])[1]")
 	private WebElement latest_vehicle_message;
-	@FindBy(xpath ="//android.view.View[contains(@text , 'THE LEGEND RETURNS')]")
-	private WebElement mute;
-//	@FindBy(xpath="//android.widget.Image[@text ='scroll_img']")
-//	private WebElement scroll_img;
-//	@FindBy(xpath ="//android.widget.Button[@resource-id ='notifyMeButton']")
-//	private WebElement Notify_me;
-//	@FindBy(xpath ="//android.widget.EditText[@resource-id='userName']")
-//	private WebElement user_name;
-//	@FindBy(xpath ="//android.widget.EditText[@resource-id='userEmail']")
-//	private WebElement user_email;
-//	@FindBy(xpath ="//android.widget.EditText[@resource-id='pincode']")
-//	private WebElement pincode;
-//	@FindBy(xpath ="//android.widget.EditText[@resource-id='userMobile']")
-//	private WebElement user_mobile;
-//	@FindBy(xpath ="//android.view.View[@content-desc='SEND OTP']/android.widget.TextView")
-//	private WebElement Send_OTP_button;
-//	@FindBy(xpath ="//android.widget.EditText[contains(@resource-id ,'digit')]")
-//	private List<WebElement> otp;
-//	@FindBy(xpath ="//android.view.View[@resource-id ='otperrormessage']")
-//	private WebElement otp_error_message;
-//	@FindBy(xpath ="//android.widget.Button[@resource-id ='lead-gen-submit-button']")
-//	private WebElement submit_button;
-	public WebElement Latest_Vehicle()
-	{
+
+	public WebElement Latest_Vehicle() {
 		return Latest_Vehicle;
 	}
-	public WebElement mute()
-	{
-		return mute;
-	}
-//	public WebElement scroll_img()
-//	{
-//		return scroll_img;
-//	}
-	public WebElement latest_vehicle_message()
-	{
+
+	public WebElement latest_vehicle_message() {
 		return latest_vehicle_message;
 	}
-//	public WebElement Notify_me()
-//	{
-//		return Notify_me;
-//	}
-//	public WebElement user_name()
-//	{
-//		return user_name;
-//	}
-//	public WebElement user_email()
-//	{
-//		return user_email;
-//	}
-//	public WebElement pincode()
-//	{
-//		return pincode;
-//	}
-//	public WebElement user_mobile()
-//	{
-//		return user_mobile;
-//	}
-//	public WebElement Send_OTP_button()
-//	{
-//		return Send_OTP_button;
-//	}
-//	public WebElement submit_button()
-//	{
-//		return submit_button;
-//	}
-//	public WebElement otp_error_message()
-//	{
-//		return otp_error_message;
-//	}
-//	public void otp()
-//	{
-//		for(int i=0,j=3;i<otp.size();i++)
-//		{
-//			custom_sendkeys(otp.get(i), ""+j, " OTP " +j);
-//			j++;
-//		}
-//	}
-	//****************************verify_EShop************************************
+
+	// ****************************verify_EShop************************************
 	@FindBy(xpath = "(//androidx.recyclerview.widget.RecyclerView[@resource-id ='com.customerapp.hero:id/recyclerView'])[2]")
 	private WebElement E_shop;
-	@FindBy(xpath ="//android.view.View[@resource-id ='nav-global-location-slot']")
-	private WebElement E_shop_location;
-	@FindBy(xpath ="(//android.widget.Button[@text])[3]")
-	private WebElement Categories;
-	@FindBy(xpath ="//android.widget.Button[contains(@text,'BACK')]")
-	private WebElement BACK_TO_HERO_MOTOCORP;
-	public WebElement E_shop()
-	{
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/lbl']")
+	private WebElement E_shop_message;
+
+	public WebElement E_shop() {
 		return E_shop;
 	}
-	public WebElement E_shop_location()
-	{
-		return E_shop_location;
+
+	public WebElement E_shop_message() {
+		return E_shop_message;
 	}
-	public WebElement Categories()
-	{
-		return Categories;
-	}
-	public WebElement BACK_TO_HERO_MOTOCORP()
-	{
-		return BACK_TO_HERO_MOTOCORP;
-	}
-	//****************************Benifits_Vehicle_Exchange************************************
+
+	// ****************************Benifits_Vehicle_Exchange************************************
 	@FindBy(xpath = "(//androidx.recyclerview.widget.RecyclerView[@resource-id ='com.customerapp.hero:id/recyclerView'])[3]")
 	private WebElement Benifits;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl']")
 	private WebElement goodlife;
-	@FindBy(xpath ="//android.widget.RadioButton[@resource-id ='eng_lang_select']")
-	private WebElement language;
-	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1'])[1]")
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1'])[1]")
 	private WebElement goodlife_message;
-	@FindBy(xpath = "(//androidx.recyclerview.widget.RecyclerView[@resource-id ='com.customerapp.hero:id/recyclerView'])[4]")
-	private WebElement Vehicle_Exchange;
-	@FindBy(xpath="(//android.widget.ListView)[1]//android.view.View[@index]")
-	private List<WebElement> Vehicle_Exchange_info;
-	public WebElement Benifits()
-	{
+
+	public WebElement Benifits() {
 		return Benifits;
 	}
-	public WebElement goodlife()
-	{
+
+	public WebElement goodlife() {
 		return goodlife;
 	}
-	public WebElement language()
-	{
-		return language;
-	}
-	public WebElement goodlife_message()
-	{
+
+	public WebElement goodlife_message() {
 		return goodlife_message;
 	}
-	public WebElement Vehicle_Exchange()
-	{
-		return Vehicle_Exchange;
-	}
-	public void Vehicle_Exchange_info()
-	{
-		for(int i=0;i<Vehicle_Exchange_info.size()-1;i++)
-		{
-			msg(Vehicle_Exchange_info.get(i),Vehicle_Exchange_info.get(i).getText());
-		}
-	}
-	//****************************Community_and_Tips************************************
+
+	// ****************************Community_and_Tips************************************
 	@FindBy(xpath = "(//androidx.recyclerview.widget.RecyclerView[@resource-id ='com.customerapp.hero:id/recyclerView'])[2]")
 	private WebElement Community;
-	@FindBy(xpath ="//android.view.View[@resource-id = 'breadcrumb-1aaaf38848']")
+	@FindBy(xpath = "//android.view.View[@resource-id = 'breadcrumb-1aaaf38848']")
 	private WebElement Community_message;
-	@FindBy(xpath="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl']")
 	private WebElement Community_message_1;
 	@FindBy(xpath = "(//androidx.recyclerview.widget.RecyclerView[@resource-id ='com.customerapp.hero:id/recyclerView'])[3]")
 	private WebElement Tips;
-	public WebElement Community()
-	{
+
+	public WebElement Community() {
 		return Community;
 	}
-	public WebElement Community_message()
-	{
+
+	public WebElement Community_message() {
 		return Community_message;
 	}
-	public WebElement Community_message_1()
-	{
+
+	public WebElement Community_message_1() {
 		return Community_message_1;
 	}
-	public WebElement Tips()
-	{
+
+	public WebElement Tips() {
 		return Tips;
 	}
 }
