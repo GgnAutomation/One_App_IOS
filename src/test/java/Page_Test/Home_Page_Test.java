@@ -28,7 +28,7 @@ public class Home_Page_Test extends Base_Utility {
 		Thread.sleep(10000);
 		try {
 		if(ob.temperature().isDisplayed()) {
-		msg(ob.temperature(), "Current Temperature is =" + ob.temperature().getText()); }
+		msg(ob.temperature(), "Current Temperature is = " ); }
 		}catch(Exception e) {Custom_click(ob.enable_now(), "Enable now");}
 		VerifyElementPresent(ob.vehicle_img(), "Vehicle Img is");
 		Thread.sleep(2000);
@@ -70,11 +70,11 @@ public class Home_Page_Test extends Base_Utility {
 			}
 		}
 		Custom_click(ob.Search_destination(), "Search destination");
-		msg(ob.Search_here(), ob.Search_here().getText());
+		msg(ob.Search_here(), " = ");
 		custom_sendkeys(ob.Search_here(), "railway", "Place name");
 		Custom_click(ob.chose_place_name(), ob.chose_place_name().getText());
-		msg(ob.Searched_name(), ob.Searched_name().getText());
-		msg(ob.Searched_address(), ob.Searched_address().getText());
+		msg(ob.Searched_name(), "Searched place name = ");
+		msg(ob.Searched_address(), "Place address = ");
 		Custom_click(ob.Navigate_button(), ob.Navigate_button().getText());
 		Custom_click(ob.Start(), "Start button");
 		Custom_click(ob.Start_button(), ob.Start_button().getText());
@@ -93,12 +93,12 @@ public class Home_Page_Test extends Base_Utility {
 		ob.exchange_info();
 		Custom_click(ob.Exchange_vehicle_name(), ob.Exchange_vehicle_name().getText());
 		Thread.sleep(2000);
-		msg(ob.real_value_msg(), ob.real_value_msg().getText());
+		msg(ob.real_value_msg(),"Exchange info =");
 	}
 	@Test(dependsOnMethods = "TC020_verify_Exchange()" ,priority = 4)
 	public void TC021_verify_Vehicle_details() {
-		msg(ob.vehicle_msg(), ob.vehicle_msg().getText());
-		msg(ob.choose_city(), ob.choose_city().getText());
+		msg(ob.vehicle_msg(), "Vehicle info = ");
+		msg(ob.choose_city(), "City = ");
 		custom_sendkeys(ob.city_sell(), config_getdata("City_to_sell_vehicle"), "City name where sell vehicle");
 		Custom_click(ob.choose_city_sell(), ob.choose_city_sell().getText());
 		custom_sendkeys(ob.city_pin_code(), "110037", "PIN code");
@@ -107,8 +107,8 @@ public class Home_Page_Test extends Base_Utility {
 	@Test(dependsOnMethods = "TC020_verify_Exchange()" ,priority = 5)
 	public void TC022_verify_Vehicle_condition()
 	{
-		msg(ob.vehicle_condition(), ob.vehicle_condition().getText());
-		msg(ob.condition_msg(), ob.condition_msg().getText());
+		msg(ob.vehicle_condition(), "");
+		msg(ob.condition_msg(), "");
 		ob.all_question();
 		Custom_click(ob.next_btn(), ob.next_btn().getText());
 	}
@@ -138,11 +138,10 @@ public class Home_Page_Test extends Base_Utility {
 		try {
 			if (ob.Relationship_Manager_name().getSize() != null) {
 				msg(ob.Relationship_Manager_name(),
-						"Relationship Manager name is =" + ob.Relationship_Manager_name().getText());
+						"Relationship Manager name is = ");
 				msg(ob.Relationship_Manager_Address(),
-						"Relationship Manager address is =" + ob.Relationship_Manager_Address().getText());
-				msg(ob.Relationship_Manager_Contact_number(), "Relationship Manager Contact number is ="
-						+ ob.Relationship_Manager_Contact_number().getText());
+						"Relationship Manager address is = ");
+				msg(ob.Relationship_Manager_Contact_number(), "Relationship Manager Contact number is = ");
 				Custom_click(ob.Relationship_Manager_Contact_number(), "Relationship manager contact");
 				driver.navigate().back();
 				driver.navigate().back();
@@ -171,7 +170,7 @@ public class Home_Page_Test extends Base_Utility {
 		Thread.sleep(2000);
 		ob.RSA_info();
 		try {
-		msg(ob.registration_number(), "Registraction number =" +ob.registration_number().getText());
+		msg(ob.registration_number(), "Registraction number = ");
 		}catch(Exception e) { Message("Registraction number  is not given");}
 		Thread.sleep(1000);
 		Custom_click(ob.Back(), "Back from Payment");
@@ -205,9 +204,9 @@ public class Home_Page_Test extends Base_Utility {
 //				}
 //		}
 //		if (device.equalsIgnoreCase("emulator")) {
-//			msg(ob.locate_the_nearest_dealer(), ob.locate_the_nearest_dealer().getText()); // only for emulator
+//			msg(ob.locate_the_nearest_dealer(), "Dealer =")); // only for emulator
 //		} else {
-//			msg(ob.locate_the_nearest_dealer_real(), ob.locate_the_nearest_dealer_real().getText()); // only for real
+//			msg(ob.locate_the_nearest_dealer_real(), "Dealer ="); // only for real
 //																										// device &
 //																										// pCloudy
 //		}
@@ -242,17 +241,17 @@ public class Home_Page_Test extends Base_Utility {
 //	public void TC030_Verify_Nearest_Dealer_info() throws InterruptedException {
 //		Thread.sleep(3000);
 //		if (device.equalsIgnoreCase("emulator")) {
-//			msg(ob.Local_dealer_fullname(), ob.Local_dealer_fullname().getText()); // for emulator
+//			msg(ob.Local_dealer_fullname(), "Dealer full name = ")); // for emulator
 //		} else {
-//			msg(ob.Local_dealer_fullname_real(), ob.Local_dealer_fullname_real().getText()); // for pCloudy and real
+//			msg(ob.Local_dealer_fullname_real(), ""Dealer full name = "); // for pCloudy and real
 //																								// device
 //		}
 //		Thread.sleep(1000);
 //		msg(ob.Local_dealer_name(), ob.Local_dealer_name().getText());
 //		if (device.equalsIgnoreCase("emulator")) {
-//			msg(ob.Local_dealer_address(), ob.Local_dealer_address().getText()); // for emulator
+//			msg(ob.Local_dealer_address(), "Dealer address = "); // for emulator
 //		} else {
-//			msg(ob.Local_dealer_address_real(), ob.Local_dealer_address_real().getText()); // for pCloudy and real
+//			msg(ob.Local_dealer_address_real(), "Dealer address = "); // for pCloudy and real
 //																							// device
 //		}
 //		Custom_click(ob.Back(), "Back from RSA");
@@ -265,11 +264,10 @@ public class Home_Page_Test extends Base_Utility {
 		Thread.sleep(2000);
 		try {
 		msg(ob.Technical_Support_Manager_Name(),
-				"Technical Support Manager Name is =" + ob.Technical_Support_Manager_Name().getText());
+				"Technical Support Manager Name is = ");
 		msg(ob.Technical_Support_Manager_Address(),
-				"Technical Support Manager address is =" + ob.Technical_Support_Manager_Address().getText());
-		msg(ob.Technical_Support_Manager_Contact_Number(), "Technical Support Manager contact number is ="
-				+ ob.Technical_Support_Manager_Contact_Number().getText());
+				"Technical Support Manager address is = " );
+		msg(ob.Technical_Support_Manager_Contact_Number(), "Technical Support Manager contact number is = ");
 		Custom_click(ob.Back(), "Back from Technical Support Manager");
 		}catch(Exception e)
 		{
@@ -313,7 +311,7 @@ public class Home_Page_Test extends Base_Utility {
     	scrollByText("Last Serviced");
     	ob.service_info();
 		Custom_click(ob.View_details_button(), ob.View_details_button().getText());
-		msg(ob.Vehicle_service(), ob.Vehicle_service().getText()+" for " +ob.Vehicle_name().getText());
+		msg(ob.Vehicle_service(), " for " +ob.Vehicle_name().getText());
 		driver.navigate().back();
 		Thread.sleep(2000);
 		Custom_click(ob.Service_history(), ob.Service_history().getText());
@@ -329,7 +327,7 @@ public class Home_Page_Test extends Base_Utility {
 	{
 		Custom_click(ob.Latest_Vehicle(), "Latest Vehicle");
 		Thread.sleep(2000);
-		msg(ob.latest_vehicle_message(), ob.latest_vehicle_message().getText());
+		msg(ob.latest_vehicle_message(), "Latest vehicle = ");
 		Custom_click(ob.Back(), "Back from Latest Vehicle page ");
 	}
 	@Test(priority = 20)
@@ -337,7 +335,7 @@ public class Home_Page_Test extends Base_Utility {
 	{
 		Scroll_down_page_Action("E_shop");
 		Custom_click(ob.E_shop(), "E-Shop ");
-		msg(ob.E_shop_message(), ob.E_shop_message().getText());
+		msg(ob.E_shop_message(), "E_shop info = ");
 		Thread.sleep(2000);
 		Custom_click(ob.Back(), " Back from Eshop page ");
 		}
@@ -347,8 +345,7 @@ public class Home_Page_Test extends Base_Utility {
 	{
 		Custom_click(ob.Benifits(), "Benifits ");
 		Thread.sleep(5000);
-		msg(ob.goodlife() ,"Welcome to " +ob.goodlife().getText() +" page");
-		msg(ob.goodlife_message(),ob.goodlife_message().getText());
+		msg(ob.goodlife() ,"Welcome to ");
 		Custom_click(ob.Back(), " Back from Hero GoodLife page");
 		TouchAction action = new TouchAction(driver);
     	for(int i=0;i<=1;i++) {

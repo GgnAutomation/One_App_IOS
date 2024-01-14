@@ -157,7 +157,7 @@ public class Book_Service extends Base_Utility {
 	{
 		for(int i=0;i<Service_Details.size()-2;i++)
 		{
-			msg(Service_Details.get(i),Service_Details.get(i).getText());
+			msg(Service_Details.get(i)," ");
 		}
 	}
 	public WebElement cancel_button()

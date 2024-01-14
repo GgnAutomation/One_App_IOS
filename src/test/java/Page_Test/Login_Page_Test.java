@@ -58,7 +58,7 @@ public class Login_Page_Test extends Base_Utility {
 		custom_sendkeys(ob.mobile_No(), config_getdata("invalidmobileno"), "Login with unregisterd mobile number");
 		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
 		Custom_click(ob.continue_button(), "Coninue button enter after unregistered mobile number");
-		msg(ob.registerd_message(), ob.registerd_message().getText());
+		msg(ob.registerd_message(), "Registerd info =");
 		Custom_click(ob.Cancel_not_registered(), ob.Cancel_not_registered().getText());
 	}
 
@@ -94,10 +94,10 @@ public class Login_Page_Test extends Base_Utility {
 		Thread.sleep(5000);
 		if (device.equalsIgnoreCase("emulator")) {
 			msg(ob.Terms_of_Use_condition(),
-					"Terms of use: First condition = " + ob.Terms_of_Use_condition().getText());
+					"Terms of use: First condition = ");
 		} else if (device.equalsIgnoreCase("pcloudy") || device.equalsIgnoreCase("realdevice")) {
 			msg(ob.Terms_of_Use_condition_for_real_device(),
-					"Terms of use: First condition = " + ob.Terms_of_Use_condition_for_real_device().getText());
+					"Terms of use: First condition = ");
 		}
 		long endreadtime = System.currentTimeMillis();
 		Message("Raad time in Tearms of use =" + (endreadtime - starreadtime) + " MS");
@@ -114,10 +114,10 @@ public class Login_Page_Test extends Base_Utility {
 		long starreadtime = System.currentTimeMillis();
 		if (device.equalsIgnoreCase("emulator")) {
 			msg(ob.Privacy_Policy_condition(),
-					"Privacy policy : First Condition = " + ob.Privacy_Policy_condition().getText());
+					"Privacy policy : First Condition = ");
 		} else if (device.equalsIgnoreCase("pcloudy") || device.equalsIgnoreCase("realdevice")) {
 			msg(ob.Terms_of_Use_condition_for_real_device(),
-					"Privacy policy : First Condition = " + ob.Terms_of_Use_condition_for_real_device().getText());
+					"Privacy policy : First Condition = ");
 		}
 		long endreadtime = System.currentTimeMillis();
 		Message("Raad time in Privacy policy =" + (endreadtime - starreadtime) + " MS");
@@ -130,7 +130,7 @@ public class Login_Page_Test extends Base_Utility {
 
 		Custom_click(ob.contact_us(), "Contact us");
 		Thread.sleep(2000);
-		msg(ob.contact_us_message(), ob.contact_us_message().getText());
+		msg(ob.contact_us_message(), "Contct us titile =");
 		Custom_click(ob.back_page(), "back Contact us page ");
 	}
 

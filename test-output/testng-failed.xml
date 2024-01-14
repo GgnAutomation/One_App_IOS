@@ -8,10 +8,16 @@
     <classes>
       <class name="Page_Test.E_Shop_test">
         <methods>
-          <include name="TC111_registered_customers"/>
+          <include name="TC112_new_customers"/>
           <include name="OPEN_AND_INSTALL_APP"/>
         </methods>
       </class> <!-- Page_Test.E_Shop_test -->
+      <class name="Page_Test.Refer_a_friend_and_Contact_us_test">
+        <methods>
+          <include name="TC056_Verify_Refer_yourself"/>
+          <include name="OPEN_AND_INSTALL_APP"/>
+        </methods>
+      </class> <!-- Page_Test.Refer_a_friend_and_Contact_us_test -->
     </classes>
   </test> <!-- All test class(failed) -->
 </suite> <!-- Failed suite [Hero_App] -->

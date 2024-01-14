@@ -171,12 +171,12 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		}
 		}catch(Exception e) { Message("Contact via email has already open");}
 		Thread.sleep(2000);
-		msg(ob.Welcome_message(),ob.Welcome_message().getText());
-		msg(ob.Welcome_message2(),ob.Welcome_message2().getText());
+		msg(ob.Welcome_message()," ");
+		msg(ob.Welcome_message2()," ");
 		Custom_click(ob.welcome_tour_next(), "welcome tour next");
-		msg(ob.welcome_tour_promotion(),ob.welcome_tour_promotion().getText());
+		msg(ob.welcome_tour_promotion()," ");
 		Custom_click(ob.welcome_tour_done(), ob.welcome_tour_done().getText());
-		msg(ob.addresses_title(),ob.addresses_title().getText());
+		msg(ob.addresses_title()," ");
 		Custom_click(ob.add_email_address(), ob.add_email_address().getText());
 		Custom_click(ob.google(), "Setup email with google");
 		Thread.sleep(5000);

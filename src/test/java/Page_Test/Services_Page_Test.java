@@ -29,14 +29,14 @@ public class Services_Page_Test extends Base_Utility {
 //		login.login();
 		Thread.sleep(2000);
 		Custom_click(ob.Services(), " Services button");
-		msg(ob.Vehicle_brand_Name(), "Vehicle brand name = " + ob.Vehicle_brand_Name().getText());
+		msg(ob.Vehicle_brand_Name(), "Vehicle brand name = ");
 		try {
-			msg(ob.Vehicle_Nick_Name(), "Vehicle nick name = " + ob.Vehicle_Nick_Name().getText());
+			msg(ob.Vehicle_Nick_Name(), "Vehicle nick name = ");
 		} catch (Exception e) {
 			Message("Vehicle nick name is not given");
 		}
 		try {
-			msg(ob.Vehicle_Number(), "Vehicle number =" + ob.Vehicle_Number().getText());
+			msg(ob.Vehicle_Number(), "Vehicle number = ");
 		} catch (Exception e) {
 			Message("Vehicle number is not given");
 		}
@@ -46,20 +46,19 @@ public class Services_Page_Test extends Base_Utility {
 	@Test(priority = 1)
 	public void TC072_verify_service_type() {
 		try {
-			msg(ob.Vehicle_Service_type(), "Vehicle Service type =" + ob.Vehicle_Service_type().getText());
+			msg(ob.Vehicle_Service_type(), "Vehicle Service type = ");
 		} catch (Exception e) {
 			Message("Vehicle Service type is not given");
 		}
 		try {
-			msg(ob.Vehicle_service_booking_no(),
-					"Vehicle Service booking number = " + ob.Vehicle_service_booking_no().getText());
+			msg(ob.Vehicle_service_booking_no(),"Vehicle Service booking number = ");
 		} catch (Exception e) {
 			Message("Vehicle Service booking number is not given");
 		}
 		String service_status = ob.next_service_info().getText();
 		Message("Service status =" + service_status);
 		try {
-			msg(ob.service_date_time(), "Service date and time =" + ob.service_date_time().getText());
+			msg(ob.service_date_time(), "Service date and time = ");
 		} catch (Exception e) {
 			Message("Service date and time is not given");
 		}
@@ -110,8 +109,8 @@ public class Services_Page_Test extends Base_Utility {
 		if(ob.cancel_service_btn().isDisplayed())
 		{
 			Custom_click(ob.cancel_service_btn(), ob.cancel_service_btn().getText() +" Service button");
-			msg(ob.cancel_title(), ob.cancel_title().getText());
-			msg(ob.cancel_message(), ob.cancel_message().getText());
+			msg(ob.cancel_title(), " ");
+			msg(ob.cancel_message(), " ");
 			if(ob.yes_button().isEnabled()&& ob.yes_button().isDisplayed()==true)
 			{
 
@@ -128,8 +127,8 @@ public class Services_Page_Test extends Base_Utility {
 	@Test(priority = 5)
 	public void TC076_Verify_dealer_manager_info() throws InterruptedException {
 		try {
-			msg(ob.manager_type(), "Manager type =" + ob.manager_type().getText());
-			msg(ob.manager_name(), "Manager name =" + ob.manager_name().getText());
+			msg(ob.manager_type(), "Manager type = ");
+			msg(ob.manager_name(), "Manager name = ");
 			Custom_click(ob.call_manager(), " Call amanger");
 			driver.navigate().back();
 			Thread.sleep(1000);
@@ -137,7 +136,7 @@ public class Services_Page_Test extends Base_Utility {
 			Thread.sleep(1000);
 			driver.navigate().back();
 			Thread.sleep(1000);
-			msg(ob.manage_phone_number(), "Manager contact number =" + ob.manage_phone_number().getText());
+			msg(ob.manage_phone_number(), "Manager contact number = ");
 			Scroll_down_page_Action("Service Schedule");
 			if (ob.Service_Schedule().isDisplayed()) {
 				Message("Service Schedule is visible");

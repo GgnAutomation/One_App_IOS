@@ -497,8 +497,9 @@ public class Base_Utility
 			if (ele.isDisplayed()) {
 				wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 				wait.until(ExpectedConditions.visibilityOf(ele));
-				test.log(Status.PASS, filedname);
-				log.info(filedname);
+				String mes = ele.getText();
+				test.log(Status.PASS, filedname + mes);
+				log.info(filedname + mes);
 			}
 		} catch (Exception e) {
 			test.log(Status.FAIL, filedname + " is not readable" + e);
