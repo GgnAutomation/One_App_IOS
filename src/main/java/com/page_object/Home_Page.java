@@ -675,10 +675,10 @@ public class Home_Page extends Base_Utility {
 			for (int i = 0; i < asked_questions.size(); i++) {
 				Custom_click(asked_questions.get(i), "Open question = " + asked_questions.get(i).getText());
 				try {
-					msg(answer, "Answer =" + answer.getText());
+					msg(answer, "Answer = ");
 				} catch (Exception e) {
 					Scroll_down_page_Action("Answer");
-					msg(answer, "Answer =" + answer.getText());
+					msg(answer, "Answer = ");
 				}
 				Custom_click(asked_questions.get(i), "Close question = " + asked_questions.get(i).getText());
 			}
@@ -693,7 +693,7 @@ public class Home_Page extends Base_Utility {
 
 	public void RSA_info() {
 		for (int i = 0; i < RSA_info.size(); i++) {
-			msg(RSA_info.get(i), RSA_info.get(i).getText());
+			msg(RSA_info.get(i), " ");
 		}
 	}
 
@@ -880,9 +880,9 @@ public class Home_Page extends Base_Utility {
 
 	public void service_info() {
 		for (int i = 0; i < service_info.size(); i++) {
-			msg(service_info.get(i), service_info.get(i).getText());
+			msg(service_info.get(i), " ");
 		}
-		msg(last_service, last_service.getText() + " on " + last_service_date.getText());
+		msg(last_service, last_service.getText() + " on " );
 	}
 
 	public WebElement View_details_button() {

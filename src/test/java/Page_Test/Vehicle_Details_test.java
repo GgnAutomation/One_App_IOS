@@ -24,9 +24,9 @@ public class Vehicle_Details_test extends Base_Utility {
 		Thread.sleep(5000);
 		Custom_click(ob.home(), "Home");
 		Custom_click(ob.side_menu_button(), "Side menu button");
-		msg(ob.user_name(),ob.user_name().getText());
-		msg(ob.vehicle_name_1(),"You are using =" +ob.vehicle_name_1().getText());
-		msg(ob.vehicle_number_1(),ob.vehicle_number_1().getText());
+		msg(ob.user_name(),"User name = ");
+		msg(ob.vehicle_name_1(),"You are using = ");
+		msg(ob.vehicle_number_1()," ");
 		Custom_click(ob.Vehicle_details(), "Vehicle Details");
 		Custom_click(ob.Selected_vehicle(), ob.Selected_vehicle().getText());
 		Custom_click(ob.choose_vehicle(), ob.choose_vehicle().getText());
@@ -37,18 +37,18 @@ public class Vehicle_Details_test extends Base_Utility {
 		}
 		try {
 			if(ob.vehicle_status().isDisplayed()) {
-		msg(ob.vehicle_status(),"Vehicle status =" + ob.vehicle_status().getText()); }
+		msg(ob.vehicle_status(),"Vehicle status = "); }
 		}catch(Exception e) { Message("Vehicle Status is not given");}
 		try {
 			if(ob.Vehicle_number().isDisplayed()) {
-		msg(ob.Vehicle_number(),"Vehicle number =" + ob.Vehicle_number().getText()); }
+		msg(ob.Vehicle_number(),"Vehicle number = "); }
 		}catch(Exception e) { Message("Vehicle number is not given");}
 		Custom_click(ob.verify_GoodLife(), " Verify Good Life");
 		Thread.sleep(5000);
-		msg(ob.verify_goodlife_page(),"verify goodlife page =" +ob.verify_goodlife_page().getText());
+		msg(ob.verify_goodlife_page(),"verify goodlife page = ");
 		Custom_click(ob.back_button(), " Back from GoodLife page");
 		Custom_click(ob.verify_joyRide(), " Verify JoyRide ");
-		msg(ob.verify_joyRide_page(),"Verify joyRide page =" +ob.verify_joyRide_page().getText());
+		msg(ob.verify_joyRide_page(),"Verify joyRide page = ");
 		Custom_click(ob.back_button(), " Back from joyRide page");
 		
 	}
@@ -77,7 +77,7 @@ public class Vehicle_Details_test extends Base_Utility {
 		Custom_click(ob.owners_manual(), "Owners manual");
 		try {
 			if(ob.owners_title().isDisplayed()) {
-		msg(ob.owners_title(),"My Vehicle Owners manual =" +ob.owners_title().getText());
+		msg(ob.owners_title(),"My Vehicle Owners manual = ");
 		Custom_click(ob.back_button(), " Back from Owners manual page"); }
 		}catch(Exception e)
 		{
@@ -94,7 +94,7 @@ public class Vehicle_Details_test extends Base_Utility {
 			Custom_click(ob.back_button(), " Back from My Vehicle page");
 		}catch(Exception e)
 		{
-			msg(ob.owners_title(),"My Vehicle Service history" +ob.owners_title().getText());
+			msg(ob.owners_title(),"My Vehicle Service history ");
 			Custom_click(ob.back_button(), " Back from Service History page");
 			Custom_click(ob.back_button(), " Back from My Vehicle page");
 			

@@ -22,7 +22,7 @@ public class GoodLife_test extends Base_Utility {
 		Custom_click(ob.goodLife(), ob.goodLife().getText());
 		Thread.sleep(2000);
 		ob.SliderDots();
-		msg(ob.goodlife_text(), "Look below all " + ob.goodlife_text().getText());
+		msg(ob.goodlife_text(), "Look below all ");
 	}
 
 	@Test(priority = 1)
@@ -136,58 +136,58 @@ public class GoodLife_test extends Base_Utility {
 //	}
 	@Test(priority = 6)
 	public void TC106_verify_Points_Earning_and_Redemption() {
-		msg(ob.benifit_1(), ob.benifit_1().getText());
-		msg(ob.benifit_2(), ob.benifit_2().getText());
-		msg(ob.benifit_3(), ob.benifit_3().getText());
+		msg(ob.benifit_1(), " ");
+		msg(ob.benifit_2(), " ");
+		msg(ob.benifit_3(), " ");
 		Custom_click(ob.View_details_arrow(), ob.View_details_arrow().getText());
 		ob.point_earn_condition();
 		Scroll_down_page_Action("Become a GoodLife Member");
-		msg(ob.Tier3_message(), ob.Tier3_message().getText());
+		msg(ob.Tier3_message(), " ");
 		ob.Tier3_distance_message();
-		msg(ob.point_earning_end_message(), ob.point_earning_end_message().getText());
+		msg(ob.point_earning_end_message(), " ");
 		Custom_click(ob.back_button(), " Back from points earning redemption ");
 	}
 
 	@Test(priority = 7)
 	public void TC107_Whats_so_Good_in_Good_life() {
 		Scroll_down_page_Action("View details");
-		msg(ob.goodLife_message1(), ob.goodLife_message1().getText());
-		msg(ob.goodLife_message2(), ob.goodLife_message2().getText());
-		msg(ob.goodLife_benifit_1(), ob.goodLife_benifit_1().getText());
-		msg(ob.goodLife_benifit_2(), ob.goodLife_benifit_2().getText());
-		msg(ob.goodLife_benifit_3(), ob.goodLife_benifit_3().getText());
+		msg(ob.goodLife_message1()," ");
+		msg(ob.goodLife_message2(), " ");
+		msg(ob.goodLife_benifit_1()," ");
+		msg(ob.goodLife_benifit_2(), " ");
+		msg(ob.goodLife_benifit_3(), " ");
 	}
 
 	@Test(priority = 8)
 	public void TC108_Verify_Ultimate_savings() {
 		Scroll_down_page_Action("Exclusive membership offers");
-		msg(ob.Ultimate_savings_title(), ob.Ultimate_savings_title().getText());
+		msg(ob.Ultimate_savings_title(), " ");
 		ob.ultimate();
 	}
 
 	@Test(priority = 9)
 	public void TC109_verify_Exclusive_membership_offers() {
 		Scroll_down_page_Action("Our Lucky goodlife memebr");
-		msg(ob.Exive_mem_offers(), ob.Exive_mem_offers().getText());
-		msg(ob.Exive_mem_offers_1(), ob.Exive_mem_offers_1().getText());
-		msg(ob.Exive_mem_offers_2(), ob.Exive_mem_offers_2().getText());
-		msg(ob.Exive_mem_offers_3(), ob.Exive_mem_offers_3().getText());
-		msg(ob.Exive_mem_offers_4(), ob.Exive_mem_offers_4().getText());
-		msg(ob.Exive_mem_offers_5(), ob.Exive_mem_offers_5().getText());
-		msg(ob.Exive_mem_offers_6(), ob.Exive_mem_offers_6().getText());
-		msg(ob.Exive_mem_offers_7(), ob.Exive_mem_offers_7().getText());
-		msg(ob.Exive_mem_offers_8(), ob.Exive_mem_offers_8().getText());
+		msg(ob.Exive_mem_offers(), " ");
+		msg(ob.Exive_mem_offers_1(), " ");
+		msg(ob.Exive_mem_offers_2(), " ");
+		msg(ob.Exive_mem_offers_3(), " ");
+		msg(ob.Exive_mem_offers_4(), " ");
+		msg(ob.Exive_mem_offers_5(), " ");
+		msg(ob.Exive_mem_offers_6(), " ");
+		msg(ob.Exive_mem_offers_7(), " ");
+		msg(ob.Exive_mem_offers_8(), " ");
 	}
 
 	@Test(priority = 10)
 	public void TC110_verify_Winner_informaton() {
 		Scroll_down_page_Action("View all winners");
-		msg(ob.lucky_member(), ob.lucky_member().getText());
-		msg(ob.lucky_member_msg(), ob.lucky_member_msg().getText());
+		msg(ob.lucky_member(), " ");
+		msg(ob.lucky_member_msg(), " ");
 		Custom_click(ob.winner_of_month(), ob.winner_of_month().getText());
-		msg(ob.winner_month(), "Winner month =" + ob.winner_month().getText());
+		msg(ob.winner_month(), "Winner month = ");
 		ob.Winner_info();
-		msg(ob.Total_winner(), "Total =" + ob.Total_winner().getText());
+		msg(ob.Total_winner(), "Total = ");
 		Custom_click(ob.back_button(), " Back from Winner Of The Month ");
 		Custom_click(ob.back_button(), " Back from Good life page ");
 

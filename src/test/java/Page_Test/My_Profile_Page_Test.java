@@ -30,17 +30,17 @@ public class My_Profile_Page_Test extends Base_Utility {
 		Thread.sleep(2000);
 		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.my_profile(), "My profile");
-		msg(ob.user_name(), "User name = " + ob.user_name().getText());
-		msg(ob.user_mobile_no(), "User mobile number =" + ob.user_mobile_no().getText());
+		msg(ob.user_name(), "User name = ");
+		msg(ob.user_mobile_no(), "User mobile number = ");
 		try {
-			msg(ob.user_email(), "User email =" + ob.user_email().getText());
+			msg(ob.user_email(), "User email = ");
 		} catch (Exception e) {
 			error_message("Email id does not given");
 		}
 	}
 
 	@Test(priority = 1)
-	public void TC040_verify_more_detais_button() { 
+	public void TC040_verify_more_detais_button() {
 		Custom_click(ob.More_details(), ob.More_details().getText());
 		ob.user_info();
 	}
@@ -82,9 +82,9 @@ public class My_Profile_Page_Test extends Base_Utility {
 		custom_sendkeys(ob.edit_email_id(), config_getdata("edit_email_id"), " Change Email id");
 		driver.navigate().back();
 		Thread.sleep(2000);
-			Custom_click(ob.edit_date_of_birth(), " Date of Birth");
+		Custom_click(ob.edit_date_of_birth(), " Date of Birth");
 		try {
-		Custom_click(ob.DOB_edit_button(), "Edit DOB");
+			Custom_click(ob.DOB_edit_button(), "Edit DOB");
 		} catch (Exception e) {
 			Custom_click(ob.edit_date_of_birth(), " Date of Birth");
 			Custom_click(ob.DOB_edit_button(), "Edit DOB");
@@ -97,8 +97,8 @@ public class My_Profile_Page_Test extends Base_Utility {
 			Message("DOB is not accepted " + config_getdata("edit_DOB"));
 			Custom_click(ob.Cancel_dob(), " Cancel DOB");
 		}
-	
-			driver.navigate().back();
+
+		driver.navigate().back();
 		Custom_click(ob.blood_group(), " Blood group");
 		Thread.sleep(2000);
 		Custom_click(ob.blood_group(), " Blood group");
@@ -156,7 +156,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 			}
 		} catch (Exception e) {
 			Message("Manage License is not given");
-			msg(ob.License_verify(), ob.License_verify().getText());
+			msg(ob.License_verify(), "License verify = ");
 			Custom_click(ob.add_Liense_now(), "  Add License now");
 			Custom_click(ob.Choose_License_from_library(), ob.Choose_License_from_library().getText());
 			Thread.sleep(1000);
@@ -181,7 +181,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 		Thread.sleep(2000);
 		try {
 			if (ob.License_verify().isDisplayed()) {
-				msg(ob.License_verify(), "Emergency contacts" + ob.License_verify().getText());
+				msg(ob.License_verify(), "Emergency contacts = ");
 				Custom_click(ob.add_Liense_now(), "  Add Emergency contacts");
 				Custom_click(ob.Back(), " Back from Select Contacts page");
 			}

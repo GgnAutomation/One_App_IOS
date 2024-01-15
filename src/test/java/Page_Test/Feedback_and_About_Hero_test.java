@@ -15,6 +15,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	public Login_Page_Test login;
 	String version = config_getdata("version");
 	String device = config_getdata("Platform_name");
+
 	@Test(priority = 0)
 	public void TC066_verify_Feedback() throws InterruptedException {
 		Message("************************Feedback and About Hero test**************************");
@@ -45,30 +46,31 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 
 	@Test(priority = 1)
 	public void TC067_verify_About_Hero() throws InterruptedException {
-			Custom_click(ob.side_menu_button(), "Side menu button");
-			Custom_click(ob.about_hero(), ob.about_hero().getText());
-			Thread.sleep(10000);
-			if (device.equalsIgnoreCase("emulator")) {
-			msg(ob.about_hero_message_1(),ob.about_hero_message_1().getText());      // For emulator
-			msg(ob.about_hero_message_2(),ob.about_hero_message_2().getText());		// For emulator
-			}
-			else {
-			msg(ob.about_hero_message_1_real(),ob.about_hero_message_1_real().getText());// For Real device & pCloudy
-			msg(ob.about_hero_message_2_real(),ob.about_hero_message_2_real().getText());// For Real device & pCloudy
-			}
-			Custom_click(ob.back_btn(), "Back from About Hero page");
- }
+		Custom_click(ob.side_menu_button(), "Side menu button");
+		Custom_click(ob.about_hero(), ob.about_hero().getText());
+		Thread.sleep(10000);
+		if (device.equalsIgnoreCase("emulator")) {
+			msg(ob.about_hero_message_1(), " "); // For emulator
+			msg(ob.about_hero_message_2(), " "); // For emulator
+		} else {
+			msg(ob.about_hero_message_1_real(), " ");// For Real device & pCloudy
+			msg(ob.about_hero_message_2_real(), " ");// For Real device & pCloudy
+		}
+		Custom_click(ob.back_btn(), "Back from About Hero page");
+	}
 
 	@Test(priority = 2)
 	public void TC068_verify_Side_menu_page_function() throws InterruptedException {
-			Custom_click(ob.side_menu_button(), "Side menu button");
-			Custom_click(ob.goodlife(), "Goodlife");
-			Thread.sleep(6000);
-			msg(ob.goodlife_page_test(),"goodlife page test =" + ob.goodlife_page_test().getText());
-			Custom_click(ob.back_btn(), "Back from GoodLife page");
+		Custom_click(ob.side_menu_button(), "Side menu button");
+		Custom_click(ob.goodlife(), "Goodlife");
+		Thread.sleep(6000);
+		msg(ob.goodlife_page_test(), "goodlife page test = ");
+		Custom_click(ob.back_btn(), "Back from GoodLife page");
 	}
+
 	@Test(priority = 3)
-	public void TC069_Wheels_of_Trust() throws InterruptedException {		Custom_click(ob.side_menu_button(), "Side menu button");
+	public void TC069_Wheels_of_Trust() throws InterruptedException {
+		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.wheels_of_trust(), "Wheels of trust");
 		Thread.sleep(5000);
 		ob.exchange_info();
@@ -212,16 +214,16 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 //		}
 //		Custom_click(ob.back_btn(), "Back from wheels of trust page");
 //	}
-	
+
 	@Test(priority = 4)
 	public void TC070_Verify_joyride() {
 		Custom_click(ob.side_menu_button(), "Side menu button");
-			Custom_click(ob.Joyride(), "Joyride");
-			ob.Joyride_info();
-			Custom_click(ob.nearest_dealer(), ob.nearest_dealer().getText());
-			Custom_click(ob.back_btn(), "Back from Dealer Locator");
-			Custom_click(ob.back_btn(), "Back from Joyride page");
+		Custom_click(ob.Joyride(), "Joyride");
+		ob.Joyride_info();
+		Custom_click(ob.nearest_dealer(), ob.nearest_dealer().getText());
+		Custom_click(ob.back_btn(), "Back from Dealer Locator");
+		Custom_click(ob.back_btn(), "Back from Joyride page");
 //			driver.navigate().back();
-		
+
 	}
 }

@@ -65,7 +65,7 @@ public class GoodLife extends Base_Utility {
 
 	public void plan_info() {
 		for (int i = 0; i < plan_info.size(); i++) {
-			msg(plan_info.get(i), plan_info.get(i).getText());
+			msg(plan_info.get(i), " ");
 		}
 	}
 
@@ -75,7 +75,7 @@ public class GoodLife extends Base_Utility {
 
 	public void membership_plan_info() {
 		for (int i = 0; i < membership_plan_info.size(); i++) {
-			msg(membership_plan_info.get(i), membership_plan_info.get(i).getText());
+			msg(membership_plan_info.get(i), " ");
 		}
 	}
 
@@ -124,9 +124,9 @@ public class GoodLife extends Base_Utility {
 
 	public void plan_benifits() {
 		for (int i = 0; i < plan_benifits.size(); i++) {
-			msg(plan_benifits.get(i), plan_benifits.get(i).getText());
+			msg(plan_benifits.get(i), " ");
 			if (i == 2) {
-				msg(ex_surprise, ex_surprise.getText());
+				msg(ex_surprise, " ");
 			}
 		}
 	}

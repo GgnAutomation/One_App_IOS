@@ -148,7 +148,7 @@ public class Feedback_and_About_Hero extends Base_Utility{
 	{
 		for(int i=13;i<exchange_info.size();i++)
 		{
-			msg(exchange_info.get(i), exchange_info.get(i).getText());
+			msg(exchange_info.get(i), " ");
 		}
 	}
 	public WebElement Language_select()
@@ -474,14 +474,14 @@ public class Feedback_and_About_Hero extends Base_Utility{
 	{
 		for(int i=1;i<4;i++)
 		{
-			msg(whatsapp_info.get(i),whatsapp_info.get(i).getText());
+			msg(whatsapp_info.get(i)," ");
 		}
 	}
 	public void whatsapp_info_real()
 	{
 		for(int i=0;i<3;i++)
 		{
-			msg(whatsapp_info_real.get(i),whatsapp_info_real.get(i).getText());
+			msg(whatsapp_info_real.get(i)," ");
 		}
 	}
 	public WebElement whatsapp_close()
@@ -548,7 +548,7 @@ public class Feedback_and_About_Hero extends Base_Utility{
 			{
 				break;
 			}
-		msg(Joyride_info.get(i),value);
+		msg(Joyride_info.get(i)," ");
 		}
 	}
 	public WebElement nearest_dealer()
