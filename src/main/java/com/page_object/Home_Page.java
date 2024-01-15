@@ -18,6 +18,7 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 public class Home_Page extends Base_Utility {
 	public Services_Page ob1;
 	String device = config_getdata("Platform_name");
+
 	public Home_Page() {
 		PageFactory.initElements(driver, this);
 	}
@@ -43,15 +44,17 @@ public class Home_Page extends Base_Utility {
 	private WebElement Collapse_btn;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_close']")
 	private WebElement close_drop_down;
-	@FindBy(xpath ="//android.widget.Button[@resource-id ='android:id/button1']")
+	@FindBy(xpath = "//android.widget.Button[@resource-id ='android:id/button1']")
 	private WebElement enable_now;
+
 	public WebElement temperature() {
 		return temperature;
 	}
-	public WebElement enable_now()
-	{
+
+	public WebElement enable_now() {
 		return enable_now;
 	}
+
 	public void all_vehicle_inside_drop_down() throws InterruptedException {
 
 		Custom_click(vehicle_drop_down, " Drop down");
@@ -70,7 +73,7 @@ public class Home_Page extends Base_Utility {
 
 	public void notification_count() {
 		for (int i = 0; i < notification_count.size(); i++) {
-			msg(notification_count.get(i), notification_count.get(i).getText());
+			msg(notification_count.get(i), "");
 		}
 
 	}
@@ -101,10 +104,12 @@ public class Home_Page extends Base_Utility {
 
 	public void SOS_message() {
 		try {
-		for (int i = 0; i < SOS_message.size(); i++) {
-			msg(SOS_message.get(i), SOS_message.get(i).getText());
+			for (int i = 0; i < SOS_message.size(); i++) {
+				msg(SOS_message.get(i), "");
+			}
+		} catch (Exception e) {
+			Custom_click(enable_now, "Enable noe");
 		}
-		}catch(Exception e) { Custom_click(enable_now, "Enable noe");}
 	}
 
 	public WebElement sent_alert_btn() {
@@ -276,7 +281,7 @@ public class Home_Page extends Base_Utility {
 
 	public void exchange_info() {
 		for (int i = 0; i < exchange_info.size(); i++) {
-			msg(exchange_info.get(i), exchange_info.get(i).getText());
+			msg(exchange_info.get(i), "");
 		}
 	}
 
@@ -373,28 +378,28 @@ public class Home_Page extends Base_Utility {
 	}
 
 	public void all_question() {
-		msg(Smoke, Smoke.getText());
-		msg(Smoke_msg, Smoke_msg.getText());
+		msg(Smoke, "");
+		msg(Smoke_msg, "");
 		Custom_click(no_smok_radio_btn, no_smok_radio_btn.getText() + " radio button");
 		Custom_click(smok_radio_btn, smok_radio_btn.getText() + " radio button");
-		msg(Starting, Starting.getText());
-		msg(Starting_msg, Starting_msg.getText());
+		msg(Starting, "");
+		msg(Starting_msg, "");
 		Custom_click(Starts_normal_radio_btn, Starts_normal_radio_btn.getText() + " radio button");
 		Custom_click(not_starts_btn, not_starts_btn.getText() + " radio button");
-		msg(Light_indicator, Light_indicator.getText());
-		msg(Light_indicator_msg, Light_indicator_msg.getText());
+		msg(Light_indicator, "");
+		msg(Light_indicator_msg, "");
 		Custom_click(Working_radio_btn, Working_radio_btn.getText() + " radio button");
 		Custom_click(not_working_radio_btn, not_working_radio_btn.getText() + " radio button");
-		msg(front_tyre, front_tyre.getText());
-		msg(front_tyre_msg, front_tyre_msg.getText());
+		msg(front_tyre, "");
+		msg(front_tyre_msg, "");
 		Custom_click(ok_radio_btn, ok_radio_btn.getText() + " radio button");
 		Custom_click(worn_out_radio_btn, worn_out_radio_btn.getText() + " radio button");
-		msg(rear_tyre, rear_tyre.getText());
-		msg(rear_tyre_msg, rear_tyre_msg.getText());
+		msg(rear_tyre, "");
+		msg(rear_tyre_msg, "");
 		Custom_click(ok_rear_radion_btn, ok_rear_radion_btn.getText() + " radio button");
 		Custom_click(worn_out_radio_btn, worn_out_radio_btn.getText() + " radio button");
-		msg(body_part, body_part.getText());
-		msg(body_part_msg, body_part_msg.getText());
+		msg(body_part, "");
+		msg(body_part_msg, "");
 		Custom_click(no_scrtch_radio_btn, no_scrtch_radio_btn.getText() + " radio button");
 		Custom_click(scrtch_radio_btn, scrtch_radio_btn.getText() + " radio button");
 	}
@@ -855,8 +860,9 @@ public class Home_Page extends Base_Utility {
 			Custom_click(Call_Dealer, (i + 1) + " Call Dealer button ");
 			driver.navigate().back();
 			driver.navigate().back();
-			if(device.equalsIgnoreCase("realdevice")) {
-			driver.navigate().back(); }
+			if (device.equalsIgnoreCase("realdevice")) {
+				driver.navigate().back();
+			}
 		}
 	}
 
@@ -882,7 +888,7 @@ public class Home_Page extends Base_Utility {
 		for (int i = 0; i < service_info.size(); i++) {
 			msg(service_info.get(i), " ");
 		}
-		msg(last_service, last_service.getText() + " on " );
+		msg(last_service, last_service.getText() + " on ");
 	}
 
 	public WebElement View_details_button() {
