@@ -463,7 +463,7 @@ public class Base_Utility
 		try {
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			Title = driver.getTitle();
-			test.log(Status.PASS, "Page is loaded : = " + Title);
+			test.log(Status.PASS, "Page is loaded :  " + Title);
 			log.info("Page is loaded " + Title);
 		} catch (Exception e) {
 			test.log(Status.FAIL, "==page is not loaded :" + e);
