@@ -353,13 +353,13 @@ public class Services_Page extends Base_Utility {
 		int i = 0;
 		try {
 			Thread.sleep(2000);
-			for (i = 5; i < Service_schedule.size(); i++) {
-				if (i < 11) {
+			for (i = 4; i < Service_schedule.size(); i++) {
+				if (i < 10) {
 					Message(Service_schedule.get(i).getText() + " = " + Service_schedule.get(i + 3).getText());
-					if (i == 7) {
-						i = 10;
+					if (i == 6) {
+						i = 9;
 					}
-				} else if (i >= 11) {
+				} else if (i >= 10) {
 					String Service_heading = Service_schedule.get(i).getText();
 					Custom_click(Service_schedule.get(i), Service_heading);
 					for (int j = 0; j < Service_schedule_subtitle.size(); j++) {
@@ -378,13 +378,13 @@ public class Services_Page extends Base_Utility {
 		int i = 0;
 		try {
 			Thread.sleep(2000);
-			for (i = 6; i < Service_schedule.size(); i++) {
-				if (i < 12) {
+			for (i = 5; i < Service_schedule.size(); i++) {
+				if (i < 11) {
 					Message(Service_schedule.get(i).getText() + " = " + Service_schedule.get(i + 3).getText());
-					if (i == 8) {
-						i = 11;
+					if (i == 7) {
+						i = 10;
 					}
-				} else if (i >= 12) {
+				} else if (i >= 11) {
 					String Service_heading = Service_schedule.get(i).getText();
 					Custom_click(Service_schedule.get(i), Service_heading);
 					for (int j = 0; j < Service_schedule_subtitle.size(); j++) {

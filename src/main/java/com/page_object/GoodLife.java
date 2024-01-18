@@ -28,10 +28,10 @@ public class GoodLife extends Base_Utility {
 
 	public void SliderDots() throws InterruptedException {
 		for (int i = 0; i < SliderDots.size(); i++) {
-			Custom_click(SliderDots.get(i), "Slider " + (i+1));
+			Custom_click(SliderDots.get(i), "Slider " + (i + 1));
 			Thread.sleep(1000);
-			}
 		}
+	}
 
 	public WebElement goodlife_Slider_image() {
 		return goodlife_Slider_image;
@@ -184,9 +184,8 @@ public class GoodLife extends Base_Utility {
 
 	public void ultimate() {
 		for (int i = 0; i < Ultimate_percentage.size(); i++) {
-			msg(Ultimate_percentage.get(i),
-					Ultimate_percentage.get(i).getText() + " " + Ultimate_Value.get(i).getText());
-			msg(Ultimate_msg.get(i), Ultimate_msg.get(i).getText());
+			msg(Ultimate_percentage.get(i), "" + " " + Ultimate_Value.get(i).getText());
+			msg(Ultimate_msg.get(i), " ");
 		}
 	}
 
@@ -349,7 +348,7 @@ public class GoodLife extends Base_Utility {
 	public void Referral_all_offer() {
 		for (int i = 0; i < Referral_all_offer.size() - 1; i++) {
 			if (i < 7) {
-				msg(Referral_all_offer.get(i), Referral_all_offer.get(i).getText());
+				msg(Referral_all_offer.get(i), "");
 			} else if (i == 7) {
 				Custom_click(Referral_all_offer.get(i), Referral_all_offer.get(i).getText());
 			}
@@ -396,7 +395,7 @@ public class GoodLife extends Base_Utility {
 	public void Winner_info() {
 		Message("******** Please look some winner name********");
 		for (int i = 0; i < Winner_info.size(); i++) {
-			msg(Winner_info.get(i), Winner_info.get(i).getText());
+			msg(Winner_info.get(i), "");
 		}
 	}
 
@@ -465,23 +464,24 @@ public class GoodLife extends Base_Utility {
 
 	public void point_earn_condition() {
 		try {
-		for (int i = 0; i < point_earn_condition.size()-1; i++) {
-			if (i < 3) {
-				msg(point_earn_condition.get(i), point_earn_condition.get(i).getText());
-			} else if (i >= 3 && i <= 12) {
-				msg(point_earn_condition.get(i),
-						point_earn_condition.get(i).getText() + " = " + point_earn_condition.get(i + 1).getText());
-				i++;
-			} else if (i == 13) {
-				msg(point_earn_condition.get(i), point_earn_condition.get(i).getText());
-			} else if (i >= 14 && i <= 24) {
-				Message(point_earn_condition.get(i).getText() + " = " + point_earn_condition.get(i + 1).getText());
-				i++;
-			} else {
-				break;
+			for (int i = 0; i < point_earn_condition.size() - 1; i++) {
+				if (i < 3) {
+					msg(point_earn_condition.get(i), "");
+				} else if (i >= 3 && i <= 12) {
+					msg(point_earn_condition.get(i), "" + " = " + point_earn_condition.get(i + 1).getText());
+					i++;
+				} else if (i == 13) {
+					msg(point_earn_condition.get(i), "");
+				} else if (i >= 14 && i <= 24) {
+					Message(point_earn_condition.get(i).getText() + " = " + point_earn_condition.get(i + 1).getText());
+					i++;
+				} else {
+					break;
+				}
 			}
+		} catch (Exception e) {
+			Message("" + e);
 		}
-		}catch(Exception e) {Message(""+e); }
 	}
 
 	public void Tier3_distance_message() {
