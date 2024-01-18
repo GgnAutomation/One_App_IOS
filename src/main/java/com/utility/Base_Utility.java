@@ -517,7 +517,7 @@ public class Base_Utility
 
 	public void error_message(String message) {
 		test.log(Status.FAIL, message);
-		log.error("");
+		log.error(" ");
 		test.addScreenCaptureFromPath(lis.getcapcture(message));
 	}
 }
