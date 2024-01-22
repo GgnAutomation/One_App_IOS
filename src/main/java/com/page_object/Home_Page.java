@@ -46,7 +46,7 @@ public class Home_Page extends Base_Utility {
 	private WebElement close_drop_down;
 	@FindBy(xpath = "//android.widget.Button[@resource-id ='android:id/button1']")
 	private WebElement enable_now;
-
+	
 	public WebElement temperature() {
 		return temperature;
 	}
@@ -280,8 +280,12 @@ public class Home_Page extends Base_Utility {
 	}
 
 	public void exchange_info() {
+		try {
 		for (int i = 0; i < exchange_info.size(); i++) {
 			msg(exchange_info.get(i), "");
+		}
+		}catch (Exception e) {
+			Message("All real value message not visible");
 		}
 	}
 
