@@ -6,24 +6,18 @@
   </listeners>
   <test thread-count="5" name="All test class(failed)">
     <classes>
-      <class name="Page_Test.Home_Page_Test">
-        <methods>
-          <include name="TC020_verify_Exchange"/>
-          <include name="TC024_Verify_Documents"/>
-          <include name="TC026_Verify_RSA"/>
-          <include name="TC023_verify_Vehicle_valution"/>
-          <include name="TC028_frequently_asked_questions"/>
-          <include name="TC027_Renew_RSA"/>
-          <include name="TC025_Verify_Relationship_Manager"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-        </methods>
-      </class> <!-- Page_Test.Home_Page_Test -->
       <class name="Page_Test.E_Shop_test">
         <methods>
           <include name="TC112_new_customers"/>
           <include name="OPEN_AND_INSTALL_APP"/>
         </methods>
       </class> <!-- Page_Test.E_Shop_test -->
+      <class name="Page_Test.Refer_a_friend_and_Contact_us_test">
+        <methods>
+          <include name="TC058_Verify_instagram_in_Contact_us_page"/>
+          <include name="OPEN_AND_INSTALL_APP"/>
+        </methods>
+      </class> <!-- Page_Test.Refer_a_friend_and_Contact_us_test -->
     </classes>
   </test> <!-- All test class(failed) -->
 </suite> <!-- Failed suite [Hero_App] -->
