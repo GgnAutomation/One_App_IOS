@@ -114,7 +114,12 @@ public class Select_Vehicle_Page_Test extends Base_Utility {
 		if (device.equalsIgnoreCase("pcloudy")) {
 //			Custom_click(ob.While_using_the_app(), "While using the app");
 		}
-//		Custom_click(ob.banner_Img_close(), " Banner Img close");
-	
-		}
+		try {
+			Thread.sleep(5000);
+			if(ob.banner_Img_close().isDisplayed()) {
+		Custom_click(ob.banner_Img_close(), " Banner Img close"); }
+			}catch (Exception e) {
+				Message("Banner img is not given");
+			}
+	}
 }
