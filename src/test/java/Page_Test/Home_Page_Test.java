@@ -70,8 +70,8 @@ public class Home_Page_Test extends Base_Utility {
 			}
 		}
 		Custom_click(ob.Search_destination(), "Search destination");
-		msg(ob.Search_here(), " = ");
-		custom_sendkeys(ob.Search_here(), "railway", "Place name");
+		msg(ob.Search_here(), "Search Here ");
+		custom_sendkeys(ob.Search_here(), " railway", "Place name");
 		Custom_click(ob.chose_place_name(), ob.chose_place_name().getText());
 		msg(ob.Searched_name(), "Searched place name = ");
 		msg(ob.Searched_address(), "Place address = ");

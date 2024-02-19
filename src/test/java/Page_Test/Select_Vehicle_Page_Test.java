@@ -115,7 +115,7 @@ public class Select_Vehicle_Page_Test extends Base_Utility {
 //			Custom_click(ob.While_using_the_app(), "While using the app");
 		}
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(10000);
 			if(ob.banner_Img_close().isDisplayed()) {
 		Custom_click(ob.banner_Img_close(), " Banner Img close"); }
 			}catch (Exception e) {

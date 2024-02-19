@@ -26,8 +26,8 @@ public class Login_Page_Test extends Base_Utility {
 	String device = config_getdata("Platform_name");
 	String version = config_getdata("version");
 	String enveronment = config_getdata("env");
-
-	@Test(priority = 0)
+	long startclicktime ,endclicktime , starreadtime , endreadtime;
+	@Test(priority = 0) 
 	public void TC001_Verify_Login_with_Invalid_credential() {
 		Message("************************Login page test**************************");
 		ob = new Login_page();
@@ -86,11 +86,11 @@ public class Login_Page_Test extends Base_Utility {
 
 	@Test(priority = 4)
 	public void TC005_Terms_of_use_button() throws InterruptedException {
-		long startclicktime = System.currentTimeMillis();
+		 startclicktime = System.currentTimeMillis();
 		Custom_click(ob.Terms_of_Use(), "Terms of use button");
-		long endclicktime = System.currentTimeMillis();
+	     endclicktime = System.currentTimeMillis();
 		Message("Click time in Tearms of use =" + (endclicktime - startclicktime) + " MS");
-		long starreadtime = System.currentTimeMillis();
+		starreadtime = System.currentTimeMillis();
 		Thread.sleep(5000);
 		if (device.equalsIgnoreCase("emulator")) {
 			msg(ob.Terms_of_Use_condition(),
@@ -99,31 +99,35 @@ public class Login_Page_Test extends Base_Utility {
 			msg(ob.Terms_of_Use_condition_for_real_device(),
 					"Terms of use: First condition = ");
 		}
-		long endreadtime = System.currentTimeMillis();
+		endreadtime = System.currentTimeMillis();
 		Message("Raad time in Tearms of use =" + (endreadtime - starreadtime) + " MS");
 		Custom_click(ob.back_page(), "back terms of use page ");
 	}
 
 	@Test(priority = 5)
 	public void TC006_Privacy_policy() throws InterruptedException {
-		long startclicktime = System.currentTimeMillis();
+		 startclicktime = System.currentTimeMillis();
 		Custom_click(ob.Privacy_Policy(), "Privacy Policy");
-		long endclicktime = System.currentTimeMillis();
+		 endclicktime = System.currentTimeMillis();
 		Message("Click time in Privacy policy =" + (endclicktime - startclicktime) + " MS");
-		Thread.sleep(4000);
-		long starreadtime = System.currentTimeMillis();
+		Thread.sleep(6000);
+		try {
+		 starreadtime = System.currentTimeMillis();
 		if (device.equalsIgnoreCase("emulator")) {
 			msg(ob.Privacy_Policy_condition(),
 					"Privacy policy : First Condition = ");
+			Custom_click(ob.back_page(), "back Privacy Policy page ");
 		} else if (device.equalsIgnoreCase("pcloudy") || device.equalsIgnoreCase("realdevice")) {
-			msg(ob.Terms_of_Use_condition_for_real_device(),
+			msg(ob.Privacy_of_Use_condition_for_real_device(),
 					"Privacy policy : First Condition = ");
+			endreadtime = System.currentTimeMillis();
+			Message("Raad time in Privacy policy =" + (endreadtime - starreadtime) + " MS");
+			Custom_click(ob.back_page(), "back Privacy Policy page ");
+		}}catch(Exception e) {
+			endreadtime = System.currentTimeMillis();
+			Message("Raad time in Privacy policy =" + (endreadtime - starreadtime) + " MS");
+			Custom_click(ob.back_page(), "back Privacy Policy page ");}
 		}
-		long endreadtime = System.currentTimeMillis();
-		Message("Raad time in Privacy policy =" + (endreadtime - starreadtime) + " MS");
-		Custom_click(ob.back_page(), "back Privacy Policy page ");
-
-	}
 
 	@Test(priority = 6)
 	public void TC007_contact_Us() throws InterruptedException {

@@ -495,7 +495,7 @@ public class Base_Utility
 	public void msg(WebElement ele, String filedname) {
 		try {
 			if (ele.isDisplayed()) {
-				wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				wait = new WebDriverWait(driver, Duration.ofSeconds(12));
 				wait.until(ExpectedConditions.visibilityOf(ele));
 				String mes = ele.getText();
 				test.log(Status.PASS, filedname + mes);

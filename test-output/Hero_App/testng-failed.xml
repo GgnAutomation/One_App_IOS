@@ -6,12 +6,12 @@
   </listeners>
   <test thread-count="5" name="All test class(failed)">
     <classes>
-      <class name="Page_Test.E_Shop_test">
+      <class name="Page_Test.GoodLife_test">
         <methods>
-          <include name="TC112_new_customers"/>
+          <include name="TC109_verify_Exclusive_membership_offers"/>
           <include name="OPEN_AND_INSTALL_APP"/>
         </methods>
-      </class> <!-- Page_Test.E_Shop_test -->
+      </class> <!-- Page_Test.GoodLife_test -->
       <class name="Page_Test.Refer_a_friend_and_Contact_us_test">
         <methods>
           <include name="TC058_Verify_instagram_in_Contact_us_page"/>

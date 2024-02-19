@@ -103,9 +103,9 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		try {
 		ob.facebook();
 		}catch(Exception e) {
-			driver.navigate().back();
-			Thread.sleep(3000);
 			test.addScreenCaptureFromPath(lis.getcapcture("facebook"));
+			driver.navigate().back();
+			
 		}
 		}
 	@Test(priority = 6)
@@ -113,9 +113,9 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 	{try {
 		ob.instagram();
 	}catch(Exception e) {
-		Custom_click(ob.back(), " Back from " + "Instagram");
 		test.addScreenCaptureFromPath(lis.getcapcture("Instagram"));
-	}
+		Custom_click(ob.back(), " Back from " + "Instagram");
+		}
 	}
 	@Test(priority = 7)
 	public void TC059_Verify_Whatsapp_in_Contact_us_page()
@@ -135,8 +135,9 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		try {
 		ob.youTube();
 		}catch(Exception e) {
-			Custom_click(ob.back(), " Back from " + "youtube");
 			test.addScreenCaptureFromPath(lis.getcapcture("youtube"));
+			Custom_click(ob.back(), " Back from " + "youtube");
+			
 		}
 	}
 	@Test(priority = 9)
@@ -145,8 +146,9 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		try {
 		ob.Linkedin();
 		}catch(Exception e) {
-			Custom_click(ob.back(), " Back from " + "Linkedin");
 			test.addScreenCaptureFromPath(lis.getcapcture("Linkedin"));
+			Custom_click(ob.back(), " Back from " + "Linkedin");
+			
 		}
 	}
 	@Test(priority = 10)
@@ -155,8 +157,9 @@ public class Refer_a_friend_and_Contact_us_test extends Base_Utility {
 		try {
 		ob.twitter();
 		}catch(Exception e) {
-			Custom_click(ob.back(), " Back from " + "twitter");
 			test.addScreenCaptureFromPath(lis.getcapcture("twitter"));
+			Custom_click(ob.back(), " Back from " + "twitter");
+			
 		}
 	}
 	@Test(priority = 11)
