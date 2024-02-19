@@ -1,33 +1,727 @@
-[INFO ] 2024-02-19 16:39:09.546 [main] Hero_App - ************************Login page test**************************
-[INFO ] 2024-02-19 16:39:12.816 [main] Hero_App - While using the app is clickable
-[INFO ] 2024-02-19 16:39:15.868 [main] Hero_App - Allow Hero App to access your phone call logs is clickable
-[INFO ] 2024-02-19 16:39:18.404 [main] Hero_App - Allow Hero App to access your contacts is clickable
-[INFO ] 2024-02-19 16:39:20.999 [main] Hero_App - Allow Hero App to make and manage phone calls is clickable
-[INFO ] 2024-02-19 16:39:23.892 [main] Hero_App - Allow Hero App to send and view SMS messages is clickable
-[INFO ] 2024-02-19 16:39:26.167 [main] Hero_App - Allow Hero App to find, connect to, and determine the relative position of nearby devices is clickable
-[INFO ] 2024-02-19 16:39:29.282 [main] Hero_App - OK is clickable
-[INFO ] 2024-02-19 16:39:31.716 [main] Hero_App - Allow notification is clickable
-[INFO ] 2024-02-19 16:39:35.336 [main] Hero_App - Login with unregisterd mobile number send successfully
-[INFO ] 2024-02-19 16:39:39.128 [main] Hero_App - Coninue button enter after unregistered mobile number is clickable
-[INFO ] 2024-02-19 16:39:39.967 [main] Hero_App - Registerd info =Number not registered
-[INFO ] 2024-02-19 16:39:42.051 [main] Hero_App - Cancel is clickable
-[INFO ] 2024-02-19 16:39:44.938 [main] Hero_App - Login with short_digit_mobile_number send successfully
-[INFO ] 2024-02-19 16:39:46.820 [main] Hero_App - Coninue button enter after short length of mobile number is  not present
-[INFO ] 2024-02-19 16:39:49.546 [main] Hero_App - Login with More than 10 digit mobile number send successfully
-[INFO ] 2024-02-19 16:39:51.010 [main] Hero_App - More then 10 digits mobiles number are not acceptable
-[INFO ] 2024-02-19 16:39:55.985 [main] Hero_App - Terms of use button is clickable
-[INFO ] 2024-02-19 16:39:55.985 [main] Hero_App - Click time in Tearms of use =2758 MS
-[INFO ] 2024-02-19 16:40:06.120 [main] Hero_App - Terms of use: First condition = This document sets out the terms and conditions for access or usage of HERO’s website at 
-[INFO ] 2024-02-19 16:40:06.120 [main] Hero_App - Raad time in Tearms of use =10135 MS
-[INFO ] 2024-02-19 16:40:09.388 [main] Hero_App - back terms of use page  is clickable
-[INFO ] 2024-02-19 16:40:11.495 [main] Hero_App - Privacy Policy is clickable
-[INFO ] 2024-02-19 16:40:11.496 [main] Hero_App - Click time in Privacy policy =2099 MS
-[INFO ] 2024-02-19 16:40:37.702 [main] Hero_App - Raad time in Privacy policy =20202 MS
-[INFO ] 2024-02-19 16:40:38.922 [main] Hero_App - back Privacy Policy page  is clickable
-[INFO ] 2024-02-19 16:40:40.704 [main] Hero_App - Contact us is clickable
-[INFO ] 2024-02-19 16:40:43.711 [main] Hero_App - Contct us titile =Welcome to the official account of Hero MotoCorp - your favourite & the world's largest two-wheeler Company
-[INFO ] 2024-02-19 16:40:45.201 [main] Hero_App - back Contact us page  is clickable
-[INFO ] 2024-02-19 16:40:48.548 [main] Hero_App - Login with Registerd mobile number send successfully
-[INFO ] 2024-02-19 16:40:51.144 [main] Hero_App - Coninue button is present
-[INFO ] 2024-02-19 16:40:53.488 [main] Hero_App - Coninue button is clickable
-[INFO ] 2024-02-19 16:41:25.403 [main] Hero_App - Resend button is present
+[INFO ] 2024-02-19 17:57:45.894 [main] Hero_App - ************************Login page test**************************
+[INFO ] 2024-02-19 17:57:49.008 [main] Hero_App - While using the app is clickable
+[INFO ] 2024-02-19 17:57:52.328 [main] Hero_App - Allow Hero App to access your phone call logs is clickable
+[INFO ] 2024-02-19 17:57:54.197 [main] Hero_App - Allow Hero App to access your contacts is clickable
+[INFO ] 2024-02-19 17:57:56.347 [main] Hero_App - Allow Hero App to make and manage phone calls is clickable
+[INFO ] 2024-02-19 17:57:58.249 [main] Hero_App - Allow Hero App to send and view SMS messages is clickable
+[INFO ] 2024-02-19 17:58:00.992 [main] Hero_App - Allow Hero App to find, connect to, and determine the relative position of nearby devices is clickable
+[INFO ] 2024-02-19 17:58:02.091 [main] Hero_App - OK is clickable
+[INFO ] 2024-02-19 17:58:04.884 [main] Hero_App - Allow notification is clickable
+[INFO ] 2024-02-19 17:58:08.199 [main] Hero_App - Login with unregisterd mobile number send successfully
+[INFO ] 2024-02-19 17:58:11.872 [main] Hero_App - Coninue button enter after unregistered mobile number is clickable
+[INFO ] 2024-02-19 17:58:12.620 [main] Hero_App - Registerd info =Number not registered
+[INFO ] 2024-02-19 17:58:14.669 [main] Hero_App - Cancel is clickable
+[INFO ] 2024-02-19 17:58:16.845 [main] Hero_App - Login with short_digit_mobile_number send successfully
+[INFO ] 2024-02-19 17:58:18.705 [main] Hero_App - Coninue button enter after short length of mobile number is  not present
+[INFO ] 2024-02-19 17:58:20.587 [main] Hero_App - Login with More than 10 digit mobile number send successfully
+[INFO ] 2024-02-19 17:58:22.130 [main] Hero_App - More then 10 digits mobiles number are not acceptable
+[INFO ] 2024-02-19 17:58:26.915 [main] Hero_App - Terms of use button is clickable
+[INFO ] 2024-02-19 17:58:26.915 [main] Hero_App - Click time in Tearms of use =2585 MS
+[INFO ] 2024-02-19 17:58:34.996 [main] Hero_App - Terms of use: First condition = This document sets out the terms and conditions for access or usage of HERO’s website at 
+[INFO ] 2024-02-19 17:58:34.998 [main] Hero_App - Raad time in Tearms of use =8081 MS
+[INFO ] 2024-02-19 17:58:38.369 [main] Hero_App - back terms of use page  is clickable
+[INFO ] 2024-02-19 17:58:39.545 [main] Hero_App - Privacy Policy is clickable
+[INFO ] 2024-02-19 17:58:39.546 [main] Hero_App - Click time in Privacy policy =1167 MS
+[INFO ] 2024-02-19 17:58:46.846 [main] Hero_App - Privacy policy : First Condition = Hero MotoCorp Ltd. together with its affiliates and subsidiaries (collectively referred to as the "Company" or "Hero" or "Us" and also indicated by "us", "we" or "our") is committed to protecting your privacy and Personal Information (defined below) You give to us. We encourage You to read the Privacy Policy ("Policy").
+[INFO ] 2024-02-19 17:58:46.847 [main] Hero_App - Raad time in Privacy policy =1287 MS
+[INFO ] 2024-02-19 17:58:48.751 [main] Hero_App - back Privacy Policy page  is clickable
+[INFO ] 2024-02-19 17:58:49.988 [main] Hero_App - Contact us is clickable
+[INFO ] 2024-02-19 17:58:52.882 [main] Hero_App - Contct us titile =Welcome to the official account of Hero MotoCorp - your favourite & the world's largest two-wheeler Company
+[INFO ] 2024-02-19 17:58:54.877 [main] Hero_App - back Contact us page  is clickable
+[INFO ] 2024-02-19 17:58:57.783 [main] Hero_App - Login with Registerd mobile number send successfully
+[INFO ] 2024-02-19 17:58:59.761 [main] Hero_App - Coninue button is present
+[INFO ] 2024-02-19 17:59:02.507 [main] Hero_App - Coninue button is clickable
+[INFO ] 2024-02-19 17:59:33.608 [main] Hero_App - Resend button is present
+[INFO ] 2024-02-19 17:59:34.738 [main] Hero_App - Resend button is clickable
+[INFO ] 2024-02-19 17:59:55.048 [main] Hero_App - OTP is 4 send successfully
+[INFO ] 2024-02-19 17:59:57.954 [main] Hero_App - OTP is 5 send successfully
+[INFO ] 2024-02-19 18:00:00.836 [main] Hero_App - OTP is 6 send successfully
+[INFO ] 2024-02-19 18:00:04.004 [main] Hero_App - OTP is 7 send successfully
+[INFO ] 2024-02-19 18:00:06.499 [main] Hero_App - OTP is 8 send successfully
+[INFO ] 2024-02-19 18:00:08.782 [main] Hero_App - OTP is 9 send successfully
+[INFO ] 2024-02-19 18:00:10.876 [main] Hero_App - Verify Button is clickable
+[INFO ] 2024-02-19 18:00:12.646 [main] Hero_App - Verify Button is still present
+[INFO ] 2024-02-19 18:00:13.792 [main] Hero_App - Edit Mobile Number is clickable
+[INFO ] 2024-02-19 18:00:17.199 [main] Hero_App - Login with Registerd mobile number send successfully
+[INFO ] 2024-02-19 18:00:20.490 [main] Hero_App - Coninue button is clickable
+[INFO ] 2024-02-19 18:00:37.941 [main] Hero_App - enterOTP =4 send successfully
+[INFO ] 2024-02-19 18:00:40.652 [main] Hero_App - enterOTP =3 send successfully
+[INFO ] 2024-02-19 18:00:42.684 [main] Hero_App - enterOTP =4 send successfully
+[INFO ] 2024-02-19 18:00:45.463 [main] Hero_App - enterOTP =2 send successfully
+[INFO ] 2024-02-19 18:00:48.607 [main] Hero_App - enterOTP =4 send successfully
+[INFO ] 2024-02-19 18:00:51.263 [main] Hero_App - enterOTP =1 send successfully
+[INFO ] 2024-02-19 18:00:53.829 [main] Hero_App - Verify Button is clickable
+[INFO ] 2024-02-19 18:00:53.849 [main] Hero_App - ************************Select_Vehicle_Page_Test**************************
+[INFO ] 2024-02-19 18:01:00.076 [main] Hero_App - Tap on pencil for Nick name  is clickable
+[INFO ] 2024-02-19 18:01:01.490 [main] Hero_App - Save button before updating the nick name is  present
+[INFO ] 2024-02-19 18:01:05.273 [main] Hero_App - Nick Name  send successfully
+[INFO ] 2024-02-19 18:01:07.817 [main] Hero_App - Nick name close button  is clickable
+[INFO ] 2024-02-19 18:01:10.093 [main] Hero_App - Nick name saved with close button
+[INFO ] 2024-02-19 18:01:11.840 [main] Hero_App - Tap on pencil for Nick name  is clickable
+[INFO ] 2024-02-19 18:01:15.354 [main] Hero_App -  30 letter Nick Name  send successfully
+[INFO ] 2024-02-19 18:01:18.897 [main] Hero_App - Save button after updating the 30 letter nick name is  is clickable
+[INFO ] 2024-02-19 18:01:21.653 [main] Hero_App -  = 30 letter nick name are acceptable
+[INFO ] 2024-02-19 18:01:22.744 [main] Hero_App - Tap on pencil for Nick name  is clickable
+[INFO ] 2024-02-19 18:01:26.841 [main] Hero_App - 31 letter Nick Name  send successfully
+[INFO ] 2024-02-19 18:01:29.465 [main] Hero_App - Save button after updating 31 letter nick name the nick name   is clickable
+[INFO ] 2024-02-19 18:01:31.718 [main] Hero_App -  = 31 letter nick name are not acceptable
+[INFO ] 2024-02-19 18:01:33.035 [main] Hero_App - Tap on pencil for Nick name  is clickable
+[INFO ] 2024-02-19 18:01:37.129 [main] Hero_App - 29 letter Nick Name  send successfully
+[INFO ] 2024-02-19 18:01:39.559 [main] Hero_App - Save button after updating the 29 letter nick name  is clickable
+[INFO ] 2024-02-19 18:01:41.820 [main] Hero_App -  = 29 letter nick name are acceptable
+[INFO ] 2024-02-19 18:01:43.309 [main] Hero_App - Continue Button before select vehicle is present
+[INFO ] 2024-02-19 18:01:43.564 [main] Hero_App - We found 1 vehicles linked to you
+[INFO ] 2024-02-19 18:01:43.565 [main] Hero_App - Total number of Vehicles registered in this number is = 1
+[INFO ] 2024-02-19 18:01:45.298 [main] Hero_App -  Select first vehicle is clickable
+[INFO ] 2024-02-19 18:01:46.046 [main] Hero_App - Continue Button after select vehicle is present
+[INFO ] 2024-02-19 18:01:47.128 [main] Hero_App - Continue Button after select vehicle is clickable
+[INFO ] 2024-02-19 18:02:10.803 [main] Hero_App -  Banner Img close is clickable
+[INFO ] 2024-02-19 18:02:10.816 [main] Hero_App - ************************Home_Page_Test**************************
+[INFO ] 2024-02-19 18:02:22.408 [main] Hero_App - Current Temperature is = 
+[INFO ] 2024-02-19 18:02:23.444 [main] Hero_App - Vehicle Img is present
+[INFO ] 2024-02-19 18:02:27.119 [main] Hero_App -  Drop down is clickable
+[INFO ] 2024-02-19 18:02:28.414 [main] Hero_App - Select Vehicle is clickable
+[INFO ] 2024-02-19 18:02:30.483 [main] Hero_App -  Drop down is clickable
+[INFO ] 2024-02-19 18:02:32.264 [main] Hero_App - select vehicle close button is clickable
+[INFO ] 2024-02-19 18:02:34.682 [main] Hero_App - Less Actions is clickable
+[INFO ] 2024-02-19 18:02:38.500 [main] Hero_App - More Actions is clickable
+[INFO ] 2024-02-19 18:02:43.294 [main] Hero_App - Notification is clickable
+[INFO ] 2024-02-19 18:02:43.926 [main] Hero_App - No notification available
+[INFO ] 2024-02-19 18:02:45.821 [main] Hero_App - Notification back is clickable
+[INFO ] 2024-02-19 18:02:48.073 [main] Hero_App - SOS icon is clickable
+[INFO ] 2024-02-19 18:02:48.732 [main] Hero_App - Panic Alert!
+[INFO ] 2024-02-19 18:02:49.300 [main] Hero_App - We have sent an SMS to emergency contact.
+[INFO ] 2024-02-19 18:02:50.647 [main] Hero_App - Send Alert Now is clickable
+[INFO ] 2024-02-19 18:02:54.706 [main] Hero_App - SOS icon is clickable
+[INFO ] 2024-02-19 18:02:56.493 [main] Hero_App - Don't send.  I'm safe is clickable
+[INFO ] 2024-02-19 18:03:00.835 [main] Hero_App - SOS icon is clickable
+[INFO ] 2024-02-19 18:03:02.391 [main] Hero_App - SOS close button is clickable
+[INFO ] 2024-02-19 18:03:03.983 [main] Hero_App - Navigate menu is clickable
+[INFO ] 2024-02-19 18:03:07.620 [main] Hero_App - Search destination is clickable
+[INFO ] 2024-02-19 18:03:08.708 [main] Hero_App - Search Here Search here
+[INFO ] 2024-02-19 18:03:11.594 [main] Hero_App - Place name send successfully
+[INFO ] 2024-02-19 18:03:15.091 [main] Hero_App - Heelalige Railway Station is clickable
+[INFO ] 2024-02-19 18:03:16.527 [main] Hero_App - Searched place name = Heelalige Railway Station
+[INFO ] 2024-02-19 18:03:17.180 [main] Hero_App - Place address = Heelalige, Anekal, District Bangalore Urban, Bengaluru, Karnataka, 560099
+[INFO ] 2024-02-19 18:03:19.174 [main] Hero_App - Navigate is clickable
+[INFO ] 2024-02-19 18:03:20.662 [main] Hero_App - Start button is clickable
+[INFO ] 2024-02-19 18:03:26.162 [main] Hero_App - Start is clickable
+[INFO ] 2024-02-19 18:03:30.472 [main] Hero_App -  Stop navigation is clickable
+[INFO ] 2024-02-19 18:03:34.461 [main] Hero_App - Exchange menu is clickable
+[INFO ] 2024-02-19 18:03:37.399 [main] Hero_App - Exchange
+[INFO ] 2024-02-19 18:03:38.351 [main] Hero_App - Introducing India’s New Age phygital 2-wheeler resale platform
+[INFO ] 2024-02-19 18:03:39.567 [main] Hero_App - Exchange benefits up to ₹4000
+[INFO ] 2024-02-19 18:03:40.442 [main] Hero_App - Choose vehicle for which you want to get estimated price
+[INFO ] 2024-02-19 18:03:41.592 [main] Hero_App - SPLENDOR +
+[INFO ] 2024-02-19 18:03:42.727 [main] Hero_App - January, 2018
+[INFO ] 2024-02-19 18:03:43.527 [main] Hero_App - Exchange in 3 easy steps
+[INFO ] 2024-02-19 18:03:44.583 [main] Hero_App - Step 1: Vehicle details
+[INFO ] 2024-02-19 18:03:45.780 [main] Hero_App - Capture your basic vehicle details
+[INFO ] 2024-02-19 18:03:46.749 [main] Hero_App - Step 2: Visit dealership
+[INFO ] 2024-02-19 18:03:47.640 [main] Hero_App - You have to visit the selected dealership for physical evaluation
+[INFO ] 2024-02-19 18:03:48.703 [main] Hero_App - Step 3: Price discovery
+[INFO ] 2024-02-19 18:03:49.658 [main] Hero_App - Post the price discovery, price of used 2W will be offered to you
+[INFO ] 2024-02-19 18:03:52.135 [main] Hero_App - SPLENDOR + is clickable
+[INFO ] 2024-02-19 18:03:54.815 [main] Hero_App - Exchange info =Find estimated resell value
+[INFO ] 2024-02-19 18:03:55.634 [main] Hero_App - Vehicle info = Vehicle
+Details
+[INFO ] 2024-02-19 18:03:56.346 [main] Hero_App - City = Choose city where you want to sell the vehicle
+[INFO ] 2024-02-19 18:03:58.284 [main] Hero_App - City name where sell vehicle send successfully
+[INFO ] 2024-02-19 18:04:03.324 [main] Hero_App - New Delhi (Delhi) is clickable
+[INFO ] 2024-02-19 18:04:06.057 [main] Hero_App - PIN code send successfully
+[INFO ] 2024-02-19 18:04:08.520 [main] Hero_App - Next is clickable
+[INFO ] 2024-02-19 18:04:11.010 [main] Hero_App - Vehicle
+Condition
+[INFO ] 2024-02-19 18:04:11.873 [main] Hero_App - Identify your vehicle condition.
+[INFO ] 2024-02-19 18:04:12.889 [main] Hero_App - Smoke
+[INFO ] 2024-02-19 18:04:13.805 [main] Hero_App - Is there any Smoke coming from the silencer?
+[INFO ] 2024-02-19 18:04:16.140 [main] Hero_App - No Smoke radio button is clickable
+[INFO ] 2024-02-19 18:04:18.496 [main] Hero_App - Smoke radio button is clickable
+[INFO ] 2024-02-19 18:04:19.335 [main] Hero_App - Starting
+[INFO ] 2024-02-19 18:04:20.104 [main] Hero_App - Is there any problem in Starting the vehicle?
+[INFO ] 2024-02-19 18:04:22.421 [main] Hero_App - Starts Normally radio button is clickable
+[INFO ] 2024-02-19 18:04:24.819 [main] Hero_App - Not Starting radio button is clickable
+[INFO ] 2024-02-19 18:04:25.739 [main] Hero_App - Light Indicator
+[INFO ] 2024-02-19 18:04:26.554 [main] Hero_App - Is there any problem in the working of Lights & Indicators?
+[INFO ] 2024-02-19 18:04:29.122 [main] Hero_App - Working radio button is clickable
+[INFO ] 2024-02-19 18:04:31.441 [main] Hero_App - Not Working radio button is clickable
+[INFO ] 2024-02-19 18:04:32.471 [main] Hero_App - Front Tyre
+[INFO ] 2024-02-19 18:04:33.349 [main] Hero_App - What is the condition of the Front Tyre?
+[INFO ] 2024-02-19 18:04:34.881 [main] Hero_App - OK radio button is clickable
+[INFO ] 2024-02-19 18:04:37.478 [main] Hero_App - Worn out/Cracks/Puncture radio button is clickable
+[INFO ] 2024-02-19 18:04:38.959 [main] Hero_App - Rear Tyre
+[INFO ] 2024-02-19 18:04:39.930 [main] Hero_App - What is the condition of the Rear Tyre?
+[INFO ] 2024-02-19 18:04:42.456 [main] Hero_App - OK radio button is clickable
+[INFO ] 2024-02-19 18:04:44.771 [main] Hero_App - Worn out/Cracks/Puncture radio button is clickable
+[INFO ] 2024-02-19 18:04:45.632 [main] Hero_App - Body Part
+[INFO ] 2024-02-19 18:04:46.605 [main] Hero_App - What is the condition of the Body Parts?
+[INFO ] 2024-02-19 18:04:49.100 [main] Hero_App - No Scratch / Dent / Cracks radio button is clickable
+[INFO ] 2024-02-19 18:04:51.441 [main] Hero_App - Scratch / Dent / Cracks radio button is clickable
+[INFO ] 2024-02-19 18:04:52.948 [main] Hero_App - Next is clickable
+[INFO ] 2024-02-19 18:04:54.742 [main] Hero_App - Find estimated resell value
+[INFO ] 2024-02-19 18:04:57.976 [main] Hero_App - SPLENDOR +
+[INFO ] 2024-02-19 18:04:58.589 [main] Hero_App - January, 2018
+[INFO ] 2024-02-19 18:04:59.300 [main] Hero_App - Reg. Month & Year
+[INFO ] 2024-02-19 18:04:59.951 [main] Hero_App - NEW DELHI
+[INFO ] 2024-02-19 18:05:01.329 [main] Hero_App - Location
+[INFO ] 2024-02-19 18:05:01.898 [main] Hero_App - Estimated Value
+[INFO ] 2024-02-19 18:05:02.593 [main] Hero_App - ₹24,768 - ₹26,679
+[INFO ] 2024-02-19 18:05:03.320 [main] Hero_App - A Hero dealership partner will contact you within 2-3 working days for detailed inspection.                  
+
+Please visit nearest Hero dealership for spot buy offers and also get a certification report for FREE.
+[INFO ] 2024-02-19 18:05:04.031 [main] Hero_App - Fair
+[INFO ] 2024-02-19 18:05:04.729 [main] Hero_App - Visit nearest dealers for exchange
+[INFO ] 2024-02-19 18:05:05.413 [main] Hero_App - Aman Motors
+[INFO ] 2024-02-19 18:05:06.111 [main] Hero_App - 2212.7 km
+[INFO ] 2024-02-19 18:05:06.741 [main] Hero_App - Aman Motors - Hero MotoCorp, Kartar Nagar, Shahdara, New Delhi, Delhi, India,110053
+[INFO ] 2024-02-19 18:05:07.488 [main] Hero_App - Call
+[INFO ] 2024-02-19 18:05:08.192 [main] Hero_App - Directions
+[INFO ] 2024-02-19 18:05:08.951 [main] Hero_App - Singla Agencies
+[INFO ] 2024-02-19 18:05:09.707 [main] Hero_App - 2183.1 km
+[INFO ] 2024-02-19 18:05:10.659 [main] Hero_App - Singla Agencies - Hero MotoCorp, Block R, Pul Pehlad Pur, New Delhi, Delhi, India,110044
+[INFO ] 2024-02-19 18:05:11.382 [main] Hero_App - Call
+[INFO ] 2024-02-19 18:05:12.203 [main] Hero_App - Directions
+[INFO ] 2024-02-19 18:05:16.290 [main] Hero_App - Back from estimated resell value page is clickable
+[INFO ] 2024-02-19 18:05:20.010 [main] Hero_App - Back from Exchange page is clickable
+[INFO ] 2024-02-19 18:05:22.296 [main] Hero_App - Document menu is clickable
+[INFO ] 2024-02-19 18:05:24.671 [main] Hero_App - R.C.
+[INFO ] 2024-02-19 18:05:24.914 [main] Hero_App - R.C. is already available
+[INFO ] 2024-02-19 18:05:25.822 [main] Hero_App - R.C. View File is clickable
+[INFO ] 2024-02-19 18:05:39.573 [main] Hero_App - Document sideicon is clickable
+[INFO ] 2024-02-19 18:05:41.840 [main] Hero_App - Back from R.C. page is clickable
+[INFO ] 2024-02-19 18:05:42.232 [main] Hero_App - Insurance
+[INFO ] 2024-02-19 18:05:42.478 [main] Hero_App - Insurance is already available
+[INFO ] 2024-02-19 18:05:43.413 [main] Hero_App - Insurance View File is clickable
+[INFO ] 2024-02-19 18:05:47.350 [main] Hero_App - Document sideicon is clickable
+[INFO ] 2024-02-19 18:05:49.631 [main] Hero_App - Back from Insurance page is clickable
+[INFO ] 2024-02-19 18:05:50.044 [main] Hero_App - P.U.C.
+[INFO ] 2024-02-19 18:05:50.314 [main] Hero_App - P.U.C. is already available
+[INFO ] 2024-02-19 18:05:51.187 [main] Hero_App - P.U.C. View File is clickable
+[INFO ] 2024-02-19 18:05:55.247 [main] Hero_App - Document sideicon is clickable
+[INFO ] 2024-02-19 18:05:57.611 [main] Hero_App - Back from P.U.C. page is clickable
+[INFO ] 2024-02-19 18:05:59.380 [main] Hero_App - Back from Documents is clickable
+[INFO ] 2024-02-19 18:06:03.664 [main] Hero_App - Relationship Manager is clickable
+[INFO ] 2024-02-19 18:06:08.596 [main] Hero_App - Relationship Manager name is = SUJAN PAUL
+[INFO ] 2024-02-19 18:06:09.270 [main] Hero_App - Relationship Manager address is = A-19 JHILMIL IND AREA G.T. Road , EAST DELHI, DELHI, DELHI, 110095
+[INFO ] 2024-02-19 18:06:09.899 [main] Hero_App - Relationship Manager Contact number is = 9871798824
+[INFO ] 2024-02-19 18:06:10.941 [main] Hero_App - Relationship manager contact is clickable
+[INFO ] 2024-02-19 18:06:15.649 [main] Hero_App - Others Contacts information =Krishan Kumar Sharma
+[INFO ] 2024-02-19 18:06:16.012 [main] Hero_App - Others Contacts information =Territory Sales Manager
+[INFO ] 2024-02-19 18:06:16.637 [main] Hero_App - Others Contacts information =krishan.sharma@heromotocorp.com
+[INFO ] 2024-02-19 18:06:18.351 [main] Hero_App - Back from Relationship Manager is clickable
+[INFO ] 2024-02-19 18:06:19.859 [main] Hero_App - RSA is clickable
+[INFO ] 2024-02-19 18:06:24.535 [main] Hero_App -  Two wheeler RSA
+[INFO ] 2024-02-19 18:06:25.332 [main] Hero_App -  When you face a breakdown on the road, help is just a call away with Roadside Assist.
+[INFO ] 2024-02-19 18:06:25.964 [main] Hero_App -  Benefits with RSA
+[INFO ] 2024-02-19 18:06:26.893 [main] Hero_App -  Secure your ride with RSA, and do not worry again!
+[INFO ] 2024-02-19 18:06:27.684 [main] Hero_App -  Helping hand in just 3 steps
+[INFO ] 2024-02-19 18:06:28.534 [main] Hero_App -  399/- 
+[INFO ] 2024-02-19 18:06:29.284 [main] Hero_App -  Per vehicle, per Year
+[INFO ] 2024-02-19 18:06:31.584 [main] Hero_App - Get Roadside Assistance now is clickable
+[INFO ] 2024-02-19 18:06:34.163 [main] Hero_App -  Owner Name
+[INFO ] 2024-02-19 18:06:34.789 [main] Hero_App -  BABLU KUMAR rawani
+[INFO ] 2024-02-19 18:06:35.346 [main] Hero_App -  Choose your vehicle
+[INFO ] 2024-02-19 18:06:35.907 [main] Hero_App -  SPLENDOR +
+[INFO ] 2024-02-19 18:06:36.534 [main] Hero_App -  VIN Number
+[INFO ] 2024-02-19 18:06:37.146 [main] Hero_App -  MBLHAR073HHL17107
+[INFO ] 2024-02-19 18:06:37.727 [main] Hero_App -  You'll receive your RSA certificate on this email ID.
+[INFO ] 2024-02-19 18:06:38.345 [main] Hero_App -  By clicking, You agree to our Digital Privacy policy
+[INFO ] 2024-02-19 18:06:39.170 [main] Hero_App - Registraction number = DL3SDX2964
+[INFO ] 2024-02-19 18:06:41.190 [main] Hero_App - Back from Payment is clickable
+[INFO ] 2024-02-19 18:06:53.215 [main] Hero_App - Successfully  Scroll page down Action Step 3
+[INFO ] 2024-02-19 18:08:52.692 [main] Hero_App - Successfully Scroll up 0
+[INFO ] 2024-02-19 18:08:53.972 [main] Hero_App - Successfully Scroll up 1
+[INFO ] 2024-02-19 18:10:28.913 [main] Hero_App - Successfully  Scroll page down Action E_shop
+[INFO ] 2024-02-19 18:11:10.769 [main] Hero_App - ************************My_Profile_Page_Test**************************
+[INFO ] 2024-02-19 18:11:59.097 [main] Hero_App - Edit profile details button is clickable
+[INFO ] 2024-02-19 18:13:23.711 [main] Hero_App - *********************My Vehicle page**************************
+[INFO ] 2024-02-19 18:15:34.185 [main] Hero_App - ************************Refer a Friend**************************
+[INFO ] 2024-02-19 18:18:43.647 [main] Hero_App - Whatsapp is not visiblejava.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 0
+[INFO ] 2024-02-19 18:18:44.605 [main] Hero_App -  Back from Whatsapp is clickable
+[INFO ] 2024-02-19 18:19:16.338 [main] Hero_App - Successfully  Scroll page down Action Twitter
+[INFO ] 2024-02-19 18:19:36.452 [main] Hero_App - Linkedin is not visiblejava.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 0
+[INFO ] 2024-02-19 18:19:57.468 [main] Hero_App - twitter is not visiblejava.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 0
+[INFO ] 2024-02-19 18:19:59.753 [main] Hero_App - Get Roadside Assistance now is clickable
+[INFO ] 2024-02-19 18:20:27.805 [main] Hero_App - ************************Safety Measures and Symbols Glossary Test**************************
+[INFO ] 2024-02-19 18:20:33.600 [main] Hero_App - Home is clickable
+[INFO ] 2024-02-19 18:20:35.489 [main] Hero_App -  Side Menu Button  is clickable
+[INFO ] 2024-02-19 18:20:38.810 [main] Hero_App - Safety Measures is clickable
+[INFO ] 2024-02-19 18:20:40.052 [main] Hero_App - Safety MeasuresSafety Measures
+[INFO ] 2024-02-19 18:20:41.117 [main] Hero_App - Stay Safe While RidingStay Safe While Riding
+[INFO ] 2024-02-19 18:20:42.258 [main] Hero_App - Do not wear headphones while ridingDo not wear headphones while riding
+[INFO ] 2024-02-19 18:20:43.367 [main] Hero_App - Keep both hands on the handlebars, except when signallingKeep both hands on the handlebars, except when signalling
+[INFO ] 2024-02-19 18:20:44.536 [main] Hero_App - Leave enough spaceLeave enough space
+[INFO ] 2024-02-19 18:20:45.810 [main] Hero_App - Avoid distractionsAvoid distractions
+[INFO ] 2024-02-19 18:20:46.833 [main] Hero_App - Ride within your skillsRide within your skills
+[INFO ] 2024-02-19 18:20:47.925 [main] Hero_App - Avoid road rageAvoid road rage
+[INFO ] 2024-02-19 18:20:50.241 [main] Hero_App - Back from Stay Safe While Riding page is clickable
+[INFO ] 2024-02-19 18:20:51.667 [main] Hero_App -  Side Menu Button  is clickable
+[INFO ] 2024-02-19 18:20:53.703 [main] Hero_App - Symbols Glossary is clickable
+[INFO ] 2024-02-19 18:20:56.454 [main] Hero_App - Symbols GlossarySymbols Glossary
+[INFO ] 2024-02-19 18:20:57.869 [main] Hero_App - What These Symbols MeanWhat These Symbols Mean
+[INFO ] 2024-02-19 18:20:59.269 [main] Hero_App - Turn LeftTurn Left
+[INFO ] 2024-02-19 18:21:01.235 [main] Hero_App - Turn RightTurn Right
+[INFO ] 2024-02-19 18:21:02.626 [main] Hero_App - Turn Slight LeftTurn Slight Left
+[INFO ] 2024-02-19 18:21:03.808 [main] Hero_App - Turn Slight RightTurn Slight Right
+[INFO ] 2024-02-19 18:21:05.191 [main] Hero_App - Turn Sharp LeftTurn Sharp Left
+[INFO ] 2024-02-19 18:21:06.637 [main] Hero_App - Turn Sharp RightTurn Sharp Right
+[INFO ] 2024-02-19 18:21:08.024 [main] Hero_App - StraightStraight
+[INFO ] 2024-02-19 18:21:18.178 [main] Hero_App - Successfully  Scroll page down Action Straight
+[INFO ] 2024-02-19 18:21:19.336 [main] Hero_App - Keep LeftKeep Left
+[INFO ] 2024-02-19 18:21:20.764 [main] Hero_App - Keep RightKeep Right
+[INFO ] 2024-02-19 18:21:22.020 [main] Hero_App - Ramp LeftRamp Left
+[INFO ] 2024-02-19 18:21:31.810 [main] Hero_App - Successfully  Scroll page down Action Ramp Left
+[INFO ] 2024-02-19 18:21:32.892 [main] Hero_App - Roundabout LeftRoundabout Left
+[INFO ] 2024-02-19 18:21:34.106 [main] Hero_App - Roundabout RightRoundabout Right
+[INFO ] 2024-02-19 18:21:35.316 [main] Hero_App - Uturn LeftUturn Left
+[INFO ] 2024-02-19 18:21:45.500 [main] Hero_App - Successfully  Scroll page down Action Uturn Left
+[INFO ] 2024-02-19 18:21:46.594 [main] Hero_App - Fork LeftFork Left
+[INFO ] 2024-02-19 18:21:47.892 [main] Hero_App - Fork RightFork Right
+[INFO ] 2024-02-19 18:21:49.257 [main] Hero_App - Destination ReachedDestination Reached
+[INFO ] 2024-02-19 18:21:59.042 [main] Hero_App - Successfully  Scroll page down Action Destination Reached
+[INFO ] 2024-02-19 18:21:59.866 [main] Hero_App - Wrong WayWrong Way
+[INFO ] 2024-02-19 18:22:02.523 [main] Hero_App - Back from Symbols Glossary page is clickable
+[INFO ] 2024-02-19 18:22:02.539 [main] Hero_App - ************************Feedback and About Hero test**************************
+[INFO ] 2024-02-19 18:22:06.956 [main] Hero_App - Home is clickable
+[INFO ] 2024-02-19 18:22:10.490 [main] Hero_App - Side menu button is clickable
+[INFO ] 2024-02-19 18:22:33.305 [main] Hero_App - Side menu button is clickable
+[INFO ] 2024-02-19 18:22:36.061 [main] Hero_App - About Hero is clickable
+[INFO ] 2024-02-19 18:22:47.307 [main] Hero_App -  Manufacturing Happiness Since 1985
+[INFO ] 2024-02-19 18:22:48.219 [main] Hero_App -  With Innovation at its core, Hero MotoCorp continues to provide mobility to the aspirations of millions around the world.
+[INFO ] 2024-02-19 18:22:50.159 [main] Hero_App - Back from About Hero page is clickable
+[INFO ] 2024-02-19 18:22:51.467 [main] Hero_App - Side menu button is clickable
+[INFO ] 2024-02-19 18:22:53.862 [main] Hero_App - Goodlife is clickable
+[INFO ] 2024-02-19 18:23:02.120 [main] Hero_App - goodlife page test = GoodLife
+[INFO ] 2024-02-19 18:23:05.807 [main] Hero_App - Back from GoodLife page is clickable
+[INFO ] 2024-02-19 18:23:07.058 [main] Hero_App - Side menu button is clickable
+[INFO ] 2024-02-19 18:23:10.338 [main] Hero_App - Wheels of trust is clickable
+[INFO ] 2024-02-19 18:23:16.726 [main] Hero_App -  Exchange
+[INFO ] 2024-02-19 18:23:17.910 [main] Hero_App -  Introducing India’s New Age phygital 2-wheeler resale platform
+[INFO ] 2024-02-19 18:23:19.142 [main] Hero_App -  Exchange benefits up to ₹4000
+[INFO ] 2024-02-19 18:23:20.244 [main] Hero_App -  Choose vehicle for which you want to get estimated price
+[INFO ] 2024-02-19 18:23:21.679 [main] Hero_App -  SPLENDOR +
+[INFO ] 2024-02-19 18:23:22.800 [main] Hero_App -  January, 2018
+[INFO ] 2024-02-19 18:23:24.204 [main] Hero_App -  Exchange in 3 easy steps
+[INFO ] 2024-02-19 18:23:25.398 [main] Hero_App -  Step 1: Vehicle details
+[INFO ] 2024-02-19 18:23:26.940 [main] Hero_App -  Capture your basic vehicle details
+[INFO ] 2024-02-19 18:23:28.092 [main] Hero_App -  Step 2: Visit dealership
+[INFO ] 2024-02-19 18:23:29.899 [main] Hero_App -  You have to visit the selected dealership for physical evaluation
+[INFO ] 2024-02-19 18:23:31.370 [main] Hero_App -  Step 3: Price discovery
+[INFO ] 2024-02-19 18:23:32.573 [main] Hero_App -  Post the price discovery, price of used 2W will be offered to you
+[INFO ] 2024-02-19 18:23:35.066 [main] Hero_App - Back from Exchange page is clickable
+[INFO ] 2024-02-19 18:23:37.039 [main] Hero_App - Side menu button is clickable
+[INFO ] 2024-02-19 18:23:39.517 [main] Hero_App - Joyride is clickable
+[INFO ] 2024-02-19 18:23:40.490 [main] Hero_App -  Experience The Care
+[INFO ] 2024-02-19 18:23:41.590 [main] Hero_App -  Exceptional Service, Unlimited Joy.
+[INFO ] 2024-02-19 18:23:42.842 [main] Hero_App -  5% Discount on Engine Oil
+[INFO ] 2024-02-19 18:23:46.065 [main] Hero_App -  10% Discount on labor charges for additional jobs*
+[INFO ] 2024-02-19 18:23:46.986 [main] Hero_App -  No Charges for Minor Jobs
+[INFO ] 2024-02-19 18:23:48.097 [main] Hero_App -  Invitation to vehicle check-up camps
+[INFO ] 2024-02-19 18:23:49.013 [main] Hero_App -  4 Services
+[INFO ] 2024-02-19 18:23:50.339 [main] Hero_App -  In one year*
+[INFO ] 2024-02-19 18:23:51.590 [main] Hero_App -  3 Services
+[INFO ] 2024-02-19 18:23:52.736 [main] Hero_App -  In one year*
+[INFO ] 2024-02-19 18:23:53.937 [main] Hero_App -  2 Services
+[INFO ] 2024-02-19 18:23:55.026 [main] Hero_App -  In one year*
+[INFO ] 2024-02-19 18:23:56.105 [main] Hero_App -  Package starts from ₹647/- + Taxes
+[INFO ] 2024-02-19 18:23:57.325 [main] Hero_App -  Price will vary as per City & Model and JoyRide Package
+[INFO ] 2024-02-19 18:23:58.389 [main] Hero_App -  Contact nearest authorized Hero dealership for more information.
+[INFO ] 2024-02-19 18:24:01.090 [main] Hero_App - Locate Nearest Dealer is clickable
+[INFO ] 2024-02-19 18:24:03.766 [main] Hero_App - Back from Dealer Locator is clickable
+[INFO ] 2024-02-19 18:24:06.348 [main] Hero_App - Back from Joyride page is clickable
+[INFO ] 2024-02-19 18:24:06.357 [main] Hero_App - ************************Service Page**************************
+[INFO ] 2024-02-19 18:24:10.592 [main] Hero_App -  Services button is clickable
+[INFO ] 2024-02-19 18:24:11.384 [main] Hero_App - Vehicle brand name = SPLENDOR +
+[INFO ] 2024-02-19 18:24:12.182 [main] Hero_App - Vehicle nick name = qwertyuiopasdfghjklzxcvbnmqwe
+[INFO ] 2024-02-19 18:24:13.122 [main] Hero_App - Vehicle number = DL3SDX2964
+[INFO ] 2024-02-19 18:24:13.910 [main] Hero_App - Vehicle Service type = Paid Service
+[INFO ] 2024-02-19 18:24:14.810 [main] Hero_App - Vehicle Service booking number = SR No.: 10375-03-RSRB-0523-6125
+[INFO ] 2024-02-19 18:24:15.033 [main] Hero_App - Service status =Service Scheduled
+[INFO ] 2024-02-19 18:24:15.818 [main] Hero_App - Service date and time = 09:00 AM, 11 May, 2023
+[INFO ] 2024-02-19 18:24:16.174 [main] Hero_App - Dealer name =HIMGIRI AUTOMOBILES (P) LTD
+[INFO ] 2024-02-19 18:24:16.438 [main] Hero_App - Dealer Address =A-19 JHILMIL IND AREA GT Road  EAST DELHI DELHI DELHI 110095
+[INFO ] 2024-02-19 18:24:17.392 [main] Hero_App - HIMGIRI AUTOMOBILES (P) LTD is clickable
+[INFO ] 2024-02-19 18:24:20.245 [main] Hero_App - Navigate is clickable
+[INFO ] 2024-02-19 18:24:23.574 [main] Hero_App - Reschedule is clickable
+[INFO ] 2024-02-19 18:24:25.226 [main] Hero_App - SPLENDOR +SPLENDOR +
+[INFO ] 2024-02-19 18:24:26.184 [main] Hero_App - qwertyuiopasdfghjklzxcvbnmqweqwertyuiopasdfghjklzxcvbnmqwe
+[INFO ] 2024-02-19 18:24:27.270 [main] Hero_App - SR No.: 10375-03-RSRB-0523-6125SR No.: 10375-03-RSRB-0523-6125
+[INFO ] 2024-02-19 18:24:28.284 [main] Hero_App - Select a DateSelect a Date
+[INFO ] 2024-02-19 18:24:29.224 [main] Hero_App - 20/02/202420/02/2024
+[INFO ] 2024-02-19 18:24:30.250 [main] Hero_App - Select a TimeSelect a Time
+[INFO ] 2024-02-19 18:24:31.376 [main] Hero_App - 9:00 AM9:00 AM
+[INFO ] 2024-02-19 18:24:31.681 [main] Hero_App - Select date one by one for verify clickable or not
+[INFO ] 2024-02-19 18:24:33.463 [main] Hero_App - 20/Feb TUE is clickable
+[INFO ] 2024-02-19 18:24:36.469 [main] Hero_App - 21/Feb WED is clickable
+[INFO ] 2024-02-19 18:24:39.178 [main] Hero_App - 22/Feb THU is clickable
+[INFO ] 2024-02-19 18:24:41.033 [main] Hero_App - 23/Feb FRI is clickable
+[INFO ] 2024-02-19 18:24:44.170 [main] Hero_App - 24/Feb SAT is clickable
+[INFO ] 2024-02-19 18:24:46.624 [main] Hero_App - 25/Feb SUN is clickable
+[INFO ] 2024-02-19 18:24:47.206 [main] Hero_App - Before picking time  =9:00 AM
+[INFO ] 2024-02-19 18:24:48.494 [main] Hero_App - Successfully  Swipe page direction Action Select a Time
+[INFO ] 2024-02-19 18:24:48.894 [main] Hero_App - After picked time  =9:00 AM
+[INFO ] 2024-02-19 18:24:48.894 [main] Hero_App - Select time slider is not working
+[INFO ] 2024-02-19 18:24:49.290 [main] Hero_App - Confirm button is Enabled 
+[INFO ] 2024-02-19 18:24:50.763 [main] Hero_App - Cancel is clickable
+[INFO ] 2024-02-19 18:24:53.404 [main] Hero_App - Cancel Service Service button is clickable
+[INFO ] 2024-02-19 18:24:54.653 [main] Hero_App -  Cancel Service?
+[INFO ] 2024-02-19 18:24:55.360 [main] Hero_App -  Are you sure you want to cancel this 
+service?
+[INFO ] 2024-02-19 18:24:55.836 [main] Hero_App - Yes button is Enabled & Displayed
+[INFO ] 2024-02-19 18:24:57.049 [main] Hero_App - No is clickable
+[INFO ] 2024-02-19 18:25:17.263 [main] Hero_App - Manager information is not given
+[INFO ] 2024-02-19 18:25:19.265 [main] Hero_App - View Service Schedule is clickable
+[INFO ] 2024-02-19 18:25:21.234 [main] Hero_App - Kilometer is clickable
+[INFO ] 2024-02-19 18:25:22.566 [main] Hero_App - 750 Kilometer is clickable
+[INFO ] 2024-02-19 18:25:25.268 [main] Hero_App - Service Number = 1st
+[INFO ] 2024-02-19 18:25:25.999 [main] Hero_App - Type = FSC
+[INFO ] 2024-02-19 18:25:26.626 [main] Hero_App - Days = 60+
+[INFO ] 2024-02-19 18:25:27.793 [main] Hero_App - Replace is clickable
+[INFO ] 2024-02-19 18:25:28.815 [main] Hero_App - Engine Oil
+[INFO ] 2024-02-19 18:25:30.354 [main] Hero_App - Replace is clickable
+[INFO ] 2024-02-19 18:25:31.444 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:25:32.554 [main] Hero_App - Fuel Lines
+[INFO ] 2024-02-19 18:25:33.221 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:25:33.676 [main] Hero_App - i3s Switch
+[INFO ] 2024-02-19 18:25:34.376 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:25:35.054 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:25:35.621 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:25:36.185 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:25:36.845 [main] Hero_App - Electric Starter
+[INFO ] 2024-02-19 18:25:37.365 [main] Hero_App - Oil Circulation
+[INFO ] 2024-02-19 18:25:37.828 [main] Hero_App - Drive Chain Slider
+[INFO ] 2024-02-19 18:25:38.323 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:25:39.889 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:25:40.902 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:25:42.024 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:25:42.407 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:25:42.915 [main] Hero_App - Engine Oil Strainer Screen
+[INFO ] 2024-02-19 18:25:43.476 [main] Hero_App - Engine Oil Centrifugal Filter
+[INFO ] 2024-02-19 18:25:43.963 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:25:44.419 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:25:44.886 [main] Hero_App - Side Stand Switch
+[INFO ] 2024-02-19 18:25:46.420 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:25:47.618 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:25:48.639 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:25:49.182 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:25:49.606 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:25:50.176 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:25:50.645 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:25:51.147 [main] Hero_App - Clutch Lever Free Play
+[INFO ] 2024-02-19 18:25:52.617 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:25:53.813 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:25:54.860 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:25:55.262 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:25:56.716 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:25:58.932 [main] Hero_App - Successfully  Swipe page direction Action 3500
+[INFO ] 2024-02-19 18:26:01.802 [main] Hero_App - Service Number = 2nd
+[INFO ] 2024-02-19 18:26:02.522 [main] Hero_App - Type = FSC
+[INFO ] 2024-02-19 18:26:03.237 [main] Hero_App - Days = 160+
+[INFO ] 2024-02-19 18:26:04.213 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:26:05.518 [main] Hero_App - Fuel Lines
+[INFO ] 2024-02-19 18:26:06.171 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:26:06.850 [main] Hero_App - i3s Switch
+[INFO ] 2024-02-19 18:26:07.477 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:26:08.279 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:26:08.887 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:26:09.389 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:26:09.900 [main] Hero_App - Electric Starter
+[INFO ] 2024-02-19 18:26:10.506 [main] Hero_App - Oil Circulation
+[INFO ] 2024-02-19 18:26:11.401 [main] Hero_App - Drive Chain Slider
+[INFO ] 2024-02-19 18:26:11.888 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:26:12.530 [main] Hero_App - Brake Shoe Wear
+[INFO ] 2024-02-19 18:26:13.300 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:26:14.922 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:26:16.118 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:26:16.694 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:26:17.325 [main] Hero_App - Brake System (Brake Cam & Brake Pedal)
+[INFO ] 2024-02-19 18:26:17.830 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:26:18.298 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:26:18.758 [main] Hero_App - Side Stand Switch
+[INFO ] 2024-02-19 18:26:20.229 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:26:21.370 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:26:22.521 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:26:23.110 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:26:23.705 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:26:24.125 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:26:24.572 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:26:25.216 [main] Hero_App - Clutch Lever Free Play
+[INFO ] 2024-02-19 18:26:25.721 [main] Hero_App - Steering Head Bearings
+[INFO ] 2024-02-19 18:26:26.570 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:26:28.170 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:26:29.328 [main] Hero_App - Brake System (Brake Cam & Brake Pedal)
+[INFO ] 2024-02-19 18:26:29.740 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:26:30.200 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:26:31.119 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:26:33.496 [main] Hero_App - Top Up is clickable
+[INFO ] 2024-02-19 18:26:33.949 [main] Hero_App - Engine Oil
+[INFO ] 2024-02-19 18:26:34.751 [main] Hero_App - Top Up is clickable
+[INFO ] 2024-02-19 18:26:37.716 [main] Hero_App - Successfully  Swipe page direction Action 6500
+[INFO ] 2024-02-19 18:26:40.412 [main] Hero_App - Service Number = 3rd
+[INFO ] 2024-02-19 18:26:41.083 [main] Hero_App - Type = FSC
+[INFO ] 2024-02-19 18:26:41.967 [main] Hero_App - Days = 260+
+[INFO ] 2024-02-19 18:26:43.011 [main] Hero_App - Replace is clickable
+[INFO ] 2024-02-19 18:26:44.023 [main] Hero_App - Engine Oil
+[INFO ] 2024-02-19 18:26:45.051 [main] Hero_App - Replace is clickable
+[INFO ] 2024-02-19 18:26:46.775 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:26:47.943 [main] Hero_App - Fuel Lines
+[INFO ] 2024-02-19 18:26:48.398 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:26:48.946 [main] Hero_App - i3s Switch
+[INFO ] 2024-02-19 18:26:49.484 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:26:49.989 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:26:50.736 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:26:51.231 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:26:51.832 [main] Hero_App - Electric Starter
+[INFO ] 2024-02-19 18:26:52.376 [main] Hero_App - Oil Circulation
+[INFO ] 2024-02-19 18:26:52.945 [main] Hero_App - Drive Chain Slider
+[INFO ] 2024-02-19 18:26:53.545 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:26:55.242 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:26:56.306 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:26:57.421 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:26:57.897 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:26:58.512 [main] Hero_App - Engine Oil Strainer Screen
+[INFO ] 2024-02-19 18:26:59.085 [main] Hero_App - Engine Oil Centrifugal Filter
+[INFO ] 2024-02-19 18:26:59.790 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:27:00.750 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:27:01.260 [main] Hero_App - Side Stand Switch
+[INFO ] 2024-02-19 18:27:02.055 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:27:04.450 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:27:04.857 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:27:05.400 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:27:06.086 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:27:06.613 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:27:07.150 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:27:07.645 [main] Hero_App - Clutch Lever Free Play
+[INFO ] 2024-02-19 18:27:09.054 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:27:10.697 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:27:11.177 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:27:11.755 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:27:12.572 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:27:14.846 [main] Hero_App - Emission Check is clickable
+[INFO ] 2024-02-19 18:27:15.403 [main] Hero_App - Muffler Evaporative Emission
+[INFO ] 2024-02-19 18:27:16.869 [main] Hero_App - Emission Check is clickable
+[INFO ] 2024-02-19 18:27:19.358 [main] Hero_App - Successfully  Swipe page direction Action 9500
+[INFO ] 2024-02-19 18:27:22.139 [main] Hero_App - Service Number = 4th
+[INFO ] 2024-02-19 18:27:22.719 [main] Hero_App - Type = FSC
+[INFO ] 2024-02-19 18:27:23.526 [main] Hero_App - Days = 360+
+[INFO ] 2024-02-19 18:27:24.723 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:27:25.983 [main] Hero_App - Fuel Lines
+[INFO ] 2024-02-19 18:27:26.702 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:27:27.377 [main] Hero_App - i3s Switch
+[INFO ] 2024-02-19 18:27:27.980 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:27:28.565 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:27:29.259 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:27:29.930 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:27:30.502 [main] Hero_App - Electric Starter
+[INFO ] 2024-02-19 18:27:31.066 [main] Hero_App - Oil Circulation
+[INFO ] 2024-02-19 18:27:31.610 [main] Hero_App - Drive Chain Slider
+[INFO ] 2024-02-19 18:27:32.177 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:27:32.814 [main] Hero_App - Brake Shoe Wear
+[INFO ] 2024-02-19 18:27:34.288 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:27:35.310 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:27:36.350 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:27:36.845 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:27:37.328 [main] Hero_App - Brake System (Brake Cam & Brake Pedal)
+[INFO ] 2024-02-19 18:27:37.836 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:27:38.249 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:27:38.713 [main] Hero_App - Side Stand Switch
+[INFO ] 2024-02-19 18:27:40.220 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:27:41.858 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:27:42.411 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:27:42.941 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:27:43.402 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:27:43.881 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:27:44.440 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:27:44.930 [main] Hero_App - Clutch Lever Free Play
+[INFO ] 2024-02-19 18:27:45.330 [main] Hero_App - Steering Head Bearings
+[INFO ] 2024-02-19 18:27:46.784 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:27:48.400 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:27:48.802 [main] Hero_App - Brake System (Brake Cam & Brake Pedal)
+[INFO ] 2024-02-19 18:27:49.218 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:27:49.737 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:27:50.612 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:27:52.106 [main] Hero_App - Top Up is clickable
+[INFO ] 2024-02-19 18:27:53.102 [main] Hero_App - Engine Oil
+[INFO ] 2024-02-19 18:27:53.836 [main] Hero_App - Top Up is clickable
+[INFO ] 2024-02-19 18:27:56.600 [main] Hero_App - Successfully  Swipe page direction Action 12500
+[INFO ] 2024-02-19 18:27:59.512 [main] Hero_App - Service Number = 5th
+[INFO ] 2024-02-19 18:28:00.758 [main] Hero_App - Type = FSC
+[INFO ] 2024-02-19 18:28:01.485 [main] Hero_App - Days = 460+
+[INFO ] 2024-02-19 18:28:02.534 [main] Hero_App - Replace is clickable
+[INFO ] 2024-02-19 18:28:03.603 [main] Hero_App - Air Cleaner Element (Pre foam type)
+[INFO ] 2024-02-19 18:28:04.058 [main] Hero_App - Air Cleaner Element (Viscous type)
+[INFO ] 2024-02-19 18:28:04.554 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:28:05.032 [main] Hero_App - Engine Oil
+[INFO ] 2024-02-19 18:28:05.811 [main] Hero_App - Replace is clickable
+[INFO ] 2024-02-19 18:28:07.363 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:28:08.401 [main] Hero_App - Fuel Lines
+[INFO ] 2024-02-19 18:28:09.088 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:28:09.682 [main] Hero_App - i3s Switch
+[INFO ] 2024-02-19 18:28:10.217 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:28:10.688 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:28:11.174 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:28:11.773 [main] Hero_App - Electric Starter
+[INFO ] 2024-02-19 18:28:12.249 [main] Hero_App - Oil Circulation
+[INFO ] 2024-02-19 18:28:12.721 [main] Hero_App - Drive Chain Slider
+[INFO ] 2024-02-19 18:28:13.264 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:28:13.747 [main] Hero_App - Brake Shoe Wear
+[INFO ] 2024-02-19 18:28:14.735 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:28:16.379 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:28:17.534 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:28:18.041 [main] Hero_App - Engine Oil Strainer Screen
+[INFO ] 2024-02-19 18:28:18.614 [main] Hero_App - Engine Oil Centrifugal Filter
+[INFO ] 2024-02-19 18:28:19.137 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:28:19.597 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:28:20.095 [main] Hero_App - Side Stand Switch
+[INFO ] 2024-02-19 18:28:21.639 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:28:23.430 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:28:24.036 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:28:24.535 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:28:25.039 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:28:25.448 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:28:25.934 [main] Hero_App - Clutch Lever Free Play
+[INFO ] 2024-02-19 18:28:26.399 [main] Hero_App - Steering Head Bearings
+[INFO ] 2024-02-19 18:28:27.185 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:28:29.353 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:28:29.821 [main] Hero_App - Steering Head Bearings
+[INFO ] 2024-02-19 18:28:30.236 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:28:30.794 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:28:32.288 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:28:34.167 [main] Hero_App - Emission Check is clickable
+[INFO ] 2024-02-19 18:28:34.697 [main] Hero_App - Muffler Evaporative Emission
+[INFO ] 2024-02-19 18:28:36.187 [main] Hero_App - Emission Check is clickable
+[INFO ] 2024-02-19 18:28:40.393 [main] Hero_App - Morethan 12.5K
+[INFO ] 2024-02-19 18:28:42.393 [main] Hero_App - 15.5k km is clickable
+[INFO ] 2024-02-19 18:28:42.393 [main] Hero_App - Paid Service for = 15.5k km
+[INFO ] 2024-02-19 18:28:45.129 [main] Hero_App - Service Number = 1st
+[INFO ] 2024-02-19 18:28:45.898 [main] Hero_App - Type = Paid
+[INFO ] 2024-02-19 18:28:46.596 [main] Hero_App - Days = 560+
+[INFO ] 2024-02-19 18:28:48.173 [main] Hero_App - Replace is clickable
+[INFO ] 2024-02-19 18:28:48.642 [main] Hero_App - Engine Oil
+[INFO ] 2024-02-19 18:28:49.557 [main] Hero_App - Replace is clickable
+[INFO ] 2024-02-19 18:28:51.265 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:28:52.301 [main] Hero_App - Fuel Lines
+[INFO ] 2024-02-19 18:28:53.051 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:28:53.572 [main] Hero_App - i3s Switch
+[INFO ] 2024-02-19 18:28:54.199 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:28:54.948 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:28:55.329 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:28:55.705 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:28:56.539 [main] Hero_App - Electric Starter
+[INFO ] 2024-02-19 18:28:56.953 [main] Hero_App - Oil Circulation
+[INFO ] 2024-02-19 18:28:57.792 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:28:59.512 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:29:01.107 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:29:01.673 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:29:02.200 [main] Hero_App - Engine Oil Strainer Screen
+[INFO ] 2024-02-19 18:29:02.716 [main] Hero_App - Engine Oil Centrifugal Filter
+[INFO ] 2024-02-19 18:29:03.302 [main] Hero_App - Brake System (Brake Cam & Brake Pedal)
+[INFO ] 2024-02-19 18:29:03.908 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:29:04.344 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:29:04.715 [main] Hero_App - Side Stand Switch
+[INFO ] 2024-02-19 18:29:06.321 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:29:07.929 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:29:08.319 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:29:08.869 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:29:09.421 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:29:09.922 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:29:10.397 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:29:10.918 [main] Hero_App - Clutch Lever Free Play
+[INFO ] 2024-02-19 18:29:12.274 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:29:14.067 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:29:14.612 [main] Hero_App - Brake System (Brake Cam & Brake Pedal)
+[INFO ] 2024-02-19 18:29:15.022 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:29:15.435 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:29:17.042 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:29:19.562 [main] Hero_App - 18.5k km is clickable
+[INFO ] 2024-02-19 18:29:19.563 [main] Hero_App - Paid Service for = 18.5k km
+[INFO ] 2024-02-19 18:29:22.394 [main] Hero_App - Service Number = 2nd
+[INFO ] 2024-02-19 18:29:23.045 [main] Hero_App - Type = Paid
+[INFO ] 2024-02-19 18:29:23.783 [main] Hero_App - Days = 660+
+[INFO ] 2024-02-19 18:29:24.868 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:29:25.859 [main] Hero_App - Fuel Lines
+[INFO ] 2024-02-19 18:29:26.391 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:29:26.960 [main] Hero_App - i3s Switch
+[INFO ] 2024-02-19 18:29:27.606 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:29:27.993 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:29:28.540 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:29:29.234 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:29:29.626 [main] Hero_App - Electric Starter
+[INFO ] 2024-02-19 18:29:30.000 [main] Hero_App - Oil Circulation
+[INFO ] 2024-02-19 18:29:30.646 [main] Hero_App - Drive Chain Slider
+[INFO ] 2024-02-19 18:29:32.134 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:29:33.211 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:29:34.379 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:29:34.932 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:29:35.309 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:29:35.877 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:29:36.390 [main] Hero_App - Side Stand Switch
+[INFO ] 2024-02-19 18:29:37.876 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:29:39.589 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:29:40.074 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:29:40.485 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:29:41.023 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:29:41.650 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:29:41.998 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:29:42.534 [main] Hero_App - Clutch Lever Free Play
+[INFO ] 2024-02-19 18:29:43.220 [main] Hero_App - Steering Head Bearings
+[INFO ] 2024-02-19 18:29:43.942 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:29:46.496 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:29:46.976 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:29:47.480 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:29:48.917 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:29:50.650 [main] Hero_App - Top Up is clickable
+[INFO ] 2024-02-19 18:29:51.068 [main] Hero_App - Engine Oil
+[INFO ] 2024-02-19 18:29:52.660 [main] Hero_App - Top Up is clickable
+[INFO ] 2024-02-19 18:29:54.962 [main] Hero_App - 21.5k km is clickable
+[INFO ] 2024-02-19 18:29:54.962 [main] Hero_App - Paid Service for = 21.5k km
+[INFO ] 2024-02-19 18:29:57.767 [main] Hero_App - Service Number = 3rd
+[INFO ] 2024-02-19 18:29:58.426 [main] Hero_App - Type = Paid
+[INFO ] 2024-02-19 18:29:59.129 [main] Hero_App - Days = 760+
+[INFO ] 2024-02-19 18:30:00.815 [main] Hero_App - Replace is clickable
+[INFO ] 2024-02-19 18:30:01.911 [main] Hero_App - Engine Oil
+[INFO ] 2024-02-19 18:30:03.250 [main] Hero_App - Replace is clickable
+[INFO ] 2024-02-19 18:30:05.106 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:30:05.770 [main] Hero_App - Fuel Lines
+[INFO ] 2024-02-19 18:30:06.413 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:30:07.158 [main] Hero_App - i3s Switch
+[INFO ] 2024-02-19 18:30:07.614 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:30:08.602 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:30:09.085 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:30:09.615 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:30:10.381 [main] Hero_App - Electric Starter
+[INFO ] 2024-02-19 18:30:10.794 [main] Hero_App - Oil Circulation
+[INFO ] 2024-02-19 18:30:12.272 [main] Hero_App - Inspect is clickable
+[INFO ] 2024-02-19 18:30:13.490 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:30:14.441 [main] Hero_App - Drain/Crankcase Breather Tube
+[INFO ] 2024-02-19 18:30:14.957 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:30:15.505 [main] Hero_App - Engine Oil Strainer Screen
+[INFO ] 2024-02-19 18:30:15.965 [main] Hero_App - Engine Oil Centrifugal Filter
+[INFO ] 2024-02-19 18:30:16.377 [main] Hero_App - Brake System (Brake Cam & Brake Pedal)
+[INFO ] 2024-02-19 18:30:16.784 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:30:17.451 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:30:17.874 [main] Hero_App - Side Stand Switch
+[INFO ] 2024-02-19 18:30:18.811 [main] Hero_App - Clean is clickable
+[INFO ] 2024-02-19 18:30:20.403 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:30:21.601 [main] Hero_App - Throttle Operation
+[INFO ] 2024-02-19 18:30:22.091 [main] Hero_App - Fuel Tank Lid Cover Operation
+[INFO ] 2024-02-19 18:30:22.657 [main] Hero_App - Spark Plug
+[INFO ] 2024-02-19 18:30:23.090 [main] Hero_App - Valve Clearance
+[INFO ] 2024-02-19 18:30:23.503 [main] Hero_App - Front/Integrated Brake Lever Free Play
+[INFO ] 2024-02-19 18:30:23.874 [main] Hero_App - Clutch Lever Free Play
+[INFO ] 2024-02-19 18:30:24.803 [main] Hero_App - Adjust is clickable
+[INFO ] 2024-02-19 18:30:27.099 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:30:27.689 [main] Hero_App - Brake System (Brake Cam & Brake Pedal)
+[INFO ] 2024-02-19 18:30:28.150 [main] Hero_App - Rear Brake Pedal/ Main Stand Pivot
+[INFO ] 2024-02-19 18:30:28.712 [main] Hero_App - Side Stand
+[INFO ] 2024-02-19 18:30:29.574 [main] Hero_App - Lubricate is clickable
+[INFO ] 2024-02-19 18:30:31.839 [main] Hero_App - Emission Check is clickable
+[INFO ] 2024-02-19 18:30:32.365 [main] Hero_App - Muffler Evaporative Emission
+[INFO ] 2024-02-19 18:30:33.092 [main] Hero_App - Emission Check is clickable
+[ERROR] 2024-02-19 18:32:42.676 [main] Hero_App - ==NOT==Unable To Swipe page direction Action 160 days
+[ERROR] 2024-02-19 18:32:42.700 [main] Hero_App - ==NOT==Unable To Swipe page direction Action 260 days
+[ERROR] 2024-02-19 18:32:42.710 [main] Hero_App - ==NOT==Unable To Swipe page direction Action 360 days
+[ERROR] 2024-02-19 18:32:42.720 [main] Hero_App - ==NOT==Unable To Swipe page direction Action 460 days
+[ERROR] 2024-02-19 18:32:42.731 [main] Hero_App - ==NOT==Unable To Swipe page direction Action Morethan 460 days
+[INFO ] 2024-02-19 18:32:42.798 [main] Hero_App - *********************Goodlife_page**************************
+[INFO ] 2024-02-19 18:32:45.908 [main] Hero_App - ************************E Shop**************************

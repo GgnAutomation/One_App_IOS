@@ -60,7 +60,7 @@ public class Login_page extends Base_Utility {
 	private WebElement Privacy_Policy;
 	@FindBy(xpath="(//android.view.View[@text])[16]")
 	private WebElement Privacy_Policy_condition;
-	@FindBy(xpath ="//android.widget.TextView[contains(@text,'Hero MotoCorp Ltd')]")
+	@FindBy(xpath ="(//android.widget.TextView[@text])[5]")
 	private WebElement Privacy_of_Use_condition_for_real_device;
 	@FindBy(xpath ="//android.widget.TextView[@text = 'Contact Us']")
 	private WebElement contact_us;
