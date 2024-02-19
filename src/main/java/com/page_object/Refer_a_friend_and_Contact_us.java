@@ -234,12 +234,15 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 			Custom_click(visit_Page.get(1), header);
 			Thread.sleep(4000);
 			try {
+				if(instagram_login.isDisplayed()) {
 			Custom_click(instagram_login, header + " Login");
-			Custom_click(back, " Back from " + header); 
+			Custom_click(back, " Back from " + header);
+				}
 		} catch (Exception e) {
-			Message("instagram is not visible" + e);
-			test.addScreenCaptureFromPath(lis.getcapcture("instagram"));
+			Message("instagram Login is not visible" + e);
 			Custom_click(back, " Back from instagram" );
+			test.addScreenCaptureFromPath(lis.getcapcture("instagram"));
+			
 		}
 	}
 

@@ -54,12 +54,14 @@ public class Login_page extends Base_Utility {
 	private WebElement Terms_of_Use;
 	@FindBy(xpath ="(//android.view.View[@text])[23]")
 	private WebElement Terms_of_Use_condition;
-	@FindBy(xpath ="(//android.widget.TextView[@text])[6]")
+	@FindBy(xpath ="(//android.widget.TextView[@text])[3]")
 	private WebElement Terms_of_Use_condition_for_real_device;
 	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/pp_lbl']")
 	private WebElement Privacy_Policy;
 	@FindBy(xpath="(//android.view.View[@text])[16]")
 	private WebElement Privacy_Policy_condition;
+	@FindBy(xpath ="//android.widget.TextView[contains(@text,'Hero MotoCorp Ltd')]")
+	private WebElement Privacy_of_Use_condition_for_real_device;
 	@FindBy(xpath ="//android.widget.TextView[@text = 'Contact Us']")
 	private WebElement contact_us;
 	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/fb_text'])[1]")
@@ -174,6 +176,10 @@ public WebElement deny()
 		public WebElement Privacy_Policy_condition()
 		{
 			return Privacy_Policy_condition;
+		}
+		public WebElement Privacy_of_Use_condition_for_real_device()
+		{
+			return Privacy_of_Use_condition_for_real_device;
 		}
 		public WebElement contact_us_message()
 		{
