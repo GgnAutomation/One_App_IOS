@@ -36,14 +36,13 @@ public class Vehicle_Details extends Base_Utility {
 	private WebElement vehicle_status;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id= 'com.customerapp.hero:id/tv_vehicle_no']")
 	private WebElement Vehicle_number;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/title'])[1]")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/title'and starts-with(@text,'Goodlife')]")
 	private WebElement verify_GoodLife;
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1'])[1]")
 	private WebElement verify_goodlife_page;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/title'])[2]")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/title'and @text ='RSA']")
 	private WebElement verify_joyRide;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/subtitle']")
-	private WebElement verify_joyRide_page;
+	
 
 	public WebElement home() {
 		return home;
@@ -97,10 +96,6 @@ public class Vehicle_Details extends Base_Utility {
 
 	public WebElement verify_joyRide() {
 		return verify_joyRide;
-	}
-
-	public WebElement verify_joyRide_page() {
-		return verify_joyRide_page;
 	}
 
 //**************************************More details *************************************

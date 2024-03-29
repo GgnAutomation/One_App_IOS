@@ -18,7 +18,7 @@ public class Select_Vehicle_Page_Test extends Base_Utility {
 	String device = config_getdata("Platform_name");
 
 	@Test(priority = 0)
-	public void TC012_verify_Nick_Name() throws InterruptedException {
+	public void TC014_verify_Nick_Name() throws InterruptedException {
 		Message("************************Select_Vehicle_Page_Test**************************");
 		ob = new Select_Vehicle_Page();
 //		login = new Login_Page_Test();
@@ -39,8 +39,8 @@ public class Select_Vehicle_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC012_verify_Nick_Name()", priority = 1)
-	public void TC013_Verify_With_30_letter_nick_name() throws InterruptedException {
+	@Test(dependsOnMethods = "TC014_verify_Nick_Name()", priority = 1)
+	public void TC015_Verify_With_30_letter_nick_name() throws InterruptedException {
 
 		Custom_click(ob.edit_nickame_button(), "Tap on pencil for Nick name ");
 		ob.edit_nickame_text().clear();
@@ -57,8 +57,8 @@ public class Select_Vehicle_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC013_Verify_With_30_letter_nick_name()", priority = 2)
-	public void TC014_Verify_With_31_letter_nick_name() throws InterruptedException {
+	@Test(dependsOnMethods = "TC015_Verify_With_30_letter_nick_name()", priority = 2)
+	public void TC016_Verify_With_31_letter_nick_name() throws InterruptedException {
 
 		Custom_click(ob.edit_nickame_button(), "Tap on pencil for Nick name ");
 		ob.edit_nickame_text().clear();
@@ -75,8 +75,8 @@ public class Select_Vehicle_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC014_Verify_With_31_letter_nick_name()", priority = 3)
-	public void TC015_Verify_With_29_letter_nick_name() throws InterruptedException {
+	@Test(dependsOnMethods = "TC016_Verify_With_31_letter_nick_name()", priority = 3)
+	public void TC017_Verify_With_29_letter_nick_name() throws InterruptedException {
 
 		Custom_click(ob.edit_nickame_button(), "Tap on pencil for Nick name ");
 		ob.edit_nickame_text().clear();
@@ -94,14 +94,20 @@ public class Select_Vehicle_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 4)
-	public void TC016_Select_Vehicle() throws InterruptedException {
+	public void TC018_Select_Vehicle() throws InterruptedException {
 
 		VerifyElementPresent(ob.continue_button(), "Continue Button before select vehicle is");
 		ob.vehicle_count();
 		Custom_click(ob.click_first_vehicle(), " Select first vehicle");
 		VerifyElementPresent(ob.continue_button(), "Continue Button after select vehicle is");
 		Custom_click(ob.continue_button(), "Continue Button after select vehicle");
-		Thread.sleep(2000);
+		Thread.sleep(10000);
+		try {
+			if(ob.allow_location().isDisplayed()) {
+		Custom_click(ob.allow_location(), "Allow location");
+		Custom_click(ob.While_using_the_app(), "While using the app");
+		Custom_click(ob.Processed(), "Processed ");
+			}}catch(Exception e) {Message("Allow loction pop is not given");}
 		if (device.equalsIgnoreCase("emulator")) {
 			Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to access your phone call logs");
 			Custom_click(ob.Allow(), ob.Allow().getText() + " Hero App to access your contacts");
@@ -111,15 +117,15 @@ public class Select_Vehicle_Page_Test extends Base_Utility {
 			Custom_click(ob.Allow(), ob.Allow().getText()
 					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
 		}
-		if (device.equalsIgnoreCase("pcloudy")) {
-//			Custom_click(ob.While_using_the_app(), "While using the app");
-		}
+
 		try {
-			Thread.sleep(10000);
-			if(ob.banner_Img_close().isDisplayed()) {
-		Custom_click(ob.banner_Img_close(), " Banner Img close"); }
-			}catch (Exception e) {
-				Message("Banner img is not given");
+
+			Thread.sleep(2000);
+			if (ob.banner_Img_close().isDisplayed()) {
+				Custom_click(ob.banner_Img_close(), " Banner Img close");
 			}
+		} catch (Exception e) {
+			Message("Banner img is not given");
+		}
 	}
 }

@@ -13,7 +13,7 @@ public class GoodLife_test extends Base_Utility {
 	String device = config_getdata("Platform_name");
 
 	@Test(priority = 0)
-	public void TC100_verify_image_in_goodlife_page() throws InterruptedException {
+	public void TC104_verify_image_in_goodlife_page() throws InterruptedException {
 		Message("*********************Goodlife_page**************************");
 		ob = new GoodLife();
 //		login = new Login_Page_Test();
@@ -26,7 +26,7 @@ public class GoodLife_test extends Base_Utility {
 	}
 
 	@Test(priority = 1)
-	public void TC101_Verify_Pro_Membership() throws InterruptedException {
+	public void TC105_Verify_Pro_Membership() throws InterruptedException {
 		Custom_click(ob.plan_name1(), ob.plan_name1().getText());
 		ob.plan_info();
 		Custom_click(ob.viewPlans_arrow(), "View plans arrow");
@@ -39,7 +39,7 @@ public class GoodLife_test extends Base_Utility {
 	}
 
 	@Test(priority = 2)
-	public void TC102_Verify_Silver_Membership() throws InterruptedException {
+	public void TC106_Verify_Silver_Membership() throws InterruptedException {
 		Custom_click(ob.plan_name2(), ob.plan_name2().getText());
 		ob.plan_info();
 		Custom_click(ob.viewPlans_arrow(), "View plans arrow");
@@ -50,7 +50,7 @@ public class GoodLife_test extends Base_Utility {
 	}
 
 	@Test(priority = 3)
-	public void TC103_Verify_Gold_Membership() throws InterruptedException {
+	public void TC107_Verify_Gold_Membership() throws InterruptedException {
 		Custom_click(ob.plan_name3(), ob.plan_name3().getText());
 		ob.plan_info();
 		Custom_click(ob.viewPlans_arrow(), "View plans arrow");
@@ -61,7 +61,7 @@ public class GoodLife_test extends Base_Utility {
 	}
 
 	@Test(priority = 4)
-	public void TC104_Verify_Platinum_Membership() throws InterruptedException {
+	public void TC108_Verify_Platinum_Membership() throws InterruptedException {
 		Scroll_down_page_Action("Platinum");
 		Custom_click(ob.plan_name4(), ob.plan_name4().getText());
 		ob.plan_info();
@@ -73,7 +73,7 @@ public class GoodLife_test extends Base_Utility {
 	}
 
 	@Test(priority = 5)
-	public void TC105_View_All_Membership_Plan() {
+	public void TC109_View_All_Membership_Plan() {
 		Custom_click(ob.viewPlans_arrow(), "View All plan infor arrow");
 		ob.membership_plan_info();
 		Scroll_down_page_Action("Experience surprises");
@@ -135,7 +135,7 @@ public class GoodLife_test extends Base_Utility {
 //		Custom_click(ob.back_button(), " Back from Referrals");
 //	}
 	@Test(priority = 6)
-	public void TC106_verify_Points_Earning_and_Redemption() {
+	public void TC110_verify_Points_Earning_and_Redemption() {
 		msg(ob.benifit_1(), " ");
 		msg(ob.benifit_2(), " ");
 		msg(ob.benifit_3(), " ");
@@ -149,24 +149,24 @@ public class GoodLife_test extends Base_Utility {
 	}
 
 	@Test(priority = 7)
-	public void TC107_Whats_so_Good_in_Good_life() {
+	public void TC111_Whats_so_Good_in_Good_life() {
 		Scroll_down_page_Action("View details");
-		msg(ob.goodLife_message1()," ");
+		msg(ob.goodLife_message1(), " ");
 		msg(ob.goodLife_message2(), " ");
-		msg(ob.goodLife_benifit_1()," ");
+		msg(ob.goodLife_benifit_1(), " ");
 		msg(ob.goodLife_benifit_2(), " ");
 		msg(ob.goodLife_benifit_3(), " ");
 	}
 
 	@Test(priority = 8)
-	public void TC108_Verify_Ultimate_savings() {
+	public void TC112_Verify_Ultimate_savings() {
 		Scroll_down_page_Action("Exclusive membership offers");
 		msg(ob.Ultimate_savings_title(), " ");
 		ob.ultimate();
 	}
 
 	@Test(priority = 9)
-	public void TC109_verify_Exclusive_membership_offers() {
+	public void TC113_verify_Exclusive_membership_offers() {
 		Scroll_down_page_Action("Our Lucky goodlife memebr");
 		msg(ob.Exive_mem_offers(), " ");
 		msg(ob.Exive_mem_offers_1(), " ");
@@ -180,7 +180,7 @@ public class GoodLife_test extends Base_Utility {
 	}
 
 	@Test(priority = 10)
-	public void TC110_verify_Winner_informaton() {
+	public void TC114_verify_Winner_informaton() {
 		Scroll_down_page_Action("View all winners");
 		msg(ob.lucky_member(), " ");
 		msg(ob.lucky_member_msg(), " ");

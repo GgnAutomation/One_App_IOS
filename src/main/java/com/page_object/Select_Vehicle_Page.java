@@ -35,14 +35,15 @@ public class Select_Vehicle_Page extends Base_Utility {
 	private WebElement vehicle_info;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id = 'com.customerapp.hero:id/cross_btn']")
 	private WebElement nick_name_close_button;
-	@FindBy(xpath ="//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_close']")
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_close']")
 	private WebElement video_close_button;
-	@FindBy(xpath ="//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_full']")
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_full']")
 	private WebElement video_full_video;
-	@FindBy(xpath ="//android.widget.Button[@resource-id ='com.android.permissioncontroller:id/permission_allow_button']")
+	@FindBy(xpath = "//android.widget.Button[@resource-id ='com.android.permissioncontroller:id/permission_allow_button']")
 	private WebElement Allow;
-	@FindBy(xpath ="//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/custom_radius_close']")
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/custom_radius_close']")
 	private WebElement banner_Img_close;
+
 	public WebElement edit_nickame_button() {
 		return edit_nickame_button;
 	}
@@ -58,14 +59,15 @@ public class Select_Vehicle_Page extends Base_Utility {
 	public WebElement nick_name_close_button() {
 		return nick_name_close_button;
 	}
-	public WebElement Allow()
-	{
+
+	public WebElement Allow() {
 		return Allow;
 	}
-	public WebElement banner_Img_close()
-	{
+
+	public WebElement banner_Img_close() {
 		return banner_Img_close;
 	}
+
 	public WebElement continue_button() {
 		return continue_button;
 	}
@@ -93,12 +95,27 @@ public class Select_Vehicle_Page extends Base_Utility {
 		}
 		Message("Total number of Vehicles registered in this number is = " + Vehicle_count);
 	}
-		public WebElement video_close_button()
-	{
+
+	public WebElement video_close_button() {
 		return video_close_button;
 	}
-	public WebElement video_full_video()
-	{
+
+	public WebElement video_full_video() {
 		return video_full_video;
 	}
+
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/permission_allow_lbl']")
+	private WebElement allow_location;
+
+	public WebElement allow_location() {
+		return allow_location;
+	}
+
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	private WebElement Processed;
+
+	public WebElement Processed() {
+		return Processed;
+	}
+
 }

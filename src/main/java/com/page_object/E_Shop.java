@@ -26,13 +26,13 @@ public class E_Shop extends Base_Utility {
 	private WebElement wishlist;
 	@FindBy(xpath = "//android.view.View[@resource-id ='block-customer-login-heading']")
 	private WebElement customer_login_heading;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='block-customer-login-heading']")
+	@FindBy(xpath = "//android.widget.TextView[starts-with(@text,'Registered')]")
 	private WebElement customer_login_heading_real;
 	@FindBy(xpath="//android.view.View[contains(@text,'If you have an account')]")
 	private WebElement registered_custombers_message;
 	@FindBy(xpath="//android.widget.TextView[contains(@text,'If you have an account')]")
 	private WebElement registered_custombers_message_real;
-	@FindBy(xpath = "//android.widget.EditText[@resource-id ='email']")
+	@FindBy(xpath = "(//android.widget.EditText)[2]")
 	private WebElement enter_email_or_mobile_number;
 	@FindBy(xpath ="//android.view.View[@content-desc='Continue']")
 	private WebElement Continue_button;
@@ -44,9 +44,9 @@ public class E_Shop extends Base_Utility {
 	private WebElement verify_mobile_message;
 	@FindBy(xpath ="//android.widget.TextView[contains(@text,'Please enter 4-Digit OTP')]")
 	private WebElement verify_mobile_message_real;
-	@FindBy(xpath ="//android.view.View[@resource-id ='otp-pop-up-close']")
+	@FindBy(xpath ="//android.widget.TextView[@text ='X']")
 	private WebElement otp_pop_up_close;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='otp-pop-up-close']")
+	@FindBy(xpath ="//android.widget.TextView[@text ='X']")
 	private WebElement otp_pop_up_close_real;
 	@FindBy(xpath ="//android.view.View[@resource-id ='block-new-customer-heading']")
 	private WebElement new_customer_heading;
@@ -139,11 +139,11 @@ public class E_Shop extends Base_Utility {
 	private WebElement user_account;
 	@FindBy(xpath ="//android.view.View[@resource-id = 'block-new-customer-heading']")
 	private WebElement newcustomer_heading;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id = 'block-new-customer-heading']")
+	@FindBy(xpath ="//android.widget.TextView[starts-with(@text, 'Checkout')]")
 	private WebElement newcustomer_heading_real;
 	@FindBy(xpath ="//android.view.View[contains(@text,'Creating an account')]")
 	private WebElement newcustomer_message1;
-	@FindBy(xpath ="//android.widget.TextView[contains(@text,'Creating an account')]")
+	@FindBy(xpath ="//android.widget.TextView[starts-with(@text, 'Creating an account')]")
 	private WebElement newcustomer_message1_real;
 	@FindBy(xpath="//android.widget.TextView[contains(@text ,'See order and')]")
 	private WebElement newcustomer_message2;
@@ -153,21 +153,21 @@ public class E_Shop extends Base_Utility {
 	private WebElement newcustomer_message4;
 	@FindBy(xpath ="//android.view.View[@content-desc='Create an Account']/android.widget.TextView")
 	private WebElement create_account;
-	@FindBy(xpath ="//android.widget.EditText[@resource-id = 'firstname']")
+	@FindBy(xpath ="(//android.widget.EditText)[2]")
 	private WebElement firstname;
-	@FindBy(xpath ="//android.widget.EditText[@resource-id = 'lastname']")
+	@FindBy(xpath ="(//android.widget.EditText)[3]")
 	private WebElement lastname;
-	@FindBy(xpath ="//android.widget.CheckBox[@resource-id ='is_subscribed']")
+	@FindBy(xpath ="//android.widget.CheckBox[starts-with(@text,'Sign Up')]")
 	private WebElement CheckBox;
 	@FindBy(xpath ="//android.widget.EditText[@resource-id ='mobile']")
 	private WebElement mobile;
 	@FindBy(xpath ="//android.view.View[@content-desc='Get OTP']/android.widget.TextView")
 	private WebElement OTP;
-	@FindBy(xpath ="//android.widget.EditText[@resource-id ='email_address']")
+	@FindBy(xpath ="(//android.widget.EditText)[4]")
 	private WebElement email_address;
-	@FindBy(xpath ="//android.widget.CheckBox[@resource-id ='custom-checkbox']")
+	@FindBy(xpath ="(//android.widget.CheckBox)[2]")
 	private WebElement checkbox_for_T_and_C;
-	@FindBy(xpath="//android.widget.Button[@resource-id ='register-submit']")
+	@FindBy(xpath="//android.widget.Button[starts-with(@text,'CREATE AN')]")
 	private WebElement create_an_account;
 	@FindBy(xpath ="//android.widget.TextView[@text ='BACK']")
 	private WebElement back_button;

@@ -26,7 +26,7 @@
 	</test>
 	<test name="Vehicle_Details_test" enabled="false">
 		<classes>
-			<class name="Page_Test.Vehicle_Details_test" /> 
+			<class name="Page_Test.Vehicle_Details_test" />
 		</classes>
 	</test>
 	<test name="Refer_a_friend_and_Contact_us_test" enabled="false">
@@ -38,13 +38,13 @@
 		<classes>
 			<class name="Page_Test.Safety_Measures_and_Symbols_Glossary_Test" />
 		</classes>
-	</test>                
+	</test>
 	<test name="Feedback_and_About_Hero_test" enabled="false">
 		<classes>
 			<class name="Page_Test.Feedback_and_About_Hero_test" />
 		</classes>
 	</test>
-		<test name="Services_Page_Test" enabled="false">
+	<test name="Services_Page_Test" enabled="false">
 		<classes>
 			<class name="Page_Test.Services_Page_Test" />
 		</classes>
@@ -52,6 +52,11 @@
 	<test name="GoodLife_test" enabled="false">
 		<classes>
 			<class name="Page_Test.GoodLife_test" />
+		</classes>
+	</test>
+	<test name="GoodLifePage_Test" enabled="false">
+		<classes>
+			<class name="Page_Test.GoodLifePage_Test" />
 		</classes>
 	</test>
 	<test name="E_Shop_test" enabled="false">
@@ -66,17 +71,19 @@
 	</test>
 	<test name="All test class" enabled="true">
 		<classes>
-		<class name="Page_Test.Login_Page_Test" />
+			<class name="Page_Test.Login_Page_Test" />
 			<class name="Page_Test.Select_Vehicle_Page_Test" />
 			<class name="Page_Test.Home_Page_Test" />
 			<class name="Page_Test.My_Profile_Page_Test" />
-			<class name="Page_Test.Vehicle_Details_test" /> 
+			<class name="Page_Test.Vehicle_Details_test" />
 			<class name="Page_Test.Refer_a_friend_and_Contact_us_test" />
 			<class name="Page_Test.Safety_Measures_and_Symbols_Glossary_Test" />
 			<class name="Page_Test.Feedback_and_About_Hero_test" />
 			<class name="Page_Test.Services_Page_Test" />
-			<class name="Page_Test.GoodLife_test" /> 
+			<class name="Page_Test.GoodLifePage_Test" />
+			<!-- 		<class name="Page_Test.GoodLife_test" />  -->
 			<class name="Page_Test.E_Shop_test" />
 		</classes>
 	</test>
 </suite> 
+	

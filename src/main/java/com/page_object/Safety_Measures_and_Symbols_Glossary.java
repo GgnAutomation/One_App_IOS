@@ -29,7 +29,7 @@ public class Safety_Measures_and_Symbols_Glossary extends Base_Utility{
 	{
 		for(int i=13;i<Safety_message.size();i++)
 		{
-			msg(Safety_message.get(i),Safety_message.get(i).getText());
+			msg(Safety_message.get(i),"");
 		}
 	}
 	public WebElement back_button()
@@ -61,14 +61,14 @@ public class Safety_Measures_and_Symbols_Glossary extends Base_Utility{
 	{
 		for(int i=13,j=0;i<Symbols_Glossary_message.size();i++)
 		{
-			msg(Symbols_Glossary_message.get(i),Symbols_Glossary_message.get(i).getText());
+			msg(Symbols_Glossary_message.get(i),"");
 		if(i==Symbols_Glossary_message.size()-1)
 		{
 			String name = Symbols_Glossary_message.get(i).getText();
 			if(name.equalsIgnoreCase("Destination Reached"))
 			{
 				Scroll_down_page_Action(name);
-				msg(Symbols_Glossary_message.get(i),Symbols_Glossary_message.get(i).getText());
+				msg(Symbols_Glossary_message.get(i),"");
 			}
 			else
 			{

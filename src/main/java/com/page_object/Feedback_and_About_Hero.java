@@ -24,16 +24,22 @@ public class Feedback_and_About_Hero extends Base_Utility{
 	private WebElement side_menu_button;
 	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/rv_item_lbl'])[7]")
 	private WebElement feedback;
-	@FindBy(xpath ="(//android.widget.ImageButton[@resource-id ='com.customerapp.hero:id/text_input_end_icon'])[1]")
-	private WebElement Category;
-	@FindBy(xpath ="(//android.widget.ImageButton[@resource-id ='com.customerapp.hero:id/text_input_end_icon'])[2]")
-	private WebElement Sub_Category;
-	@FindBy(xpath ="(//android.widget.ImageButton[@resource-id ='com.customerapp.hero:id/text_input_end_icon'])[3]")
-	private WebElement Sub_Sub_Category;
-	@FindBy(xpath ="//android.widget.EditText[@resource-id ='com.customerapp.hero:id/et_your_feedback']")
-	private WebElement feedback_message;
+	@FindBy(xpath ="//android.widget.TextView[starts-with(@text,'App')]")
+	private WebElement App_Related;
 	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
-	private WebElement submit_feedback;
+	private WebElement Continue_btn;
+	@FindBy(xpath ="//android.widget.AutoCompleteTextView[@resource-id ='com.customerapp.hero:id/filled_exposed']")
+	private WebElement Sub_Category;
+	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_title'and @text ='Sales']")
+	private WebElement Sales;
+	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_title'and @text ='Service']")
+	private WebElement Service;
+	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_title'and @text ='Parts']")
+	private WebElement Parts;
+	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_title'and @text ='Goodlife']")
+	private WebElement Goodlife;
+	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_title'and @text ='Suggestions']")
+	private WebElement Suggestions;
 	@FindBy(xpath ="//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/back_btn']")
 	private WebElement back_btn;
 	public WebElement home() {
@@ -47,27 +53,39 @@ public class Feedback_and_About_Hero extends Base_Utility{
 	{
 		return feedback;
 	}
-	public WebElement Category()
+	public WebElement App_Related()
 	{
-		return Category;
+		return App_Related;
 	}
 
+	public WebElement Continue_btn()
+	{
+		return Continue_btn;
+	}
+	
 	public WebElement Sub_Category()
 	{
 		return Sub_Category;
 	}
-	
-	public WebElement Sub_Sub_Category()
+	public WebElement Sales()
 	{
-		return Sub_Sub_Category;
+		return Sales;
 	}
-	public WebElement feedback_message()
+	public WebElement Service()
 	{
-		return feedback_message;
+		return Service;
 	}
-	public WebElement submit_feedback()
+	public WebElement Parts()
 	{
-		return submit_feedback;
+		return Parts;
+	}
+	public WebElement Goodlife()
+	{
+		return Goodlife;
+	}
+	public WebElement Suggestions()
+	{
+		return Suggestions;
 	}
 	public WebElement back_btn()
 	{
@@ -79,12 +97,10 @@ public class Feedback_and_About_Hero extends Base_Utility{
 	private WebElement about_hero;
 	@FindBy(xpath ="//android.view.View[@resource-id='container-6a13db6644']/android.view.View")
 	private WebElement about_hero_message_1;
-	@FindBy(xpath ="//android.widget.TextView[contains(@text,'Manufacturing Happiness')]")
+	@FindBy(xpath ="//android.widget.TextView[contains(@text,'Riding')]")
 	private WebElement about_hero_message_1_real;
 	@FindBy(xpath ="//android.view.View[@resource-id='container-6a13db6644']/android.widget.TextView")
 	private WebElement about_hero_message_2;
-	@FindBy(xpath ="(//android.view.View[@resource-id='container-6a13db6644']/android.widget.TextView)[2]")
-	private WebElement about_hero_message_2_real;
 	@FindBy(xpath ="//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/cross']")
 	private WebElement Cross_button;
 	public WebElement about_hero()
@@ -103,10 +119,7 @@ public class Feedback_and_About_Hero extends Base_Utility{
 	{
 		return about_hero_message_2;
 	}
-	public WebElement about_hero_message_2_real()
-	{
-		return about_hero_message_2_real;
-	}
+
 	public WebElement Cross_button()
 	{
 		return Cross_button;
