@@ -154,10 +154,12 @@ public class Base_Utility
 				pcloudyOptions.put("pCloudy_Username", "randhir.kumar@heromotocorp.com");
 				pcloudyOptions.put("pCloudy_ApiKey", "2gdc5pv55mh54mqtwmvj4xbr");
 				pcloudyOptions.put("pCloudy_DurationInMinutes", 120);
-				pcloudyOptions.put("pCloudy_DeviceFullName", "SAMSUNG_GalaxyF145G_Android_13.0.0_dd226");
-//				pcloudyOptions.put("pCloudy_DeviceManufacturer", "SAMSUNG");
-//				pcloudyOptions.put("pCloudy_DeviceVersion", "13.0.0");
-				pcloudyOptions.put("pCloudy_ApplicationName", "Oneapp-release-prod-r8-21nov.apk");
+//				pcloudyOptions.put("pCloudy_DeviceFullName", "SAMSUNG_GalaxyF145G_Android_13.0.0_dd226");
+//				pcloudyOptions.put("pCloudy_DeviceFullName", "SAMSUNG_GalaxyF235G_Android_13.0.0_11a9e");
+				pcloudyOptions.put("pCloudy_DeviceManufacturer", "SAMSUNG");
+				pcloudyOptions.put("pCloudy_DeviceVersion", "13.0.0");
+//				pcloudyOptions.put("pCloudy_ApplicationName", "Oneapp-release-prod-r8-21nov.apk");
+				pcloudyOptions.put("pCloudy_ApplicationName", "app-release-prod-18march.apk");
 				pcloudyOptions.put("pCloudy_WildNet", "false");
 				pcloudyOptions.put("pCloudy_EnableVideo", "true");
 				pcloudyOptions.put("pCloudy_EnablePerformanceData", "true");
@@ -176,7 +178,7 @@ public class Base_Utility
 				db.setCapability("appium:automationName", "uiautomator2");
 				db.setCapability("platformName", "Android");
 				db.setCapability("appium:deviceName", "Redmi 10 Prime");
-				db.setCapability("appium:udid", "192.168.1.3:5555"); // 3323262910AA04DS //192.168.1.3:55555
+				db.setCapability("appium:udid", "41f7d4580507"); // 3323262910AA04DS //192.168.1.3:55555
 				db.setCapability("appium:avdLaunchTimeout", 600000);
 				db.setCapability("appPackage", "com.customerapp.hero");
 				db.setCapability("appActivity", "com.customerapp.hero.views.activity.HmcDashboard");
@@ -393,18 +395,20 @@ public class Base_Utility
 
 	// =================================================================================================================================
 	@SuppressWarnings({ "rawtypes", "deprecation" })
-	public static void horizontal_scroll_image(WebElement end_position, WebElement Start_position,String fieldname) 
-	{
+	public static void horizontal_scroll_image(WebElement end_position, WebElement Start_position, String fieldname) {
 		try {
 			TouchAction action = new TouchAction(driver);
 			if (end_position.isDisplayed() || end_position.isEnabled() && Start_position.isDisplayed()
 					|| Start_position.isEnabled() == true) {
 				Point location1 = end_position.getLocation();
 				Point location2 = Start_position.getLocation();
+				System.out.println("location1 =" + location1 + "location2 =" + location2);
 				int end_x = location1.x;
-				int end_y = location1.y-105;
+				int end_y = location1.y - 105;
 				int start_x = location2.x;
-				int start_y = location2.y-110;
+				int start_y = location2.y - 110;
+				System.out.println(
+						"end_x =" + end_x + "end_y =" + end_y + "start_x = " + start_x + "start_y =" + start_y);
 				action.press(PointOption.point(start_x, start_y))
 						.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
 						.moveTo(PointOption.point(end_x, end_y)).release().perform();

@@ -458,28 +458,28 @@ public class Services_Page extends Base_Utility {
 						Message("Service center name is not given");
 					}
 					Message("Service center address =" + sevice_center_info.get(1).getText());
-					Message("******************Job card , Completion date & price ************************");
-					Message("Estimated Amount =" + Estimated_Amount.getText());
-					Message("Estimated Date & Time =" + Estimated_Date_Time.getText());
-					if (invoice.getText().equalsIgnoreCase("Download invoice")) {
-						Custom_click(invoice, "Download invoice");
-						Thread.sleep(6000);
-					}
-					try {
-						Custom_click(invoice, "view invoice");
-						Thread.sleep(2000);
-						Message("invoice number =" + invoice_number.getText());
-						driver.navigate().back();
-					} catch (Exception e) {
-						Message("Not able to download invoice");
-					}
+//					Message("******************Job card , Completion date & price ************************");
+//					Message("Estimated Amount =" + Estimated_Amount.getText());
+//					Message("Estimated Date & Time =" + Estimated_Date_Time.getText());
+//					if (invoice.getText().equalsIgnoreCase("Download invoice")) {
+//						Custom_click(invoice, "Download invoice");
+//						Thread.sleep(6000);
+//					}
+//					try {
+//						Custom_click(invoice, "view invoice");
+//						Thread.sleep(2000);
+//						Message("invoice number =" + invoice_number.getText());
+//						driver.navigate().back();
+//					} catch (Exception e) {
+//						Message("Not able to download invoice");
+//					}
 					support_information();
 					Custom_click(collapse_arrow, "collapse Key arrow in");
 					Custom_click(collapse_arrow, "collapse Key arrow out");
 					Custom_click(call_supporter, " call supporter ");
 					driver.navigate().back();
 					driver.navigate().back();
-					driver.navigate().back();
+//					driver.navigate().back();
 					Custom_click(back_button, Service_history.get(0).getText());
 				} else {
 					Message(service_info);

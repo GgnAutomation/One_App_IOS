@@ -96,7 +96,7 @@ public class GoodLife extends Base_Utility {
 	}
 
 	// ******************************Silver,Gold & Platinum
-	// Membership*******************************
+	//Membership*******************************
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/planlbl' and @text='Silver']")
 	private WebElement plan_name2;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/planlbl' and @text='Gold']")

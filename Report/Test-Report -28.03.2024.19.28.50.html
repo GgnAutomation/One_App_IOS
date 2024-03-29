@@ -1,0 +1,1606 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Hero_App Test Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Hero_App</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Mar 28, 2024 07:28:50 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Page_Test.GoodLifePage_Test = TC104_Verify_goodlife_info</p>
+            <p class="text-sm">
+              <span>7:30:08 pm</span> / <span>00:02:26:354</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Page_Test.GoodLifePage_Test = TC104_Verify_goodlife_info</h5>
+<span class='badge badge-success'>03.28.2024 7:30:08 pm</span>
+<span class='badge badge-danger'>03.28.2024 7:32:35 pm</span>
+<span class='badge badge-default'>00:02:26:354</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:30:08 pm</td>
+        <td>
+          *********************Goodlife_page**************************
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:30:13 pm</td>
+        <td>
+          Successfully click on = OK
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:30:18 pm</td>
+        <td>
+          Successfully click on = Process button require notification access
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:30:21 pm</td>
+        <td>
+          Successfully click on = AllowAllow Hero App to send you notifications
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:30:26 pm</td>
+        <td>
+          Login with Registerd mobile number send successfully =9015564645
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:30:30 pm</td>
+        <td>
+          Successfully click on = Coninue button
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:30:49 pm</td>
+        <td>
+          enterOTP =2 send successfully =2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:30:54 pm</td>
+        <td>
+          enterOTP =3 send successfully =3
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:30:58 pm</td>
+        <td>
+          enterOTP =4 send successfully =4
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:02 pm</td>
+        <td>
+          enterOTP =6 send successfully =6
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:05 pm</td>
+        <td>
+          enterOTP =5 send successfully =5
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:07 pm</td>
+        <td>
+          enterOTP =1 send successfully =1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:11 pm</td>
+        <td>
+          Successfully click on = Verify Button
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:19 pm</td>
+        <td>
+          Successfully click on =  Select first vehicle
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:22 pm</td>
+        <td>
+          Successfully click on = Continue Button after select vehicle
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:32 pm</td>
+        <td>
+          Successfully click on = Allow location
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:34 pm</td>
+        <td>
+          Successfully click on = While using the app
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:37 pm</td>
+        <td>
+          Successfully click on = Processed 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:03 pm</td>
+        <td>
+          Banner img is not given
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:19 pm</td>
+        <td>
+          Successfully click on = GoodLife
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:26 pm</td>
+        <td>
+          ReWared message = Every Journey is a Reward
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:29 pm</td>
+        <td>
+          Plan name null Membership
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:31 pm</td>
+        <td>
+          Point Value =0 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:34 pm</td>
+        <td>
+          Successfully click on = Renew Membership
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:35 pm</td>
+        <td>
+          Test Case Pass
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Page_Test.GoodLifePage_Test = TC105_View_All_Membership_Plan</p>
+            <p class="text-sm">
+              <span>7:32:35 pm</span> / <span>00:02:50:027</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Page_Test.GoodLifePage_Test = TC105_View_All_Membership_Plan</h5>
+<span class='badge badge-success'>03.28.2024 7:32:35 pm</span>
+<span class='badge badge-danger'>03.28.2024 7:35:25 pm</span>
+<span class='badge badge-default'>00:02:50:027</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:39 pm</td>
+        <td>
+           Goodlife Benefits
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:42 pm</td>
+        <td>
+           Insurance
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:45 pm</td>
+        <td>
+           Accidental Death Cover
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:48 pm</td>
+        <td>
+           Discount
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:50 pm</td>
+        <td>
+           On Vehicle Service
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:53 pm</td>
+        <td>
+           Shopping Offers
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:56 pm</td>
+        <td>
+           Bonus points
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:58 pm</td>
+        <td>
+           Welcome points
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:02 pm</td>
+        <td>
+           Vehicle upgrade
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:05 pm</td>
+        <td>
+           Referral
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:08 pm</td>
+        <td>
+           PUC points
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:11 pm</td>
+        <td>
+           Minimum ROI
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:14 pm</td>
+        <td>
+           On 2-wheeler Loans
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:17 pm</td>
+        <td>
+           Biking Expeditions
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:19 pm</td>
+        <td>
+           And Sweepstakes
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:22 pm</td>
+        <td>
+           Choose
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:25 pm</td>
+        <td>
+           Your Plan
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:28 pm</td>
+        <td>
+           Pro
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:30 pm</td>
+        <td>
+           -
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:33 pm</td>
+        <td>
+           ₹600
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:35 pm</td>
+        <td>
+           199
+6000
+3000
+75
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:38 pm</td>
+        <td>
+           -
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:42 pm</td>
+        <td>
+           -
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:44 pm</td>
+        <td>
+           Pro
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:47 pm</td>
+        <td>
+           ₹199/3Year
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:50 pm</td>
+        <td>
+           Silver
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:53 pm</td>
+        <td>
+           ₹1 Lac For 1 Year
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:55 pm</td>
+        <td>
+           ₹1200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:58 pm</td>
+        <td>
+           299
+7000
+3500
+100
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:00 pm</td>
+        <td>
+           6.99%
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:03 pm</td>
+        <td>
+           Silver
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:06 pm</td>
+        <td>
+           ₹299/3Year
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:08 pm</td>
+        <td>
+           Gold
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:11 pm</td>
+        <td>
+           ₹2 Lac For 1 Year
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:14 pm</td>
+        <td>
+           ₹2400
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:17 pm</td>
+        <td>
+           399
+8000
+4000
+125
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:20 pm</td>
+        <td>
+           6.99%
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:23 pm</td>
+        <td>
+           Gold
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 pm</td>
+        <td>
+           ₹399/3Year
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:28 pm</td>
+        <td>
+           Most Popular
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:30 pm</td>
+        <td>
+           Other common benefits
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:33 pm</td>
+        <td>
+           A Budget friendly maintenance
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:51 pm</td>
+        <td>
+          Successfully Scroll page Action ==surprises
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:54 pm</td>
+        <td>
+           Free Express Service on prior booking
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:56 pm</td>
+        <td>
+           Free Nitrogen Filling for 3 times & 1 time free vehicle wash
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:59 pm</td>
+        <td>
+           Discount Joyride Package & Renewal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:01 pm</td>
+        <td>
+           Monthly Lucky draw only for members
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:05 pm</td>
+        <td>
+           Experience surprises
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:08 pm</td>
+        <td>
+           Special Invites to Digital Events & Chance to Participate in Engagement Campaigns
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:14 pm</td>
+        <td>
+          Successfully click on = Become a Gold member
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:18 pm</td>
+        <td>
+          Successfully click on = Back from Profile Form
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:25 pm</td>
+        <td>
+          Successfully click on = Back from GoodLife plans
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:25 pm</td>
+        <td>
+          Test Case Pass
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Page_Test.GoodLifePage_Test = TC106_Verify_Membership_Information</p>
+            <p class="text-sm">
+              <span>7:35:25 pm</span> / <span>00:00:17:923</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Page_Test.GoodLifePage_Test = TC106_Verify_Membership_Information</h5>
+<span class='badge badge-success'>03.28.2024 7:35:25 pm</span>
+<span class='badge badge-danger'>03.28.2024 7:35:42 pm</span>
+<span class='badge badge-default'>00:00:17:923</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:28 pm</td>
+        <td>
+          Successfully click on = Show More
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:32 pm</td>
+        <td>
+           = Membership Valid Till
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:33 pm</td>
+        <td>
+           = 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:35 pm</td>
+        <td>
+           = Membership No. : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:37 pm</td>
+        <td>
+           = 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:39 pm</td>
+        <td>
+           = Milestone Redeemed :
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:40 pm</td>
+        <td>
+           = null of 0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:42 pm</td>
+        <td>
+           = Earning & Redemption History
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:42 pm</td>
+        <td>
+          Test Case Pass
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Page_Test.GoodLifePage_Test = TC107_Earning_and_Redemption_History</p>
+            <p class="text-sm">
+              <span>7:35:42 pm</span> / <span>00:00:20:771</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Page_Test.GoodLifePage_Test = TC107_Earning_and_Redemption_History</h5>
+<span class='badge badge-success'>03.28.2024 7:35:42 pm</span>
+<span class='badge badge-danger'>03.28.2024 7:36:03 pm</span>
+<span class='badge badge-default'>00:00:20:771</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:46 pm</td>
+        <td>
+          Successfully click on = Earning & Redemption History
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:49 pm</td>
+        <td>
+          Successfully click on = Earning History
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:50 pm</td>
+        <td>
+          No earning history
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:53 pm</td>
+        <td>
+          Successfully click on = Redemption history
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:55 pm</td>
+        <td>
+          No redemption history
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:35:58 pm</td>
+        <td>
+          Successfully click on = Back from Transaction History
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:03 pm</td>
+        <td>
+          Successfully click on = Show Less
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:03 pm</td>
+        <td>
+          Test Case Pass
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Page_Test.GoodLifePage_Test = TC108_Complete_Profile</p>
+            <p class="text-sm">
+              <span>7:36:03 pm</span> / <span>00:00:13:776</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Page_Test.GoodLifePage_Test = TC108_Complete_Profile</h5>
+<span class='badge badge-success'>03.28.2024 7:36:03 pm</span>
+<span class='badge badge-danger'>03.28.2024 7:36:17 pm</span>
+<span class='badge badge-default'>00:00:13:776</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:06 pm</td>
+        <td>
+          Complete Profile
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:08 pm</td>
+        <td>
+          Complete your profile and win upto 500 points
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:12 pm</td>
+        <td>
+          Successfully click on = Update profile button
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:17 pm</td>
+        <td>
+          Successfully click on = Back from Complete Profile Rewards
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:17 pm</td>
+        <td>
+          Test Case Pass
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Page_Test.GoodLifePage_Test = TC109_Verify_Welcome_Rewards</p>
+            <p class="text-sm">
+              <span>7:36:17 pm</span> / <span>00:00:13:663</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Page_Test.GoodLifePage_Test = TC109_Verify_Welcome_Rewards</h5>
+<span class='badge badge-success'>03.28.2024 7:36:17 pm</span>
+<span class='badge badge-danger'>03.28.2024 7:36:31 pm</span>
+<span class='badge badge-default'>00:00:13:663</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:20 pm</td>
+        <td>
+          Welcome Rewards
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:22 pm</td>
+        <td>
+          Check your welcome rewards & redemption status.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:25 pm</td>
+        <td>
+          Successfully click on = Welcome rewardsa view details button
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:31 pm</td>
+        <td>
+          Successfully click on = Back from Welcome Rewards
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:31 pm</td>
+        <td>
+          Test Case Pass
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Page_Test.GoodLifePage_Test = TC110_Verify_refer_friend_in_Goodlife</p>
+            <p class="text-sm">
+              <span>7:36:31 pm</span> / <span>00:00:49:047</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Page_Test.GoodLifePage_Test = TC110_Verify_refer_friend_in_Goodlife</h5>
+<span class='badge badge-success'>03.28.2024 7:36:31 pm</span>
+<span class='badge badge-danger'>03.28.2024 7:37:20 pm</span>
+<span class='badge badge-default'>00:00:49:047</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:34 pm</td>
+        <td>
+          Refer your near ones to buy a Hero 2-wheeler and Earn GoodLife Reward PointsRefer your near ones to buy a Hero 2-wheeler and Earn GoodLife Reward Points
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:51 pm</td>
+        <td>
+          Successfully Scroll page Action ==Winner Of The Month
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:55 pm</td>
+        <td>
+          Successfully click on = Know More
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:56 pm</td>
+        <td>
+          Referrals
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:57 pm</td>
+        <td>
+          Amazing Benefits
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:36:59 pm</td>
+        <td>
+          ONLY for YOU
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:00 pm</td>
+        <td>
+          Easiest way to Earn Reward Points get even more exciting with Remarkable Reward Points when you refer a friend or yourself for another Hero 2 Wheeler
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:02 pm</td>
+        <td>
+          Use Referral For
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:03 pm</td>
+        <td>
+          Upgrade your 2 Wheeler
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:04 pm</td>
+        <td>
+          Upgrade to a New Hero 2 Wheeler and Earn double Reward points of 3000 points
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:06 pm</td>
+        <td>
+          Successfully click on = Refer
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:11 pm</td>
+        <td>
+          Successfully click on =  Back from Vehicle Purchase Referral
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:14 pm</td>
+        <td>
+          Successfully click on = *T&C Apply
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:17 pm</td>
+        <td>
+          Successfully click on =  Back from Terms of Use
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:20 pm</td>
+        <td>
+          Successfully click on =  Back from Referrals
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:20 pm</td>
+        <td>
+          Test Case Pass
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Page_Test.GoodLifePage_Test = TC111_Verify_Winner_Of_The_Month</p>
+            <p class="text-sm">
+              <span>7:37:20 pm</span> / <span>00:00:18:479</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Page_Test.GoodLifePage_Test = TC111_Verify_Winner_Of_The_Month</h5>
+<span class='badge badge-success'>03.28.2024 7:37:20 pm</span>
+<span class='badge badge-danger'>03.28.2024 7:37:38 pm</span>
+<span class='badge badge-default'>00:00:18:479</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:24 pm</td>
+        <td>
+          Successfully click on = Winner of the Month
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:25 pm</td>
+        <td>
+          Referrals
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:27 pm</td>
+        <td>
+          Amazing Benefits
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:28 pm</td>
+        <td>
+          ONLY for YOU
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:29 pm</td>
+        <td>
+          Easiest way to Earn Reward Points get even more exciting with Remarkable Reward Points when you refer a friend or yourself for another Hero 2 Wheeler
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:30 pm</td>
+        <td>
+          Use Referral For
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:31 pm</td>
+        <td>
+          Upgrade your 2 Wheeler
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:33 pm</td>
+        <td>
+          Upgrade to a New Hero 2 Wheeler and Earn double Reward points of 3000 points
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:34 pm</td>
+        <td>
+          Refer
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:35 pm</td>
+        <td>
+          *T&C Apply
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:38 pm</td>
+        <td>
+          Successfully click on =  Back from Winner Of The Month
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:38 pm</td>
+        <td>
+          Test Case Pass
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Page_Test.GoodLifePage_Test = TC112_verify_Points_Earning_and_Redemption</p>
+            <p class="text-sm">
+              <span>7:37:38 pm</span> / <span>00:00:24:351</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Page_Test.GoodLifePage_Test = TC112_verify_Points_Earning_and_Redemption</h5>
+<span class='badge badge-success'>03.28.2024 7:37:38 pm</span>
+<span class='badge badge-danger'>03.28.2024 7:38:03 pm</span>
+<span class='badge badge-default'>00:00:24:351</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Azure-Project\One_App/failed_Tests_ScreenShots/TC112_verify_Points_Earning_and_Redemption.png28-03-2024_07 38 01' src="D:\Azure-Project\One_App/failed_Tests_ScreenShots/TC112_verify_Points_Earning_and_Redemption.png28-03-2024_07 38 01">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:37:40 pm</td>
+        <td>
+          Make the most of your Hero GoodLife Membership, earn Points at various steps
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:38:01 pm</td>
+        <td>
+          Points earning redemption view detail button==Unable To Click ==org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [e81b7b98-df38-4941-8d6e-3f11dce8d4d2, findElement {using=xpath, value=//android.widget.TextView[@resource-id ='com.customerapp.hero:id/points_earning_redemption_view_detail_btn' and @text ='View Details']}]
+Capabilities {appium:app: /opt/raid-data/data/userV2/..., appium:appActivity: com.customerapp.hero.views...., appium:appPackage: com.customerapp.hero, appium:automationName: uiautomator2, appium:chromedriverPort: 30362, appium:databaseEnabled: false, appium:desired: {app: /opt/raid-data/data/userV2/..., appActivity: com.customerapp.hero.views...., appPackage: com.customerapp.hero, automationName: uiautomator2, chromedriverPort: 30362, deviceName: 778, launchTimeout: 90000, newCommandTimeout: 600, pcloudy:options: {appiumVersion: 2.0.0, pCloudy_ApiKey: 2gdc5pv55mh54mqtwmvj4xbr, pCloudy_DeviceManufacturer: SAMSUNG, pCloudy_DeviceVersion: 13.0.0, pCloudy_DurationInMinutes: 120, pCloudy_EnableDeviceLogs: true, pCloudy_EnablePerformanceData: true, pCloudy_EnableVideo: true, pCloudy_Username: randhir.kumar@heromotocorp.com, pCloudy_WildNet: false}, platformName: android, platformVersion: 12.0.0, systemPort: 30364, udid: RZ8R916R5ND}, appium:deviceApiLevel: 33, appium:deviceManufacturer: samsung, appium:deviceModel: SM-M127G, appium:deviceName: RZ8R916R5ND, appium:deviceScreenDensity: 300, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8R916R5ND, appium:javascriptEnabled: true, appium:launchTimeout: 90000, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 600, appium:pixelRatio: 1.875, appium:platformVersion: 13, appium:statBarHeight: 45, appium:systemPort: 30364, appium:takesScreenshot: true, appium:udid: RZ8R916R5ND, appium:viewportRect: {height: 1420, left: 0, top: 45, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, pcloudy:options: {appiumVersion: 2.0.0, pCloudy_ApiKey: 2gdc5pv55mh54mqtwmvj4xbr, pCloudy_DeviceManufacturer: SAMSUNG, pCloudy_DeviceVersion: 13.0.0, pCloudy_DurationInMinutes: 120, pCloudy_EnableDeviceLogs: true, pCloudy_EnablePerformanceData: true, pCloudy_EnableVideo: true, pCloudy_Username: randhir.kumar@heromotocorp.com, pCloudy_WildNet: false}, platformName: ANDROID}
+Session ID: e81b7b98-df38-4941-8d6e-3f11dce8d4d2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:38:01 pm</td>
+        <td>
+          Test Case Fail
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Page_Test.GoodLifePage_Test = TC113_verify_Service_Privilegers</p>
+            <p class="text-sm">
+              <span>7:38:03 pm</span> / <span>00:00:04:565</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Page_Test.GoodLifePage_Test = TC113_verify_Service_Privilegers</h5>
+<span class='badge badge-success'>03.28.2024 7:38:03 pm</span>
+<span class='badge badge-danger'>03.28.2024 7:38:07 pm</span>
+<span class='badge badge-default'>00:00:04:565</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Azure-Project\One_App/failed_Tests_ScreenShots/TC113_verify_Service_Privilegers.png28-03-2024_07 38 06' src="D:\Azure-Project\One_App/failed_Tests_ScreenShots/TC113_verify_Service_Privilegers.png28-03-2024_07 38 06">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:38:06 pm</td>
+        <td>
+          Service_PrivilegersUnable To Scroll page Action ==org.openqa.selenium.InvalidElementStateException: Swipe action cannot be performed
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [e81b7b98-df38-4941-8d6e-3f11dce8d4d2, performTouchAction {actions=[{action=press, options={x=360, y=732}}, {action=wait, options={ms=10000}}, {action=moveTo, options={x=360, y=366}}, {action=release, options={}}]}]
+Capabilities {appium:app: /opt/raid-data/data/userV2/..., appium:appActivity: com.customerapp.hero.views...., appium:appPackage: com.customerapp.hero, appium:automationName: uiautomator2, appium:chromedriverPort: 30362, appium:databaseEnabled: false, appium:desired: {app: /opt/raid-data/data/userV2/..., appActivity: com.customerapp.hero.views...., appPackage: com.customerapp.hero, automationName: uiautomator2, chromedriverPort: 30362, deviceName: 778, launchTimeout: 90000, newCommandTimeout: 600, pcloudy:options: {appiumVersion: 2.0.0, pCloudy_ApiKey: 2gdc5pv55mh54mqtwmvj4xbr, pCloudy_DeviceManufacturer: SAMSUNG, pCloudy_DeviceVersion: 13.0.0, pCloudy_DurationInMinutes: 120, pCloudy_EnableDeviceLogs: true, pCloudy_EnablePerformanceData: true, pCloudy_EnableVideo: true, pCloudy_Username: randhir.kumar@heromotocorp.com, pCloudy_WildNet: false}, platformName: android, platformVersion: 12.0.0, systemPort: 30364, udid: RZ8R916R5ND}, appium:deviceApiLevel: 33, appium:deviceManufacturer: samsung, appium:deviceModel: SM-M127G, appium:deviceName: RZ8R916R5ND, appium:deviceScreenDensity: 300, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8R916R5ND, appium:javascriptEnabled: true, appium:launchTimeout: 90000, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 600, appium:pixelRatio: 1.875, appium:platformVersion: 13, appium:statBarHeight: 45, appium:systemPort: 30364, appium:takesScreenshot: true, appium:udid: RZ8R916R5ND, appium:viewportRect: {height: 1420, left: 0, top: 45, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, pcloudy:options: {appiumVersion: 2.0.0, pCloudy_ApiKey: 2gdc5pv55mh54mqtwmvj4xbr, pCloudy_DeviceManufacturer: SAMSUNG, pCloudy_DeviceVersion: 13.0.0, pCloudy_DurationInMinutes: 120, pCloudy_EnableDeviceLogs: true, pCloudy_EnablePerformanceData: true, pCloudy_EnableVideo: true, pCloudy_Username: randhir.kumar@heromotocorp.com, pCloudy_WildNet: false}, platformName: ANDROID}
+Session ID: e81b7b98-df38-4941-8d6e-3f11dce8d4d2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:38:06 pm</td>
+        <td>
+          Test Case Fail
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Page_Test.GoodLifePage_Test = TC114_verify_Benefits_and_Experiences</p>
+            <p class="text-sm">
+              <span>7:38:07 pm</span> / <span>00:00:21:992</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Page_Test.GoodLifePage_Test = TC114_verify_Benefits_and_Experiences</h5>
+<span class='badge badge-success'>03.28.2024 7:38:07 pm</span>
+<span class='badge badge-danger'>03.28.2024 7:38:29 pm</span>
+<span class='badge badge-default'>00:00:21:992</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Azure-Project\One_App/failed_Tests_ScreenShots/TC114_verify_Benefits_and_Experiences.png28-03-2024_07 38 27' src="D:\Azure-Project\One_App/failed_Tests_ScreenShots/TC114_verify_Benefits_and_Experiences.png28-03-2024_07 38 27">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:38:27 pm</td>
+        <td>
+          Test Case Fail
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Mar 28, 2024 07:28:50 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Mar 28, 2024 07:38:29 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>8</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>3</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='72%'>
+<b>8</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='27%'><b>3</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='96%'><b>134</b> events passed</small></div>
+<div>
+<small data-tooltip='3%'><b>5</b> events failed,
+<b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Page_Test.GoodLifePage_Test = TC104_Verify_goodlife_info":146.354,"Page_Test.GoodLifePage_Test = TC105_View_All_Membership_Plan":170.027,"Page_Test.GoodLifePage_Test = TC106_Verify_Membership_Information":17.923,"Page_Test.GoodLifePage_Test = TC107_Earning_and_Redemption_History":20.771,"Page_Test.GoodLifePage_Test = TC108_Complete_Profile":13.776,"Page_Test.GoodLifePage_Test = TC109_Verify_Welcome_Rewards":13.663,"Page_Test.GoodLifePage_Test = TC110_Verify_refer_friend_in_Goodlife":49.047,"Page_Test.GoodLifePage_Test = TC111_Verify_Winner_Of_The_Month":18.479,"Page_Test.GoodLifePage_Test = TC112_verify_Points_Earning_and_Redemption":24.351,"Page_Test.GoodLifePage_Test = TC113_verify_Service_Privilegers":4.565,"Page_Test.GoodLifePage_Test = TC114_verify_Benefits_and_Experiences":21.992
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Project Name</td>
+<td>Hero App</td>
+</tr>
+<tr>
+<td>Laptop</td>
+<td>Dell intel core i7</td>
+</tr>
+<tr>
+<td>QA</td>
+<td>Nitesh Kumar</td>
+</tr>
+<tr>
+<td>Operating system</td>
+<td>Windows 10 pro</td>
+</tr>
+<tr>
+<td>BrowserName</td>
+<td>Android Studio</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 8,
+failParent: 3,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 134,
+failEvents: 5,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 0
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

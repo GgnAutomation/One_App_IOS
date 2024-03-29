@@ -49,19 +49,18 @@ public class My_Profile_Page_Test extends Base_Utility {
 	public void TC041_edit_profile_button() throws InterruptedException {
 		Custom_click(ob.edit_profile_details_button(), "Edit profile details button");
 		Custom_click(ob.profile_pic_edit_btn(), "profile pic edit button");
+		Custom_click(ob.Choose_from_library(), " Chose profile pic from liberary ");
 		try {
-			Custom_click(ob.while_using_the_app(), "while_using_the_app");
-			Custom_click(ob.allow(), "Allow");
-			Custom_click(ob.profile_pic_edit_btn(), "profile pic edit button");
-			Custom_click(ob.Choose_from_library(), " Chose profile pic from liberary ");
-		} catch (Exception e) {
-			Message("while_using_the_app popup is not given");
-			Custom_click(ob.Choose_from_library(), " Chose profile pic from liberary ");
-		}
+		if(ob.allow().isDisplayed()) {
+		Custom_click(ob.allow(), "Allow"); }}catch(Exception e) {Message("No pop given");}
 		Thread.sleep(2000);
 		driver.navigate().back();
 		Custom_click(ob.profile_pic_edit_btn(), "profile pic edit button");
 		Custom_click(ob.Take_a_Photo(), " Take a pic for profile ");
+		try {
+		if(ob.while_using_the_app().isDisplayed()) {
+		Custom_click(ob.while_using_the_app(), "while_using_the_app");
+		}}catch(Exception e) {Message("No pop given");}
 		Thread.sleep(2000);
 		driver.navigate().back();
 		Custom_click(ob.profile_pic_edit_btn(), "profile pic edit button");
@@ -166,10 +165,10 @@ public class My_Profile_Page_Test extends Base_Utility {
 			Thread.sleep(1000);
 			driver.navigate().back();
 			Custom_click(ob.add_Liense_now(), "  Add License now");
-//				Custom_click(ob.Choose_from_Digilocker(), ob.Choose_from_Digilocker().getText());
-//				Thread.sleep(1000);
-//				driver.navigate().back();
-//				Custom_click(ob.add_Liense_now(), "  Add License n	c
+				Custom_click(ob.Choose_from_Digilocker(), ob.Choose_from_Digilocker().getText());
+				Thread.sleep(1000);
+				driver.navigate().back();
+				Custom_click(ob.add_Liense_now(), " Add License now");
 			Custom_click(ob.close_button_for_license_upload(), " Close license upload page");
 		}
 		Custom_click(ob.Back(), " Back from Driver License");
@@ -183,6 +182,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 			if (ob.License_verify().isDisplayed()) {
 				msg(ob.License_verify(), "Emergency contacts = ");
 				Custom_click(ob.add_Liense_now(), "  Add Emergency contacts");
+				Custom_click(ob.allow(), "Allow Hero App to access your contacts?");
 				Custom_click(ob.Back(), " Back from Select Contacts page");
 			}
 		} catch (Exception e) {

@@ -24,8 +24,6 @@ public class Home_Page extends Base_Utility {
 	}
 
 	// *************************Temperature**********************
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/weather_lbl']")
-	private WebElement temperature;
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1'])[1]")
 	private WebElement vehicle_drop_down;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/bike_name_lbl']")
@@ -46,10 +44,6 @@ public class Home_Page extends Base_Utility {
 	private WebElement close_drop_down;
 	@FindBy(xpath = "//android.widget.Button[@resource-id ='android:id/button1']")
 	private WebElement enable_now;
-	
-	public WebElement temperature() {
-		return temperature;
-	}
 
 	public WebElement enable_now() {
 		return enable_now;
@@ -281,10 +275,11 @@ public class Home_Page extends Base_Utility {
 
 	public void exchange_info() {
 		try {
-		for (int i = 0; i < exchange_info.size(); i++) {
-			msg(exchange_info.get(i), "");
-		}
-		}catch (Exception e) {
+			for (int i = 0; i < exchange_info.size(); i++) {
+				Thread.sleep(1000);
+				msg(exchange_info.get(i), "");
+			}
+		} catch (Exception e) {
 			Message("All real value message not visible");
 		}
 	}
@@ -447,6 +442,12 @@ public class Home_Page extends Base_Utility {
 	private WebElement Back;
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[1]")
 	private WebElement cancel_payment;
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_share']")
+	private WebElement share_document;
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_download']")
+	private WebElement download_document;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_update']")
+	private WebElement update_doc;
 
 	public WebElement Documents_Menu() {
 		return Documents_Menu;
@@ -468,57 +469,80 @@ public class Home_Page extends Base_Utility {
 
 		for (int i = 1; i < Documents_list.size(); i++) {
 			String name = Documents_list.get(i).getText();
-//			Custom_click(Documents_list.get(i), name);
 			Message(name);
 			i++;
 			String doc = Documents_list.get(i).getText();
 			if (doc.equalsIgnoreCase("Upload")) {
 				Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
 				Thread.sleep(2000);
-				if (i == 2) {
-					Custom_click(While_using_the_app, "While using the app");
-					Custom_click(Allow, "Allow");
-					Thread.sleep(2000);
-					Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
-				}
-//			try {
-//				if (Document_Check != null) {
-//					Message(Document_Check.getText());
-//					Custom_click(Add_Now, name + " Add now");
-//					if (i == 1) {
-//						Custom_click(While_using_the_app, "While using the app");
-//						Custom_click(Allow, "Allow");
-//						Thread.sleep(2000);
-//						Custom_click(Add_Now, name + " Add now");
-//					}
 				try {
-					Custom_click(Choose_Document_from_library, name + " Document frmo library");
-					Thread.sleep(2000);
-					driver.navigate().back();
-					Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
-//					Custom_click(Add_Now, name + " Add now");
-					Custom_click(Take_a_Photo, "Take a Photo");
-					Thread.sleep(2000);
-					driver.navigate().back();
-//					Custom_click(Add_Now, name + " Add now");
-					if (i != 6) {
-						Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
-						Custom_click(Choose_from_Digilocker, "Choose from Digilocker");
+					if (While_using_the_app.isDisplayed()) {
+						Custom_click(While_using_the_app, "While using the app");
+						Custom_click(Allow, "Allow");
 						Thread.sleep(2000);
+						Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
+					}
+				} catch (Exception e) {
+				}
+				Custom_click(Choose_Document_from_library, name + " Choose from library");
+				Thread.sleep(2000);
+				driver.navigate().back();
+				Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
+				Custom_click(Take_a_Photo, "Take a Photo");
+				Thread.sleep(2000);
+				driver.navigate().back();
+				Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
+				try {
+					if (Choose_from_Digilocker.isDisplayed()) {
+						Custom_click(Choose_from_Digilocker, "Choose from Digilocker");
+						Thread.sleep(3000);
 						Custom_click(Back, " Back from Digilocker Login");
 					}
-					Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
-					Custom_click(document_upload_close_button, "Close upload document page");
-//				}
 				} catch (Exception e) {
-					Message(name + " is already available");
-					Custom_click(Back, name + " Back Document");
+					Custom_click(document_upload_close_button, "Close upload document page");
 				}
+				Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
+				Custom_click(document_upload_close_button, "Close upload document page");
 			} else {
 				Message(name + " is already available");
 				Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
+				Thread.sleep(2000);
+				Custom_click(share_document, "Share document button");
+				Thread.sleep(2000);
+				driver.navigate().back();
+				Custom_click(download_document, "Download document button");
 				Thread.sleep(3000);
-				Custom_click(Document_sideicon, "Document sideicon");
+				Custom_click(update_doc, "Update document button");
+				Custom_click(Choose_Document_from_library, name + " Choose from library");
+				try {
+					if (Allow.isDisplayed()) {
+						Custom_click(Allow, "Allow");
+					}
+				} catch (Exception e) {
+				}
+				driver.navigate().back();
+				Custom_click(update_doc, "Update document button");
+				Custom_click(Take_a_Photo, "Take a Photo");
+				try {
+					if (Allow.isDisplayed()) {
+						Custom_click(While_using_the_app, "While using the app");
+					}
+				} catch (Exception e) {
+				}
+				Thread.sleep(2000);
+				driver.navigate().back();
+				Custom_click(update_doc, "Update document button");
+				try {
+					if (Choose_from_Digilocker.isDisplayed()) {
+						Custom_click(Choose_from_Digilocker, "Choose from Digilocker");
+						Thread.sleep(3000);
+						Custom_click(Back, " Back from Digilocker Login");
+					}
+				} catch (Exception e) {
+					Custom_click(document_upload_close_button, "Close upload document page");
+				}
+				Custom_click(update_doc, "Update document button");
+				Custom_click(document_upload_close_button, "Close upload document page");
 				Custom_click(Back, "Back from " + name + " page");
 			}
 		}
@@ -873,7 +897,7 @@ public class Home_Page extends Base_Utility {
 	// ****************************Service_at_home_page************************************
 	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv_ser')]")
 	private List<WebElement> service_info;
-	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv_last')]")
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'	com.customerapp.hero:id/tv_last')]")
 	private WebElement last_service;
 	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv_history')]")
 	private WebElement last_service_date;
@@ -892,7 +916,12 @@ public class Home_Page extends Base_Utility {
 		for (int i = 0; i < service_info.size(); i++) {
 			msg(service_info.get(i), " ");
 		}
-		msg(last_service, last_service.getText() + " on ");
+		try {
+			if (last_service_date.isDisplayed())
+				msg(last_service_date, "last service on ");
+		} catch (Exception e) {
+			Message("last service date is not given");
+		}
 	}
 
 	public WebElement View_details_button() {

@@ -87,9 +87,9 @@ public class My_Profile_Page extends Base_Utility {
 	}
 
 	public void user_info() {
-		msg(user_info.get(0), user_info.get(0).getText() + " = " + user_dob.getText());
-		msg(user_info.get(1), user_info.get(1).getText() + " = " + user_gender.getText());
-		msg(user_info.get(2), user_info.get(2).getText() + " = " + user_blood_group.getText());
+		msg(user_info.get(0),   " = " + user_dob.getText());
+		msg(user_info.get(1),   " = " + user_gender.getText());
+		msg(user_info.get(2),    " = " + user_blood_group.getText());
 	}
 
 	public WebElement edit_profile_details_button() {

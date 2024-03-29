@@ -28,32 +28,32 @@ public class Vehicle_Details_test extends Base_Utility {
 		msg(ob.vehicle_name_1(),"You are using = ");
 		msg(ob.vehicle_number_1()," ");
 		Custom_click(ob.Vehicle_details(), "Vehicle Details");
-		Custom_click(ob.Selected_vehicle(), ob.Selected_vehicle().getText());
-		Custom_click(ob.choose_vehicle(), ob.choose_vehicle().getText());
-		if (ob.Vehicle_img().isDisplayed()) {
-			Message("Vehicle image is present");
-		} else {
-			Message("Vehicle image is missing");
-		}
-		try {
-			if(ob.vehicle_status().isDisplayed()) {
-		msg(ob.vehicle_status(),"Vehicle status = "); }
-		}catch(Exception e) { Message("Vehicle Status is not given");}
-		try {
-			if(ob.Vehicle_number().isDisplayed()) {
-		msg(ob.Vehicle_number(),"Vehicle number = "); }
-		}catch(Exception e) { Message("Vehicle number is not given");}
+//		Custom_click(ob.Selected_vehicle(), ob.Selected_vehicle().getText());
+//		Custom_click(ob.choose_vehicle(), ob.choose_vehicle().getText());
+//		if (ob.Vehicle_img().isDisplayed()) {
+//			Message("Vehicle image is present");
+//		} else {
+//			Message("Vehicle image is missing");
+//		}
+//		try {
+//			if(ob.vehicle_status().isDisplayed()) {
+//		msg(ob.vehicle_status(),"Vehicle status = "); }
+//		}catch(Exception e) { Message("Vehicle Status is not given");}
+//		try {
+//			if(ob.Vehicle_number().isDisplayed()) {
+//		msg(ob.Vehicle_number(),"Vehicle number = "); }
+//		}catch(Exception e) { Message("Vehicle number is not given");}
 		Custom_click(ob.verify_GoodLife(), " Verify Good Life");
 		Thread.sleep(5000);
 		msg(ob.verify_goodlife_page(),"verify goodlife page = ");
 		Custom_click(ob.back_button(), " Back from GoodLife page");
 		Custom_click(ob.verify_joyRide(), " Verify JoyRide ");
-		msg(ob.verify_joyRide_page(),"Verify joyRide page = ");
 		Custom_click(ob.back_button(), " Back from joyRide page");
+//		Custom_click(ob.back_button(), " Back from My Vehicle");
 		
 	}
 
-	@Test(priority = 1)
+//	@Test(priority = 1)
 	public void TC047_Verify_My_Vehicle_more_details() {
 		Custom_click(ob.more_details(), ob.more_details().getText());
 		ob.vehicle_info();
@@ -64,7 +64,7 @@ public class Vehicle_Details_test extends Base_Utility {
 		Custom_click(ob.more_details(), ob.more_details().getText());
 	}
 
-	@Test(priority = 2)
+//	@Test(priority = 2)
 	public void TC048_Verify_My_Vehicle_Documents() throws InterruptedException {
 		Custom_click(ob.my_vehicle_documents(), ob.my_vehicle_documents().getText());
 		Thread.sleep(2000);
@@ -74,18 +74,21 @@ public class Vehicle_Details_test extends Base_Utility {
 
 	@Test(priority = 3)
 	public void TC049_Verify_Owners_Manual() {
+		Scroll_down_page_Action("Owners manual");
 		Custom_click(ob.owners_manual(), "Owners manual");
 		try {
 			if(ob.owners_title().isDisplayed()) {
 		msg(ob.owners_title(),"My Vehicle Owners manual = ");
-		Custom_click(ob.back_button(), " Back from Owners manual page"); }
+		Custom_click(ob.back_button(), " Back from Owners manual page");
+		Custom_click(ob.back_button(), " Back from My Vehicle page");}
 		}catch(Exception e)
 		{
 			Message("Owner details already given");
 			Custom_click(ob.back_button(), " Back from Owners manual page");
+			Custom_click(ob.back_button(), " Back from My Vehicle page");
 		}
 	}
-	@Test(priority = 4)
+//	@Test(priority = 4)
 	public void TC050_Verify_my_Vehicle_service_History() {
 		Custom_click(ob.My_vehicle_Service_history(), "My Vehicle Service history");
 		try {

@@ -5,9 +5,9 @@
     <classes>
       <class name="Page_Test.Login_Page_Test">
         <methods>
-          <include name="TC011_edit_moble"/>
-          <include name="TC010_inavalid_OTP"/>
+          <include name="TC003_verify_update_number"/>
           <include name="OPEN_AND_INSTALL_APP"/>
+          <include name="TC004_Verify_Login_with_short_length_of_mobile_number_credential"/>
         </methods>
       </class> <!-- Page_Test.Login_Page_Test -->
     </classes>
