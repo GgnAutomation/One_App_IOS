@@ -83,18 +83,14 @@ public class E_Shop_test extends Base_Utility {
 		Custom_click(ob.create_account(), ob.create_account().getText());
 		custom_sendkeys(ob.firstname(), "Sonu", " First name ");
 		driver.navigate().back();
-//		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
-//		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
 		custom_sendkeys(ob.lastname(), "Jindal", " Last name ");
 		driver.navigate().back();
-//		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
 		Custom_click(ob.CheckBox(), ob.CheckBox().getText());
 		custom_sendkeys(ob.lastname(), "9876564534", " Mobile number ");
 		driver.navigate().back();
-//		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
+		Thread.sleep(2000);
 		custom_sendkeys(ob.email_address(), "sonu@gmail.com", " Email ");
 		driver.navigate().back();
-//		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
 		Custom_click(ob.checkbox_for_T_and_C(), " Tearms and Condition check Box ");
 		Custom_click(ob.OTP(), ob.OTP().getText());
 		if (device.equalsIgnoreCase("emulator")) {

@@ -18,17 +18,17 @@ public class Vehicle_Details extends Base_Utility {
 	private WebElement home;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/side_menu_btn']")
 	private WebElement side_menu_button;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/user_name']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/user_name']")
 	private WebElement user_name;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/vehicle_name']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/vehicle_name']")
 	private WebElement vehicle_name_1;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/vehicle_nam1']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/vehicle_nam1']")
 	private WebElement vehicle_number_1;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/vehicle_detail_btn']")
 	private WebElement Vehicle_Details;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/tv_model']")
 	private WebElement Selected_vehicle;
-	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/bike_name_lbl'])[1]")
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/bike_name_lbl'])[1]")
 	private WebElement choose_vehicle;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/img_vehicle']")
 	private WebElement Vehicle_img;
@@ -41,8 +41,9 @@ public class Vehicle_Details extends Base_Utility {
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1'])[1]")
 	private WebElement verify_goodlife_page;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/title'and @text ='RSA']")
+	private WebElement verify_RSA;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/title'and @text ='Joyride']")
 	private WebElement verify_joyRide;
-	
 
 	public WebElement home() {
 		return home;
@@ -51,18 +52,19 @@ public class Vehicle_Details extends Base_Utility {
 	public WebElement side_menu_button() {
 		return side_menu_button;
 	}
-	public WebElement user_name()
-	{
+
+	public WebElement user_name() {
 		return user_name;
 	}
-	public WebElement vehicle_name_1()
-	{
+
+	public WebElement vehicle_name_1() {
 		return vehicle_name_1;
 	}
-	public WebElement vehicle_number_1()
-	{
+
+	public WebElement vehicle_number_1() {
 		return vehicle_number_1;
 	}
+
 	public WebElement Vehicle_details() {
 		return Vehicle_Details;
 	}
@@ -70,10 +72,11 @@ public class Vehicle_Details extends Base_Utility {
 	public WebElement Selected_vehicle() {
 		return Selected_vehicle;
 	}
-	public WebElement choose_vehicle()
-	{
+
+	public WebElement choose_vehicle() {
 		return choose_vehicle;
 	}
+
 	public WebElement Vehicle_img() {
 		return Vehicle_img;
 	}
@@ -98,16 +101,29 @@ public class Vehicle_Details extends Base_Utility {
 		return verify_joyRide;
 	}
 
-//**************************************More details *************************************
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_details']")
-	private WebElement more_details;
-
-	public WebElement more_details() {
-		return more_details;
+	public WebElement verify_RSA() {
+		return verify_RSA;
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_header']")
-	private List<WebElement> Vehicle_header;
+//*************************************Documents *************************************
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_lbl'])[1]")
+	private WebElement Vehicle_insurance;
+
+	public WebElement Vehicle_insurance() {
+		return Vehicle_insurance;
+	}
+
+	@FindBy(xpath = "(//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/imageView'])[1]")
+	private WebElement Insurance_image;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_lbl'])[2]")
+	private WebElement Vehicle_R_C;
+
+	public WebElement Vehicle_R_C() {
+		return Vehicle_R_C;
+	}
+
+	@FindBy(xpath = "(//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/imageView'])[2]")
+	private WebElement R_C_image;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_value']")
 	private List<WebElement> vehicle_info;
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_value'])[4]")
@@ -117,14 +133,12 @@ public class Vehicle_Details extends Base_Utility {
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
 	private WebElement save_button;
 
-	public void vehicle_info() {
-		try {
-			for (int i = 0; i < vehicle_info.size(); i++) {
-				Message(Vehicle_header.get(i).getText() + " = " + vehicle_info.get(i).getText());
-			}
-		} catch (Exception e) {
-			Message("" + e);
-		}
+	public WebElement Insurance_image() {
+		return Insurance_image;
+	}
+
+	public WebElement R_C_image() {
+		return R_C_image;
 	}
 
 	public WebElement nick_name_edit() {
@@ -176,12 +190,10 @@ public class Vehicle_Details extends Base_Utility {
 		for (int i = 0; i < Documents_list.size(); i++) {
 			String name = Documents_list.get(i).getText();
 			String doc = Documents_status.get(i).getText();
-			if(doc.equalsIgnoreCase("Upload")) {
-				Message(name +" document is not uploaded yet");
-			}
-			else
-			{
-				Message(name +" document is already uploaded");
+			if (doc.equalsIgnoreCase("Upload")) {
+				Message(name + " document is not uploaded yet");
+			} else {
+				Message(name + " document is already uploaded");
 			}
 		}
 	}
@@ -254,7 +266,7 @@ public class Vehicle_Details extends Base_Utility {
 					} catch (Exception e) {
 						Message("Service center name is not given");
 					}
-					
+
 					Message("******************Job card , Completion date & price ************************");
 					Message("Estimated Amount =" + Estimated_Amount.getText());
 					Message("Estimated Date & Time =" + Estimated_Date_Time.getText());

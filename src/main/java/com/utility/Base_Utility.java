@@ -334,7 +334,6 @@ public class Base_Utility
 	public static void Scroll_down_page_Action(String fieldname) {
 		try {
 			Dimension dim = driver.manage().window().getSize();
-//		    	System.out.println(dim);
 			int startx = (int) (dim.width / 2);
 			int starty = (int) (dim.height / 2);
 			int endx = (int) (dim.width / 2);

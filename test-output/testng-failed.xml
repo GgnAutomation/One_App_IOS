@@ -4,31 +4,18 @@
   <listeners>
     <listener class-name="com.utility.listner"/>
   </listeners>
-  <test thread-count="5" name="All test class(failed)">
+  <test thread-count="5" name="Vehicle_Details_test(failed)">
     <classes>
-      <class name="Page_Test.Home_Page_Test">
+      <class name="Page_Test.Vehicle_Details_test">
         <methods>
-          <include name="TC024_verify_Vehicle_condition"/>
+          <include name="TC047_Verify_My_Vehicle_Documents"/>
+          <include name="TC049_Verify_Owners_Manual"/>
           <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC023_verify_Vehicle_details"/>
-          <include name="TC025_verify_Vehicle_valution"/>
-          <include name="TC021_verify_Navigate"/>
-          <include name="TC022_verify_Exchange"/>
+          <include name="TC051_Verify_Tips_and_DIY_videos_inside_sideMenu"/>
+          <include name="TC046_Verify_My_Vehicle"/>
+          <include name="TC048_Verify_My_Vehicle_Subscriptions_details"/>
         </methods>
-      </class> <!-- Page_Test.Home_Page_Test -->
-      <class name="Page_Test.E_Shop_test">
-        <methods>
-          <include name="TC116_new_customers"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-        </methods>
-      </class> <!-- Page_Test.E_Shop_test -->
-      <class name="Page_Test.Refer_a_friend_and_Contact_us_test">
-        <methods>
-          <include name="TC058_Verify_instagram_in_Contact_us_page"/>
-          <include name="TC059_Verify_Whatsapp_in_Contact_us_page"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-        </methods>
-      </class> <!-- Page_Test.Refer_a_friend_and_Contact_us_test -->
+      </class> <!-- Page_Test.Vehicle_Details_test -->
     </classes>
-  </test> <!-- All test class(failed) -->
+  </test> <!-- Vehicle_Details_test(failed) -->
 </suite> <!-- Failed suite [Hero_App] -->
