@@ -116,6 +116,7 @@ public class Login_Page_Test extends Base_Utility {
 		endclicktime = System.currentTimeMillis();
 		Message("Click time in Privacy policy =" + (endclicktime - startclicktime) + " MS");
 		Thread.sleep(6000);
+		driver.navigate().refresh();
 		try {
 			starreadtime = System.currentTimeMillis();
 			if (device.equalsIgnoreCase("emulator")) {

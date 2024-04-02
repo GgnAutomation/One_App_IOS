@@ -226,11 +226,16 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 	}
 
 	public void instagram() throws InterruptedException {
+		try {
 		header = social_media_header.get(1).getText();
 		Message(Visit_page_text.get(1).getText());
 		Custom_click(visit_Page.get(1), header);
 		Thread.sleep(4000);
 		Custom_click(back, " Back from instagram");
+		}catch(Exception e)
+		{
+			driver.navigate().back();
+		}
 
 	}
 

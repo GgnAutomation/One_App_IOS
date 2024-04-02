@@ -509,7 +509,8 @@ public class Home_Page extends Base_Utility {
 				Thread.sleep(2000);
 				Custom_click(share_document, "Share document button");
 				Thread.sleep(2000);
-				driver.navigate().back();
+				Custom_click(download_document, "Download refresh");
+				Thread.sleep(2000);
 				Custom_click(download_document, "Download document button");
 				Thread.sleep(3000);
 				Custom_click(update_doc, "Update document button");
