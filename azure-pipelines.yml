@@ -35,14 +35,49 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
 
+# - task: CopyFiles@2
+#   inputs:
+#     SourceFolder: '$(agent.builddirectory)'
+#     Contents: '**/Report/Test-Report*'
+#     TargetFolder: '$(build.artifactstagingdirectory)'
+
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(agent.builddirectory)'
-    Contents: '**/Report/Test-Report*'
-    TargetFolder: '$(build.artifactstagingdirectory)'
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    Contents: '**/surefire-reports/TEST-*.xml'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit' 
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+
 
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Parse test results
+      $testReportPath = "$(Build.ArtifactStagingDirectory)/Test-Report.xml"
+      $testResults = [xml] (Get-Content $testReportPath)
+      $passedTests = $testResults.testsuites.testsuite | Where-Object {$_.failures -eq '0'} | ForEach-Object {$_.name}
+      $failedTests = $testResults.testsuites.testsuite | Where-Object {$_.failures -ne '0'} | ForEach-Object {$_.name}
+
+      # Define email bodies
+      $passedBody = "The following tests passed:`n" + ($passedTests -join "`n")
+      $failedBody = "The following tests failed:`n" + ($failedTests -join "`n")
+
+      # Send emails
+      $smtpServer = "smtp.gmail.com"
+      $smtpPort = 25
+      $smtpUsername = "magento20s@gmail.com"
+      $smtpPassword = "lrprwymolzftyvqq"
+
+      Send-MailMessage -From "magento20s@gmail.com" -To "dubey.vishal@orangemantra.in" -Subject "UI Test Results - Passed" -Body $passedBody -SmtpServer $smtpServer -Port $smtpPort -Credential (New-Object System.Management.Automation.PSCredential ($smtpUsername, (ConvertTo-SecureString $smtpPassword -AsPlainText -Force))) -UseSsl
+      Send-MailMessage -From "magento20s@gmail.com" -To "secure@orangemantra.in" -Subject "UI Test Results - Failed" -Body $failedBody -SmtpServer $smtpServer -Port $smtpPort -Credential (New-Object System.Management.Automation.PSCredential ($smtpUsername, (ConvertTo-SecureString $smtpPassword -AsPlainText -Force))) -UseSsl
