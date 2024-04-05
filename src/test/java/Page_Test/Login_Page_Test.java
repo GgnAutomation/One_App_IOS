@@ -116,11 +116,10 @@ public class Login_Page_Test extends Base_Utility {
 		endclicktime = System.currentTimeMillis();
 		Message("Click time in Privacy policy =" + (endclicktime - startclicktime) + " MS");
 		Thread.sleep(6000);
-		driver.navigate().refresh();
 		try {
 			starreadtime = System.currentTimeMillis();
 			if (device.equalsIgnoreCase("emulator")) {
-				msg(ob.Privacy_Policy_condition(), "Privacy policy : First Condition = ");
+				msg(ob.Privacy_Policy_condition(), "Privacy policy : First  = ");
 				Custom_click(ob.back_page(), "back Privacy Policy page ");
 			} else if (device.equalsIgnoreCase("pcloudy") || device.equalsIgnoreCase("realdevice")) {
 				msg(ob.Privacy_of_Use_condition_for_real_device(), "Privacy policy : First Condition = ");

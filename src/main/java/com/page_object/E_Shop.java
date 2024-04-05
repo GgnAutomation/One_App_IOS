@@ -163,7 +163,7 @@ public class E_Shop extends Base_Utility {
 	private WebElement mobile;
 	@FindBy(xpath ="//android.view.View[@content-desc='Get OTP']/android.widget.TextView")
 	private WebElement OTP;
-	@FindBy(xpath ="(//android.widget.EditText)[4]")
+	@FindBy(xpath ="(//android.widget.EditText)[3]")
 	private WebElement email_address;
 	@FindBy(xpath ="(//android.widget.CheckBox)[2]")
 	private WebElement checkbox_for_T_and_C;

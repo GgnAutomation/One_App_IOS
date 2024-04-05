@@ -1,5 +1,6 @@
 package com.page_object;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -227,13 +228,12 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 
 	public void instagram() throws InterruptedException {
 		try {
-		header = social_media_header.get(1).getText();
-		Message(Visit_page_text.get(1).getText());
-		Custom_click(visit_Page.get(1), header);
-		Thread.sleep(4000);
-		Custom_click(back, " Back from instagram");
-		}catch(Exception e)
-		{
+			header = social_media_header.get(1).getText();
+			Message(Visit_page_text.get(1).getText());
+			Custom_click(visit_Page.get(1), header);
+			Thread.sleep(4000);
+			Custom_click(back, " Back from instagram");
+		} catch (Exception e) {
 			driver.navigate().back();
 		}
 
@@ -244,20 +244,17 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 			header = social_media_header.get(2).getText();
 			Message(Visit_page_text.get(2).getText());
 			Message(" Whatsapp number =" + whatsapp_visit_page.getText());
-			Custom_click(whatsapp_visit_page, header);
-			Thread.sleep(3000);
-			try {
-				if (whatsapp_visit_page.isDisplayed() == true) {
-					Message("We can’t find WhatsApp on your device. Please install for better experience");
-				} else {
-					Custom_click(back, " Back from " + header);
-					driver.navigate().back();
-				}
-			} catch (Exception e) {
-				Message("WhatsApp on your device is available");
-				driver.navigate().back();
-				driver.navigate().back();
-			}
+//			Custom_click(whatsapp_visit_page, header);
+//			Thread.sleep(3000);
+//			try {
+//				if (whatsapp_visit_page.isDisplayed() == true) {
+//					Message("We can’t find WhatsApp on your device. Please install for better experience");
+//				} 
+//			} catch (Exception e) {
+//				Message("WhatsApp on your device is available");
+//				driver.navigate().back();
+//				driver.navigate().back();
+//			}
 		} catch (Exception e) {
 			Message("Whatsapp is not visible" + e);
 			test.addScreenCaptureFromPath(lis.getcapcture("Whatsapp"));
@@ -265,8 +262,14 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 		}
 	}
 
-	public void youTube() throws InterruptedException {
-		header = social_media_header.get(3).getText();
+	public void youTube() throws InterruptedException, IOException {
+		try {
+			header = social_media_header.get(3).getText();
+		} catch (Exception e) {
+			Runtime.getRuntime().exec(
+					"adb shell am start -n com.customerapp.hero/com.customerapp.hero.views.activity.HmcDashboard");
+			header = social_media_header.get(3).getText();
+		}
 		Message(Visit_page_text.get(3).getText());
 		Custom_click(visit_Page.get(2), header);
 		Thread.sleep(4000);
@@ -276,14 +279,14 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 	public void Linkedin() throws InterruptedException {
 		try {
 			if (version.equalsIgnoreCase("11")) {
-				Scroll_down_page_Action("Twitter"); 
-				header = social_media_header.get(3).getText(); 
-				Message(Visit_page_text.get(3).getText()); 
+				Scroll_down_page_Action("Twitter");
+				header = social_media_header.get(3).getText();
+				Message(Visit_page_text.get(3).getText());
 				Custom_click(visit_Page.get(2), header);
 			} else {
-				header = social_media_header.get(4).getText(); 
-				Message(Visit_page_text.get(4).getText()); 
-				Custom_click(visit_Page.get(3), header); 
+				header = social_media_header.get(4).getText();
+				Message(Visit_page_text.get(4).getText());
+				Custom_click(visit_Page.get(3), header);
 			}
 			Thread.sleep(4000);
 			Custom_click(Close_linkedin_pop_message, "Close linkedin pop message");

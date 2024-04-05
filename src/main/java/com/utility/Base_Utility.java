@@ -403,9 +403,9 @@ public class Base_Utility
 				Point location2 = Start_position.getLocation();
 				System.out.println("location1 =" + location1 + "location2 =" + location2);
 				int end_x = location1.x;
-				int end_y = location1.y - 105;
+				int end_y = location1.y - 90;
 				int start_x = location2.x;
-				int start_y = location2.y - 110;
+				int start_y = location2.y - 90;
 				System.out.println(
 						"end_x =" + end_x + "end_y =" + end_y + "start_x = " + start_x + "start_y =" + start_y);
 				action.press(PointOption.point(start_x, start_y))
