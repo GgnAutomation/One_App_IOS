@@ -30,7 +30,6 @@ public class Safety_Measures_and_Symbols_Glossary_Test extends Base_Utility{
 		Custom_click(ob.side_menu_btn(), " Side Menu Button ");
 		Custom_click(ob.Symbols_Glossary(), ob.Symbols_Glossary().getText());
 		ob.Symbols_Glossary_message();
-		Custom_click(ob.back_button(), "Back from Symbols Glossary page");
-//		driver.navigate().back();
+
 	}
 }
