@@ -77,7 +77,8 @@ stages:
     - script: |
         echo "Downloading log file for runId: $(Build.BuildId)"
         wget --header="Authorization: Basic $(echo -n :aq3uuk6btcgd37r6zg422q2hmocc4miv76lobf6nrw337k7x7nha | base64)" -O log.txt "https://dev.azure.com/hero-mobile-team-sas/6b05002f-86c8-48e9-84e5-2175be106a49/_apis/build/builds/$(Build.BuildId)/logs/6"
-        echo "Log file downloaded and stored in logs.txt"
-        extractedRunId=$(cat logs.txt | grep "Test run id:" | awk '{print $NF}' | sed 's/[^0-9]*//g')
+        echo "Log file downloaded and stored in log.txt"
+        ls -la
+        extractedRunId=$(cat log.txt | grep "Test run id:" | awk '{print $NF}' | sed 's/[^0-9]*//g')
         echo "##vso[task.setvariable variable=extractedRunId]$extractedRunId"
         echo "Extracted Run ID: $extractedRunId"
