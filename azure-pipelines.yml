@@ -75,4 +75,6 @@ stages:
   - job: FailureHandler
     steps:
     - script: |
-        echo "Previous stage failed. Current runId: $(Build.BuildId)"
+        echo "Downloading log file for runId: $(Build.BuildId)"
+        wget "https://dev.azure.com/hero-mobile-team-sas/6b05002f-86c8-48e9-84e5-2175be106a49/_apis/build/builds/$(Build.BuildId)/logs/6" -O logs.txt
+        echo "Log file downloaded and stored in logs.txt"
