@@ -69,16 +69,22 @@ stages:
         echo "##vso[task.setvariable variable=isMainStageSuccessful]true"
       condition: succeeded()
 
-- stage: HandleFailure
-  condition: eq(variables['isMainStageSuccessful'], 'false')
+- stage: AnalyzeResults
   jobs:
-  - job: FailureHandler
+  - job: AnalysisJob
     steps:
     - script: |
+        echo "Analyzing results..."
         echo "Downloading log file for runId: $(Build.BuildId)"
         wget -O log.txt "https://dev.azure.com/hero-mobile-team-sas/6b05002f-86c8-48e9-84e5-2175be106a49/_apis/build/builds/$(Build.BuildId)/logs/6"
-        echo "Log file downloaded and stored in log.txt"
-        ls -la
-        extractedRunId=$(cat log.txt | grep "Test run id:" | awk '{print $NF}' | sed 's/[^0-9]*//g')
-        echo "##vso[task.setvariable variable=extractedRunId]$extractedRunId"
-        echo "Extracted Run ID: $extractedRunId"
+        if [ -s log.txt ]; then
+            extractedRunId=$(cat log.txt | grep "Test run id:" | awk '{print $NF}' | sed 's/[^0-9]*//g')
+            if [ ! -z "$extractedRunId" ]; then
+                echo "##vso[task.setvariable variable=extractedRunId]$extractedRunId"
+                echo "Extracted Run ID: $extractedRunId"
+            else
+                echo "Run ID not found in the log."
+            fi
+        else
+            echo "Log file is empty or not downloaded."
+        fi
