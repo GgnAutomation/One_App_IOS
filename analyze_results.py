@@ -46,7 +46,7 @@ def send_email(subject, body, recipient):
 if __name__ == "__main__":
     try:
         run_id = sys.argv[1]
-        url = f"https://2lpomtcmprodsin11.vstmrblob.vsassets.io/579f621e-ed92-4b3d-924d-a686079fcdee-222082-runid-{run_id}/GeneralAttachment/TestResults_{run_id}.zip"
+        url = f"https://2lpomtcmprodsin11.vstmrblob.vsassets.io/579f621e-ed92-4b3d-924d-a686079fcdee-222082-runid-{run_id}/GeneralAttachment/TestResults_{run_id}.zip?sv=2019-07-07&sr=b&si=logstore-read-list-policy&sig=8Y9tIyDKIwSo4wLewlb6ZSR%2FaoQc3LgyxkrGRz8jhxI%3D&spr=https&rsct=application%2Foctet-stream"
         zip_filename = f"TestResults_{run_id}.zip"
         download_file(url, zip_filename)
         extract_zip(zip_filename, '.')
