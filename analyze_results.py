@@ -35,10 +35,10 @@ def send_email(subject, body, recipient):
     msg.attach(MIMEText(body, 'plain'))
 
     # Replace with your SMTP server details
-    server = smtplib.SMTP('smtp.yourserver.com', 587)
+    server = smtplib.SMTP('smtp.gmail.com', 25)
     server.starttls()
-    server.login('your-email@example.com', 'your-password')
-    server.sendmail('your-email@example.com', recipient, msg.as_string())
+    server.login('magento20s@gmail.com', 'lrprwymolzftyvqq')
+    server.sendmail('magento20s@gmail.com', recipient, msg.as_string())
     server.quit()
 
 if __name__ == "__main__":
