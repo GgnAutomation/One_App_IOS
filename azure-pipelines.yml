@@ -92,12 +92,12 @@ stages:
     # - script: |
     #     python analyze_results.py $(extractedRunId)
     #   displayName: 'Analyze Test Results and Send Emails'
-    - script: ls -la $(System.DefaultWorkingDirectory)
-      displayName: 'List files in the working directory'
-
+    - script: ls -la 
     - task: PublishTestResults@2
       inputs:
-        testResultsFormat: 'JUnit'
-        testResultsFiles: 'testing.xml'
+        testResultsFormat: 'JUnit' # Use 'TestNG' if it's TestNG results
+        testResultsFiles: '**/testing.xml' # Adjust the path as necessary
         failTaskOnFailedTests: true
         testRunTitle: 'JUnit Test Results'
+
+
