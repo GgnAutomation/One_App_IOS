@@ -97,7 +97,7 @@ stages:
 
     - task: PublishTestResults@2
       inputs:
-        testResultsFormat: 'JUnit' 
-        testResultsFiles: '**/TEST-*.xml'
+        testResultsFormat: 'JUnit'
+        testResultsFiles: 'testing.xml'
         failTaskOnFailedTests: true
         testRunTitle: 'JUnit Test Results'
