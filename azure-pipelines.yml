@@ -92,7 +92,7 @@ stages:
     # - script: |
     #     python analyze_results.py $(extractedRunId)
     #   displayName: 'Analyze Test Results and Send Emails'
-    - script: ls -lA $(System.DefaultWorkingDirectory)
+    - script: ls -la $(System.DefaultWorkingDirectory)
       displayName: 'List files in the working directory'
 
     - task: PublishTestResults@2
