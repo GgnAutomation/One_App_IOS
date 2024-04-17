@@ -48,11 +48,18 @@ stages:
         testResultsFormat: 'JUnit' 
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
 
+    - bash: |
+        echo "Listing contents of surefire-reports directory:"
+        ls -l $(System.DefaultWorkingDirectory)/surefire-reports
+      displayName: 'List Test Results'
+
+
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
-        Contents: '**/surefire-reports/TEST-*.xml'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        Contents: '**/surefire-reports/**'  # Make sure this matches the output directory structure of the Maven task
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/surefire-reports'
+
 
     - task: ArchiveFiles@2
       displayName: 'Archive test results'
@@ -62,6 +69,7 @@ stages:
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/test-results.zip'
         replaceExistingArchive: true
+
 
     - task: PublishBuildArtifacts@1
       condition: always()  # Ensures this step runs even if previous steps fail
