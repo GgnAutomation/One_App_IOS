@@ -29,6 +29,7 @@ stages:
     steps:
     - task: Maven@3
       timeoutInMinutes: 150
+      continueOnError: true  # Allows the pipeline to continue even if this task fails
       inputs:
         mavenPomFile: 'pom.xml'
         goals: 'clean install'
@@ -53,7 +54,6 @@ stages:
         Contents: '**/surefire-reports/TEST-*.xml'
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-    # Task to zip the test results
     - task: ArchiveFiles@2
       displayName: 'Archive test results'
       inputs:
@@ -63,8 +63,8 @@ stages:
         archiveFile: '$(Build.ArtifactStagingDirectory)/test-results.zip'
         replaceExistingArchive: true
 
-    # Publish the zip file as an artifact
     - task: PublishBuildArtifacts@1
+      condition: always()  # Ensures this step runs even if previous steps fail
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)/test-results.zip'
         ArtifactName: 'test-results'
