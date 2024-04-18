@@ -45,7 +45,7 @@ stages:
 
     - task: PublishTestResults@2
       inputs:
-        testResultsFormat: 'JUnit' 
+        testResultsFormat: 'JUnit'
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
 
     - bash: |
@@ -53,29 +53,17 @@ stages:
         ls -l $(System.DefaultWorkingDirectory)/target/surefire-reports
       displayName: 'List Surefire Reports'
 
-
     - task: CopyFiles@2
       inputs:
-        SourceFolder: '$(System.DefaultWorkingDirectory)'
-        Contents: '**/surefire-reports/**'  # Make sure this matches the output directory structure of the Maven task
-        TargetFolder: '$(Build.ArtifactStagingDirectory)/surefire-reports'
-
-
-    - task: ArchiveFiles@2
-      displayName: 'Archive test results'
-      inputs:
-        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/surefire-reports'
-        includeRootFolder: false
-        archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/test-results.zip'
-        replaceExistingArchive: true
-
+        SourceFolder: '$(System.DefaultWorkingDirectory)/target'
+        Contents: '**/surefire-reports/testng-results.xml'  # Adjust if the file name or path is different
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
     - task: PublishBuildArtifacts@1
       condition: always()  # Ensures this step runs even if previous steps fail
       inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)/test-results.zip'
-        ArtifactName: 'test-results'
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'testng-results'
         publishLocation: 'Container'
 
     - bash: |
