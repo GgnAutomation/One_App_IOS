@@ -67,6 +67,12 @@ stages:
         publishLocation: 'Container'
 
     - bash: |
+        echo "Installing Python dependencies..."
+        python -m pip install --upgrade pip
+        pip install pandas
+      displayName: 'Install Python Dependencies'
+
+    - bash: |
         echo "Running Python analysis on test results..."
         python analyze_test_results.py "$(Build.ArtifactStagingDirectory)/testng-results.xml"
       displayName: 'Analyze Test Results'
