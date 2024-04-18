@@ -50,8 +50,8 @@ stages:
 
     - bash: |
         echo "Listing contents of surefire-reports directory:"
-        ls -l $(System.DefaultWorkingDirectory)/surefire-reports
-      displayName: 'List Test Results'
+        ls -l $(System.DefaultWorkingDirectory)/target/surefire-reports
+      displayName: 'List Surefire Reports'
 
 
     - task: CopyFiles@2
