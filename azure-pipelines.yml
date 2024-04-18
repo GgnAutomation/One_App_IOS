@@ -29,7 +29,7 @@ stages:
     steps:
     - task: Maven@3
       timeoutInMinutes: 150
-      continueOnError: true  # Allows the pipeline to continue even if this task fails
+      continueOnError: true
       inputs:
         mavenPomFile: 'pom.xml'
         goals: 'clean install'
@@ -56,15 +56,30 @@ stages:
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)/target'
-        Contents: '**/surefire-reports/testng-results.xml'  # Adjust if the file name or path is different
+        Contents: '**/surefire-reports/testng-results.xml'
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
     - task: PublishBuildArtifacts@1
-      condition: always()  # Ensures this step runs even if previous steps fail
+      condition: always()
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'testng-results'
         publishLocation: 'Container'
+
+    - bash: |
+        echo "Running Python analysis on test results..."
+        python analyze_test_results.py "$(Build.ArtifactStagingDirectory)/testng-results.xml"
+      displayName: 'Analyze Test Results'
+      env:
+        PYTHONIOENCODING: 'UTF-8'
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Analyzed Test Results'
+      inputs:
+        PathtoPublish: '.'
+        ArtifactName: 'analyzed-test-results'
+        publishLocation: 'Container'
+        Contents: '**/*.csv'
 
     - bash: |
         echo "##vso[task.setvariable variable=isMainStageSuccessful]true"
