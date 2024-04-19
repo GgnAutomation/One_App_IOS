@@ -65,6 +65,11 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'testng-results'
         publishLocation: 'Container'
+    
+    - bash: |
+        echo "Checking the presence of testng-results.xml..."
+        ls -l $(Build.ArtifactStagingDirectory)
+      displayName: 'Check testng-results.xml Presence'
 
     - bash: |
         echo "Installing Python dependencies with retry logic..."
@@ -76,7 +81,7 @@ stages:
 
     - bash: |
         echo "Running Python analysis on test results..."
-        python analyze_test_results.py "$(Build.ArtifactStagingDirectory)/testng-results.xml"
+        python analyze_test_results.py "$(Build.ArtifactStagingDirectory)/surefire-reports/testng-results.xml"
       displayName: 'Analyze Test Results'
       env:
         PYTHONIOENCODING: 'UTF-8'
