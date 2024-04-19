@@ -67,10 +67,12 @@ stages:
         publishLocation: 'Container'
 
     - bash: |
-        echo "Installing Python dependencies..."
-        python -m pip install --upgrade pip
-        pip install pandas
+        echo "Installing Python dependencies with retry logic..."
+        for i in {1..3}; do  # Retry loop
+            python -m pip install --upgrade pip && pip install pandas && break || sleep 15
+        done
       displayName: 'Install Python Dependencies'
+      timeoutInMinutes: 10
 
     - bash: |
         echo "Running Python analysis on test results..."
