@@ -92,8 +92,77 @@ stages:
         PathtoPublish: '.'
         ArtifactName: 'analyzed-test-results'
         publishLocation: 'Container'
-        Contents: '**/*.csv'
+        Contents: 'passed_tests.csv, failed_tests.csv'
 
     - bash: |
         echo "##vso[task.setvariable variable=isMainStageSuccessful]true"
       condition: succeeded()
+
+- stage: SendEmail
+  jobs:
+    - job: EmailJob
+      pool:
+        vmImage: 'windows-latest'
+      steps:
+        - download: current
+          artifact: analyzed-test-results
+
+        # Task to send passed_tests.csv
+        - task: PowerShell@2
+          inputs:
+            targetType: 'inline'
+            script: |
+              $smtpServer = 'smtp.gmail.com'
+              $smtpUsername = 'magento20s@gmail.com'
+              $smtpPassword = 'lrprwymolzftyvqq'
+              $from = 'magento20s@gmail.com'
+              $to = 'dubey.vishal@orangemantra.in'
+              $subject = 'Passed Test Cases Report'
+              $body = "Dear Team, <br> Please find the attached report of passed test cases."
+              $attachment = "$(Pipeline.Workspace)/analyzed-test-results/passed_tests.csv"
+
+              $smtp = New-Object Net.Mail.SmtpClient($smtpServer)
+              $smtp.EnableSsl = $true
+              $smtp.Credentials = New-Object System.Net.NetworkCredential($smtpUsername, $smtpPassword)
+
+              $msg = New-Object Net.Mail.MailMessage
+              $msg.From = $from
+              $msg.TO.Add($to)
+              $msg.Subject = $subject
+              $msg.Body = $body
+              $msg.IsBodyHtml = $true
+
+              $attachment = New-Object Net.Mail.Attachment($attachment)
+              $msg.Attachments.Add($attachment)
+
+              $smtp.Send($msg)
+
+        # Task to send failed_tests.csv
+        - task: PowerShell@2
+          inputs:
+            targetType: 'inline'
+            script: |
+              $smtpServer = 'smtp.gmail.com'
+              $smtpUsername = 'magento20s@gmail.com'
+              $smtpPassword = 'lrprwymolzftyvqq'
+              $from = 'magento20s@gmail.com'
+              $to = 'singh.nishant1@orangemantra.in'
+              $subject = 'Failed Test Cases Report'
+              $body = "Dear Team, <br> Please find the attached report of failed test cases."
+              $attachment = "$(Pipeline.Workspace)/analyzed-test-results/failed_tests.csv"
+
+              $smtp = New-Object Net.Mail.SmtpClient($smtpServer)
+              $smtp.EnableSsl = $true
+              $smtp.Credentials = New-Object System.Net.NetworkCredential($smtpUsername, $smtpPassword)
+
+              $msg = New-Object Net.Mail.MailMessage
+              $msg.From = $from
+              $msg.TO.Add($to)
+              $msg.Subject = $subject
+              $msg.Body = $body
+              $msg.IsBodyHtml = $true
+
+              $attachment = New-Object Net.Mail.Attachment($attachment)
+              $msg.Attachments.Add($attachment)
+
+              $smtp.Send($msg)
