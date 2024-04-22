@@ -117,6 +117,7 @@ stages:
               $smtpPassword = 'lrprwymolzftyvqq'
               $from = 'magento20s@gmail.com'
               $to = 'dubey.vishal@orangemantra.in'
+              $cc = 'johar.aditya@orangemantra.in','sharma.etika@orangemantra.in'
               $subject = 'Passed Test Cases Report'
               $body = "Dear Team, <br> Please find the attached report of passed test cases."
               $attachment = "$(Pipeline.Workspace)/analyzed-test-results/passed_tests.csv"
@@ -128,6 +129,7 @@ stages:
               $msg = New-Object Net.Mail.MailMessage
               $msg.From = $from
               $msg.TO.Add($to)
+              foreach ($ccRecipient in $cc) { $msg.CC.Add($ccRecipient) }
               $msg.Subject = $subject
               $msg.Body = $body
               $msg.IsBodyHtml = $true
@@ -147,6 +149,7 @@ stages:
               $smtpPassword = 'lrprwymolzftyvqq'
               $from = 'magento20s@gmail.com'
               $to = 'singh.nishant1@orangemantra.in'
+              $cc = 'johar.aditya@orangemantra.in','sharma.etika@orangemantra.in'
               $subject = 'Failed Test Cases Report'
               $body = "Dear Team, <br> Please find the attached report of failed test cases."
               $attachment = "$(Pipeline.Workspace)/analyzed-test-results/failed_tests.csv"
@@ -158,6 +161,7 @@ stages:
               $msg = New-Object Net.Mail.MailMessage
               $msg.From = $from
               $msg.TO.Add($to)
+              foreach ($ccRecipient in $cc) { $msg.CC.Add($ccRecipient) }
               $msg.Subject = $subject
               $msg.Body = $body
               $msg.IsBodyHtml = $true
