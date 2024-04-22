@@ -119,7 +119,7 @@ stages:
               $to = 'dubey.vishal@orangemantra.in'
               
               $subject = 'Customer One App Android :Success UI Test'
-              $body = "<i>Hi Team, <br><br>I hope this email finds you well.</br> I'm pleased to inform you that UI tests run for <b>`"Customer One App Android`"</b> have passed successfully during the test execution cycle. Please find the attached details report for your reference.<br> This is a system generated mail from devsecops . Please do not reply to this email.</br></i>"
+              $body = "<i>Hi Team, <br><br>I hope this email finds you well.</br> I'm pleased to inform you that UI tests run for <b>Customer One App Android</b> have passed successfully during the test execution cycle. Please find the attached details report for your reference.<br> This is a system generated mail from devsecops . Please do not reply to this email.</br></i>"
               $attachment = "$(Pipeline.Workspace)/analyzed-test-results/passed_tests.csv"
 
               $smtp = New-Object Net.Mail.SmtpClient($smtpServer)
@@ -151,7 +151,7 @@ stages:
               $to = 'singh.nishant1@orangemantra.in'
               
               $subject = 'Failed Test Cases Report'
-              $body = "<i>Hi Team, <br><br>I hope this email finds you well.</br> I regret to inform you that some of the UI tests failed for <b>`"Customer One App Android`"</b> during the test execution cycle . Please find the comprehensive report, verify the issues and fix these issues.<br> This is a system generated mail from devsecops. For any query please reach out to the QA Team.</br></i>"
+              $body = "<i>Hi Team, <br><br>I hope this email finds you well.</br> I regret to inform you that some of the UI tests failed for <b>Customer One App Android</b> during the test execution cycle . Please find the comprehensive report, verify the issues and fix these issues.<br> This is a system generated mail from devsecops. For any query please reach out to the QA Team.</br></i>"
               $attachment = "$(Pipeline.Workspace)/analyzed-test-results/failed_tests.csv"
 
               $smtp = New-Object Net.Mail.SmtpClient($smtpServer)
