@@ -20,12 +20,14 @@ def analyze_test_results(file_path):
                         'Test Name': name,
                         'Status': status,
                         'Description': description,
-                        'Messages': messages
+                        'Messages': "; ".join(messages) if messages else "No messages"
                     })
 
     df = pd.DataFrame(test_cases)
-    passed = df[df['Status'] == 'PASS']
-    failed = df[df['Status'] == 'FAIL']
+
+    passed = df[df['Status'] == 'PASS'][['Test Name', 'Status', 'Description']]  
+    failed = df[df['Status'] == 'FAIL']  
+
 
     passed.to_csv('passed_tests.csv', index=False)
     failed.to_csv('failed_tests.csv', index=False)
