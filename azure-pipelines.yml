@@ -150,7 +150,7 @@ stages:
               $from = 'magento20s@gmail.com'
               $to = 'singh.nishant1@orangemantra.in'
               $cc = 'johar.aditya@orangemantra.in','sharma.etika@orangemantra.in','anil1.singh@heromotocorp.com','siddhant.mehta@heromotocorp.com'
-              $subject = 'Failed Test Cases Report'
+              $subject = 'Customer One App Android: Failed UI Test'
               $body = "<i>Hi Team, <br><br>I hope this email finds you well.</br> I regret to inform you that some of the UI tests failed for <b>Customer One App Android</b> during the test execution cycle . Please find the comprehensive report, verify the issues and fix these issues.<br> This is a system generated mail from devsecops. For any query please reach out to the QA Team!.</br></i>"
               $attachment = "$(Pipeline.Workspace)/analyzed-test-results/failed_tests.csv"
 
