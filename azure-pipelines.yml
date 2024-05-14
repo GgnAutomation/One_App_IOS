@@ -117,8 +117,9 @@ stages:
               $smtpUsername = 'devsecops.one@heromotocorp.com'
               $smtpPassword = 'tmnv vmgz rogp huty'
               $from = 'devsecops.one@heromotocorp.com'
-              $to = 'dubey.vishal@orangemantra.in'
-              $cc = 'johar.aditya@orangemantra.in','siddhant.mehta@heromotocorp.com','anil1.singh@heromotocorp.com','siddhant.mehta@heromotocorp.com'
+              $to = 'Randhir.kumar@heromotocorp.com','nitesh.jha@intellicredence.com'
+               #$cc = 'nitesh.jha@intellicredence.com'
+              $bcc = 'anil1.singh@heromotocorp.com','siddhant.mehta@heromotocorp.com'
               $subject = 'Customer One App Android :Success UI Test'
               $body = "<i>Hi Team, <br><br>I hope this email finds you well.</br> I'm pleased to inform you that UI tests run for <b>Customer One App Android</b> have passed successfully during the test execution cycle. Please find the attached details report for your reference.<br> This is a system generated mail from devsecops . Please do not reply to this email!.</br></i>"
               $attachment = "$(Pipeline.Workspace)/analyzed-test-results/passed_tests.csv"
@@ -129,8 +130,10 @@ stages:
 
               $msg = New-Object Net.Mail.MailMessage
               $msg.From = $from
-              $msg.TO.Add($to)
-              foreach ($ccRecipient in $cc) { $msg.CC.Add($ccRecipient) }
+               #$msg.TO.Add($to)
+              foreach ($toRecipient in $to) { $msg.TO.Add($toRecipient) }
+               #foreach ($ccRecipient in $cc) { $msg.CC.Add($ccRecipient) }
+              foreach ($bccRecipient in $bcc) { $msg.BCC.Add($bccRecipient) }
               $msg.Subject = $subject
               $msg.Body = $body
               $msg.IsBodyHtml = $true
@@ -149,8 +152,9 @@ stages:
               $smtpUsername = 'devsecops.one@heromotocorp.com'
               $smtpPassword = 'tmnv vmgz rogp huty'
               $from = 'devsecops.one@heromotocorp.com'
-              $to = 'dubey.vishal@orangemantra.in'
-              $cc = 'johar.aditya@orangemantra.in','siddhant.mehta@heromotocorp.co','anil1.singh@heromotocorp.com','siddhant.mehta@heromotocorp.com'
+              $to = 'Randhir.kumar@heromotocorp.com','Harsha.pai@heromotocorp.com','Varun1.sharma@heromotocorp.com','Aadarsh.rohira@heromotocorp.com'
+              $cc = 'nitesh.jha@intellicredence.com','ankit3.gupta@heromotocorp.com','siddhant.mehta@heromotocorp.com'
+              $bcc = 'anil1.singh@heromotocorp.com','siddhant.mehta@heromotocorp.com'
               $subject = 'Customer One App Android: Failed UI Test'
               $body = "<i>Hi Team, <br><br>I hope this email finds you well.</br> I regret to inform you that some of the UI tests failed for <b>Customer One App Android</b> during the test execution cycle . Please find the comprehensive report, verify the issues and fix these issues.<br> This is a system generated mail from devsecops. For any query please reach out to the QA Team!.</br></i>"
               $attachment = "$(Pipeline.Workspace)/analyzed-test-results/failed_tests.csv"
@@ -161,8 +165,10 @@ stages:
 
               $msg = New-Object Net.Mail.MailMessage
               $msg.From = $from
-              $msg.TO.Add($to)
+               #$msg.TO.Add($to)
+              foreach ($toRecipient in $to) { $msg.TO.Add($toRecipient) }
               foreach ($ccRecipient in $cc) { $msg.CC.Add($ccRecipient) }
+              foreach ($bccRecipient in $bcc) { $msg.BCC.Add($bccRecipient) }
               $msg.Subject = $subject
               $msg.Body = $body
               $msg.IsBodyHtml = $true
