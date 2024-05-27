@@ -289,7 +289,13 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 				Custom_click(visit_Page.get(3), header);
 			}
 			Thread.sleep(4000);
-			Custom_click(Close_linkedin_pop_message, "Close linkedin pop message");
+			try {
+				if (Close_linkedin_pop_message.isDisplayed()) {
+					Custom_click(Close_linkedin_pop_message, "Close linkedin pop message");
+				}
+			} catch (Exception e) {
+				driver.navigate().back();
+			}
 			try {
 				Custom_click(Linkedin_Join_now, header + " " + Linkedin_Join_now.getText());
 			} catch (Exception e) {

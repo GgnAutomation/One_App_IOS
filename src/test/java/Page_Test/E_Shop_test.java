@@ -26,6 +26,7 @@ public class E_Shop_test extends Base_Utility {
 		} else {
 			Custom_click(ob.E_shop(), ob.E_shop().getText());
 		}
+		Custom_click(ob.existing_Eshop(), ob.existing_Eshop().getText());
 		Thread.sleep(10000);
 		Custom_click(ob.shoping_cart(), "Shoping Cart list");
 		Thread.sleep(2000);
@@ -64,6 +65,7 @@ public class E_Shop_test extends Base_Utility {
 		driver.navigate().back();
 		Thread.sleep(2000);
 		Custom_click(ob.E_shop_pCloudy(), ob.E_shop_pCloudy().getText());
+		Custom_click(ob.existing_Eshop(), ob.existing_Eshop().getText());
 		Thread.sleep(10000);
 		Custom_click(ob.user_account(), "User account");
 		if (device.equalsIgnoreCase("pcloudy")) {

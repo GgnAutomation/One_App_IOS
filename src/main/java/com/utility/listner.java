@@ -90,9 +90,19 @@ public class listner extends Base_Utility implements ITestListener {
 		
 		}
 
-		
-
-		
-	
-
-
+//code for location handle
+//HashMap<String, Integer> contentSettings = new HashMap<String, Integer>();
+//HashMap<String, Object> profile = new HashMap<String, Object>(); 
+//HashMap<String, Object> prefs = new HashMap<String, Object>();
+//
+//contentSettings.put("notifications", 2);// 0 is ask  , 1 is allow , 2 is block
+//
+//contentSettings.put("geolocation", 1);
+//
+//contentSettings.put("media_stream", 1);
+//
+//profile.put("managed_default_content_settings", contentSettings);
+//
+//prefs.put("profile", profile);
+//
+//co.setExperimentalOption("prefs", prefs);

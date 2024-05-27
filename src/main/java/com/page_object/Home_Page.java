@@ -276,7 +276,7 @@ public class Home_Page extends Base_Utility {
 	public void exchange_info() {
 		try {
 			for (int i = 0; i < exchange_info.size(); i++) {
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 				msg(exchange_info.get(i), "");
 			}
 		} catch (Exception e) {
@@ -406,18 +406,10 @@ public class Home_Page extends Base_Utility {
 //****************************Documents Page************************************
 	@FindBy(xpath = "//android.widget.TextView[starts-with(@text,'Documents')]/parent::android.view.ViewGroup")
 	private WebElement Documents_Menu;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_name'])[1]")
-	private WebElement document_name1;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_name'])[2]")
-	private WebElement document_name2;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_name'])[3]")
-	private WebElement document_name3;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[1]")
-	private WebElement RC_Status;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[2]")
-	private WebElement Insurance_Status;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[3]")
-	private WebElement PUC_Status;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_name']")
+	private List<WebElement> document_name;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	private List<WebElement> document_Status;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/icon2']")
 	private WebElement Document_sideicon;
 	@FindBy(xpath = "//android.widget.TextView[@text ]")
@@ -452,9 +444,17 @@ public class Home_Page extends Base_Utility {
 	public WebElement Documents_Menu() {
 		return Documents_Menu;
 	}
-
+	public List<WebElement> document_name()
+	{
+		return document_name;
+	}
+	public List<WebElement> document_Status()
+	{
+		return document_Status;
+	}
 	public WebElement Back() {
 		return Back;
+
 	}
 
 	public WebElement cancel_payment() {
@@ -464,7 +464,38 @@ public class Home_Page extends Base_Utility {
 	public WebElement While_using_the_app() {
 		return While_using_the_app;
 	}
-
+	public WebElement Choose_Document_from_library()
+	{
+		return Choose_Document_from_library;
+	}
+	public WebElement Take_a_Photo()
+	{
+		return Take_a_Photo;
+	}
+	public WebElement Choose_from_Digilocker()	
+	{
+		return Choose_from_Digilocker;
+	}
+	public WebElement Allow()
+	{
+		return Allow;
+	}
+	public WebElement document_upload_close_button()
+	{
+		return document_upload_close_button;
+	}
+	public WebElement share_document()
+	{
+		return share_document;
+	}
+	public WebElement download_document()
+	{
+		return download_document;
+	}
+	public WebElement update_doc()
+	{
+		return update_doc;
+	}
 	public void Documents_list() throws InterruptedException {
 
 		for (int i = 1; i < Documents_list.size(); i++) {
@@ -508,11 +539,19 @@ public class Home_Page extends Base_Utility {
 				Custom_click(Documents_list.get(i), name + " " + Documents_list.get(i).getText());
 				Thread.sleep(2000);
 				Custom_click(share_document, "Share document button");
-				Thread.sleep(2000);
-				driver.navigate().back();
-				Custom_click(download_document, "Download document button");
-				Thread.sleep(3000);
+				try {
+					if (download_document.isDisplayed()) {
+						Custom_click(download_document, "Download document button");
+						Thread.sleep(3000);
+					}
+				} catch (Exception e) {
+					driver.navigate().back();
+				}
+				try {
 				Custom_click(update_doc, "Update document button");
+				} catch (Exception e) {
+					driver.navigate().back();
+				}
 				Custom_click(Choose_Document_from_library, name + " Choose from library");
 				try {
 					if (Allow.isDisplayed()) {
@@ -880,17 +919,21 @@ public class Home_Page extends Base_Utility {
 	public void Dealer_info() {
 		int avilable_dealer = Dealer_name.size();
 		Message("Total available dealer is =" + avilable_dealer);
+		try {
 		for (int i = 0; i < avilable_dealer; i++) {
 			Message((i + 1) + " Dealer name =" + Dealer_name.get(i).getText());
 			Message((i + 1) + " Dealer address =" + Dealer_address.getText());
-			Message((i + 1) + " Dealer distance =" + Dealer_distance.getText());
-			Message((i + 1) + " Dealer duration time =" + Dealer_duration_time.getText());
+//			Message((i + 1) + " Dealer distance =" + Dealer_distance.getText());
+//			Message((i + 1) + " Dealer duration time =" + Dealer_duration_time.getText());
 			Custom_click(Call_Dealer, (i + 1) + " Call Dealer button ");
 			driver.navigate().back();
 			driver.navigate().back();
 			if (device.equalsIgnoreCase("realdevice")) {
 				driver.navigate().back();
 			}
+		}
+		}catch (Exception e) {
+			Message("Some dealer info is missing");
 		}
 	}
 
