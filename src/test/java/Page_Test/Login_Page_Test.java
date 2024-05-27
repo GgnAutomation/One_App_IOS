@@ -34,6 +34,7 @@ public class Login_Page_Test extends Base_Utility {
 		ob = new Login_page();
 		ob1 = new Select_Vehicle_Page();
 		if (device.equalsIgnoreCase("realdevice") || device.equalsIgnoreCase("pcloudy")) {
+//			Custom_click(ob1.banner_Img_close(), " Banner Img close");
 			Custom_click(ob.ok(), "OK");
 			Custom_click(ob.process_require_notification(), "Process button require notification access");
 			Custom_click(ob.Allow(), ob.Allow().getText() + "Allow Hero App to send you notifications");
@@ -122,7 +123,8 @@ public class Login_Page_Test extends Base_Utility {
 				msg(ob.Privacy_Policy_condition(), "Privacy policy : First  = ");
 				Custom_click(ob.back_page(), "back Privacy Policy page ");
 			} else if (device.equalsIgnoreCase("pcloudy") || device.equalsIgnoreCase("realdevice")) {
-				msg(ob.Privacy_of_Use_condition_for_real_device(), "Privacy policy : First Condition = ");
+				msg(ob.Privacy_of_Use_condition_for_real_device(),
+						ob.Privacy_of_Use_condition_for_real_device().getText());
 				endreadtime = System.currentTimeMillis();
 				Message("Read time in Privacy policy =" + (endreadtime - starreadtime) + " MS");
 				Custom_click(ob.back_page(), "back Privacy Policy page ");
@@ -163,7 +165,7 @@ public class Login_Page_Test extends Base_Utility {
 		Custom_click(ob.Check_now_btn(), "Check now button");
 		Custom_click(ob.While_using_the_app(), "While using the app");
 		Custom_click(ob.upload_from_photo_gallery(), "Upload from photo gallery");
-		Custom_click(ob.Allow(), ob.Allow().getText() );
+		Custom_click(ob.Allow(), ob.Allow().getText());
 		Custom_click(ob.cancel_btn(), "Close photo gallery");
 		Custom_click(ob.back_page(), "Back from Scan bike parts");
 		Custom_click(ob.login_page(), "Login button");
@@ -228,6 +230,7 @@ public class Login_Page_Test extends Base_Utility {
 		ob = new Login_page();
 		ob1 = new Select_Vehicle_Page();
 		if (device.equalsIgnoreCase("realdevice") || device.equalsIgnoreCase("pcloudy")) {
+//			Custom_click(ob1.banner_Img_close(), " Banner Img close");
 			Custom_click(ob.ok(), "OK");
 			Custom_click(ob.process_require_notification(), "Process button require notification access");
 			Custom_click(ob.Allow(), ob.Allow().getText() + "Allow Hero App to send you notifications");
@@ -260,11 +263,14 @@ public class Login_Page_Test extends Base_Utility {
 					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
 		}
 		try {
-			if(ob1.allow_location().isDisplayed()) {
-		Custom_click(ob1.allow_location(), "Allow location");
-		Custom_click(ob1.While_using_the_app(), "While using the app");
-		Custom_click(ob1.Processed(), "Processed ");
-			}}catch(Exception e) {Message("Allow loction pop is not given");}
+			if (ob1.allow_location().isDisplayed()) {
+				Custom_click(ob1.allow_location(), "Allow location");
+				Custom_click(ob1.While_using_the_app(), "While using the app");
+				Custom_click(ob1.Processed(), "Processed ");
+			}
+		} catch (Exception e) {
+			Message("Allow loction pop is not given");
+		}
 		try {
 			Thread.sleep(5000);
 			if (ob1.banner_Img_close().isDisplayed()) {

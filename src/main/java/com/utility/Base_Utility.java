@@ -34,6 +34,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+import android.gesture.GestureUtils;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
@@ -92,56 +93,33 @@ public class Base_Utility
 //		db.setCapability("appium:newCommandTimeout", 6600);
 //	}
 	// ******************Automatic server end code ************************
-	public void OPEN_AND_INSTALL_APP() {
-		String Device_name = config_getdata("Platform_name");
-		if (Device_name.equalsIgnoreCase("emulator")) {
+	public void OPEN_AND_INSTALL_APP() 
+	{
+	    String deviceName = config_getdata("Platform_name");
+	    if (deviceName.equalsIgnoreCase("emulator")) {
+	        try {
+	            UiAutomator2Options options = new UiAutomator2Options();
+	            options.setCapability("appium:automationName", "uiautomator2");
+	            options.setCapability("platformName", "Android");
+	            options.setCapability("appium:deviceName", "Pixel_6_API_31");
+	            options.setCapability("appium:udid", "emulator-5554");
+	            options.setCapability("appium:avdLaunchTimeout", 90000);
+	            options.setCapability("appium:app", System.getProperty("user.dir") + "\\apk\\app-debug.apk");
+	            options.setCapability("appium:ensureWebviewsHavePages", true);
+	            options.setCapability("appium:nativeWebScreenshot", true);
+	            options.setCapability("appium:newCommandTimeout", 9600);
+
+	            driver = new AndroidDriver(new URL(config_getdata("IpAddress")), options);
+	            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+	            
+	            log = LogManager.getLogger("Hero_App");
+	            lis = new listner();
+	        } catch (Exception e) {
+	            log.error("Failed to open and install app: " + e.getMessage(), e);
+	        }
+	    }
+	    else if (deviceName.equalsIgnoreCase("pcloudy")) {
 			try {
-				// DesiredCapabilities db = new DesiredCapabilities();
-				UiAutomator2Options db = new UiAutomator2Options();
-				db.setCapability("appium:automationName", "uiautomator2");
-				db.setCapability("platformName", "Android");
-				db.setCapability("appium:deviceName", "Pixel_6_API_31");
-				db.setCapability("appium:udid", "emulator-5554");
-				db.setCapability("appium:avdLaunchTimeout", 900000);
-				db.setCapability("appium:app", (System.getProperty("user.dir") + "\\apk\\app-debug.apk"));
-				driver = new AndroidDriver(new URL(config_getdata("IpAddress")), db);
-				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-				db.setCapability("appium:ensureWebviewsHavePages", true);
-				db.setCapability("appium:nativeWebScreenshot", true);
-				db.setCapability("appium:newCommandTimeout", 9600);
-				log = LogManager.getLogger("Hero_App");
-				lis = new listner();
-			} catch (Exception e) {
-				System.out.println(e);
-			}
-		} else if (Device_name.equalsIgnoreCase("pcloudy")) {
-			try {
-//				DesiredCapabilities capabilities = new DesiredCapabilities();
-//				capabilities.setCapability("pCloudy_Username", "randhir.kumar@heromotocorp.com");
-//				capabilities.setCapability("pCloudy_ApiKey", "2gdc5pv55mh54mqtwmvj4xbr");
-//				capabilities.setCapability("pCloudy_DurationInMinutes", 120);
-//				capabilities.setCapability("newCommandTimeout", 600);
-//				capabilities.setCapability("launchTimeout", 90000);
-//				capabilities.setCapability("pCloudy_DeviceManufacturer", "GOOGLE");
-//				capabilities.setCapability("pCloudy_DeviceVersion", "13.0.0");
-//				capabilities.setCapability("platformVersion", "13.0.0");
-//				capabilities.setCapability("platformName", "Android");
-//				capabilities.setCapability("automationName", "uiautomator2");
-//				if (enveronment.equalsIgnoreCase("prod")) {
-//					capabilities.setCapability("pCloudy_ApplicationName", "Oneapp-release-prod-r8-21nov.apk");
-//				} else {
-//					capabilities.setCapability("pCloudy_ApplicationName", "app-debug_9.apk");
-//				}
-//				capabilities.setCapability("appPackage", "com.customerapp.hero");
-//				capabilities.setCapability("appActivity", "com.customerapp.hero.views.activity.HmcDashboard");
-//				capabilities.setCapability("pCloudy_WildNet", "false");
-//				capabilities.setCapability("pCloudy_EnableVideo", "true");
-//				capabilities.setCapability("pCloudy_EnablePerformanceData", "false");
-//				capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
-//				capabilities.setCapability("appiumVersion", "2.0.0");
-//				driver = new AndroidDriver(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
-//				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-//				log = LogManager.getLogger("Hero_App");
 				DesiredCapabilities capabilities = new DesiredCapabilities();
 				capabilities.setCapability("appium:newCommandTimeout", 600);
 				capabilities.setCapability("appium:launchTimeout", 90000);
@@ -154,25 +132,28 @@ public class Base_Utility
 				pcloudyOptions.put("pCloudy_Username", "randhir.kumar@heromotocorp.com");
 				pcloudyOptions.put("pCloudy_ApiKey", "2gdc5pv55mh54mqtwmvj4xbr");
 				pcloudyOptions.put("pCloudy_DurationInMinutes", 120);
-//				pcloudyOptions.put("pCloudy_DeviceFullName", "SAMSUNG_GalaxyF145G_Android_13.0.0_dd226");
-//				pcloudyOptions.put("pCloudy_DeviceFullName", "SAMSUNG_GalaxyF235G_Android_13.0.0_11a9e");
 				pcloudyOptions.put("pCloudy_DeviceManufacturer", "SAMSUNG");
 				pcloudyOptions.put("pCloudy_DeviceVersion", "13.0.0");
-//				pcloudyOptions.put("pCloudy_ApplicationName", "Oneapp-release-prod-r8-21nov.apk");
-				pcloudyOptions.put("pCloudy_ApplicationName", "app-release-prod-18march.apk");
+				if (enveronment.equalsIgnoreCase("prod")) {
+					pcloudyOptions.put("pCloudy_ApplicationName", "One_app_Prod_9_2_1.apk");
+				} else {
+					pcloudyOptions.put("pCloudy_ApplicationName", "app-debug-uat-9_2_1.apk");
+				}
 				pcloudyOptions.put("pCloudy_WildNet", "false");
 				pcloudyOptions.put("pCloudy_EnableVideo", "true");
 				pcloudyOptions.put("pCloudy_EnablePerformanceData", "true");
 				pcloudyOptions.put("pCloudy_EnableDeviceLogs", "true");
 				pcloudyOptions.put("appiumVersion", "2.0.0");
 				capabilities.setCapability("pcloudy:options", pcloudyOptions);
-				driver = new AndroidDriver(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
+				driver = new AndroidDriver(new URL("https://ind-west.pcloudy.com/appiumcloud/wd/hub"), capabilities);
+				
+//					https://device.pcloudy.com/appiumcloud/wd/hub   https://ind-west.pcloudy.com/appiumcloud/wd/hub
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 				log = LogManager.getLogger("Hero_App");
 			} catch (Exception e) {
 				System.out.println(e);
 			}
-		} else if (Device_name.equalsIgnoreCase("realdevice")) {
+		} else if (deviceName.equalsIgnoreCase("realdevice")) {
 			try {
 				UiAutomator2Options db = new UiAutomator2Options();
 				db.setCapability("appium:automationName", "uiautomator2");
@@ -322,7 +303,7 @@ public class Base_Utility
 				log.info(fieldname + " is clickable");
 			}
 		} catch (Exception e) {
-			test.log(Status.FAIL, fieldname + "==Unable To Click ==" + e);
+			test.log(Status.FAIL, fieldname + "=Unable To Click =" + e);
 			test.addScreenCaptureFromPath(lis.getcapcture(fieldname));
 			log.error(fieldname + " is not clickable");
 
@@ -343,6 +324,7 @@ public class Base_Utility
 				action.press(PointOption.point(startx, starty))
 						.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(10)))
 						.moveTo(PointOption.point(endx, endy)).release().perform();
+			
 			}
 			test.log(Status.PASS, "Successfully Scroll page Action ==" + fieldname);
 			log.info("Successfully  Scroll page down Action " + fieldname);

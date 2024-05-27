@@ -7,6 +7,7 @@ import org.openqa.selenium.Point;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
 import com.page_object.Services_Page;
 import com.utility.Base_Utility;
 
@@ -190,21 +191,28 @@ public class Services_Page_Test extends Base_Utility {
 		ob.Service_schedule();
 	}
 
+	@SuppressWarnings({ "rawtypes", "deprecation" })
 	@Test(priority = 11)
 	public void TC087_View_Service_schedule_15500() throws InterruptedException {
 		Thread.sleep(2000);
-		@SuppressWarnings({ "deprecation", "rawtypes" })
+		try {
 		TouchAction action = new TouchAction(driver);
 		Point l1 = ob.value_12500k().getLocation();
 		Point l2 = ob.value_12500().getLocation();
-		int end_x = l1.x+60;
-		int end_y = l1.y-105;
+		int end_x = l1.x+40;
+		int end_y = l1.y-90;
 		int start_x = l2.x;
-		int start_y = l2.y-110;
+		int start_y = l2.y-90;
 		action.press(PointOption.point(start_x, start_y))
 		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
 		.moveTo(PointOption.point(end_x, end_y)).release().perform();
-		Message("Morethan 12.5K");
+		log.info("Successfully  Swipe page direction Action " + "15500");
+		test.log(Status.PASS, "Successfully  Swipe page direction Action = " + "15500");
+		} catch (Exception e) {
+			log.error("Unable To Swipe page direction Action " + "15500");
+			test.log(Status.FAIL, "15500" + "Unable To Swipe page direction Action " + "15500" + e);
+			test.addScreenCaptureFromPath(lis.getcapcture("15500"));
+		}
 		String text = ob.KM_15500().getText();
 		Custom_click(ob.KM_15500(), text);
 		Message("Paid Service for = " + text);

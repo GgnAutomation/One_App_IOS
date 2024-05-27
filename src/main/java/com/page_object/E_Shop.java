@@ -16,8 +16,10 @@ public class E_Shop extends Base_Utility {
 
 	@FindBy(xpath = "//android.widget.FrameLayout[@content-desc='Eshop']/android.view.ViewGroup/android.widget.TextView")
 	private WebElement E_shop;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/navigation_bar_item_small_label_view'])[3]")
+	@FindBy(xpath = "//android.widget.FrameLayout[@content-desc='E-Shop']/android.view.ViewGroup/android.widget.TextView")
 	private WebElement E_shop_pCloudy;
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[2]")
+	private WebElement existing_Eshop;
 	@FindBy(xpath = "//android.view.View[@content-desc='cart']")
 	private WebElement shoping_cart;
 	@FindBy(xpath="//android.view.View[contains(@text,'You have no items')]")
@@ -61,6 +63,10 @@ public class E_Shop extends Base_Utility {
 	public WebElement E_shop_pCloudy()
 	{
 		return E_shop_pCloudy;
+	}
+	public WebElement existing_Eshop()
+	{
+		return existing_Eshop;
 	}
 	public WebElement shoping_cart()
 	{

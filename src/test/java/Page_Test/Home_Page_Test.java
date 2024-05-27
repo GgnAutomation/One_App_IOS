@@ -2,6 +2,7 @@ package Page_Test;
 
 import java.time.Duration;
 
+import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.page_object.Home_Page;
@@ -9,6 +10,7 @@ import com.utility.Base_Utility;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
@@ -23,8 +25,8 @@ public class Home_Page_Test extends Base_Utility {
 	public void TC019_Home_page_verify() throws InterruptedException {
 		Message("************************Home_Page_Test**************************");
 		ob = new Home_Page();
-//		login = new Login_Page_Test();
-//		login.login();
+		login = new Login_Page_Test();
+		login.login();
 		Thread.sleep(10000);
 		VerifyElementPresent(ob.vehicle_img(), "Vehicle Img is");
 		Thread.sleep(2000);
@@ -54,7 +56,7 @@ public class Home_Page_Test extends Base_Utility {
 			Custom_click(ob.SOS_icon(), "SOS icon");
 			ob.SOS_message();
 			Custom_click(ob.sent_alert_btn(), ob.sent_alert_btn().getText());
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 			Custom_click(ob.SOS_icon(), "SOS icon");
 			ob.dont_send();
 			Thread.sleep(2000);
@@ -123,16 +125,210 @@ public class Home_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 7)
-	public void TC026_Verify_Documents() throws InterruptedException {
+	public void TC026_Verify_RC_Documents() throws InterruptedException {
 
 		Custom_click(ob.Documents_Menu(), "Document menu");
 		Thread.sleep(2000);
-		ob.Documents_list();
-		Custom_click(ob.Back(), "Back from Documents");
+		String Do_name = ob.document_name().get(0).getText();
+		Message("Document first = " + Do_name);
+		String status = ob.document_Status().get(0).getText();
+		if (status.equalsIgnoreCase("Upload")) {
+			Custom_click(ob.document_Status().get(0), Do_name + " " + status);
+			Thread.sleep(2000);
+			Custom_click(ob.Choose_Document_from_library(), Do_name + " " + "Choose from library");
+			try {
+				if (ob.Allow().isDisplayed()) {
+					Custom_click(ob.Allow(), "Allow");
+				}
+			} catch (Exception e) {
+			}
+			driver.navigate().back();
+			Thread.sleep(2000);
+			Custom_click(ob.document_Status().get(0), Do_name + status);
+			Custom_click(ob.Take_a_Photo(), "Take a Photo");
+			try {
+				if (ob.While_using_the_app().isDisplayed()) {
+					Custom_click(ob.While_using_the_app(), "While using the app");
+				}
+			} catch (Exception e) {
+			}
+			driver.navigate().back();
+			Thread.sleep(2000);
+			Custom_click(ob.document_Status().get(0), Do_name + status);
+			Custom_click(ob.Choose_from_Digilocker(), Do_name + "Choose from Digilocker");
+			driver.navigate().back();
+			Thread.sleep(2000);
+			Custom_click(ob.document_Status().get(0), Do_name + status);
+			Custom_click(ob.document_upload_close_button(), "Close upload document page");
+		} else if (status.equalsIgnoreCase("View File")) {
+			Message(Do_name + " is already available");
+			Custom_click(ob.document_Status().get(0), Do_name + status);
+			Thread.sleep(2000);
+			Custom_click(ob.share_document(), "Share document button");
+			Thread.sleep(5000);
+			driver.navigate().back();
+			try {
+				if (ob.download_document().isDisplayed()) {
+					Custom_click(ob.download_document(), "Download document button");
+				}
+			} catch (Exception e) {
+				driver.navigate().back();
+			}
+			Thread.sleep(5000);
+			Custom_click(ob.update_doc(), "Update document button");
+			Custom_click(ob.Choose_Document_from_library(), Do_name + " Choose from library");
+			try {
+				if (ob.Allow().isDisplayed()) {
+					Custom_click(ob.Allow(), "Allow");
+					Thread.sleep(2000);
+					driver.navigate().back();
+				}
+			} catch (Exception e) {
+			}
+			Custom_click(ob.update_doc(), "Update document button");
+			Custom_click(ob.Take_a_Photo(), "Take a Photo");
+			try {
+				if (ob.While_using_the_app().isDisplayed()) {
+					Custom_click(ob.While_using_the_app(), "While using the app");
+					Thread.sleep(2000);
+					driver.navigate().back();
+				}
+			} catch (Exception e) {
+			}
+
+			Custom_click(ob.update_doc(), "Update document button");
+			Custom_click(ob.Choose_from_Digilocker(), "Choose from Digilocker");
+			Thread.sleep(3000);
+			Custom_click(ob.Back(), " Back from Digilocker Login");
+			Custom_click(ob.update_doc(), "Update document button");
+			Custom_click(ob.document_upload_close_button(), "Close upload document page");
+			Custom_click(ob.Back(), "Back from " + Do_name + " page");
+
+		} else {
+			System.out.println("Not able to read" + status);
+		}
+
 	}
 
 	@Test(priority = 8)
-	public void TC027_Verify_Relationship_Manager() throws InterruptedException {
+	public void TC027_Verify_Insurance_Documents() throws InterruptedException {
+		String Do_name = ob.document_name().get(1).getText();
+		Message("Document Second = " + Do_name);
+		String status = ob.document_Status().get(1).getText();
+		if (status.equalsIgnoreCase("Upload")) {
+			Custom_click(ob.document_Status().get(1), Do_name + " " + status);
+			Custom_click(ob.Choose_Document_from_library(), Do_name + " " + "Choose from library");
+			driver.navigate().back();
+			Thread.sleep(2000);
+			Custom_click(ob.document_Status().get(1), Do_name + " " + status);
+			Custom_click(ob.Take_a_Photo(), "Take a Photo");
+			driver.navigate().back();
+			Thread.sleep(2000);
+			Custom_click(ob.document_Status().get(1), Do_name + " " + status);
+			Custom_click(ob.Choose_from_Digilocker(), Do_name + " " + "Choose from Digilocker");
+			driver.navigate().back();
+			Thread.sleep(2000);
+			Custom_click(ob.document_Status().get(1), Do_name + " " + status);
+			Custom_click(ob.document_upload_close_button(), "Close upload document page");
+		} else if (status.equalsIgnoreCase("View File")) {
+			Message(Do_name + " is already available");
+			Custom_click(ob.document_Status().get(1), Do_name + status);
+			Thread.sleep(2000);
+			Custom_click(ob.share_document(), "Share document button");
+			Thread.sleep(5000);
+			driver.navigate().back();
+			Custom_click(ob.download_document(), "Download document button");
+			Thread.sleep(5000);
+			Custom_click(ob.update_doc(), "Update document button");
+			Custom_click(ob.Choose_Document_from_library(), Do_name + " Choose from library");
+			Thread.sleep(3000);
+			driver.navigate().back();
+			Custom_click(ob.update_doc(), "Update document button");
+			Custom_click(ob.Take_a_Photo(), "Take a Photo");
+			Thread.sleep(2000);
+			driver.navigate().back();
+			Custom_click(ob.update_doc(), "Update document button");
+			Custom_click(ob.Choose_from_Digilocker(), "Choose from Digilocker");
+			Thread.sleep(3000);
+			Custom_click(ob.Back(), " Back from Digilocker Login");
+			Custom_click(ob.update_doc(), "Update document button");
+			Custom_click(ob.document_upload_close_button(), "Close upload document page");
+			Custom_click(ob.Back(), "Back from " + Do_name + " page");
+
+		} else {
+			System.out.println("Not able to read" + status);
+		}
+	}
+
+	@Test(priority = 9)
+	public void TC028_Verify_PUC_Documents() throws InterruptedException {
+		String Do_name = ob.document_name().get(2).getText();
+		Message("Document Third = " + Do_name);
+		String status = ob.document_Status().get(2).getText();
+		if (status.equalsIgnoreCase("Upload")) {
+			Custom_click(ob.document_Status().get(2), Do_name + " " + status);
+			Custom_click(ob.Choose_Document_from_library(), Do_name + " " + "Choose from library");
+			Thread.sleep(3000);
+			driver.navigate().back();
+			Thread.sleep(2000);
+			Custom_click(ob.document_Status().get(2), Do_name + " " + status);
+			Custom_click(ob.Take_a_Photo(), "Take a Photo");
+			Thread.sleep(3000);
+			driver.navigate().back();
+			Thread.sleep(2000);
+			Custom_click(ob.document_Status().get(2), Do_name + " " + status);
+			try {
+				if (ob.Choose_from_Digilocker().isDisplayed()) {
+					Custom_click(ob.Choose_from_Digilocker(), Do_name + " " + "Choose from Digilocker");
+					Thread.sleep(3000);
+					driver.navigate().back();
+					Thread.sleep(2000);
+				}
+			} catch (Exception e) {
+				Message("Digilocker option is not given");
+				Custom_click(ob.document_upload_close_button(), "Close upload document page");
+			}
+			Custom_click(ob.document_Status().get(2), Do_name + " " + status);
+			Custom_click(ob.document_upload_close_button(), "Close upload document page");
+		} else if (status.equalsIgnoreCase("View File")) {
+			Message(Do_name + " is already available");
+			Custom_click(ob.document_Status().get(2), Do_name + " " + status);
+			Thread.sleep(2000);
+			Custom_click(ob.share_document(), "Share document button");
+			Thread.sleep(5000);
+			driver.navigate().back();
+			Custom_click(ob.download_document(), "Download document button");
+			Thread.sleep(5000);
+			Custom_click(ob.update_doc(), "Update document button");
+			Custom_click(ob.Choose_Document_from_library(), Do_name + " Choose from library");
+			Thread.sleep(3000);
+			driver.navigate().back();
+			Custom_click(ob.update_doc(), "Update document button");
+			Custom_click(ob.Take_a_Photo(), "Take a Photo");
+			Thread.sleep(3000);
+			driver.navigate().back();
+			Custom_click(ob.update_doc(), "Update document button");
+			Custom_click(ob.document_upload_close_button(), "Close upload document page");
+			Custom_click(ob.Back(), "Back from " + Do_name + " page");
+
+		} else {
+			System.out.println("Not able to read" + status);
+		}
+	}
+
+	@Test(priority = 10)
+	public void TC029_Verify_Challans_Documents() throws InterruptedException {
+		String Do_name = ob.document_name().get(3).getText();
+		Message("Document fourth =" + Do_name);
+		String status = ob.document_Status().get(3).getText();
+		Custom_click(ob.document_Status().get(3), status);
+		Thread.sleep(2000);
+		driver.navigate().back();
+		Custom_click(ob.Back(), "Back from Documents");
+	}
+
+	@Test(priority = 11)
+	public void TC030_Verify_Relationship_Manager() throws InterruptedException {
 		Thread.sleep(2000);
 		Custom_click(ob.Relationship_Manager(), "Relationship Manager");
 		Thread.sleep(4000);
@@ -157,15 +353,15 @@ public class Home_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(priority = 9)
-	public void TC028_Verify_RSA() throws InterruptedException {
+	@Test(priority = 12)
+	public void TC031_Verify_RSA() throws InterruptedException {
 		Custom_click(ob.RSA(), "RSA");
 		Thread.sleep(4000);
 		ob.RSA_info();
 	}
 
-	@Test(priority = 10)
-	public void TC029_Renew_RSA() throws InterruptedException {
+	@Test(priority = 13)
+	public void TC032_Renew_RSA() throws InterruptedException {
 		Custom_click(ob.renew_rsa(), ob.renew_rsa().getText());
 		Thread.sleep(2000);
 		ob.RSA_info();
@@ -179,8 +375,8 @@ public class Home_Page_Test extends Base_Utility {
 		Thread.sleep(1000);
 	}
 
-	@Test(priority = 11)
-	public void TC030_frequently_asked_questions() throws InterruptedException {
+	@Test(priority = 14)
+	public void TC033_frequently_asked_questions() throws InterruptedException {
 //		@SuppressWarnings("deprecation")
 //		TouchAction action = new TouchAction(driver);
 //		for (int i = 1; i <= 1; i++) {
@@ -194,8 +390,8 @@ public class Home_Page_Test extends Base_Utility {
 		Custom_click(ob.Back(), "Back from Roadside Assistance");
 	}
 
-	@Test(priority = 12)
-	public void TC031_Verify_Technical_Support_Manager() throws InterruptedException {
+	@Test(priority = 15)
+	public void TC034_Verify_Technical_Support_Manager() throws InterruptedException {
 		Custom_click(ob.Technical_Support(), "Technical Support");
 		Thread.sleep(2000);
 		try {
@@ -212,8 +408,8 @@ public class Home_Page_Test extends Base_Utility {
 		}
 	}
 
-	@Test(priority = 13)
-	public void TC032_Verify_Dealer_Locator() throws InterruptedException {
+	@Test(priority = 16)
+	public void TC035_Verify_Dealer_Locator() throws InterruptedException {
 
 		Custom_click(ob.Dealer_Locator(), "Dealer Locator");
 		Thread.sleep(2000);
@@ -221,22 +417,22 @@ public class Home_Page_Test extends Base_Utility {
 		ob.Select_State("BIHAR");
 	}
 
-	@Test(priority = 14)
-	public void TC033_Select_city() {
+	@Test(priority = 17)
+	public void TC036_Select_city() {
 		Custom_click(ob.Select_City(), "Select city");
 		ob.Select_City("BAGAHA");
 	}
 
-	@Test(priority = 15)
-	public void TC034_View_dealer_name_and_address() {
+	@Test(priority = 18)
+	public void TC037_View_dealer_name_and_address() {
 		Custom_click(ob.map_view(), "Map View dealer name and address");
 		ob.Dealer_info();
 		Custom_click(ob.Back(), "Back from Dealer Locator");
 	}
 
 	@SuppressWarnings("deprecation")
-	@Test(priority = 16)
-	public void TC035_verify_Service_at_home_page() throws InterruptedException {
+	@Test(priority = 19)
+	public void TC038_verify_Service_at_home_page() throws InterruptedException {
 		@SuppressWarnings("deprecation")
 		TouchAction action = new TouchAction(driver);
 		for (int i = 0; i < 1; i++) {
@@ -259,16 +455,16 @@ public class Home_Page_Test extends Base_Utility {
 		Custom_click(ob.Back(), "Back from Service Schedule page");
 	}
 
-	@Test(priority = 17)
-	public void TC036_verify_Active_Booking_at_home_page() throws InterruptedException {
+	@Test(priority = 20)
+	public void TC039_verify_Active_Booking_at_home_page() throws InterruptedException {
 		Custom_click(ob.Latest_Vehicle(), "Latest Vehicle");
 		Thread.sleep(2000);
 		msg(ob.latest_vehicle_message(), "Latest vehicle = ");
 		Custom_click(ob.Back(), "Back from Active booking Vehicle page ");
 	}
 
-	@Test(priority = 18)
-	public void TC037_verify_EShop() throws InterruptedException {
+	@Test(priority = 21)
+	public void TC040_verify_EShop() throws InterruptedException {
 		Scroll_down_page_Action("E_shop");
 		Custom_click(ob.E_shop(), "E-Shop ");
 		msg(ob.E_shop_message(), "E_shop info = ");
@@ -277,8 +473,8 @@ public class Home_Page_Test extends Base_Utility {
 	}
 
 	@SuppressWarnings("deprecation")
-	@Test(priority = 19)
-	public void TC038_verify_Benifits_Vehicle_Exchange() throws InterruptedException {
+	@Test(priority = 22)
+	public void TC041_verify_Benifits_Vehicle_Exchange() throws InterruptedException {
 		Custom_click(ob.Benifits(), "Benifits ");
 		Thread.sleep(5000);
 		msg(ob.goodlife(), "Welcome to ");
