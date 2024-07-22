@@ -300,7 +300,7 @@ public class Vehicle_Details extends Base_Utility {
 
 	// ********************************************** Tips and DIY videos
 	// ***********************************
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/rv_item_lbl'])[2]")
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/rv_item_lbl'])[3]")
 	private WebElement Tips_and_DIY_videos;
 	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc= 'Tips']/android.widget.TextView")
 	private WebElement Tips_info;

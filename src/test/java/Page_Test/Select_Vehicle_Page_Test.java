@@ -118,14 +118,14 @@ public class Select_Vehicle_Page_Test extends Base_Utility {
 					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
 		}
 
-		try {
-
-			Thread.sleep(2000);
-			if (ob.banner_Img_close().isDisplayed()) {
-				Custom_click(ob.banner_Img_close(), " Banner Img close");
-			}
-		} catch (Exception e) {
-			Message("Banner img is not given");
-		}
+//		try {
+//
+//			Thread.sleep(2000);
+//			if (ob.banner_Img_close().isDisplayed()) {
+//				Custom_click(ob.banner_Img_close(), " Banner Img close");
+//			}
+//		} catch (Exception e) {
+//			Message("Banner img is not given");
+//		}
 	}
 }

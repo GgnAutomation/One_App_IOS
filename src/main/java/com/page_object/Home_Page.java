@@ -851,9 +851,9 @@ public class Home_Page extends Base_Utility {
 	private WebElement Dealer_Locator;
 	@FindBy(xpath = "//android.widget.Spinner[@resource-id='com.customerapp.hero:id/state_sp']//android.widget.TextView")
 	private WebElement Select_State;
-	@FindBy(xpath = "//android.widget.Spinner[@resource-id='com.customerapp.hero:id/city_sp']//android.widget.TextView")
+	@FindBy(xpath = "//android.widget.EditText[@resource-id ='com.customerapp.hero:id/text_input_editext']")
 	private WebElement Select_City;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/textView']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/textView22']")
 	private List<WebElement> Select_State_list;
 	@FindBy(xpath = "//android.widget.ImageButton[@resource-id='com.customerapp.hero:id/floating_button2']")
 	private WebElement map_view;
@@ -896,22 +896,25 @@ public class Home_Page extends Base_Utility {
 		}
 	}
 
-	public void Select_City(String value) {
-		for (int i = 0; i < Select_State_list.size(); i++) {
-			if (Select_State_list.get(i).getText().equalsIgnoreCase(value)) {
-				Custom_click(Select_State_list.get(i), value);
-				break;
-			} else {
-				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
-				if (i == (Select_State_list.size() - 1)) {
-					Select_State_list.get(i).click();
-					Select_City.click();
-					i = 0;
-				}
-			}
-		}
+//	public void Select_City(String value) {
+//		for (int i = 0; i < Select_State_list.size(); i++) {
+//			if (Select_State_list.get(i).getText().equalsIgnoreCase(value)) {
+//				Custom_click(Select_State_list.get(i), value);
+//				break;
+//			} else {
+//				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+//				if (i == (Select_State_list.size() - 1)) {
+//					Select_State_list.get(i).click();
+//					Select_City.click();
+//					i = 0;
+//				}
+//			}
+//		}
+//	}
+	public List<WebElement> Select_State_list()
+	{
+		return Select_State_list;
 	}
-
 	public WebElement map_view() {
 		return map_view;
 	}
@@ -920,12 +923,13 @@ public class Home_Page extends Base_Utility {
 		int avilable_dealer = Dealer_name.size();
 		Message("Total available dealer is =" + avilable_dealer);
 		try {
-		for (int i = 0; i < avilable_dealer; i++) {
+		for (int i = 0; i < 2; i++) {
 			Message((i + 1) + " Dealer name =" + Dealer_name.get(i).getText());
 			Message((i + 1) + " Dealer address =" + Dealer_address.getText());
 //			Message((i + 1) + " Dealer distance =" + Dealer_distance.getText());
 //			Message((i + 1) + " Dealer duration time =" + Dealer_duration_time.getText());
 			Custom_click(Call_Dealer, (i + 1) + " Call Dealer button ");
+			Thread.sleep(2000);
 			driver.navigate().back();
 			driver.navigate().back();
 			if (device.equalsIgnoreCase("realdevice")) {
@@ -934,6 +938,9 @@ public class Home_Page extends Base_Utility {
 		}
 		}catch (Exception e) {
 			Message("Some dealer info is missing");
+			driver.navigate().back();
+			driver.navigate().back();
+			
 		}
 	}
 

@@ -58,7 +58,9 @@ public class Base_Utility
 	String confipath = System.getProperty("user.dir") + "/config_data/config.properties";
 	String excelpath = System.getProperty("user.dir") + "/Data/data1.xlsx";
 	public static AndroidDriver driver;
-	String enveronment = config_getdata("env");
+	String enveronment = config_getdata("env") ;
+	String Apikey ="gb2hycp3rd35mt73jy4vc85f" , username ="anil1.singh@heromotocorp.com";
+	
 
 	@BeforeTest
 
@@ -129,15 +131,15 @@ public class Base_Utility
 				capabilities.setCapability("appium:appPackage", "com.customerapp.hero");
 				capabilities.setCapability("appium:appActivity", "com.customerapp.hero.views.activity.HmcDashboard");
 				HashMap<String, Object> pcloudyOptions = new HashMap<String, Object>();
-				pcloudyOptions.put("pCloudy_Username", "randhir.kumar@heromotocorp.com");
-				pcloudyOptions.put("pCloudy_ApiKey", "2gdc5pv55mh54mqtwmvj4xbr");
+				pcloudyOptions.put("pCloudy_Username", username);
+				pcloudyOptions.put("pCloudy_ApiKey", Apikey);
 				pcloudyOptions.put("pCloudy_DurationInMinutes", 120);
 				pcloudyOptions.put("pCloudy_DeviceManufacturer", "SAMSUNG");
 				pcloudyOptions.put("pCloudy_DeviceVersion", "13.0.0");
 				if (enveronment.equalsIgnoreCase("prod")) {
-					pcloudyOptions.put("pCloudy_ApplicationName", "One_app_Prod_9_2_1.apk");
+					pcloudyOptions.put("pCloudy_ApplicationName", "One_App_Prod_9_2_2.apk");
 				} else {
-					pcloudyOptions.put("pCloudy_ApplicationName", "app-debug-uat-9_2_1.apk");
+					pcloudyOptions.put("pCloudy_ApplicationName", "app-UatVariant-debug.apk");
 				}
 				pcloudyOptions.put("pCloudy_WildNet", "false");
 				pcloudyOptions.put("pCloudy_EnableVideo", "true");
@@ -145,7 +147,7 @@ public class Base_Utility
 				pcloudyOptions.put("pCloudy_EnableDeviceLogs", "true");
 				pcloudyOptions.put("appiumVersion", "2.0.0");
 				capabilities.setCapability("pcloudy:options", pcloudyOptions);
-				driver = new AndroidDriver(new URL("https://ind-west.pcloudy.com/appiumcloud/wd/hub"), capabilities);
+				driver = new AndroidDriver(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
 				
 //					https://device.pcloudy.com/appiumcloud/wd/hub   https://ind-west.pcloudy.com/appiumcloud/wd/hub
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));

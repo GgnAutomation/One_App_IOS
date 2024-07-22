@@ -22,7 +22,7 @@ public class Feedback_and_About_Hero extends Base_Utility{
 	private WebElement home;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/side_menu_btn']")
 	private WebElement side_menu_button;
-	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/rv_item_lbl'])[7]")
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/rv_item_lbl'])[9]")
 	private WebElement feedback;
 	@FindBy(xpath ="//android.widget.TextView[starts-with(@text,'App')]")
 	private WebElement App_Related;
@@ -93,7 +93,7 @@ public class Feedback_and_About_Hero extends Base_Utility{
 	}
 	
 	//************************************************About Hero***************************************
-	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/rv_item_lbl'])[8]")
+	@FindBy(xpath ="(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/rv_item_lbl'])[10]")
 	private WebElement about_hero;
 	@FindBy(xpath ="//android.view.View[@resource-id='container-6a13db6644']/android.view.View")
 	private WebElement about_hero_message_1;

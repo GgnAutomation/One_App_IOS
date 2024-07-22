@@ -4,15 +4,17 @@
   <listeners>
     <listener class-name="com.utility.listner"/>
   </listeners>
-  <test thread-count="5" name="Home_Page_Test(failed)">
+  <test thread-count="5" name="All test class(failed)">
     <classes>
-      <class name="Page_Test.Home_Page_Test">
+      <class name="Page_Test.GoodLifePage_Test">
         <methods>
-          <include name="TC027_Verify_Insurance_Documents"/>
-          <include name="TC020_verify_SOS"/>
+          <include name="TC114_Verify_refer_friend_in_Goodlife"/>
+          <include name="TC117_verify_Service_Privilegers"/>
+          <include name="TC118_verify_Benefits_and_Experiences"/>
+          <include name="TC116_verify_Points_Earning_and_Redemption"/>
           <include name="OPEN_AND_INSTALL_APP"/>
         </methods>
-      </class> <!-- Page_Test.Home_Page_Test -->
+      </class> <!-- Page_Test.GoodLifePage_Test -->
     </classes>
-  </test> <!-- Home_Page_Test(failed) -->
+  </test> <!-- All test class(failed) -->
 </suite> <!-- Failed suite [Hero_App] -->

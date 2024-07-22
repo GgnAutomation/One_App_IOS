@@ -21,9 +21,9 @@ public class My_Profile_Page extends Base_Utility {
 	private WebElement my_profile;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/user_name']")
 	private WebElement user_name;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/user_mobile_no']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_contact']")
 	private WebElement user_mobile_no;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/user_email']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_email']")
 	private WebElement user_email;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_details']")
 	private WebElement More_details;
@@ -35,7 +35,7 @@ public class My_Profile_Page extends Base_Utility {
 	private WebElement user_gender;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/blood_group']")
 	private WebElement user_blood_group;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_edit']")
 	private WebElement edit_profile_details_button;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/profile_pic_edit_btn']")
 	private WebElement profile_pic_edit_btn;
@@ -209,7 +209,7 @@ public class My_Profile_Page extends Base_Utility {
 	}
 
 //	*******************************Manage License *****************************************
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/manage_license']")
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/imageView']")
 	private WebElement manage_license;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.customerapp.hero:id/imageView']")
 	private WebElement licence_image;

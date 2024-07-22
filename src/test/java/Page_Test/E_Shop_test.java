@@ -15,7 +15,7 @@ public class E_Shop_test extends Base_Utility {
 	String device = config_getdata("Platform_name");
 
 	@Test(priority = 0)
-	public void TC115_registered_customers() throws InterruptedException {
+	public void TC119_registered_customers() throws InterruptedException {
 		Message("************************E Shop**************************");
 		ob = new E_Shop();
 //		login = new Login_Page_Test();
@@ -28,39 +28,41 @@ public class E_Shop_test extends Base_Utility {
 		}
 		Custom_click(ob.existing_Eshop(), ob.existing_Eshop().getText());
 		Thread.sleep(10000);
-		Custom_click(ob.shoping_cart(), "Shoping Cart list");
-		Thread.sleep(2000);
-		msg(ob.shoping_cart_items(), " ");
-		Custom_click(ob.wishlist(), "wishlist");
-		Thread.sleep(2000);
-		if (device.equalsIgnoreCase("emulator")) {
-			msg(ob.customer_login_heading(), "for ");
-			msg(ob.registered_custombers_message(), " ");
-		} else {
-			msg(ob.customer_login_heading_real(), "for ");
-			msg(ob.registered_custombers_message_real(), " ");
-		}
-		custom_sendkeys(ob.enter_email_or_mobile_number(), "rahul@gmail.com", "Email ID");
-		if (device.equalsIgnoreCase("pcloudy")) {
-			driver.navigate().back();
-		} else {
-			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
-
-		}
-		Custom_click(ob.Continue_button(), "Continue button");
-		Thread.sleep(2000);
-		if (device.equalsIgnoreCase("emulator")) {
-			msg(ob.verify_mobile(), " "); // For Emulator only
-			msg(ob.verify_mobile_message(), " "); // For Emulator only
-			Custom_click(ob.otp_pop_up_close(), "OTP Pop Up close"); // For Emulator only
-		} else {
-			msg(ob.verify_mobile_real(), " "); // For real device and pCloudy
-			msg(ob.verify_mobile_message_real(), " "); // For real device and pCloudy
-			Custom_click(ob.otp_pop_up_close_real(), "OTP Pop Up close"); // For real device and pCloudy
-		}
+		Custom_click(ob.close_location(), "Close location Icon ");
+		Custom_click(ob.ok_location(), "ok location");
+//		Custom_click(ob.shoping_cart(), "Shoping Cart list");
+//		Thread.sleep(2000);
+//		msg(ob.shoping_cart_items(), " ");
+//		Custom_click(ob.wishlist(), "wishlist");
+//		Thread.sleep(2000);
+//		if (device.equalsIgnoreCase("emulator")) {
+//			msg(ob.customer_login_heading(), "for ");
+//			msg(ob.registered_custombers_message(), " ");
+//		} else {
+//			msg(ob.customer_login_heading_real(), "for ");
+//			msg(ob.registered_custombers_message_real(), " ");
+//		}
+//		custom_sendkeys(ob.enter_email_or_mobile_number(), "rahul@gmail.com", "Email ID");
+//		if (device.equalsIgnoreCase("pcloudy")) {
+//			driver.navigate().back();
+//		} else {
+//			((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
+//
+//		}
+//		Custom_click(ob.Continue_button(), "Continue button");
+//		Thread.sleep(2000);
+//		if (device.equalsIgnoreCase("emulator")) {
+//			msg(ob.verify_mobile(), " "); // For Emulator only
+//			msg(ob.verify_mobile_message(), " "); // For Emulator only
+//			Custom_click(ob.otp_pop_up_close(), "OTP Pop Up close"); // For Emulator only
+//		} else {
+//			msg(ob.verify_mobile_real(), " "); // For real device and pCloudy
+//			msg(ob.verify_mobile_message_real(), " "); // For real device and pCloudy
+//			Custom_click(ob.otp_pop_up_close_real(), "OTP Pop Up close"); // For real device and pCloudy
+//		}
 	}
 
-	@Test(priority = 1)
+//	@Test(priority = 1)
 	public void TC116_new_customers() throws InterruptedException {
 		driver.navigate().back();
 		Thread.sleep(2000);

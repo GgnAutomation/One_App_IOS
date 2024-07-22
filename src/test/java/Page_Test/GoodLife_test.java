@@ -14,7 +14,7 @@ public class GoodLife_test extends Base_Utility {
 
 	@Test(priority = 0)
 	public void TC104_verify_image_in_goodlife_page() throws InterruptedException {
-		Message("*********************Goodlife_page**************************");
+		Message("*********************Goodlife**************************");
 		ob = new GoodLife();
 //		login = new Login_Page_Test();
 //		login.login();

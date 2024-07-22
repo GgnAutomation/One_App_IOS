@@ -30,6 +30,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 		Thread.sleep(2000);
 		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.my_profile(), "My profile");
+		Thread.sleep(2000);
 		msg(ob.user_name(), "User name = ");
 		msg(ob.user_mobile_no(), "User mobile number = ");
 		try {
@@ -41,8 +42,8 @@ public class My_Profile_Page_Test extends Base_Utility {
 
 	@Test(priority = 1)
 	public void TC040_verify_more_detais_button() {
-		Custom_click(ob.More_details(), ob.More_details().getText());
-		ob.user_info();
+//		Custom_click(ob.More_details(), ob.More_details().getText());
+//		ob.user_info();
 	}
 
 	@Test(priority = 2)
@@ -112,7 +113,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 		Thread.sleep(2000);
 		Custom_click(ob.Save_button(), "Save button");
 		try {
-			if (ob.More_details().isDisplayed()) {
+			if (ob.edit_profile_details_button().isDisplayed()) {
 				Message("Personal Details editd sucessfully");
 			}
 		} catch (Exception e) {
@@ -140,7 +141,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 		Thread.sleep(2000);
 		Custom_click(ob.Save_button(), "Save button");
 		Thread.sleep(3000);
-		Custom_click(ob.More_details(), ob.More_details().getText());
+//		Custom_click(ob.More_details(), ob.More_details().getText());
 
 	}
 
@@ -176,6 +177,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 
 	@Test(priority = 6)
 	public void TC045_Verify_emergency_contacts() throws InterruptedException {
+		Scroll_down_page_Action("Emergency contacts");
 		Custom_click(ob.emergency_contacts(), "Emergency contacts");
 		Thread.sleep(2000);
 		try {

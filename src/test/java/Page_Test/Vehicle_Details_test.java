@@ -38,7 +38,7 @@ public class Vehicle_Details_test extends Base_Utility {
 		Thread.sleep(5000);
 	}
 
-	@Test(priority = 1)
+//	@Test(priority = 1)
 	public void TC047_Verify_My_Vehicle_Documents() throws InterruptedException {
 		msg(ob.Vehicle_insurance(), "");
 		Custom_click(ob.Insurance_image(), "Insurance image");

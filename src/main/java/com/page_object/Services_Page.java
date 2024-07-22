@@ -62,6 +62,143 @@ public class Services_Page extends Base_Utility {
 		return service_date_time;
 	}
 
+	// *********************************Book_service************************************************
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	private WebElement Book_Service_button;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_date']")
+	private WebElement Selected_date;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/date']")
+	private List<WebElement> pick_date;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_select_time']")
+	private WebElement select_time;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/centerName']")
+	private WebElement center_Name;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/centerAddress']")
+	private WebElement center_Address;
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/keyArrow']")
+	private WebElement Center_keyArrow;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl']")
+	private WebElement Select_service_center;
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/back_btn']")
+	private WebElement back_btn;
+	@FindBy(xpath = "//android.widget.RadioButton[@resource-id ='com.customerapp.hero:id/radio2']")
+	private WebElement Service_Type;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/checkBoxText1']")
+	private List<WebElement> Customer_Requests;
+	@FindBy(xpath = "//android.widget.EditText[@resource-id ='com.customerapp.hero:id/otherIssuesEdt']")
+	private WebElement Additional_Instructions;
+
+	public WebElement Book_Service_button() {
+		return Book_Service_button;
+	}
+
+	public WebElement Selected_date() {
+		return Selected_date;
+	}
+
+	public void pick_date() {
+		for (int i = 0; i < pick_date.size(); i++) {
+			Custom_click(pick_date.get(i), pick_date.get(i).getText());
+		}
+	}
+
+	public WebElement select_time() {
+		return select_time;
+	}
+
+	public WebElement center_Name() {
+		return center_Name;
+	}
+
+	public WebElement center_Address() {
+		return center_Address;
+	}
+
+	public WebElement Center_keyArrow() {
+		return Center_keyArrow;
+	}
+
+	public WebElement Select_service_center() {
+		return Select_service_center;
+	}
+
+	public WebElement back_btn() {
+		return back_btn;
+	}
+
+	public WebElement Service_Type() {
+		return Service_Type;
+	}
+
+	public void Customer_Requests() {
+		for (int i = 0; i < Customer_Requests.size(); i++) {
+			Custom_click(Customer_Requests.get(i), Customer_Requests.get(i).getText());
+			i++;
+		}
+	}
+
+	public WebElement Additional_Instructions() {
+		return Additional_Instructions;
+	}
+
+	// ********************Review Service Details********************
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	private WebElement Review_Service_Details_button;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id , 'com.customerapp.hero:id/')]")
+	private List<WebElement> Service_Details;
+	@FindBy(xpath = "//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/cancel_button']")
+	private WebElement cancel_button;
+	@FindBy(xpath = "//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/btn_lay']")
+	private WebElement Book_service_button;
+
+	public WebElement Review_Service_Details_button() {
+		return Review_Service_Details_button;
+	}
+
+	public void Service_Details() {
+		for (int i = 0; i < Service_Details.size() - 2; i++) {
+			msg(Service_Details.get(i), " ");
+		}
+	}
+
+	public WebElement cancel_button() {
+		return cancel_button;
+	}
+
+	public WebElement Book_service_button() {
+		return Book_service_button;
+	}
+
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[1]")
+	private WebElement Confirm_Book;
+
+	public WebElement Confirm_Book() {
+		return Confirm_Book;
+	}
+
+//*********************************************Serviced booked information********************************
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id')]")
+	private List<WebElement> Service_booked_info;
+
+	public void Service_booked_info() {
+		for (int i = 1; i < Service_booked_info.size() - 1; i++) {
+			Message(Service_booked_info.get(i).getText());
+		}
+	}
+
+	public void Service_rescheduled_info() {
+		for (int i = 13; i < Service_booked_info.size() - 1; i++) {
+			Message(Service_booked_info.get(i).getText());
+		}
+	}
+
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	private WebElement Go_back_to_home;
+
+	public WebElement Go_back_to_home() {
+		return Go_back_to_home;
+	}
+
 //*********************************************verify_Dealer_information********************************
 	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id , 'com.customerapp.hero:id/tv_dealer')]")
 	private List<WebElement> dealer_info;
@@ -122,71 +259,96 @@ public class Services_Page extends Base_Utility {
 	private List<WebElement> booked_info;
 	@FindBy(xpath = "//androidx.recyclerview.widget.RecyclerView[@resource-id='com.customerapp.hero:id/rv_date']//android.widget.TextView")
 	private List<WebElement> select_date;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id='com.customerapp.hero:id/tv_time']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/tv_time']")
 	private WebElement Selected_time;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl' and @text='Confirm']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl' and @text='Confirm']")
 	private WebElement confirm_btn;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl' and @text='Cancel']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl' and @text='Cancel']")
 	private WebElement cancel_btn;
+
 	public WebElement Reschedule_service_btn() {
 		return Reschedule_service_btn;
 	}
+
 	public void booked_info() {
 		for (int i = 0; i < booked_info.size() - 1; i++) {
-			msg(booked_info.get(i), booked_info.get(i).getText());
+			msg(booked_info.get(i), "");
 		}
 	}
 
 	public void select_date() {
 		for (int i = 0; i < select_date.size(); i++) {
-			Custom_click(select_date.get(i + 1),select_date.get(i + 1).getText() + "/" + select_date.get(i).getText()
+			Custom_click(select_date.get(i + 1), select_date.get(i + 1).getText() + "/" + select_date.get(i).getText()
 					+ " " + select_date.get(i + 2).getText());
 			i++;
 			i++;
 		}
 	}
-	public WebElement Selected_time()
-	{
+
+	public WebElement Selected_time() {
 		return Selected_time;
 	}
-	public WebElement confirm_btn()
-	{
+
+	public WebElement confirm_btn() {
 		return confirm_btn;
 	}
-	public WebElement cancel_btn()
-	{
+
+	public WebElement cancel_btn() {
 		return cancel_btn;
 	}
+
 //**************************************verify_Cancel_Service**************************
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl' and starts-with(@text,'Cancel')]")
 	private WebElement cancel_service_btn;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id='com.customerapp.hero:id/tv_title']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/tv_title']")
 	private WebElement cancel_title;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id='com.customerapp.hero:id/textMessage']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/textMessage']")
 	private WebElement cancel_message;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl' and @text='Yes']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl' and @text='Yes']")
 	private WebElement yes_button;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl' and @text='No']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/btn_lbl' and @text='No']")
 	private WebElement No_button;
+	@FindBy(id = "com.customerapp.hero:id/tv_title")
+	private WebElement cancel_info1;
+
+	public WebElement cancel_info1() {
+		return cancel_info1;
+	}
+
+	@FindBy(id = "com.customerapp.hero:id/textMessage")
+	private WebElement cancel_info2;
+
+	public WebElement cancel_info2() {
+		return cancel_info2;
+	}
+
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_close']")
+	private WebElement cancel_pop;
+
+	public WebElement cancel_pop() {
+		return cancel_pop;
+	}
+
 	public WebElement cancel_service_btn() {
 		return cancel_service_btn;
 	}
-	public WebElement cancel_title()
-	{
+
+	public WebElement cancel_title() {
 		return cancel_title;
 	}
-	public WebElement cancel_message()
-	{
+
+	public WebElement cancel_message() {
 		return cancel_message;
 	}
-	public WebElement yes_button()
-	{
+
+	public WebElement yes_button() {
 		return yes_button;
 	}
-	public WebElement No_button()
-	{
+
+	public WebElement No_button() {
 		return No_button;
 	}
+
 //*********************************************View_Service_Schedule********************************
 	@FindBy(xpath = "//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/service_schedule_lay']")
 	private WebElement Service_Schedule;
@@ -196,9 +358,9 @@ public class Services_Page extends Base_Utility {
 	private WebElement Days;
 	@FindBy(xpath = "//android.widget.SeekBar[@content-desc ='Value, 0']")
 	private WebElement Kilometer_750;
-	@FindBy(xpath ="//android.widget.TextView[@text ='750']")
+	@FindBy(xpath = "//android.widget.TextView[@text ='750']")
 	private WebElement value_750;
-	@FindBy(xpath ="//android.widget.TextView[@text ='3500']")
+	@FindBy(xpath = "//android.widget.TextView[@text ='3500']")
 	private WebElement value_3500;
 	@FindBy(xpath = "//android.widget.TextView[@text ='6500']")
 	private WebElement value_6500;
@@ -222,9 +384,9 @@ public class Services_Page extends Base_Utility {
 	private WebElement KM_24500;
 	@FindBy(xpath = "//android.widget.TextView[@text ='27.5k km']")
 	private WebElement KM_27500;
-	@FindBy(xpath ="//android.widget.TextView[@text ='60']")
+	@FindBy(xpath = "//android.widget.TextView[@text ='60']")
 	private WebElement days_60;
-	@FindBy(xpath ="//android.widget.TextView[@text ='160']")
+	@FindBy(xpath = "//android.widget.TextView[@text ='160']")
 	private WebElement days_160;
 	@FindBy(xpath = "//android.widget.TextView[@text ='260']")
 	private WebElement days_260;
@@ -300,52 +462,52 @@ public class Services_Page extends Base_Utility {
 	public WebElement Kilometer_750() {
 		return Kilometer_750;
 	}
-	public WebElement days_60()
-	{
+
+	public WebElement days_60() {
 		return days_60;
 	}
-	public WebElement days_160()
-	{
+
+	public WebElement days_160() {
 		return days_160;
 	}
-	public WebElement days_260()
-	{
+
+	public WebElement days_260() {
 		return days_260;
 	}
-	public WebElement days_360()
-	{
+
+	public WebElement days_360() {
 		return days_360;
 	}
-	public WebElement days_460()
-	{
+
+	public WebElement days_460() {
 		return days_460;
 	}
-	public WebElement days_460_above()
-	{
+
+	public WebElement days_460_above() {
 		return days_460_above;
 	}
-	public WebElement value_750()
-	{
+
+	public WebElement value_750() {
 		return value_750;
 	}
-	public WebElement value_3500()
-	{
+
+	public WebElement value_3500() {
 		return value_3500;
 	}
-	public WebElement value_6500()
-	{
+
+	public WebElement value_6500() {
 		return value_6500;
 	}
-	public WebElement value_9500()
-	{
+
+	public WebElement value_9500() {
 		return value_9500;
 	}
-	public WebElement value_12500()
-	{
+
+	public WebElement value_12500() {
 		return value_12500;
 	}
-	public WebElement value_12500k()
-	{
+
+	public WebElement value_12500k() {
 		return value_12500k;
 	}
 
@@ -353,13 +515,13 @@ public class Services_Page extends Base_Utility {
 		int i = 0;
 		try {
 			Thread.sleep(2000);
-			for (i = 4; i < Service_schedule.size(); i++) {
-				if (i < 10) {
+			for (i = 5; i < 16; i++) {
+				if (i < 11) {
 					Message(Service_schedule.get(i).getText() + " = " + Service_schedule.get(i + 3).getText());
-					if (i == 6) {
-						i = 9;
+					if (i == 7) {
+						i = 10;
 					}
-				} else if (i >= 10) {
+				} else if (i >= 11) {
 					String Service_heading = Service_schedule.get(i).getText();
 					Custom_click(Service_schedule.get(i), Service_heading);
 					for (int j = 0; j < Service_schedule_subtitle.size(); j++) {
@@ -378,13 +540,13 @@ public class Services_Page extends Base_Utility {
 		int i = 0;
 		try {
 			Thread.sleep(2000);
-			for (i = 5; i < Service_schedule.size(); i++) {
-				if (i < 11) {
+			for (i = 6; i < 17; i++) {
+				if (i < 12) {
 					Message(Service_schedule.get(i).getText() + " = " + Service_schedule.get(i + 3).getText());
-					if (i == 7) {
-						i = 10;
+					if (i == 8) {
+						i = 11;
 					}
-				} else if (i >= 11) {
+				} else if (i >= 12) {
 					String Service_heading = Service_schedule.get(i).getText();
 					Custom_click(Service_schedule.get(i), Service_heading);
 					for (int j = 0; j < Service_schedule_subtitle.size(); j++) {
@@ -512,23 +674,27 @@ public class Services_Page extends Base_Utility {
 
 	public void tips_list() throws InterruptedException {
 		String tips = "";
-		for (int i = 1; i < tips_list.size(); i++) {
-			try {
-				tips = tips_list.get(i).getText();
-				Message(tips);
-				Custom_click(tips_list.get(i), tips);
-				Thread.sleep(6000);
-				if (image_verify.isDisplayed()) {
-					Message(tips + " PDF image is available for guide");
-				} else {
-					Message(tips + " PDF image is not available for guide");
+		try {
+			for (int i = 1; i < 16; i++) {
+				try {
+					tips = tips_list.get(i).getText();
+					Message(tips);
+					Custom_click(tips_list.get(i), tips);
+					Thread.sleep(6000);
+					if (image_verify.isDisplayed()) {
+						Message(tips + " PDF image is available for guide");
+					} else {
+						Message(tips + " PDF image is not available for guide");
+					}
+					Custom_click(back_button, "Back from " + tips);
+					i++;
+				} catch (Exception e) {
+					Message("" + e);
+					Custom_click(back_button, "Back from " + tips);
 				}
-				Custom_click(back_button, "Back from " + tips);
-				i++;
-			} catch (Exception e) {
-				Message("" + e);
-				Custom_click(back_button, "Back from " + tips);
 			}
+		} catch (Exception e) {
+			Message("" + e);
 		}
 	}
 
@@ -537,23 +703,27 @@ public class Services_Page extends Base_Utility {
 	}
 
 	public void DIY_Videos_list() throws InterruptedException {
-		for (int i = 2; i < DIY_Videos_list.size(); i++) {
+		try {
+			for (int i = 2; i < 12; i++) {
 
-			String video = DIY_Videos_list.get(i).getText();
-			Message(video + " Video");
-			i++;
-			Custom_click(DIY_Videos_list.get(i), video);
-			Thread.sleep(3000);
-			try {
-				Custom_click(play_video, video + " Play video");
-				Thread.sleep(1000);
-				Custom_click(Video_close_button, video + " close");
+				String video = DIY_Videos_list.get(i).getText();
+				Message(video + " Video");
 				i++;
+				Custom_click(DIY_Videos_list.get(i), video);
+				Thread.sleep(3000);
+				try {
+					Custom_click(play_video, video + " Play video");
+					Thread.sleep(1000);
+					Custom_click(Video_close_button, video + " close");
+					i++;
 
-			} catch (Exception e) {
-				Message("" + e);
-				Custom_click(Video_close_button, video + " close");
+				} catch (Exception e) {
+					Message("" + e);
+					Custom_click(Video_close_button, video + " close");
+				}
 			}
+		} catch (Exception e) {
+			Message("" + e);
 		}
 	}
 }

@@ -34,7 +34,7 @@ public class Login_page extends Base_Utility {
 	private WebElement deny;
 	@FindBy(xpath = "//android.widget.Button[@text='OK']")
 	private WebElement ok;
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
 	private WebElement process_require_notification;
 	@FindBy(xpath = "//android.widget.Button[@resource-id ='com.android.settings:id/button1']")
 	private WebElement open;
@@ -92,10 +92,11 @@ public class Login_page extends Base_Utility {
 	public WebElement registerd_message() {
 		return registerd_message;
 	}
-	public WebElement process_require_notification()
-	{
+
+	public WebElement process_require_notification() {
 		return process_require_notification;
 	}
+
 	public WebElement registerd_message_1() {
 		return registerd_message_1;
 	}
@@ -241,7 +242,7 @@ public class Login_page extends Base_Utility {
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/action_lbl'])[2]")
 	private WebElement vehicle_exchange;
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/action_lbl'])[3]")
-	private WebElement Contact_us;;
+	private WebElement View_Challans;
 
 	public WebElement nearby_dealer() {
 		return nearby_dealer;
@@ -251,8 +252,8 @@ public class Login_page extends Base_Utility {
 		return vehicle_exchange;
 	}
 
-	public WebElement Contact_us() {
-		return Contact_us;
+	public WebElement View_Challans() {
+		return View_Challans;
 	}
 
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/numUpdate1']")
@@ -268,18 +269,28 @@ public class Login_page extends Base_Utility {
 	public WebElement Check_now_btn() {
 		return Check_now_btn;
 	}
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_upload_lbl']")
+
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_upload_lbl']")
 	private WebElement upload_from_photo_gallery;
-	public WebElement upload_from_photo_gallery()
-	{
+
+	public WebElement upload_from_photo_gallery() {
 		return upload_from_photo_gallery;
 	}
-	@FindBy(xpath ="//android.widget.ImageButton[@content-desc='Cancel']")
+
+	@FindBy(xpath = "//android.widget.ImageButton[@content-desc='Cancel']")
 	private WebElement cancel_btn;
-	public WebElement cancel_btn()
-	{
+
+	public WebElement cancel_btn() {
 		return cancel_btn;
 	}
+
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	private WebElement Contact_Us;
+
+	public WebElement Contact_Us() {
+		return Contact_Us;
+	}
+
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl']")
 	private WebElement login_page;
 
@@ -299,13 +310,12 @@ public class Login_page extends Base_Utility {
 	public WebElement Continue_guest_btn() {
 		return Continue_guest_btn;
 	}
-	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl']")
+
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl']")
 	private List<WebElement> details_verify;
-	
-	public void details_verify()
-	{
-		for(int i=0;i<details_verify.size();i++)
-		{
+
+	public void details_verify() {
+		for (int i = 0; i < details_verify.size(); i++) {
 			Message(details_verify.get(i).getText());
 		}
 	}

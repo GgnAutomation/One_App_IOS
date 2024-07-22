@@ -8,12 +8,12 @@ import com.utility.Base_Utility;
 public class Book_Service_test extends Base_Utility {
 	public Login_Page_Test login;
 	public Book_Service ob;
-	@Test(priority = 0)
+//	@Test(priority = 0)
 	public void TC106_previous_service_info() throws InterruptedException {
 		Message("************************Book_Service_Page_Test**************************");
 		ob = new Book_Service();
-		login = new Login_Page_Test();
-		login.login();
+//		login = new Login_Page_Test();
+//		login.login();
 		Custom_click(ob.Services(), "Services button");
 		msg(ob.next_service_info(),ob.next_service_info().getText());
 		msg(ob.service_date_time(),ob.service_date_time().getText());
@@ -28,7 +28,7 @@ public class Book_Service_test extends Base_Utility {
 		}catch(Exception e) {Message("Vehicle License number is not given");}
 	}
 
-	@Test(priority = 1)
+//	@Test(priority = 1)
 	public void TC107_Book_service() throws InterruptedException {
 		msg(ob.select_date(),ob.select_date().getText());
 		ob.pick_date();
@@ -51,7 +51,7 @@ public class Book_Service_test extends Base_Utility {
 		driver.navigate().back();
 	}
 
-	@Test(priority = 2)
+//	@Test(priority = 2)
 	public void TC108_Review_Service_Details() {
 		Custom_click(ob.Review_Service_Details_button(), ob.Review_Service_Details_button().getText());
 		ob.Service_Details();

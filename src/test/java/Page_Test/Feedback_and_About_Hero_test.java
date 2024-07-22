@@ -99,7 +99,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 			}
 		} catch (Exception e) {
 			Message("No message readable");
-			Custom_click(ob.back_btn(), "Back from About Hero page");
+
 		}
 
 		Custom_click(ob.back_btn(), "Back from About Hero page");
@@ -124,11 +124,12 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 9)
-	public void TC075_Verify_joyride() {
+	public void TC075_Verify_joyride() throws InterruptedException {
 		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.Joyride(), "Joyride");
 		ob.Joyride_info();
 		Custom_click(ob.nearest_dealer(), ob.nearest_dealer().getText());
+		Thread.sleep(2000);
 		Custom_click(ob.back_btn(), "Back from Dealer Locator");
 		Custom_click(ob.back_btn(), "Back from Joyride page");
 //			driver.navigate().back();

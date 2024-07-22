@@ -49,6 +49,41 @@ public class Goodlifepage extends Base_Utility {
 		return Renew_membership;
 	}
 
+	@FindBy(xpath = "(//android.widget.EditText[@resource-id = 'com.customerapp.hero:id/text_input_editext'])[1]")
+	private WebElement Nominee_Name;
+
+	public WebElement Nominee_Name() {
+		return Nominee_Name;
+	}
+
+	@FindBy(xpath = "(//android.widget.EditText[@resource-id = 'com.customerapp.hero:id/text_input_editext'])[2]")
+	private WebElement Nominee_Contact_Number;
+
+	public WebElement Nominee_Contact_Number() {
+		return Nominee_Contact_Number;
+	}
+
+	@FindBy(xpath = "//android.widget.ImageButton[@content-desc='Show dropdown menu']")
+	private WebElement Nominee_Relationship_with_Member;
+
+	public WebElement Nominee_Relationship_with_Member() {
+		return Nominee_Relationship_with_Member;
+	}
+
+	@FindBy(xpath = "//android.widget.CheckBox[@resource-id='com.customerapp.hero:id/nominee_address_same_as_user_check']")
+	private WebElement Nominee_address_same_as_member;
+
+	public WebElement Nominee_address_same_as_member() {
+		return Nominee_address_same_as_member;
+	}
+
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	private WebElement Pay_amount;
+
+	public WebElement Pay_amount() {
+		return Pay_amount;
+	}
+
 	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv')]")
 	private List<WebElement> membership_plan_info;
 
@@ -299,7 +334,8 @@ public class Goodlifepage extends Base_Utility {
 		}
 	}
 
-	// ******************************Benefits and Experiences****************************
+	// ******************************Benefits and
+	// Experiences****************************
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/down_ic_btn'])[2]")
 	private WebElement show_more_Benefits_and_Experiences;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/benefit_lbl']")

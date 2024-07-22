@@ -59,8 +59,9 @@ public class Login_Page_Test extends Base_Utility {
 		ob.details_verify();
 		Custom_click(ob.back_page(), "Back from details verify ");
 		Custom_click(ob.continue_button(), "Coninue button enter after unregistered mobile number");
+		Thread.sleep(2000);
 		Custom_click(ob.Continue_guest_btn(), "Continue as gest button");
-		Custom_click(ob.login_page(), "Login button");
+		Custom_click(ob.back_page(), "Back from Welcome! page ");
 	}
 
 	@Test(priority = 3)
@@ -149,26 +150,37 @@ public class Login_Page_Test extends Base_Utility {
 	public void TC009_Continue_as_guest() throws InterruptedException {
 		Custom_click(ob.Continue_as_guest(), "Continue as guest ");
 		ob.guest_page_info();
-		Custom_click(ob.nearby_dealer(), "Nearby Dealers ");
-		Custom_click(ob.While_using_the_app(), "While using the app");
-		Custom_click(ob.back_page(), "Back from Dealer Locator");
-		Custom_click(ob.vehicle_exchange(), "Vehicle Exchange ");
-		Thread.sleep(4000);
+		Custom_click(ob.nearby_dealer(), "Vehicle Exchange ");
 		Custom_click(ob.back_page(), "Back from Vehicle Exchange");
-		Custom_click(ob.Contact_us(), "Contact us in guest page");
+		Custom_click(ob.vehicle_exchange(), "Find A Dealer ");
 		Thread.sleep(2000);
-		Custom_click(ob.back_page(), "Back from Contact us in guest page");
+		Custom_click(ob.While_using_the_app(), "While using the app");
+		Custom_click(ob.back_page(), "Back from Dealer Locator ");
+		Custom_click(ob.View_Challans() , "View Challans ");
+		Thread.sleep(2000);
+		Custom_click(ob.back_page(), "Back from Digilocker Login");
 		Custom_click(ob.update_mobile_number(), "Update mobile number pencile");
 		Thread.sleep(3000);
-		Custom_click(ob.back_page(), "Back from Update mobile number page");
-		Scroll_down_page_Action("Check now");
-		Custom_click(ob.Check_now_btn(), "Check now button");
-		Custom_click(ob.While_using_the_app(), "While using the app");
-		Custom_click(ob.upload_from_photo_gallery(), "Upload from photo gallery");
-		Custom_click(ob.Allow(), ob.Allow().getText());
-		Custom_click(ob.cancel_btn(), "Close photo gallery");
-		Custom_click(ob.back_page(), "Back from Scan bike parts");
-		Custom_click(ob.login_page(), "Login button");
+		Custom_click(ob.back_page(), "Back from Detail Verification page");
+//		Scroll_down_page_Action("Check now");
+//		try {
+//		if(ob.Check_now_btn().isDisplayed())
+//		Custom_click(ob.Check_now_btn(), "Check now button");
+//		}catch(Exception e)
+//		{
+//			Scroll_down_page_Action("Check now");
+//			Custom_click(ob.Check_now_btn(), "Check now button");
+//		}
+//		Custom_click(ob.While_using_the_app(), "While using the app");
+//		Custom_click(ob.upload_from_photo_gallery(), "Upload from photo gallery");
+//		Custom_click(ob.Allow(), ob.Allow().getText());
+//		driver.navigate().back();
+////		Custom_click(ob.cancel_btn(), "Close photo gallery");
+//		Custom_click(ob.back_page(), "Back from Scan bike parts");
+		Custom_click(ob.Contact_Us(), "Contact Us");
+		Thread.sleep(2000);
+		Custom_click(ob.back_page(), "Back from Contact Us");
+		Custom_click(ob.back_page(), "Back from Welcome!");
 	}
 
 	@Test(priority = 9)
@@ -271,14 +283,14 @@ public class Login_Page_Test extends Base_Utility {
 		} catch (Exception e) {
 			Message("Allow loction pop is not given");
 		}
-		try {
-			Thread.sleep(5000);
-			if (ob1.banner_Img_close().isDisplayed()) {
-				Custom_click(ob1.banner_Img_close(), " Banner Img close");
-			}
-		} catch (Exception e) {
-			Message("Banner img is not given");
-		}
+//		try {
+//			Thread.sleep(5000);
+//			if (ob1.banner_Img_close().isDisplayed()) {
+//				Custom_click(ob1.banner_Img_close(), " Banner Img close");
+//			}
+//		} catch (Exception e) {
+//			Message("Banner img is not given");
+//		}
 
 	}
 

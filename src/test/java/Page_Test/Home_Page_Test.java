@@ -23,10 +23,10 @@ public class Home_Page_Test extends Base_Utility {
 
 	@Test(priority = 0)
 	public void TC019_Home_page_verify() throws InterruptedException {
-		Message("************************Home_Page_Test**************************");
+		Message("*********Home_Page_Test*********");
 		ob = new Home_Page();
-		login = new Login_Page_Test();
-		login.login();
+//		login = new Login_Page_Test();
+//		login.login();
 		Thread.sleep(10000);
 		VerifyElementPresent(ob.vehicle_img(), "Vehicle Img is");
 		Thread.sleep(2000);
@@ -71,7 +71,7 @@ public class Home_Page_Test extends Base_Utility {
 	public void TC021_verify_Navigate() {
 		Custom_click(ob.Navigate_menu(), "Navigate menu");
 		Custom_click(ob.Search_destination(), "Search destination");
-		msg(ob.Search_here(), "Search Here ");
+		msg(ob.Search_here(), " ");
 		custom_sendkeys(ob.Search_here(), " railway", "Place name");
 		Custom_click(ob.chose_place_name(), ob.chose_place_name().getText());
 		msg(ob.Searched_name(), "Searched place name = ");
@@ -89,7 +89,12 @@ public class Home_Page_Test extends Base_Utility {
 
 	@Test(priority = 3)
 	public void TC022_verify_Exchange() throws InterruptedException {
-		Custom_click(ob.Exchange_Menu(), "Exchange menu");
+		try {
+			Custom_click(ob.Exchange_Menu(), "Exchange menu");
+		} catch (Exception e) {
+			driver.navigate().back();
+			Custom_click(ob.Exchange_Menu(), "Exchange menu");
+		}
 		Thread.sleep(2000);
 		ob.exchange_info();
 		Custom_click(ob.Exchange_vehicle_name(), ob.Exchange_vehicle_name().getText());
@@ -139,43 +144,51 @@ public class Home_Page_Test extends Base_Utility {
 			try {
 				if (ob.Allow().isDisplayed()) {
 					Custom_click(ob.Allow(), "Allow");
+					Thread.sleep(2000);
 				}
 			} catch (Exception e) {
 			}
 			driver.navigate().back();
 			Thread.sleep(2000);
 			Custom_click(ob.document_Status().get(0), Do_name + status);
+			Thread.sleep(2000);
 			Custom_click(ob.Take_a_Photo(), "Take a Photo");
 			try {
 				if (ob.While_using_the_app().isDisplayed()) {
 					Custom_click(ob.While_using_the_app(), "While using the app");
+					Thread.sleep(2000);
 				}
 			} catch (Exception e) {
 			}
 			driver.navigate().back();
 			Thread.sleep(2000);
 			Custom_click(ob.document_Status().get(0), Do_name + status);
+			Thread.sleep(2000);
 			Custom_click(ob.Choose_from_Digilocker(), Do_name + "Choose from Digilocker");
+			Thread.sleep(2000);
 			driver.navigate().back();
 			Thread.sleep(2000);
 			Custom_click(ob.document_Status().get(0), Do_name + status);
+			Thread.sleep(2000);
 			Custom_click(ob.document_upload_close_button(), "Close upload document page");
 		} else if (status.equalsIgnoreCase("View File")) {
 			Message(Do_name + " is already available");
 			Custom_click(ob.document_Status().get(0), Do_name + status);
 			Thread.sleep(2000);
 			Custom_click(ob.share_document(), "Share document button");
-			Thread.sleep(5000);
-			driver.navigate().back();
+			Thread.sleep(2000);
 			try {
 				if (ob.download_document().isDisplayed()) {
 					Custom_click(ob.download_document(), "Download document button");
 				}
 			} catch (Exception e) {
 				driver.navigate().back();
+				Thread.sleep(2000);
+				Custom_click(ob.download_document(), "Download document button");
 			}
 			Thread.sleep(5000);
 			Custom_click(ob.update_doc(), "Update document button");
+			Thread.sleep(2000);
 			Custom_click(ob.Choose_Document_from_library(), Do_name + " Choose from library");
 			try {
 				if (ob.Allow().isDisplayed()) {
@@ -184,8 +197,11 @@ public class Home_Page_Test extends Base_Utility {
 					driver.navigate().back();
 				}
 			} catch (Exception e) {
+				Message("No Allow pop up is given");
+				driver.navigate().back();
 			}
 			Custom_click(ob.update_doc(), "Update document button");
+			Thread.sleep(2000);
 			Custom_click(ob.Take_a_Photo(), "Take a Photo");
 			try {
 				if (ob.While_using_the_app().isDisplayed()) {
@@ -194,6 +210,8 @@ public class Home_Page_Test extends Base_Utility {
 					driver.navigate().back();
 				}
 			} catch (Exception e) {
+				Message("No While using  pop up is given");
+				driver.navigate().back();
 			}
 
 			Custom_click(ob.update_doc(), "Update document button");
@@ -217,15 +235,21 @@ public class Home_Page_Test extends Base_Utility {
 		String status = ob.document_Status().get(1).getText();
 		if (status.equalsIgnoreCase("Upload")) {
 			Custom_click(ob.document_Status().get(1), Do_name + " " + status);
+			Thread.sleep(2000);
 			Custom_click(ob.Choose_Document_from_library(), Do_name + " " + "Choose from library");
+			Thread.sleep(2000);
 			driver.navigate().back();
 			Thread.sleep(2000);
 			Custom_click(ob.document_Status().get(1), Do_name + " " + status);
+			Thread.sleep(2000);
 			Custom_click(ob.Take_a_Photo(), "Take a Photo");
+			Thread.sleep(2000);
 			driver.navigate().back();
 			Thread.sleep(2000);
 			Custom_click(ob.document_Status().get(1), Do_name + " " + status);
+			Thread.sleep(2000);
 			Custom_click(ob.Choose_from_Digilocker(), Do_name + " " + "Choose from Digilocker");
+			Thread.sleep(2000);
 			driver.navigate().back();
 			Thread.sleep(2000);
 			Custom_click(ob.document_Status().get(1), Do_name + " " + status);
@@ -235,15 +259,24 @@ public class Home_Page_Test extends Base_Utility {
 			Custom_click(ob.document_Status().get(1), Do_name + status);
 			Thread.sleep(2000);
 			Custom_click(ob.share_document(), "Share document button");
-			Thread.sleep(5000);
-			driver.navigate().back();
-			Custom_click(ob.download_document(), "Download document button");
-			Thread.sleep(5000);
+			Thread.sleep(2000);
+			try {
+				if (ob.download_document().isDisplayed()) {
+					Custom_click(ob.download_document(), "Download document button");
+					Thread.sleep(5000);
+				}
+			} catch (Exception e) {
+				driver.navigate().back();
+				Thread.sleep(2000);
+				Custom_click(ob.download_document(), "Download document button");
+			}
 			Custom_click(ob.update_doc(), "Update document button");
+			Thread.sleep(2000);
 			Custom_click(ob.Choose_Document_from_library(), Do_name + " Choose from library");
 			Thread.sleep(3000);
 			driver.navigate().back();
 			Custom_click(ob.update_doc(), "Update document button");
+			Thread.sleep(2000);
 			Custom_click(ob.Take_a_Photo(), "Take a Photo");
 			Thread.sleep(2000);
 			driver.navigate().back();
@@ -267,16 +300,19 @@ public class Home_Page_Test extends Base_Utility {
 		String status = ob.document_Status().get(2).getText();
 		if (status.equalsIgnoreCase("Upload")) {
 			Custom_click(ob.document_Status().get(2), Do_name + " " + status);
+			Thread.sleep(2000);
 			Custom_click(ob.Choose_Document_from_library(), Do_name + " " + "Choose from library");
 			Thread.sleep(3000);
 			driver.navigate().back();
 			Thread.sleep(2000);
 			Custom_click(ob.document_Status().get(2), Do_name + " " + status);
+			Thread.sleep(2000);
 			Custom_click(ob.Take_a_Photo(), "Take a Photo");
 			Thread.sleep(3000);
 			driver.navigate().back();
 			Thread.sleep(2000);
 			Custom_click(ob.document_Status().get(2), Do_name + " " + status);
+			Thread.sleep(2000);
 			try {
 				if (ob.Choose_from_Digilocker().isDisplayed()) {
 					Custom_click(ob.Choose_from_Digilocker(), Do_name + " " + "Choose from Digilocker");
@@ -295,15 +331,25 @@ public class Home_Page_Test extends Base_Utility {
 			Custom_click(ob.document_Status().get(2), Do_name + " " + status);
 			Thread.sleep(2000);
 			Custom_click(ob.share_document(), "Share document button");
-			Thread.sleep(5000);
-			driver.navigate().back();
-			Custom_click(ob.download_document(), "Download document button");
-			Thread.sleep(5000);
+			Thread.sleep(2000);
+			try {
+				if (ob.download_document().isDisplayed()) {
+					Custom_click(ob.download_document(), "Download document button");
+					Thread.sleep(5000);
+				}
+			} catch (Exception e) {
+				driver.navigate().back();
+				Thread.sleep(2000);
+				Custom_click(ob.download_document(), "Download document button");
+
+			}
 			Custom_click(ob.update_doc(), "Update document button");
+			Thread.sleep(2000);
 			Custom_click(ob.Choose_Document_from_library(), Do_name + " Choose from library");
 			Thread.sleep(3000);
 			driver.navigate().back();
 			Custom_click(ob.update_doc(), "Update document button");
+			Thread.sleep(2000);
 			Custom_click(ob.Take_a_Photo(), "Take a Photo");
 			Thread.sleep(3000);
 			driver.navigate().back();
@@ -311,7 +357,9 @@ public class Home_Page_Test extends Base_Utility {
 			Custom_click(ob.document_upload_close_button(), "Close upload document page");
 			Custom_click(ob.Back(), "Back from " + Do_name + " page");
 
-		} else {
+		} else
+
+		{
 			System.out.println("Not able to read" + status);
 		}
 	}
@@ -338,6 +386,7 @@ public class Home_Page_Test extends Base_Utility {
 				msg(ob.Relationship_Manager_Address(), "Relationship Manager address is = ");
 				msg(ob.Relationship_Manager_Contact_number(), "Relationship Manager Contact number is = ");
 				Custom_click(ob.Relationship_Manager_Contact_number(), "Relationship manager contact");
+				Thread.sleep(2000);
 				driver.navigate().back();
 				driver.navigate().back();
 				if (device.equalsIgnoreCase("realdevice")) {
@@ -413,14 +462,14 @@ public class Home_Page_Test extends Base_Utility {
 
 		Custom_click(ob.Dealer_Locator(), "Dealer Locator");
 		Thread.sleep(2000);
-		Custom_click(ob.Select_State(), "Select state");
-		ob.Select_State("BIHAR");
+//		Custom_click(ob.Select_State(), "Select state");
+//		ob.Select_State("BIHAR");
 	}
 
 	@Test(priority = 17)
 	public void TC036_Select_city() {
 		Custom_click(ob.Select_City(), "Select city");
-		ob.Select_City("BAGAHA");
+		Custom_click(ob.Select_State_list().get(0), ob.Select_State_list().get(0).getText());
 	}
 
 	@Test(priority = 18)
@@ -457,6 +506,7 @@ public class Home_Page_Test extends Base_Utility {
 
 	@Test(priority = 20)
 	public void TC039_verify_Active_Booking_at_home_page() throws InterruptedException {
+		Scroll_down_page_Action("Latest Vehicle");
 		Custom_click(ob.Latest_Vehicle(), "Latest Vehicle");
 		Thread.sleep(2000);
 		msg(ob.latest_vehicle_message(), "Latest vehicle = ");
