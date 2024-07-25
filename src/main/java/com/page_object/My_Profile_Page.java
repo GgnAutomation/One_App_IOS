@@ -25,10 +25,12 @@ public class My_Profile_Page extends Base_Utility {
 	private WebElement user_mobile_no;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_email']")
 	private WebElement user_email;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_details']")
-	private WebElement More_details;
-	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/tv')]")
-	private List<WebElement> user_info;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_digi']")
+	private WebElement Didi_info;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/vehicle_lbl']")
+	private WebElement Vehicle_name;
+	@FindBy(xpath ="//android.widget.TextView[@resource-id ='com.customerapp.hero:id/vinNo_lbl']")
+	private WebElement vin_number;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/user_dob']")
 	private WebElement user_dob;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/gender']")
@@ -78,20 +80,22 @@ public class My_Profile_Page extends Base_Utility {
 		return user_email;
 	}
 
-	public WebElement More_details() {
-		return More_details;
+	public WebElement Didi_info() {
+		return Didi_info;
 	}
 
 	public WebElement Back() {
 		return Back;
 	}
 
-	public void user_info() {
-		msg(user_info.get(0),   " = " + user_dob.getText());
-		msg(user_info.get(1),   " = " + user_gender.getText());
-		msg(user_info.get(2),    " = " + user_blood_group.getText());
+	public WebElement Vehicle_name()
+	{
+		return Vehicle_name;
 	}
-
+	public WebElement vin_number()
+	{
+		return vin_number;
+	}
 	public WebElement edit_profile_details_button() {
 		return edit_profile_details_button;
 	}

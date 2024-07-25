@@ -20,7 +20,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 	String device = config_getdata("Platform_name");
 
 	@Test(priority = 0)
-	public void TC039_Verify_My_Profile() throws InterruptedException {
+	public void TC042_Verify_My_Profile() throws InterruptedException {
 		Message("************************My_Profile_Page_Test**************************");
 		ob = new My_Profile_Page();
 //		login = new Login_Page_Test();
@@ -41,27 +41,38 @@ public class My_Profile_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 1)
-	public void TC040_verify_more_detais_button() {
-//		Custom_click(ob.More_details(), ob.More_details().getText());
-//		ob.user_info();
+	public void TC043_Degilocker_info_and_my_Vehicles_info() throws InterruptedException {
+		msg(ob.Didi_info(), "Digi info =");
+		msg(ob.Vehicle_name(), "Vehicle name =");
+		msg(ob.vin_number(), "Vehicle number =");
+		Custom_click(ob.vin_number(), "My vehicle");
+		Thread.sleep(2000);
+		Custom_click(ob.Back(), "Back from My vehicle");
 	}
 
 	@Test(priority = 2)
-	public void TC041_edit_profile_button() throws InterruptedException {
+	public void TC044_edit_profile_button() throws InterruptedException {
 		Custom_click(ob.edit_profile_details_button(), "Edit profile details button");
 		Custom_click(ob.profile_pic_edit_btn(), "profile pic edit button");
 		Custom_click(ob.Choose_from_library(), " Chose profile pic from liberary ");
 		try {
-		if(ob.allow().isDisplayed()) {
-		Custom_click(ob.allow(), "Allow"); }}catch(Exception e) {Message("No pop given");}
+			if (ob.allow().isDisplayed()) {
+				Custom_click(ob.allow(), "Allow");
+			}
+		} catch (Exception e) {
+			Message("No pop given");
+		}
 		Thread.sleep(2000);
 		driver.navigate().back();
 		Custom_click(ob.profile_pic_edit_btn(), "profile pic edit button");
 		Custom_click(ob.Take_a_Photo(), " Take a pic for profile ");
 		try {
-		if(ob.while_using_the_app().isDisplayed()) {
-		Custom_click(ob.while_using_the_app(), "while_using_the_app");
-		}}catch(Exception e) {Message("No pop given");}
+			if (ob.while_using_the_app().isDisplayed()) {
+				Custom_click(ob.while_using_the_app(), "while_using_the_app");
+			}
+		} catch (Exception e) {
+			Message("No pop given");
+		}
 		Thread.sleep(2000);
 		driver.navigate().back();
 		Custom_click(ob.profile_pic_edit_btn(), "profile pic edit button");
@@ -70,7 +81,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 3)
-	public void TC042_edit_Personal_Details() throws InterruptedException {
+	public void TC045_edit_Personal_Details() throws InterruptedException {
 		map = new LinkedHashMap<>();
 		map.put("Name", ob.edit_full_name().getText());
 		map.put("Email ID", ob.edit_email_id().getText());
@@ -123,9 +134,8 @@ public class My_Profile_Page_Test extends Base_Utility {
 
 	}
 
-	@Test(dependsOnMethods = "TC042_edit_Personal_Details()", priority = 4)
-	public void TC043_change_original_Personal_Details() throws InterruptedException {
-//			Custom_click(ob.More_details(), ob.More_details().getText());
+	@Test(dependsOnMethods = "TC045_edit_Personal_Details()", priority = 4)
+	public void TC046_change_original_Personal_Details() throws InterruptedException {
 		Custom_click(ob.edit_profile_details_button(), "Edit profile details button");
 		custom_sendkeys(ob.edit_full_name(), map.get("Name"), " Original Name");
 		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
@@ -141,18 +151,16 @@ public class My_Profile_Page_Test extends Base_Utility {
 		Thread.sleep(2000);
 		Custom_click(ob.Save_button(), "Save button");
 		Thread.sleep(3000);
-//		Custom_click(ob.More_details(), ob.More_details().getText());
 
 	}
 
 	@Test(priority = 5)
-	public void TC044_Manage_License() throws InterruptedException {
+	public void TC047_Manage_License() throws InterruptedException {
 		Custom_click(ob.manage_license(), " Manage License");
 		Thread.sleep(2000);
 		try {
 			if (ob.licence_image().isDisplayed()) {
 				Message("Manage License is already given");
-				Custom_click(ob.License_kebab_icon(), "Licence kebab icon");
 			}
 		} catch (Exception e) {
 			Message("Manage License is not given");
@@ -166,17 +174,17 @@ public class My_Profile_Page_Test extends Base_Utility {
 			Thread.sleep(1000);
 			driver.navigate().back();
 			Custom_click(ob.add_Liense_now(), "  Add License now");
-				Custom_click(ob.Choose_from_Digilocker(), ob.Choose_from_Digilocker().getText());
-				Thread.sleep(1000);
-				driver.navigate().back();
-				Custom_click(ob.add_Liense_now(), " Add License now");
+			Custom_click(ob.Choose_from_Digilocker(), ob.Choose_from_Digilocker().getText());
+			Thread.sleep(1000);
+			driver.navigate().back();
+			Custom_click(ob.add_Liense_now(), " Add License now");
 			Custom_click(ob.close_button_for_license_upload(), " Close license upload page");
 		}
 		Custom_click(ob.Back(), " Back from Driver License");
 	}
 
 	@Test(priority = 6)
-	public void TC045_Verify_emergency_contacts() throws InterruptedException {
+	public void TC048_Verify_emergency_contacts() throws InterruptedException {
 		Scroll_down_page_Action("Emergency contacts");
 		Custom_click(ob.emergency_contacts(), "Emergency contacts");
 		Thread.sleep(2000);

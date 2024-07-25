@@ -8,10 +8,10 @@
     <classes>
       <class name="Page_Test.GoodLifePage_Test">
         <methods>
-          <include name="TC114_Verify_refer_friend_in_Goodlife"/>
-          <include name="TC117_verify_Service_Privilegers"/>
-          <include name="TC118_verify_Benefits_and_Experiences"/>
-          <include name="TC116_verify_Points_Earning_and_Redemption"/>
+          <include name="TC119_verify_Service_Privilegers"/>
+          <include name="TC120_verify_Benefits_and_Experiences"/>
+          <include name="TC116_Verify_refer_friend_in_Goodlife"/>
+          <include name="TC118_verify_Points_Earning_and_Redemption"/>
           <include name="OPEN_AND_INSTALL_APP"/>
         </methods>
       </class> <!-- Page_Test.GoodLifePage_Test -->

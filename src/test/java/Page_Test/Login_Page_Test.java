@@ -283,14 +283,14 @@ public class Login_Page_Test extends Base_Utility {
 		} catch (Exception e) {
 			Message("Allow loction pop is not given");
 		}
-//		try {
-//			Thread.sleep(5000);
-//			if (ob1.banner_Img_close().isDisplayed()) {
-//				Custom_click(ob1.banner_Img_close(), " Banner Img close");
-//			}
-//		} catch (Exception e) {
-//			Message("Banner img is not given");
-//		}
+		try {
+			Thread.sleep(5000);
+			if (ob1.banner_Img_close().isDisplayed()) {
+				Custom_click(ob1.banner_Img_close(), " Banner Img close");
+			}
+		} catch (Exception e) {
+			Message("Banner img is not given");
+		}
 
 	}
 

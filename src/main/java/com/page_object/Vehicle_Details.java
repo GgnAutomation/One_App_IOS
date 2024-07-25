@@ -106,43 +106,47 @@ public class Vehicle_Details extends Base_Utility {
 	}
 
 //*************************************Documents *************************************
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_lbl'])[1]")
-	private WebElement Vehicle_insurance;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/subtitle'])[1]")
+	private WebElement Document_info;
 
-	public WebElement Vehicle_insurance() {
-		return Vehicle_insurance;
+	public WebElement Document_info() {
+		return Document_info;
 	}
 
-	@FindBy(xpath = "(//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/imageView'])[1]")
-	private WebElement Insurance_image;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_lbl'])[2]")
-	private WebElement Vehicle_R_C;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_nameText'])[1]")
+	private WebElement RC_Document;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_nameText'])[2]")
+	private WebElement Challans;
 
-	public WebElement Vehicle_R_C() {
-		return Vehicle_R_C;
+	public WebElement RC_Document() {
+		return RC_Document;
 	}
 
-	@FindBy(xpath = "(//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/imageView'])[2]")
-	private WebElement R_C_image;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_value']")
-	private List<WebElement> vehicle_info;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_value'])[4]")
-	private WebElement nick_name_edit;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_nameText'])[3]")
+	private WebElement PUC;
+	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/doc_nameText'])[4]")
+	private WebElement Vehicle_Insurance;
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/cross_btn']")
+	private WebElement Document_upload_cross_btn;
 	@FindBy(xpath = "//android.widget.EditText[@resource-id ='com.customerapp.hero:id/text_input_editext']")
 	private WebElement nick_name_input_field;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
 	private WebElement save_button;
 
-	public WebElement Insurance_image() {
-		return Insurance_image;
+	public WebElement Challans() {
+		return Challans;
 	}
 
-	public WebElement R_C_image() {
-		return R_C_image;
+	public WebElement PUC() {
+		return PUC;
 	}
 
-	public WebElement nick_name_edit() {
-		return nick_name_edit;
+	public WebElement Vehicle_Insurance() {
+		return Vehicle_Insurance;
+	}
+
+	public WebElement Document_upload_cross_btn() {
+		return Document_upload_cross_btn;
 	}
 
 	public WebElement nick_name_input_field() {
@@ -162,18 +166,6 @@ public class Vehicle_Details extends Base_Utility {
 	private List<WebElement> Documents_status;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/title']")
 	private WebElement Document_Check;
-//	@FindBy(xpath = "//android.widget.TextView[@text ='Add now']")
-//	private WebElement Add_Now;
-//	@FindBy(xpath = "//android.widget.Button[@resource-id = 'com.android.permissioncontroller:id/permission_allow_foreground_only_button']")
-//	private WebElement While_using_the_app;
-//	@FindBy(xpath = "//android.widget.Button[@resource-id ='com.android.permissioncontroller:id/permission_allow_button']")
-//	private WebElement Allow;
-//	@FindBy(xpath = "//android.widget.TextView[@text ='Choose from library']")
-//	private WebElement Choose_Document_from_library;
-//	@FindBy(xpath = "//android.widget.TextView[@text ='Take a Photo']")
-//	private WebElement Take_a_Photo;
-//	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/cross_btn']")
-//	private WebElement document_upload_close_button;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/back_btn']")
 	private WebElement Back;
 

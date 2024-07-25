@@ -15,7 +15,7 @@ public class E_Shop_test extends Base_Utility {
 	String device = config_getdata("Platform_name");
 
 	@Test(priority = 0)
-	public void TC119_registered_customers() throws InterruptedException {
+	public void TC121_registered_customers() throws InterruptedException {
 		Message("************************E Shop**************************");
 		ob = new E_Shop();
 //		login = new Login_Page_Test();

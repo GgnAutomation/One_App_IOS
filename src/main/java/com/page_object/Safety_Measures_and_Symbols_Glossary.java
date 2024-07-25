@@ -27,7 +27,7 @@ public class Safety_Measures_and_Symbols_Glossary extends Base_Utility {
 	}
 
 	public void Safety_message() {
-		for (int i = 13; i < Safety_message.size(); i++) {
+		for (int i = 0; i < Safety_message.size(); i++) {
 			msg(Safety_message.get(i), "");
 		}
 	}
@@ -60,7 +60,7 @@ public class Safety_Measures_and_Symbols_Glossary extends Base_Utility {
 
 	public void Symbols_Glossary_message() {
 		try {
-			for (int i = 13, j = 0; i < Symbols_Glossary_message.size(); i++) {
+			for (int i = 0, j = 0; i < Symbols_Glossary_message.size(); i++) {
 				msg(Symbols_Glossary_message.get(i), "");
 				if (i == Symbols_Glossary_message.size() - 1) {
 					String name = Symbols_Glossary_message.get(i).getText();
@@ -71,7 +71,7 @@ public class Safety_Measures_and_Symbols_Glossary extends Base_Utility {
 						}
 						Scroll_down_page_Action(name);
 						j++;
-						i = 17;
+						i = 4;
 					}
 				}
 		} catch (Exception e) {

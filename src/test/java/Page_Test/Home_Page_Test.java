@@ -313,18 +313,6 @@ public class Home_Page_Test extends Base_Utility {
 			Thread.sleep(2000);
 			Custom_click(ob.document_Status().get(2), Do_name + " " + status);
 			Thread.sleep(2000);
-			try {
-				if (ob.Choose_from_Digilocker().isDisplayed()) {
-					Custom_click(ob.Choose_from_Digilocker(), Do_name + " " + "Choose from Digilocker");
-					Thread.sleep(3000);
-					driver.navigate().back();
-					Thread.sleep(2000);
-				}
-			} catch (Exception e) {
-				Message("Digilocker option is not given");
-				Custom_click(ob.document_upload_close_button(), "Close upload document page");
-			}
-			Custom_click(ob.document_Status().get(2), Do_name + " " + status);
 			Custom_click(ob.document_upload_close_button(), "Close upload document page");
 		} else if (status.equalsIgnoreCase("View File")) {
 			Message(Do_name + " is already available");

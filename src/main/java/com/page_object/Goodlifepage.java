@@ -146,10 +146,16 @@ public class Goodlifepage extends Base_Utility {
 
 	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id')]")
 	private List<WebElement> Earning_History_value;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/title']")
+	private WebElement Earning_History_title;
 
 	public void Earning_History_value() {
-		for (int i = 1; i < Earning_History_value.size(); i++) {
-			msg(Earning_History_value.get(i), "");
+		try {
+			msg(Earning_History_title, "Earning_History =");
+		} catch (Exception e) {
+			for (int i = 1; i < Earning_History_value.size(); i++) {
+				msg(Earning_History_value.get(i), "");
+			}
 		}
 	}
 
@@ -201,8 +207,12 @@ public class Goodlifepage extends Base_Utility {
 	private WebElement Referral_Offer;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/points_earning_redemption_view_detail_btn']")
 	private WebElement Know_more;
-	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id')]")
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/lbl')]")
 	private List<WebElement> Referral_all_offer;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/offer_frnd_lbl']")
+	private WebElement refer_offer;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/referral_view_detail_btn']")
+	private WebElement refer_btn;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/termCondition']")
 	private WebElement term_Condition;
 
@@ -210,19 +220,24 @@ public class Goodlifepage extends Base_Utility {
 		return Referral_Offer;
 	}
 
+	public WebElement refer_btn() {
+		return refer_btn;
+	}
+
 	public WebElement Know_more() {
 		return Know_more;
 	}
 
 	public void Referral_all_offer() {
-		for (int i = 0; i < Referral_all_offer.size() - 1; i++) {
-			if (i < 7) {
+		try {
+			for (int i = 0; i < Referral_all_offer.size(); i++) {
 				msg(Referral_all_offer.get(i), "");
-			} else if (i == 7) {
-				Custom_click(Referral_all_offer.get(i), Referral_all_offer.get(i).getText());
 			}
-
+			msg(refer_offer, "Refferal offer =");
+		} catch (Exception e) {
+			Message("refer all offier not able to click");
 		}
+
 	}
 
 	public WebElement term_Condition() {

@@ -17,7 +17,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	String device = config_getdata("Platform_name");
 
 	@Test(priority = 0)
-	public void TC066_Verify_App_Related_Feedback() throws InterruptedException {
+	public void TC068_Verify_App_Related_Feedback() throws InterruptedException {
 		Message("************************Feedback and About Hero test**************************");
 		ob = new Feedback_and_About_Hero();
 //		login = new Login_Page_Test();
@@ -36,7 +36,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 1)
-	public void TC067_Verify_Sales_Feedback() throws InterruptedException {
+	public void TC069_Verify_Sales_Feedback() throws InterruptedException {
 		Custom_click(ob.Sales(), "Sales category");
 		Custom_click(ob.Continue_btn(), "Continue button");
 		Thread.sleep(2000);
@@ -46,7 +46,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 2)
-	public void TC068_Verify_Service_Feedback() throws InterruptedException {
+	public void TC070_Verify_Service_Feedback() throws InterruptedException {
 		Custom_click(ob.Service(), "Service category");
 		Custom_click(ob.Continue_btn(), "Continue button");
 		Thread.sleep(2000);
@@ -56,7 +56,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 3)
-	public void TC069_Verify_Parts_Feedback() throws InterruptedException {
+	public void TC071_Verify_Parts_Feedback() throws InterruptedException {
 		Custom_click(ob.Parts(), "Parts category");
 		Custom_click(ob.Continue_btn(), "Continue button");
 		Thread.sleep(2000);
@@ -67,7 +67,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 4)
-	public void TC070_Verify_Goodlife_Feedback() throws InterruptedException {
+	public void TC072_Verify_Goodlife_Feedback() throws InterruptedException {
 		Custom_click(ob.Goodlife(), "Goodlife category");
 		Custom_click(ob.Continue_btn(), "Continue button");
 		Thread.sleep(2000);
@@ -77,7 +77,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 5)
-	public void TC071_Verify_Suggestions_Feedback() throws InterruptedException {
+	public void TC073_Verify_Suggestions_Feedback() throws InterruptedException {
 		Custom_click(ob.Suggestions(), "Suggestions category");
 		Custom_click(ob.Continue_btn(), "Continue button");
 		Thread.sleep(2000);
@@ -89,7 +89,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 6)
-	public void TC072_verify_About_Hero() throws InterruptedException {
+	public void TC074_verify_About_Hero() throws InterruptedException {
 		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.about_hero(), ob.about_hero().getText());
 		Thread.sleep(10000);
@@ -106,7 +106,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 7)
-	public void TC073_verify_Side_menu_page_function() throws InterruptedException {
+	public void TC075_verify_Side_menu_page_function() throws InterruptedException {
 		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.goodlife(), "Goodlife");
 		Thread.sleep(6000);
@@ -115,7 +115,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 8)
-	public void TC074_Wheels_of_Trust() throws InterruptedException {
+	public void TC076_Wheels_of_Trust() throws InterruptedException {
 		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.wheels_of_trust(), "Wheels of trust");
 		Thread.sleep(5000);
@@ -124,7 +124,7 @@ public class Feedback_and_About_Hero_test extends Base_Utility {
 	}
 
 	@Test(priority = 9)
-	public void TC075_Verify_joyride() throws InterruptedException {
+	public void TC077_Verify_joyride() throws InterruptedException {
 		Custom_click(ob.side_menu_button(), "Side menu button");
 		Custom_click(ob.Joyride(), "Joyride");
 		ob.Joyride_info();
