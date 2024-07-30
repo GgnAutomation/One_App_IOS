@@ -107,7 +107,7 @@ public class Login_Page_Test extends Base_Utility {
 			msg(ob.Terms_of_Use_condition_for_real_device(), "Terms of use: First condition = ");
 		}
 		endreadtime = System.currentTimeMillis();
-		Message("Raad time in Tearms of use =" + (endreadtime - starreadtime) + " MS");
+		Message("Read time in Tearms of use =" + (endreadtime - starreadtime) + " MS");
 		Custom_click(ob.back_page(), "back terms of use page ");
 	}
 

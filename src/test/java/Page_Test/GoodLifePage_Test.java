@@ -15,8 +15,8 @@ public class GoodLifePage_Test extends Base_Utility {
 	public void TC109_Verify_goodlife_info() throws InterruptedException {
 		Message("*********************Goodlife_page**************************");
 		ob = new Goodlifepage();
-		login = new Login_Page_Test();
-		login.login();
+//		login = new Login_Page_Test();
+//		login.login();
 		Thread.sleep(5000);
 		Custom_click(ob.goodLife(), ob.goodLife().getText());
 		Thread.sleep(10000);

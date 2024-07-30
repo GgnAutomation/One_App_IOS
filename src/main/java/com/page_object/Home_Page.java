@@ -54,6 +54,7 @@ public class Home_Page extends Base_Utility {
 		Custom_click(vehicle_drop_down, " Drop down");
 		Custom_click(all_vehicle_inside_drop_down.get(0), "Select Vehicle");
 		Custom_click(vehicle_drop_down, " Drop down");
+		Thread.sleep(2000);
 		Custom_click(select_vehicle_close_btn, "select vehicle close button");
 	}
 

@@ -563,6 +563,8 @@ public class Services_Page extends Base_Utility {
 //*********************************************Last Serviced********************************
 	@FindBy(xpath = "//android.view.ViewGroup[@resource-id= 'com.customerapp.hero:id/service_history_lay']")
 	private WebElement Last_serviced_history;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/title')]")
+	private WebElement Service_title;
 	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id')]")
 	private List<WebElement> Service_history;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/brandName']")
@@ -604,8 +606,10 @@ public class Services_Page extends Base_Utility {
 	}
 
 	public void Service_history() throws InterruptedException {
-		for (int i = 0; i < Service_history.size(); i++) {
-			try {
+		try {
+			msg(Service_title, "Service info =");
+		} catch (Exception e) {
+			for (int i = 0; i < Service_history.size(); i++) {
 				String service_info = Service_history.get(i).getText();
 				if (service_info.equalsIgnoreCase("Details")) {
 					Custom_click(Service_history.get(i), service_info);
@@ -616,7 +620,7 @@ public class Services_Page extends Base_Utility {
 							Message("Service center name =" + sevice_center_info.get(0).getText());
 
 						}
-					} catch (Exception e) {
+					} catch (Exception d) {
 						Message("Service center name is not given");
 					}
 					Message("Service center address =" + sevice_center_info.get(1).getText());
@@ -631,8 +635,7 @@ public class Services_Page extends Base_Utility {
 				} else {
 					Message(service_info);
 				}
-			} catch (Exception e) {
-				Message("" + e);
+
 			}
 		}
 	}
