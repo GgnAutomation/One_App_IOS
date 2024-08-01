@@ -17,7 +17,7 @@ public class Safety_Measures_and_Symbols_Glossary extends Base_Utility {
 //************************************Safety Measures**************************
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/rv_item_lbl'])[5]")
 	private WebElement Safety_Measures;
-	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id')]")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/lbl1']")
 	private List<WebElement> Safety_message;
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/back_btn']")
 	private WebElement back_button;
@@ -43,7 +43,7 @@ public class Safety_Measures_and_Symbols_Glossary extends Base_Utility {
 	private WebElement side_menu_btn;
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/rv_item_lbl'])[6]")
 	private WebElement Symbols_Glossary;
-	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id')]")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/lbl1']")
 	private List<WebElement> Symbols_Glossary_message;
 
 	public WebElement home() {

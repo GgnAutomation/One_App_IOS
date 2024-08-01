@@ -643,7 +643,7 @@ public class Services_Page extends Base_Utility {
 //*********************************************Tips & DIY********************************
 	@FindBy(xpath = "//android.view.ViewGroup[@resource-id ='com.customerapp.hero:id/tips_diy_constraint_lay']")
 	private WebElement Tips_and_DIY;
-	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id, 'com.customerapp.hero:id')]")
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id, 'com.customerapp.hero:id/lbl')]")
 	private List<WebElement> tips_list;
 	@FindBy(xpath = "//android.widget.ImageView[@content-desc ='PDF PAGE']")
 	private WebElement image_verify;
@@ -662,24 +662,21 @@ public class Services_Page extends Base_Utility {
 
 	public void tips_list() throws InterruptedException {
 		String tips = "";
+		Message("" + tips_list.size());
 		try {
 			for (int i = 1; i < 16; i++) {
-				try {
-					tips = tips_list.get(i).getText();
-					Message(tips);
-					Custom_click(tips_list.get(i), tips);
-					Thread.sleep(6000);
-					if (image_verify.isDisplayed()) {
-						Message(tips + " PDF image is available for guide");
-					} else {
-						Message(tips + " PDF image is not available for guide");
-					}
-					Custom_click(back_button, "Back from " + tips);
-					i++;
-				} catch (Exception e) {
-					Message("" + e);
-					Custom_click(back_button, "Back from " + tips);
+				Thread.sleep(1000);
+				tips = tips_list.get(i).getText();
+				Message(tips);
+				Custom_click(tips_list.get(i), tips);
+				Thread.sleep(5000);
+				if (image_verify.isDisplayed()) {
+					Message(tips + " PDF image is available for guide");
+				} else {
+					Message(tips + " PDF image is not available for guide");
 				}
+				Custom_click(back_button, "Back from " + tips);
+				i++;
 			}
 		} catch (Exception e) {
 			Message("" + e);

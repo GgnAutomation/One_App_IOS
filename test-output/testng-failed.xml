@@ -4,77 +4,14 @@
   <listeners>
     <listener class-name="com.utility.listner"/>
   </listeners>
-  <test thread-count="5" name="All test class(failed)">
+  <test thread-count="5" name="Services_Page_Test(failed)">
     <classes>
       <class name="Page_Test.Services_Page_Test">
         <methods>
-          <include name="TC078_Vehicle_details_on_service_page"/>
-          <include name="TC088_View_Service_schedule_3500"/>
-          <include name="TC081_Verify_Serviced_book_information"/>
-          <include name="TC093_View_Service_schedule_18500"/>
+          <include name="TC108_Verify_all_DIY_Videos_list"/>
           <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC080_Review_Service_Details"/>
-          <include name="TC097_View_Service_schedule_60_days"/>
-          <include name="TC082_verify_service_type"/>
-          <include name="TC095_View_Service_schedule_24500"/>
-          <include name="TC089_View_Service_schedule_6500"/>
-          <include name="TC079_Book_Service"/>
-          <include name="TC092_View_Service_schedule_15500"/>
-          <include name="TC091_View_Service_schedule_12500"/>
-          <include name="TC096_View_Service_schedule_27500"/>
-          <include name="TC098_View_Service_schedule_160_days"/>
-          <include name="TC094_View_Service_schedule_21500"/>
-          <include name="TC090_View_Service_schedule_9500"/>
-          <include name="TC085_Verify_Reschedule_service_information"/>
-          <include name="TC087_View_Service_schedule_750"/>
         </methods>
       </class> <!-- Page_Test.Services_Page_Test -->
-      <class name="Page_Test.Feedback_and_About_Hero_test">
-        <methods>
-          <include name="TC076_Wheels_of_Trust"/>
-          <include name="TC077_Verify_joyride"/>
-          <include name="TC069_Verify_Sales_Feedback"/>
-          <include name="TC073_Verify_Suggestions_Feedback"/>
-          <include name="TC068_Verify_App_Related_Feedback"/>
-          <include name="TC072_Verify_Goodlife_Feedback"/>
-          <include name="TC070_Verify_Service_Feedback"/>
-          <include name="TC074_verify_About_Hero"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC071_Verify_Parts_Feedback"/>
-          <include name="TC075_verify_Side_menu_page_function"/>
-        </methods>
-      </class> <!-- Page_Test.Feedback_and_About_Hero_test -->
-      <class name="Page_Test.GoodLifePage_Test">
-        <methods>
-          <include name="TC119_verify_Service_Privilegers"/>
-          <include name="TC120_verify_Benefits_and_Experiences"/>
-          <include name="TC113_Earning_and_Redemption_History"/>
-          <include name="TC116_Verify_refer_friend_in_Goodlife"/>
-          <include name="TC118_verify_Points_Earning_and_Redemption"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC115_Verify_Welcome_Rewards"/>
-          <include name="TC111_Become_a_Gold_Member"/>
-          <include name="TC117_Verify_Winner_Of_The_Month"/>
-        </methods>
-      </class> <!-- Page_Test.GoodLifePage_Test -->
-      <class name="Page_Test.Home_Page_Test">
-        <methods>
-          <include name="TC030_Verify_Relationship_Manager"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-        </methods>
-      </class> <!-- Page_Test.Home_Page_Test -->
-      <class name="Page_Test.Refer_a_friend_and_Contact_us_test">
-        <methods>
-          <include name="TC058_Verify_Refer_yourself"/>
-          <include name="TC063_Verify_Linkedin_in_Contact_us_page"/>
-          <include name="TC061_Verify_Whatsapp_in_Contact_us_page"/>
-          <include name="TC064_Verify_twitter_in_Contact_us_page"/>
-          <include name="TC059_Verify_Facebook_in_Contact_us_page"/>
-          <include name="TC062_Verify_youTube_in_Contact_us_page"/>
-          <include name="OPEN_AND_INSTALL_APP"/>
-          <include name="TC065_Verify_Contact_via_Email"/>
-        </methods>
-      </class> <!-- Page_Test.Refer_a_friend_and_Contact_us_test -->
     </classes>
-  </test> <!-- All test class(failed) -->
+  </test> <!-- Services_Page_Test(failed) -->
 </suite> <!-- Failed suite [Hero_App] -->

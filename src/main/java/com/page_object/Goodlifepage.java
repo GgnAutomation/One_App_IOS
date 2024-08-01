@@ -244,20 +244,26 @@ public class Goodlifepage extends Base_Utility {
 		return term_Condition;
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1']")
+	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/winner_trophy_ic']")
 	private WebElement Winner_Of_The_Month;
 
 	public WebElement Winner_Of_The_Month() {
 		return Winner_Of_The_Month;
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/')]")
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1']")
+	private WebElement winner_month;
+	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/digital_voucher_peice']")
+	private WebElement digital_voucher_info;
+	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id, 'com.customerapp.hero:id/winner')]")
 	private List<WebElement> Winner_of_the_month_info;
 
 	public void Winner_of_the_month_info() {
+		msg(winner_month, "winne month =");
 		for (int i = 0; i < Winner_of_the_month_info.size(); i++) {
 			msg(Winner_of_the_month_info.get(i), "");
 		}
+		msg(digital_voucher_info, "digital voucher info =");
 	}
 
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl3']")

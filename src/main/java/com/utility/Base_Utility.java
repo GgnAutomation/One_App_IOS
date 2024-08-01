@@ -59,7 +59,7 @@ public class Base_Utility
 	String excelpath = System.getProperty("user.dir") + "/Data/data1.xlsx";
 	public static AndroidDriver driver;
 	String enveronment = config_getdata("env") ;
-	String Apikey ="gb2hycp3rd35mt73jy4vc85f" , username ="anil1.singh@heromotocorp.com";
+	String Apikey ="2gdc5pv55mh54mqtwmvj4xbr" , username ="randhir.kumar@heromotocorp.com";
 	
 
 	@BeforeTest
@@ -260,17 +260,17 @@ public class Base_Utility
 	@Override
 	public ExtentReports getreports() {
 		String currenttime = new SimpleDateFormat("dd.MM.YYYY.HH.mm.ss").format(new Date());
-		String path = System.getProperty("user.dir") + "\\Report\\Test-Report -" + currenttime + ".html";
+		String path = System.getProperty("user.dir") + "/Report/Test-Report -" + currenttime + ".html";
 		report = new ExtentSparkReporter(path);
-		report.config().setDocumentTitle("Hero_App Test Report");
-		report.config().setReportName("Hero_App");
+		report.config().setDocumentTitle("One_App Test Report");
+		report.config().setReportName("One_App");
 		report.config().setTheme(Theme.DARK);
 		extent = new ExtentReports();
 		extent.attachReporter(report);
-		extent.setSystemInfo("Project Name", "Hero App");
-		extent.setSystemInfo("Laptop", "Dell intel core i7");
+		extent.setSystemInfo("Project Name", "One App");
+		extent.setSystemInfo("Laptop", "MacBook Pro intel core i7");
 		extent.setSystemInfo("QA", "Nitesh Kumar");
-		extent.setSystemInfo("Operating system", "Windows 10 pro");
+		extent.setSystemInfo("Operating system", "Sonoma 14.5");
 		extent.setSystemInfo("BrowserName", "Android Studio");
 		return extent;
 	}
