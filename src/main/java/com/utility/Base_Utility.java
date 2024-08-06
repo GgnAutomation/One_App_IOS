@@ -141,13 +141,13 @@ public class Base_Utility
 				} else {
 					pcloudyOptions.put("pCloudy_ApplicationName", "app-UatVariant-debug.apk");
 				}
-				pcloudyOptions.put("pCloudy_WildNet", "false");
-				pcloudyOptions.put("pCloudy_EnableVideo", "true");
-				pcloudyOptions.put("pCloudy_EnablePerformanceData", "true");
-				pcloudyOptions.put("pCloudy_EnableDeviceLogs", "true");
+				pcloudyOptions.put("pCloudy_WildNet", false);
+				pcloudyOptions.put("pCloudy_EnableVideo", true);
+				pcloudyOptions.put("pCloudy_EnablePerformanceData", true);
+				pcloudyOptions.put("pCloudy_EnableDeviceLogs", true);
 				pcloudyOptions.put("appiumVersion", "2.0.0");
 				capabilities.setCapability("pcloudy:options", pcloudyOptions);
-				driver = new AndroidDriver(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
+				driver = new AndroidDriver(new URL("https://ind-west.pcloudy.com/appiumcloud/wd/hub"), capabilities);
 				
 //					https://device.pcloudy.com/appiumcloud/wd/hub   https://ind-west.pcloudy.com/appiumcloud/wd/hub
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -160,8 +160,8 @@ public class Base_Utility
 				UiAutomator2Options db = new UiAutomator2Options();
 				db.setCapability("appium:automationName", "uiautomator2");
 				db.setCapability("platformName", "Android");
-				db.setCapability("appium:deviceName", "Redmi 10 Prime");
-				db.setCapability("appium:udid", "41f7d4580507"); // 3323262910AA04DS //192.168.1.3:55555
+				db.setCapability("appium:deviceName", "realme 9");
+				db.setCapability("appium:udid", "74633a84"); // 3323262910AA04DS //192.168.1.3:55555
 				db.setCapability("appium:avdLaunchTimeout", 600000);
 				db.setCapability("appPackage", "com.customerapp.hero");
 				db.setCapability("appActivity", "com.customerapp.hero.views.activity.HmcDashboard");

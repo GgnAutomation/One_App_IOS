@@ -151,6 +151,7 @@ public class Login_Page_Test extends Base_Utility {
 		Custom_click(ob.Continue_as_guest(), "Continue as guest ");
 		ob.guest_page_info();
 		Custom_click(ob.nearby_dealer(), "Vehicle Exchange ");
+		Thread.sleep(2000);
 		Custom_click(ob.back_page(), "Back from Vehicle Exchange");
 		Custom_click(ob.vehicle_exchange(), "Find A Dealer ");
 		Thread.sleep(2000);
