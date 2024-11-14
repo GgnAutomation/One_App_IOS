@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Login_page</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/13/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>10/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Aug 01 19:13:09 IST 2024</td>
+<td>Started on:</td><td>Wed Nov 13 15:29:51 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>5 seconds (5962 ms)</td>
+<tr><td>Total time:</td><td>885 seconds (885519 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,13 +76,56 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Page_Test.Login_Page_Test.TC007_Privacy_policy()'><b>TC007_Privacy_policy</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.Privacy_Policy()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC007_Privacy_policy(Login_Page_Test.java:117)
+<td title='Page_Test.Login_Page_Test.TC005_max_digit_mobile_number()'><b>TC005_max_digit_mobile_number</b><br>Test class: Page_Test.Login_Page_Test</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.6.1&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.ios.IOSDriver
+Command: [574aaba7-1322-4196-a2a3-d29f0731c822, findElement {using=xpath, value=//XCUIElementTypeTextField[@name=&apos; Registered mobile number&apos;]}]
+Capabilities {appium:automationName: XCUITest, appium:bundleId: com.customerapp.hero, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:platformVersion: 17.7, appium:showXcodeLog: true, appium:takesScreenshot: true, appium:udid: 00008120-0004798A21F9A01E, appium:webStorageEnabled: false, platformName: IOS}
+Session ID: 574aaba7-1322-4196-a2a3-d29f0731c822
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.clear(Unknown Source)
+	at Page_Test.Login_Page_Test.TC005_max_digit_mobile_number(Login_Page_Test.java:86)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace32749970", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace32749970'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.Privacy_Policy()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC007_Privacy_policy(Login_Page_Test.java:117)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace918584437", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace918584437'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.6.1&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.ios.IOSDriver
+Command: [574aaba7-1322-4196-a2a3-d29f0731c822, findElement {using=xpath, value=//XCUIElementTypeTextField[@name=&apos; Registered mobile number&apos;]}]
+Capabilities {appium:automationName: XCUITest, appium:bundleId: com.customerapp.hero, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:platformVersion: 17.7, appium:showXcodeLog: true, appium:takesScreenshot: true, appium:udid: 00008120-0004798A21F9A01E, appium:webStorageEnabled: false, platformName: IOS}
+Session ID: 574aaba7-1322-4196-a2a3-d29f0731c822
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.clear(Unknown Source)
+	at Page_Test.Login_Page_Test.TC005_max_digit_mobile_number(Login_Page_Test.java:86)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -110,53 +153,59 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
-<tr>
-<td title='Page_Test.Login_Page_Test.TC011_resend_butn()'><b>TC011_resend_butn</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.resend_button()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC011_resend_butn(Login_Page_Test.java:209)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace586479858", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace586479858'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.resend_button()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC011_resend_butn(Login_Page_Test.java:209)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
+<td>45</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
 <tr>
 <td title='Page_Test.Login_Page_Test.TC004_Verify_Login_with_short_length_of_mobile_number_credential()'><b>TC004_Verify_Login_with_short_length_of_mobile_number_credential</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.mobile_No()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC004_Verify_Login_with_short_length_of_mobile_number_credential(Login_Page_Test.java:69)
+<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.6.1&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.ios.IOSDriver
+Command: [574aaba7-1322-4196-a2a3-d29f0731c822, findElement {using=xpath, value=//XCUIElementTypeTextField[@name=&apos; Registered mobile number&apos;]}]
+Capabilities {appium:automationName: XCUITest, appium:bundleId: com.customerapp.hero, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:platformVersion: 17.7, appium:showXcodeLog: true, appium:takesScreenshot: true, appium:udid: 00008120-0004798A21F9A01E, appium:webStorageEnabled: false, platformName: IOS}
+Session ID: 574aaba7-1322-4196-a2a3-d29f0731c822
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.clear(Unknown Source)
+	at Page_Test.Login_Page_Test.TC004_Verify_Login_with_short_length_of_mobile_number_credential(Login_Page_Test.java:77)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace498537855", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace498537855'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.mobile_No()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC004_Verify_Login_with_short_length_of_mobile_number_credential(Login_Page_Test.java:69)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace322100932", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace322100932'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.6.1&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.ios.IOSDriver
+Command: [574aaba7-1322-4196-a2a3-d29f0731c822, findElement {using=xpath, value=//XCUIElementTypeTextField[@name=&apos; Registered mobile number&apos;]}]
+Capabilities {appium:automationName: XCUITest, appium:bundleId: com.customerapp.hero, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:platformVersion: 17.7, appium:showXcodeLog: true, appium:takesScreenshot: true, appium:udid: 00008120-0004798A21F9A01E, appium:webStorageEnabled: false, platformName: IOS}
+Session ID: 574aaba7-1322-4196-a2a3-d29f0731c822
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.clear(Unknown Source)
+	at Page_Test.Login_Page_Test.TC004_Verify_Login_with_short_length_of_mobile_number_credential(Login_Page_Test.java:77)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -184,316 +233,59 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
-<tr>
-<td title='Page_Test.Login_Page_Test.TC012_inavalid_OTP()'><b>TC012_inavalid_OTP</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.enter_inavalid_OTP()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC012_inavalid_OTP(Login_Page_Test.java:216)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1084698317", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1084698317'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.enter_inavalid_OTP()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC012_inavalid_OTP(Login_Page_Test.java:216)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
-<tr>
-<td title='Page_Test.Login_Page_Test.TC013_edit_moble()'><b>TC013_edit_moble</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.edit_moble_button()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC013_edit_moble(Login_Page_Test.java:223)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1990282381", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1990282381'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.edit_moble_button()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC013_edit_moble(Login_Page_Test.java:223)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
-<tr>
-<td title='Page_Test.Login_Page_Test.TC001_Verify_Login_with_Invalid_credential()'><b>TC001_Verify_Login_with_Invalid_credential</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.apache.logging.log4j.Logger.info(String)&quot; because &quot;com.utility.Base_Utility.log&quot; is null
-	at com.utility.Base_Utility.Message(Base_Utility.java:502)
-	at Page_Test.Login_Page_Test.TC001_Verify_Login_with_Invalid_credential(Login_Page_Test.java:33)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace15429318", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace15429318'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.apache.logging.log4j.Logger.info(String)&quot; because &quot;com.utility.Base_Utility.log&quot; is null
-	at com.utility.Base_Utility.Message(Base_Utility.java:502)
-	at Page_Test.Login_Page_Test.TC001_Verify_Login_with_Invalid_credential(Login_Page_Test.java:33)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
-<tr>
-<td title='Page_Test.Login_Page_Test.TC008_contact_Us()'><b>TC008_contact_Us</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.contact_us()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC008_contact_Us(Login_Page_Test.java:143)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1801709229", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1801709229'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.contact_us()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC008_contact_Us(Login_Page_Test.java:143)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
-<tr>
-<td title='Page_Test.Login_Page_Test.TC002_invalidmobileno()'><b>TC002_invalidmobileno</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.mobile_No()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC002_invalidmobileno(Login_Page_Test.java:46)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2085813377", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2085813377'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.mobile_No()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC002_invalidmobileno(Login_Page_Test.java:46)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
-<tr>
-<td title='Page_Test.Login_Page_Test.TC006_Terms_of_use_button()'><b>TC006_Terms_of_use_button</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.utility.listner.getcapcture(String)&quot; because &quot;com.utility.Base_Utility.lis&quot; is null
-	at com.utility.Base_Utility.Scroll_down_page_Action(Base_Utility.java:336)
-	at Page_Test.Login_Page_Test.TC006_Terms_of_use_button(Login_Page_Test.java:97)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1786077314", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1786077314'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.utility.listner.getcapcture(String)&quot; because &quot;com.utility.Base_Utility.lis&quot; is null
-	at com.utility.Base_Utility.Scroll_down_page_Action(Base_Utility.java:336)
-	at Page_Test.Login_Page_Test.TC006_Terms_of_use_button(Login_Page_Test.java:97)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
-<tr>
-<td title='Page_Test.Login_Page_Test.TC009_Continue_as_guest()'><b>TC009_Continue_as_guest</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.Continue_as_guest()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC009_Continue_as_guest(Login_Page_Test.java:151)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1732902480", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1732902480'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.Continue_as_guest()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC009_Continue_as_guest(Login_Page_Test.java:151)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
-<tr>
-<td title='Page_Test.Login_Page_Test.TC005_max_digit_mobile_number()'><b>TC005_max_digit_mobile_number</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.mobile_No()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC005_max_digit_mobile_number(Login_Page_Test.java:77)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1808584758", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1808584758'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.mobile_No()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC005_max_digit_mobile_number(Login_Page_Test.java:77)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
+<td>46</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
 <tr>
 <td title='Page_Test.Login_Page_Test.TC003_verify_update_number()'><b>TC003_verify_update_number</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.continue_button()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC003_verify_update_number(Login_Page_Test.java:56)
+<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.6.1&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.ios.IOSDriver
+Command: [574aaba7-1322-4196-a2a3-d29f0731c822, findElement {using=xpath, value=//*[@name=&apos;Allow&apos;]}]
+Capabilities {appium:automationName: XCUITest, appium:bundleId: com.customerapp.hero, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:platformVersion: 17.7, appium:showXcodeLog: true, appium:takesScreenshot: true, appium:udid: 00008120-0004798A21F9A01E, appium:webStorageEnabled: false, platformName: IOS}
+Session ID: 574aaba7-1322-4196-a2a3-d29f0731c822
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.getText(Unknown Source)
+	at Page_Test.Login_Page_Test.TC003_verify_update_number(Login_Page_Test.java:70)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace671536858", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace671536858'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.continue_button()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC003_verify_update_number(Login_Page_Test.java:56)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace556773329", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace556773329'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.6.1&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.ios.IOSDriver
+Command: [574aaba7-1322-4196-a2a3-d29f0731c822, findElement {using=xpath, value=//*[@name=&apos;Allow&apos;]}]
+Capabilities {appium:automationName: XCUITest, appium:bundleId: com.customerapp.hero, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:platformVersion: 17.7, appium:showXcodeLog: true, appium:takesScreenshot: true, appium:udid: 00008120-0004798A21F9A01E, appium:webStorageEnabled: false, platformName: IOS}
+Session ID: 574aaba7-1322-4196-a2a3-d29f0731c822
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.getText(Unknown Source)
+	at Page_Test.Login_Page_Test.TC003_verify_update_number(Login_Page_Test.java:70)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -521,45 +313,67 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
+<td>92</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Page_Test.Login_Page_Test.TC007_Privacy_policy()'><b>TC007_Privacy_policy</b><br>Test class: Page_Test.Login_Page_Test</td>
+<td></td>
+<td>74</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
+<tr>
+<td title='Page_Test.Login_Page_Test.TC011_resend_butn()'><b>TC011_resend_butn</b><br>Test class: Page_Test.Login_Page_Test</td>
+<td></td>
+<td>26</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
+<tr>
+<td title='Page_Test.Login_Page_Test.TC001_Setup_Prerequisites()'><b>TC001_Setup_Prerequisites</b><br>Test class: Page_Test.Login_Page_Test</td>
+<td></td>
+<td>45</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
+<tr>
+<td title='Page_Test.Login_Page_Test.TC002_invalidmobileno()'><b>TC002_invalidmobileno</b><br>Test class: Page_Test.Login_Page_Test</td>
+<td></td>
+<td>92</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
+<tr>
+<td title='Page_Test.Login_Page_Test.TC006_Terms_of_use_button()'><b>TC006_Terms_of_use_button</b><br>Test class: Page_Test.Login_Page_Test</td>
+<td></td>
+<td>93</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
+<tr>
+<td title='Page_Test.Login_Page_Test.TC009_Continue_as_guest()'><b>TC009_Continue_as_guest</b><br>Test class: Page_Test.Login_Page_Test</td>
+<td></td>
+<td>130</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
+<tr>
+<td title='Page_Test.Login_Page_Test.TC008_contact_Us()'><b>TC008_contact_Us</b><br>Test class: Page_Test.Login_Page_Test</td>
+<td></td>
+<td>15</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
 <tr>
 <td title='Page_Test.Login_Page_Test.TC010_Verify_Login_with_valid_credential()'><b>TC010_Verify_Login_with_valid_credential</b><br>Test class: Page_Test.Login_Page_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.mobile_No()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC010_Verify_Login_with_valid_credential(Login_Page_Test.java:189)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace639482242", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace639482242'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.page_object.Login_page.mobile_No()&quot; because &quot;this.ob&quot; is null
-	at Page_Test.Login_Page_Test.TC010_Verify_Login_with_valid_credential(Login_Page_Test.java:189)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Page_Test.Login_Page_Test@4758820d</td></tr>
+<td></td>
+<td>53</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
+<tr>
+<td title='Page_Test.Login_Page_Test.TC013_edit_moble()'><b>TC013_edit_moble</b><br>Test class: Page_Test.Login_Page_Test</td>
+<td></td>
+<td>120</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
+<tr>
+<td title='Page_Test.Login_Page_Test.TC012_inavalid_OTP()'><b>TC012_inavalid_OTP</b><br>Test class: Page_Test.Login_Page_Test</td>
+<td></td>
+<td>36</td>
+<td>Page_Test.Login_Page_Test@2d10e0b1</td></tr>
 </table><p>
 </body>
 </html>

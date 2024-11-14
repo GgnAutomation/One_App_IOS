@@ -24,23 +24,23 @@ public class Home_Page extends Base_Utility {
 	}
 
 	// *************************Temperature**********************
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl1'])[1]")
+	@FindBy(xpath = "//XCUIElementTypeNavigationBar[@name='OneApp.HomeView']/XCUIElementTypeOther")
 	private WebElement vehicle_drop_down;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/bike_name_lbl']")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[contains(@name,'Primary')]")
 	private List<WebElement> all_vehicle_inside_drop_down;
-	@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.customerapp.hero:id/iv_close']")
+	@FindBy(xpath = "//XCUIElementTypeButton[contains(@name,'crossGreyIcon')]")
 	private WebElement select_vehicle_close_btn;
-	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/vehicle_img']")
+	@FindBy(xpath = "//XCUIElementTypeOther/XCUIElementTypeImage[2]")
 	private WebElement vehicle_img;
-	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/ic_notification']")
+	@FindBy(xpath = "//XCUIElementTypeButton[@name='notification']")
 	private WebElement notification;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/title']")
+	@FindBy(xpath = "//XCUIElementTypeCell/XCUIElementTypeStaticText")
 	private List<WebElement> notification_count;
-	@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.customerapp.hero:id/back_btn']")
+	@FindBy(xpath = "//XCUIElementTypeButton[@name='Back']")
 	private WebElement notification_back;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id='com.customerapp.hero:id/collapse_btn']")
+	@FindBy(xpath = "//XCUIElementTypeButton[contains(@name,'Actions')]")
 	private WebElement Collapse_btn;
-	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_close']")
+	@FindBy(xpath = "//XCUIElementTypeButton[@name='crossGreyIcon']")
 	private WebElement close_drop_down;
 	@FindBy(xpath = "//android.widget.Button[@resource-id ='android:id/button1']")
 	private WebElement enable_now;
@@ -68,7 +68,8 @@ public class Home_Page extends Base_Utility {
 
 	public void notification_count() {
 		for (int i = 0; i < notification_count.size(); i++) {
-			msg(notification_count.get(i), "");
+			msg(notification_count.get(i+1), "");
+			i++;
 		}
 
 	}
@@ -82,7 +83,7 @@ public class Home_Page extends Base_Utility {
 	}
 
 	// **************************************SOS********************************
-	@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.customerapp.hero:id/ic_sos']")
+	@FindBy(xpath = "//XCUIElementTypeButton[@name='sos']")
 	private WebElement SOS_icon;
 	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/text')]")
 	private List<WebElement> SOS_message;
@@ -777,7 +778,7 @@ public class Home_Page extends Base_Utility {
 				Custom_click(select_state.get(i), name);
 				break;
 			} else {
-				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+//				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
 				if (i == (select_state.size() - 1)) {
 					select_state.get(i).click();
 					State.click();
@@ -794,7 +795,7 @@ public class Home_Page extends Base_Utility {
 				Custom_click(select_state.get(i), name);
 				break;
 			} else {
-				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+//				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
 				if (i == (select_state.size() - 1)) {
 					select_state.get(i).click();
 					City.click();
@@ -811,7 +812,7 @@ public class Home_Page extends Base_Utility {
 				Custom_click(select_state.get(i), name);
 				break;
 			} else {
-				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+//				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
 				if (i == (select_state.size() - 1)) {
 					select_state.get(i).click();
 					Locality.click();
@@ -887,7 +888,7 @@ public class Home_Page extends Base_Utility {
 				Custom_click(Select_State_list.get(i), value);
 				break;
 			} else {
-				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+//				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
 				if (i == (Select_State_list.size() - 1)) {
 					Select_State_list.get(i).click();
 					Select_State.click();

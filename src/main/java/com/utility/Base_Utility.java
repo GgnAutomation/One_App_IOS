@@ -8,7 +8,6 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Properties;
-import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
@@ -18,31 +17,29 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestListener;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import android.gesture.GestureUtils;
 import io.appium.java_client.MobileBy;
-import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
+import io.qameta.allure.Allure;
 
 @SuppressWarnings("deprecation")
 @Listeners(com.utility.listner.class)
@@ -57,122 +54,95 @@ public class Base_Utility
 	public static WebDriverWait wait;
 	String confipath = System.getProperty("user.dir") + "/config_data/config.properties";
 	String excelpath = System.getProperty("user.dir") + "/Data/data1.xlsx";
-	public static AndroidDriver driver;
-	String enveronment = config_getdata("env") ;
-	String Apikey ="2gdc5pv55mh54mqtwmvj4xbr" , username ="randhir.kumar@heromotocorp.com";
-	
+	public static IOSDriver driver;
+	String enveronment = config_getdata("env");
+	String Apikey = "2gdc5pv55mh54mqtwmvj4xbr", username = "randhir.kumar@heromotocorp.com";
+	public static String userName = "randhir.kumarheromotocorp";
+	public static String accessKey = "bduH44LqYpsKBB4XN6tTZLzuIoczCKiqbpWCzsmpuRnFjPsnud";
 
 	@BeforeTest
-
-	// ******************Automatic server start code ************************
-//	public void appiumTest() throws Exception {
-//		
-//		Thread.sleep(2000);
-////		service =new AppiumServiceBuilder().withAppiumJS(new File("C:\\Users\\Welcome\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-////				.withIPAddress("127.0.0.1").usingPort(4723).build();
-//		service = AppiumDriverLocalService
-//				.buildService(new AppiumServiceBuilder().usingAnyFreePort()
-//						.usingDriverExecutable(new File("C:\\Program Files\\nodejs\\node.exe"))
-//						.withAppiumJS(new File("C:\\Users\\Welcome\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js")));
-//		service.start();
-//		UiAutomator2Options db = new UiAutomator2Options();
-//		db.setCapability("appium:automationName", "uiautomator2");
-//		db.setCapability("platformName", "Android");
-//		db.setCapability("appium:deviceName", "Pixel_6_API_31");
-//		db.setCapability("appium:udid", "emulator-5554");
-// //       db.setCapability("appium:avd", "Pixel_6");// if u connect real device comment this line
-//        db.setCapability("appium:avdLaunchTimeout", 600000);
-//		db.setCapability("appium:app", (System.getProperty("user.dir") + "\\apk\\app-debug-connected.apk"));
-//		Thread.sleep(2000);
-//		String service_url = service.getUrl().toString();
-//		driver = new AndroidDriver(new URL(service_url),db);
-//		 
-////		driver = new AndroidDriver(new URL(config_getdata("IpAddress")), db);
-//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-//		log = LogManager.getLogger("Hero_App");
-//		db.setCapability("appium:ensureWebviewsHavePages", true);
-//		db.setCapability("appium:nativeWebScreenshot", true);
-//		db.setCapability("appium:newCommandTimeout", 6600);
-//	}
-	// ******************Automatic server end code ************************
-	public void OPEN_AND_INSTALL_APP() 
-	{
-	    String deviceName = config_getdata("Platform_name");
-	    if (deviceName.equalsIgnoreCase("emulator")) {
-	        try {
-	            UiAutomator2Options options = new UiAutomator2Options();
-	            options.setCapability("appium:automationName", "uiautomator2");
-	            options.setCapability("platformName", "Android");
-	            options.setCapability("appium:deviceName", "Pixel_6_API_31");
-	            options.setCapability("appium:udid", "emulator-5554");
-	            options.setCapability("appium:avdLaunchTimeout", 90000);
-	            options.setCapability("appium:app", System.getProperty("user.dir") + "\\apk\\app-debug.apk");
-	            options.setCapability("appium:ensureWebviewsHavePages", true);
-	            options.setCapability("appium:nativeWebScreenshot", true);
-	            options.setCapability("appium:newCommandTimeout", 9600);
-
-	            driver = new AndroidDriver(new URL(config_getdata("IpAddress")), options);
-	            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-	            
-	            log = LogManager.getLogger("Hero_App");
-	            lis = new listner();
-	        } catch (Exception e) {
-	            log.error("Failed to open and install app: " + e.getMessage(), e);
-	        }
-	    }
-	    else if (deviceName.equalsIgnoreCase("pcloudy")) {
+	public void OPEN_AND_INSTALL_APP() {
+		String deviceName = config_getdata("Platform_name");
+		if (deviceName.equalsIgnoreCase("simulator")) {
 			try {
+				XCUITestOptions options = new XCUITestOptions();
+				options.setCapability("appium:automationName", "uiautomator2");
+				options.setCapability("platformName", "Android");
+				options.setCapability("appium:deviceName", "Pixel_6_API_31");
+				options.setCapability("appium:udid", "emulator-5554");
+				options.setCapability("appium:avdLaunchTimeout", 90000);
+				options.setCapability("appium:app", System.getProperty("user.dir") + "\\apk\\app-debug.apk");
+				options.setCapability("appium:ensureWebviewsHavePages", true);
+				options.setCapability("appium:nativeWebScreenshot", true);
+				options.setCapability("appium:newCommandTimeout", 9600);
+
+				driver = new IOSDriver(new URL(config_getdata("IpAddress")), options);
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+
+				log = LogManager.getLogger("One_App_IOS");
+				lis = new listner();
+			} catch (Exception e) {
+				log.error("Failed to open and install app: " + e.getMessage(), e);
+			}
+		} else if (deviceName.equalsIgnoreCase("pcloudy")) {
+			try {
+//				DesiredCapabilities capabilities = new DesiredCapabilities();
+//				HashMap<String, Object> ltOptions = new HashMap<String, Object>();
+//				ltOptions.put("w3c", true);
+//				ltOptions.put("platformName", "ios");
+//				ltOptions.put("deviceName", "iPhone.*");
+//				ltOptions.put("app", "lt://APP10160321281723462145182155");
+//				ltOptions.put("devicelog", true);
+//				ltOptions.put("visual", true);
+//				ltOptions.put("video", true);	
+//				ltOptions.put("isRealMobile", true);
+//				ltOptions.put("autoAcceptAlerts", true);
+//				capabilities.setCapability("lt:options", ltOptions);
+//				driver = new IOSDriver(
+//						new URL("https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"),
+//						capabilities);
+//				driver.activateApp("com.customerapp.hero");
 				DesiredCapabilities capabilities = new DesiredCapabilities();
-				capabilities.setCapability("appium:newCommandTimeout", 600);
+				capabilities.setCapability("appium:newCommandTimeout", 1000);
 				capabilities.setCapability("appium:launchTimeout", 90000);
-				capabilities.setCapability("appium:platformVersion", "12.0.0");
-				capabilities.setCapability("appium:platformName", "Android");
-				capabilities.setCapability("appium:automationName", "uiautomator2");
-				capabilities.setCapability("appium:appPackage", "com.customerapp.hero");
-				capabilities.setCapability("appium:appActivity", "com.customerapp.hero.views.activity.HmcDashboard");
+				capabilities.setCapability("appium:platformVersion", "15.0.0");
+				capabilities.setCapability("appium:platformName", "ios");
+				capabilities.setCapability("appium:acceptAlerts", true);
+				capabilities.setCapability("appium:automationName", "xcuitest");
+				capabilities.setCapability("appium:bundleId", "com.customerapp.hero");
 				HashMap<String, Object> pcloudyOptions = new HashMap<String, Object>();
-				pcloudyOptions.put("pCloudy_Username", username);
-				pcloudyOptions.put("pCloudy_ApiKey", Apikey);
-				pcloudyOptions.put("pCloudy_DurationInMinutes", 120);
-				pcloudyOptions.put("pCloudy_DeviceManufacturer", "SAMSUNG");
-				pcloudyOptions.put("pCloudy_DeviceVersion", "13.0.0");
-				if (enveronment.equalsIgnoreCase("prod")) {
-					pcloudyOptions.put("pCloudy_ApplicationName", "One_App_Prod_9_2_2.apk");
-				} else {
-					pcloudyOptions.put("pCloudy_ApplicationName", "app-UatVariant-debug.apk");
-				}
+				pcloudyOptions.put("pCloudy_Username", "randhir.kumar@heromotocorp.com");
+				pcloudyOptions.put("pCloudy_ApiKey", "2gdc5pv55mh54mqtwmvj4xbr");
+				pcloudyOptions.put("pCloudy_DurationInMinutes", 45);
+				pcloudyOptions.put("pCloudy_DeviceManufacturer", "APPLE");
+//				pcloudyOptions.put("pCloudy_DeviceVersion", "15.0.0");
+				pcloudyOptions.put("pCloudy_ApplicationName", "OneApp_9_2_6_Resigned1727069782.ipa");
 				pcloudyOptions.put("pCloudy_WildNet", false);
 				pcloudyOptions.put("pCloudy_EnableVideo", true);
-				pcloudyOptions.put("pCloudy_EnablePerformanceData", true);
+				pcloudyOptions.put("autoGrantPermissions", true);
+				pcloudyOptions.put("pCloudy_EnablePerformanceData", false);
 				pcloudyOptions.put("pCloudy_EnableDeviceLogs", true);
+				pcloudyOptions.put("noReset", true);
 				pcloudyOptions.put("appiumVersion", "2.0.0");
 				capabilities.setCapability("pcloudy:options", pcloudyOptions);
-				driver = new AndroidDriver(new URL("https://ind-west.pcloudy.com/appiumcloud/wd/hub"), capabilities);
-				
-//					https://device.pcloudy.com/appiumcloud/wd/hub   https://ind-west.pcloudy.com/appiumcloud/wd/hub
+				driver = new IOSDriver(new URL("https://ind-west.pcloudy.com/appiumcloud/wd/hub"), capabilities);
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-				log = LogManager.getLogger("Hero_App");
+				log = LogManager.getLogger("One_App_IOS");
+
 			} catch (Exception e) {
 				System.out.println(e);
 			}
 		} else if (deviceName.equalsIgnoreCase("realdevice")) {
 			try {
-				UiAutomator2Options db = new UiAutomator2Options();
-				db.setCapability("appium:automationName", "uiautomator2");
-				db.setCapability("platformName", "Android");
-				db.setCapability("appium:deviceName", "realme 9");
-				db.setCapability("appium:udid", "74633a84"); // 3323262910AA04DS //192.168.1.3:55555
-				db.setCapability("appium:avdLaunchTimeout", 600000);
-				db.setCapability("appPackage", "com.customerapp.hero");
-				db.setCapability("appActivity", "com.customerapp.hero.views.activity.HmcDashboard");
-				db.setCapability("appium:noReset", "false");
-//			db.setCapability("appium:app", (System.getProperty("user.dir") + "\\apk\\app-debug-connected.apk"));
-				driver = new AndroidDriver(new URL(config_getdata("IpAddress")), db);
+				XCUITestOptions options = new XCUITestOptions();
+				options.setCapability("platformName", "iOS");
+				options.setCapability("appium:udid", "00008120-0004798A21F9A01E");
+				options.setCapability("appium:automationName", "XCUITest");
+				options.setCapability("appium:bundleId", "com.customerapp.hero");
+				options.setCapability("appium:showXcodeLog", true);
+				driver = new IOSDriver(new URL(config_getdata("IpAddress")), options);
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-				db.setCapability("appium:ensureWebviewsHavePages", true);
-				db.setCapability("appium:nativeWebScreenshot", true);
-				db.setCapability("appium:newCommandTimeout", 6600);
-				log = LogManager.getLogger("Hero_App");
+				log = LogManager.getLogger("One_App_IOS");
 				lis = new listner();
 			} catch (Exception e) {
 				System.out.println(e);
@@ -183,8 +153,6 @@ public class Base_Utility
 	@Override
 	public String config_getdata(String key) {
 		String value = "";
-//		ResourceBundle ro = ResourceBundle.getBundle("config");
-//		value=ro.getString(key);
 		try {
 			FileInputStream fis = new FileInputStream(confipath);
 			Properties prop = new Properties();
@@ -279,7 +247,8 @@ public class Base_Utility
 	public void custom_sendkeys(WebElement element, String value, String fieldname) {
 		try {
 			if (element.isEnabled() || element.isDisplayed() == true) {
-				wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+				Thread.sleep(2000);
+				wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 				wait.until(ExpectedConditions.visibilityOf(element));
 				element.click();
 				element.sendKeys(value);
@@ -287,8 +256,8 @@ public class Base_Utility
 				log.info(fieldname + " send successfully");
 			}
 		} catch (Exception e) {
-			test.log(Status.FAIL, fieldname + " is not able to send" + e);
-			test.addScreenCaptureFromPath(lis.getcapcture(fieldname));
+			test.log(Status.FAIL, fieldname + " is not able to send" + lis.getcapcture(fieldname) + e);
+			test.log(Status.FAIL, e);
 			log.error(fieldname + " is not able to send");
 		}
 
@@ -305,8 +274,8 @@ public class Base_Utility
 				log.info(fieldname + " is clickable");
 			}
 		} catch (Exception e) {
-			test.log(Status.FAIL, fieldname + "=Unable To Click =" + e);
-			test.addScreenCaptureFromPath(lis.getcapcture(fieldname));
+			test.log(Status.FAIL, fieldname + " Unable To Click reason = " + lis.getcapcture(fieldname));
+			test.log(Status.FAIL, e);
 			log.error(fieldname + " is not clickable");
 
 		}
@@ -326,7 +295,7 @@ public class Base_Utility
 				action.press(PointOption.point(startx, starty))
 						.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(10)))
 						.moveTo(PointOption.point(endx, endy)).release().perform();
-			
+
 			}
 			test.log(Status.PASS, "Successfully Scroll page Action ==" + fieldname);
 			log.info("Successfully  Scroll page down Action " + fieldname);
@@ -436,8 +405,8 @@ public class Base_Utility
 
 			}
 		} catch (Exception e) {
-			test.log(Status.FAIL, fieldname + "==Image is not present ==" + e);
-			test.addScreenCaptureFromPath(lis.getcapcture(fieldname));
+			test.log(Status.FAIL, fieldname + "==Image is not present ==" + lis.getcapcture(fieldname) + e);
+			test.log(Status.FAIL, e);
 			log.error("Image is not present" + fieldname);
 
 		}
@@ -471,8 +440,8 @@ public class Base_Utility
 				log.info(fieldname + "  not present");
 			}
 		} catch (Exception e) {
-			test.log(Status.FAIL, fieldname + " not present" + e);
-			test.addScreenCaptureFromPath(lis.getcapcture(fieldname));
+			test.log(Status.FAIL, fieldname + " not present" + lis.getcapcture(fieldname) + e);
+			test.log(Status.FAIL, e);
 			log.error(fieldname + "  not present");
 		}
 
@@ -506,5 +475,10 @@ public class Base_Utility
 		test.log(Status.FAIL, message);
 		log.error(" ");
 		test.addScreenCaptureFromPath(lis.getcapcture(message));
+	}
+
+	@AfterTest
+	public void tear_Down() {
+		driver.quit();
 	}
 }

@@ -87,7 +87,7 @@ public class My_Profile_Page_Test extends Base_Utility {
 		map.put("Email ID", ob.edit_email_id().getText());
 		map.put("Registered mobile number", ob.edit_registered_mobile_number().getText());
 		custom_sendkeys(ob.edit_full_name(), config_getdata("edit_name_in_personal_detail"), " Change Name");
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.TAB));
+		driver.navigate().back();
 		ob.gender_selection();
 		driver.navigate().back();
 		custom_sendkeys(ob.edit_email_id(), config_getdata("edit_email_id"), " Change Email id");
@@ -138,7 +138,6 @@ public class My_Profile_Page_Test extends Base_Utility {
 	public void TC046_change_original_Personal_Details() throws InterruptedException {
 		Custom_click(ob.edit_profile_details_button(), "Edit profile details button");
 		custom_sendkeys(ob.edit_full_name(), map.get("Name"), " Original Name");
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
 		driver.navigate().back();
 		String email = map.get("Email ID");
 		if (email.isBlank()) {
@@ -146,7 +145,6 @@ public class My_Profile_Page_Test extends Base_Utility {
 		} else {
 			custom_sendkeys(ob.edit_email_id(), map.get("Email ID"), "Original Email id");
 		}
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
 		driver.navigate().back();
 		Thread.sleep(2000);
 		Custom_click(ob.Save_button(), "Save button");

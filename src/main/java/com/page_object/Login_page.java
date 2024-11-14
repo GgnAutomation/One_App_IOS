@@ -1,8 +1,10 @@
 package com.page_object;
 
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,23 +12,30 @@ import org.testng.annotations.Listeners;
 
 import com.utility.Base_Utility;
 
+import android.inputmethodservice.Keyboard.Key;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.IOSElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.touch.offset.ElementOption;
+
 @Listeners(com.utility.listner.class)
 public class Login_page extends Base_Utility {
 	public Login_page() {
 		PageFactory.initElements(driver, this);
 	}
-
-	@FindBy(xpath = "//android.widget.ImageView[@content-desc='Cancel']")
+	@AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Cancel']")
 	private WebElement close;
-	@FindBy(id = "com.customerapp.hero:id/text_input_editext")
+	@FindBy(xpath = "//XCUIElementTypeTextField[@name=' Registered mobile number']")
 	private WebElement mobile_No;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_title']")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[contains(@name,'Number not regist')]")
 	private WebElement registerd_message;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/textMessage']")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[contains(@name,'Update registered')]")
 	private WebElement registerd_message_1;
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[1]")
 	private WebElement cancel_button;
-	@FindBy(xpath = "//android.widget.ImageView[@resource-id='com.customerapp.hero:id/iv_cross']")
+	@FindBy(xpath = "//XCUIElementTypeButton[@name='crossGreyIcon']")
 	private WebElement cancel_button_r;
 	@FindBy(xpath = "//android.widget.Button[@resource-id = 'com.android.permissioncontroller:id/permission_allow_foreground_only_button']")
 	private WebElement While_using_the_app;
@@ -34,51 +43,53 @@ public class Login_page extends Base_Utility {
 	private WebElement deny;
 	@FindBy(xpath = "//android.widget.Button[@text='OK']")
 	private WebElement ok;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name =' Proceed ']")
 	private WebElement process_require_notification;
 	@FindBy(xpath = "//android.widget.Button[@resource-id ='com.android.settings:id/button1']")
 	private WebElement open;
-	@FindBy(xpath = "//android.widget.Button[@resource-id ='android:id/button1']")
-	private WebElement allow;
-	@FindBy(xpath = "//android.widget.Button[@resource-id ='com.android.permissioncontroller:id/permission_allow_button']")
-	private WebElement Allow;
-	@FindBy(id = "com.customerapp.hero:id/cus_orange_button_lay")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Continue']")
 	private WebElement continue_button;
-	@FindBy(className = "android.widget.EditText")
+	@FindBy(xpath = "//XCUIElementTypeTextField")
 	private List<WebElement> OTP;
-	@FindBy(xpath = "//android.widget.TextView[@text ='Resend']")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Resend']")
 	private WebElement resend_button;
-	@FindBy(xpath = "//android.widget.TextView[@text = 'Verify']")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Verify']")
 	private WebElement verify_button;
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/tv_title']")
 	private WebElement Wrong_mobile_message;
 	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[1]")
 	private WebElement Cancel_pop;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/user_no_lbl']")
-	private WebElement registered_mobile_no;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/term_nd_cond_lbl']")
+	@FindBy(xpath = "//XCUIElementTypeButton[@name='Cancel']")
+	private WebElement Cancel_digi;
+	@FindBy(xpath = "//XCUIElementTypeButton[@name='Terms of Use']")
 	private WebElement Terms_of_Use;
-	@FindBy(xpath = "(//android.view.View[@text])[23]")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Terms of Use']")
 	private WebElement Terms_of_Use_condition;
-	@FindBy(xpath = "(//android.widget.TextView[@text])[3]")
+	@FindBy(xpath = "(//XCUIElementTypeStaticText[@name='Terms of Use'])[1]")
 	private WebElement Terms_of_Use_condition_for_real_device;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/pp_lbl']")
+	@FindBy(xpath = "//XCUIElementTypeButton[@name=' Privacy Policy']")
 	private WebElement Privacy_Policy;
-	@FindBy(xpath = "(//android.view.View[@text])[16]")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Privacy Policy']")
 	private WebElement Privacy_Policy_condition;
-	@FindBy(xpath = "(//android.widget.TextView[@text])[5]")
+	@FindBy(xpath = "(//XCUIElementTypeStaticText[@name='Privacy Policy'])[1]")
 	private WebElement Privacy_of_Use_condition_for_real_device;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/contact_us_lbl']")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Contact Us']")
 	private WebElement contact_us;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/fb_text'])[1]")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Facebook']")
 	private WebElement contact_us_message;
-	@FindBy(xpath = "//android.widget.ImageView[@resource-id = 'com.customerapp.hero:id/back_btn']")
+	@FindBy(xpath = "//XCUIElementTypeButton[@name='Back']")
 	private WebElement back_page;
-	@FindBy(id = "com.customerapp.hero:id/edit_phn_no_btn")
+	@FindBy(xpath = "//*[@name='back']")
+	private WebElement back_contact;
+	@FindBy(xpath = "//XCUIElementTypeButton[@name='editredcircle']")
 	private WebElement edit_moble_button;
 
 	public WebElement close() {
 		return close;
+	}
+
+	public WebElement back_contact() {
+		return back_contact;
 	}
 
 	public WebElement While_using_the_app() {
@@ -113,20 +124,19 @@ public class Login_page extends Base_Utility {
 		return ok;
 	}
 
-	public WebElement allow() {
-		return allow;
-	}
-
-	public WebElement Allow() {
-		return Allow;
-	}
-
 	public WebElement deny() {
 		return deny;
 	}
 
 	public WebElement mobile_No() {
 		return mobile_No;
+	}
+
+	@FindBy(xpath = "//*[@name='Done']")
+	private WebElement done;
+
+	public WebElement done() {
+		return done;
 	}
 
 	public WebElement Cancel_pop() {
@@ -138,23 +148,42 @@ public class Login_page extends Base_Utility {
 	}
 
 	public void enter_Valid_OTP() {
-		for (int i = 0; i < OTP.size(); i++) {
-			custom_sendkeys(OTP.get(i), "" + (i + 1), "enterOTP =" + (i + 1));
+		try {
+			for (int i = 0; i < OTP.size(); i++) {
+				OTP.get(i).click();
+				Thread.sleep(2000);
+				custom_sendkeys(OTP.get(i), "" + (i + 1), "enterOTP =" + (i + 1));
+
+			}
+		} catch (Exception e) {
+			System.out.println(e);
 		}
 	}
 
 	public void enter_Valid_OTP_prod() {
-		custom_sendkeys(OTP.get(0), "" + 2, "enterOTP =" + 2);
-		custom_sendkeys(OTP.get(1), "" + 3, "enterOTP =" + 3);
-		custom_sendkeys(OTP.get(2), "" + 4, "enterOTP =" + 4);
-		custom_sendkeys(OTP.get(3), "" + 6, "enterOTP =" + 6);
-		custom_sendkeys(OTP.get(4), "" + 5, "enterOTP =" + 5);
-		custom_sendkeys(OTP.get(5), "" + 1, "enterOTP =" + 1);
+		try {
+			custom_sendkeys(OTP.get(0), "" + 2, "enterOTP =" + 2);
+			custom_sendkeys(OTP.get(1), "" + 3, "enterOTP =" + 3);
+			custom_sendkeys(OTP.get(2), "" + 4, "enterOTP =" + 4);
+			custom_sendkeys(OTP.get(3), "" + 6, "enterOTP =" + 6);
+			custom_sendkeys(OTP.get(4), "" + 5, "enterOTP =" + 5);
+			custom_sendkeys(OTP.get(5), "" + 1, "enterOTP =" + 1);
+
+		} catch (Exception e) {
+			Message("" + e);
+		}
 	}
 
 	public void enter_inavalid_OTP() {
-		for (int i = 0, j = 3; i < OTP.size(); i++, j++) {
-			custom_sendkeys(OTP.get(i), "" + (j + 1), "OTP is " + (j + 1));
+		try {
+			System.out.println(OTP.size());
+			for (int i = 0, j = 3; i < OTP.size(); i++) {
+				
+				custom_sendkeys(OTP.get(i), "" + (j + 1), "OTP is " + (j + 1));
+				j++;
+			}
+		} catch (Exception e) {
+			Message("" + e);
 		}
 	}
 
@@ -170,12 +199,26 @@ public class Login_page extends Base_Utility {
 		return Wrong_mobile_message;
 	}
 
-	public WebElement registered_mobile_no() {
-		return registered_mobile_no;
+	public WebElement Cancel_digi() {
+		return Cancel_digi;
 	}
 
 	public WebElement Terms_of_Use() {
 		return Terms_of_Use;
+	}
+
+	@FindBy(xpath = "//*[@name='Allow Once']")
+	private WebElement Allow;
+
+	public WebElement Allow() {
+		return Allow;
+	}
+
+	@FindBy(xpath = "//*[@name='Allow']")
+	private WebElement allow;
+
+	public WebElement allow() {
+		return allow;
 	}
 
 	public WebElement Terms_of_Use_condition() {
@@ -214,20 +257,11 @@ public class Login_page extends Base_Utility {
 		return edit_moble_button;
 	}
 
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[2]")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Continue as guest']")
 	private WebElement Continue_as_guest;
 
 	public WebElement Continue_as_guest() {
 		return Continue_as_guest;
-	}
-
-	@FindBy(xpath = "//android.widget.TextView[contains(@resource-id,'com.customerapp.hero:id/')]")
-	private List<WebElement> guest_page_info;
-
-	public void guest_page_info() {
-		for (int i = 1; i < guest_page_info.size(); i++) {
-			Message(guest_page_info.get(i).getText());
-		}
 	}
 
 	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/bannerImg']")
@@ -237,11 +271,11 @@ public class Login_page extends Base_Utility {
 		return Hero_Product_getNow_btn;
 	}
 
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/action_lbl'])[1]")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Find A Dealer']")
 	private WebElement nearby_dealer;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/action_lbl'])[2]")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Exchange']")
 	private WebElement vehicle_exchange;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/action_lbl'])[3]")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='View Challans']")
 	private WebElement View_Challans;
 
 	public WebElement nearby_dealer() {
@@ -256,18 +290,18 @@ public class Login_page extends Base_Utility {
 		return View_Challans;
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/numUpdate1']")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Update mobile number for Hero vehicle?']")
 	private WebElement update_mobile_number;
 
 	public WebElement update_mobile_number() {
 		return update_mobile_number;
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/checkLbl']")
-	private WebElement Check_now_btn;
+	@FindBy(xpath = "//*[contains(@name,'Enter 6-digit OTP sent to') ]")
+	private WebElement registered_mobile_no;
 
-	public WebElement Check_now_btn() {
-		return Check_now_btn;
+	public WebElement registered_mobile_no() {
+		return registered_mobile_no;
 	}
 
 	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_upload_lbl']")
@@ -298,9 +332,9 @@ public class Login_page extends Base_Utility {
 		return login_page;
 	}
 
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[1]")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Update Number']")
 	private WebElement update_number;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl'])[2]")
+	@FindBy(xpath = "(//XCUIElementTypeStaticText[@name='Continue as guest'])[2]")
 	private WebElement Continue_guest_btn;
 
 	public WebElement update_number() {
@@ -311,11 +345,11 @@ public class Login_page extends Base_Utility {
 		return Continue_guest_btn;
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/lbl']")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[@name]")
 	private List<WebElement> details_verify;
 
 	public void details_verify() {
-		for (int i = 0; i < details_verify.size(); i++) {
+		for (int i = 0; i < 3; i++) {
 			Message(details_verify.get(i).getText());
 		}
 	}

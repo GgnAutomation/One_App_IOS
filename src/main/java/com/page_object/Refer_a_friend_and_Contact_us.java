@@ -71,7 +71,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 				Custom_click(Select_State_list.get(i), value);
 				break;
 			} else {
-				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+//				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
 				if (i == (Select_State_list.size() - 1)) {
 					Select_State_list.get(i).click();
 					Select_state.click();
@@ -95,7 +95,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 				Custom_click(Select_State_list.get(i), value);
 				break;
 			} else {
-				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+//				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
 				if (i == (Select_State_list.size() - 1)) {
 					Select_State_list.get(i).click();
 					Select_City.click();
@@ -125,7 +125,7 @@ public class Refer_a_friend_and_Contact_us extends Base_Utility {
 				Custom_click(Select_State_list.get(i), value);
 				break;
 			} else {
-				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+//				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
 				if (i == (Select_State_list.size() - 1)) {
 					Select_State_list.get(i).click();
 					Select_Model.click();

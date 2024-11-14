@@ -29,23 +29,27 @@ public class Login_Page_Test extends Base_Utility {
 	long startclicktime, endclicktime, starreadtime, endreadtime;
 
 	@Test(priority = 0)
-	public void TC001_Verify_Login_with_Invalid_credential() {
+	public void TC001_Setup_Prerequisites() {
 		Message("************************Login page test**************************");
 		ob = new Login_page();
 		ob1 = new Select_Vehicle_Page();
-		if (device.equalsIgnoreCase("realdevice") || device.equalsIgnoreCase("pcloudy")) {
-//			Custom_click(ob1.banner_Img_close(), " Banner Img close");
-			Custom_click(ob.ok(), "OK");
-			Custom_click(ob.process_require_notification(), "Process button require notification access");
-			Custom_click(ob.Allow(), ob.Allow().getText() + "Allow Hero App to send you notifications");
+		try {
+			Thread.sleep(5000);
+			if (ob.process_require_notification().isDisplayed()) {
+				Custom_click(ob.process_require_notification(), " Process button require notification access");
+				Custom_click(ob.allow(), ob.allow().getText() + " Allow Hero App to send you notifications");
+			}
+		} catch (Exception e) {
+			Message("No Pop-up is given");
 		}
+
 	}
 
 	@Test(priority = 1)
 	public void TC002_invalidmobileno() {
 		custom_sendkeys(ob.mobile_No(), config_getdata("invalidmobileno"), "Login with unregisterd mobile number");
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
-		Custom_click(ob.continue_button(), "Coninue button enter after unregistered mobile number");
+		Custom_click(ob.done(), "Done ");
+		Custom_click(ob.continue_button(), "Continue button enter after unregistered mobile number");
 		msg(ob.registerd_message(), "Registerd info =");
 		msg(ob.registerd_message_1(), "Registerd info =");
 		Custom_click(ob.cancel_button_r(), "Close not registered pop message");
@@ -53,37 +57,42 @@ public class Login_Page_Test extends Base_Utility {
 
 	@Test(priority = 2)
 	public void TC003_verify_update_number() throws InterruptedException {
-		Custom_click(ob.continue_button(), "Coninue button enter after unregistered mobile number");
+		Custom_click(ob.continue_button(), "Continue button enter after unregistered mobile number");
 		Thread.sleep(3000);
 		Custom_click(ob.update_number(), "Update number button");
+		Thread.sleep(3000);
 		ob.details_verify();
 		Custom_click(ob.back_page(), "Back from details verify ");
-		Custom_click(ob.continue_button(), "Coninue button enter after unregistered mobile number");
+		Custom_click(ob.continue_button(), "Continue button enter after unregistered mobile number");
 		Thread.sleep(2000);
 		Custom_click(ob.Continue_guest_btn(), "Continue as gest button");
+		if (device.equalsIgnoreCase("realdevice")) {
+			Custom_click(ob.allow(), ob.allow().getText() + " Allow Hero App to send you notifications");
+		}
 		Custom_click(ob.back_page(), "Back from Welcome! page ");
 	}
 
 	@Test(priority = 3)
 	public void TC004_Verify_Login_with_short_length_of_mobile_number_credential() throws InterruptedException {
+		ob.mobile_No().clear();
 		custom_sendkeys(ob.mobile_No(), config_getdata("short_digit_mobile_number"),
 				"Login with short_digit_mobile_number");
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
-		VerifyElementPresent(ob.continue_button(), "Coninue button enter after short length of mobile number is");
+		Custom_click(ob.done(), "Done ");
+		VerifyElementPresent(ob.continue_button(), "Continue button enter after short length of mobile number is");
 	}
 
 	@Test(priority = 4)
 	public void TC005_max_digit_mobile_number() throws InterruptedException {
+		ob.mobile_No().clear();
 		custom_sendkeys(ob.mobile_No(), config_getdata("max_digit_mobile_number"),
 				"Login with More than 10 digit mobile number");
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
+		Custom_click(ob.done(), "Done ");
 		if (config_getdata("max_digit_mobile_number").equalsIgnoreCase(ob.mobile_No().getText())) {
 			Message("More then 10 digit mobile numbers are acceptable");
 		} else {
 			Message("More then 10 digits mobiles number are not acceptable");
 		}
 		Thread.sleep(2000);
-		driver.navigate().back();
 	}
 
 	@Test(priority = 5)
@@ -92,6 +101,11 @@ public class Login_Page_Test extends Base_Utility {
 		try {
 			if (ob.Terms_of_Use().isDisplayed()) {
 				Custom_click(ob.Terms_of_Use(), "Terms of use button");
+				try {
+					Custom_click(ob.Allow(), ob.Allow().getText());
+				} catch (Exception e) {
+					Message("No permission pop is given");
+				}
 			}
 		} catch (Exception e) {
 			Scroll_down_page_Action("Tearms of use");
@@ -101,11 +115,7 @@ public class Login_Page_Test extends Base_Utility {
 		Message("Click time in Tearms of use =" + (endclicktime - startclicktime) + " MS");
 		starreadtime = System.currentTimeMillis();
 		Thread.sleep(5000);
-		if (device.equalsIgnoreCase("emulator")) {
-			msg(ob.Terms_of_Use_condition(), "Terms of use: First condition = ");
-		} else if (device.equalsIgnoreCase("pcloudy") || device.equalsIgnoreCase("realdevice")) {
-			msg(ob.Terms_of_Use_condition_for_real_device(), "Terms of use: First condition = ");
-		}
+		msg(ob.Terms_of_Use_condition_for_real_device(), "Terms of use: First condition = ");
 		endreadtime = System.currentTimeMillis();
 		Message("Read time in Tearms of use =" + (endreadtime - starreadtime) + " MS");
 		Custom_click(ob.back_page(), "back terms of use page ");
@@ -120,16 +130,15 @@ public class Login_Page_Test extends Base_Utility {
 		Thread.sleep(6000);
 		try {
 			starreadtime = System.currentTimeMillis();
-			if (device.equalsIgnoreCase("emulator")) {
-				msg(ob.Privacy_Policy_condition(), "Privacy policy : First  = ");
-				Custom_click(ob.back_page(), "back Privacy Policy page ");
-			} else if (device.equalsIgnoreCase("pcloudy") || device.equalsIgnoreCase("realdevice")) {
-				msg(ob.Privacy_of_Use_condition_for_real_device(),
-						ob.Privacy_of_Use_condition_for_real_device().getText());
-				endreadtime = System.currentTimeMillis();
-				Message("Read time in Privacy policy =" + (endreadtime - starreadtime) + " MS");
-				Custom_click(ob.back_page(), "back Privacy Policy page ");
+			try {
+				Custom_click(ob.Allow(), ob.Allow().getText());
+			} catch (Exception e) {
+				Message("No permission pop is given");
 			}
+			msg(ob.Privacy_of_Use_condition_for_real_device(), ob.Privacy_of_Use_condition_for_real_device().getText());
+			endreadtime = System.currentTimeMillis();
+			Message("Read time in Privacy policy =" + (endreadtime - starreadtime) + " MS");
+			Custom_click(ob.back_page(), "back Privacy Policy page ");
 		} catch (Exception e) {
 			endreadtime = System.currentTimeMillis();
 			Message("Not able to read with time  =" + (endreadtime - starreadtime) + " MS");
@@ -143,64 +152,47 @@ public class Login_Page_Test extends Base_Utility {
 		Custom_click(ob.contact_us(), "Contact us");
 		Thread.sleep(2000);
 		msg(ob.contact_us_message(), "Contct us titile =");
-		Custom_click(ob.back_page(), "back Contact us page ");
+		Custom_click(ob.back_contact(), "back Contact us page ");
 	}
 
 	@Test(priority = 8)
 	public void TC009_Continue_as_guest() throws InterruptedException {
 		Custom_click(ob.Continue_as_guest(), "Continue as guest ");
-		ob.guest_page_info();
-		Custom_click(ob.nearby_dealer(), "Vehicle Exchange ");
+		Custom_click(ob.vehicle_exchange(), "Vehicle Exchange ");
 		Thread.sleep(2000);
 		Custom_click(ob.back_page(), "Back from Vehicle Exchange");
-		Custom_click(ob.vehicle_exchange(), "Find A Dealer ");
+		Custom_click(ob.nearby_dealer(), "Find A Dealer ");
 		Thread.sleep(2000);
-		Custom_click(ob.While_using_the_app(), "While using the app");
 		Custom_click(ob.back_page(), "Back from Dealer Locator ");
-		Custom_click(ob.View_Challans() , "View Challans ");
-		Thread.sleep(2000);
-		Custom_click(ob.back_page(), "Back from Digilocker Login");
+		Custom_click(ob.View_Challans(), "View Challans ");
+		Thread.sleep(3000);
+		Custom_click(ob.Cancel_digi(), "Cancel Digilocker Login");
 		Custom_click(ob.update_mobile_number(), "Update mobile number pencile");
 		Thread.sleep(3000);
 		Custom_click(ob.back_page(), "Back from Detail Verification page");
-//		Scroll_down_page_Action("Check now");
-//		try {
-//		if(ob.Check_now_btn().isDisplayed())
-//		Custom_click(ob.Check_now_btn(), "Check now button");
-//		}catch(Exception e)
-//		{
-//			Scroll_down_page_Action("Check now");
-//			Custom_click(ob.Check_now_btn(), "Check now button");
-//		}
-//		Custom_click(ob.While_using_the_app(), "While using the app");
-//		Custom_click(ob.upload_from_photo_gallery(), "Upload from photo gallery");
-//		Custom_click(ob.Allow(), ob.Allow().getText());
-//		driver.navigate().back();
-////		Custom_click(ob.cancel_btn(), "Close photo gallery");
-//		Custom_click(ob.back_page(), "Back from Scan bike parts");
-		Custom_click(ob.Contact_Us(), "Contact Us");
-		Thread.sleep(2000);
-		Custom_click(ob.back_page(), "Back from Contact Us");
 		Custom_click(ob.back_page(), "Back from Welcome!");
 	}
 
 	@Test(priority = 9)
 	public void TC010_Verify_Login_with_valid_credential() throws InterruptedException {
+		ob.mobile_No().clear();
 		if (enveronment.equalsIgnoreCase("prod")) {
 			custom_sendkeys(ob.mobile_No(), config_getdata("prod_mobileno"), "Login with Registerd mobile number");
 		} else {
 			custom_sendkeys(ob.mobile_No(), config_getdata("Stage_mobileno"), "Login with Registerd mobile number");
 		}
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
-		VerifyElementPresent(ob.continue_button(), "Coninue button is");
-		Custom_click(ob.continue_button(), "Coninue button");
+		Custom_click(ob.done(), "Done ");
+		Thread.sleep(2000);
+		VerifyElementPresent(ob.continue_button(), "Continue button is");
+		Custom_click(ob.continue_button(), "Continue button");
 		String registered_mob = ob.registered_mobile_no().getText();
 		String[] mob = registered_mob.split(" ");
-		System.out.println(mob[1]);
+		int size = mob.length - 1;
+		System.out.println(mob[size]);
 		if (enveronment.equalsIgnoreCase("prod")) {
-			assertEquals(config_getdata("prod_mobileno"), mob[1]);
+			assertEquals(config_getdata("prod_mobileno"), mob[size]);
 		} else {
-			assertEquals(config_getdata("Stage_mobileno"), mob[1]);
+			assertEquals(config_getdata("Stage_mobileno"), mob[size]);
 		}
 		Thread.sleep(30000);
 	}
@@ -213,7 +205,8 @@ public class Login_Page_Test extends Base_Utility {
 	}
 
 	@Test(priority = 11)
-	public void TC012_inavalid_OTP() {
+	public void TC012_inavalid_OTP() throws InterruptedException {
+		Thread.sleep(2000);
 		ob.enter_inavalid_OTP();
 		Custom_click(ob.verify_button(), "Verify Button");
 		VerifyElementPresent(ob.verify_button(), "Verify Button is still");
@@ -222,17 +215,19 @@ public class Login_Page_Test extends Base_Utility {
 	@Test(priority = 12)
 	public void TC013_edit_moble() throws InterruptedException {
 		Custom_click(ob.edit_moble_button(), "Edit Mobile Number");
+		ob.mobile_No().clear();
 		if (enveronment.equalsIgnoreCase("prod")) {
 			custom_sendkeys(ob.mobile_No(), config_getdata("prod_mobileno"), "Login with Registerd mobile number");
 		} else {
 			custom_sendkeys(ob.mobile_No(), config_getdata("Stage_mobileno"), "Login with Registerd mobile number");
 		}
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
-		Custom_click(ob.continue_button(), "Coninue button");
+		driver.navigate().back();
+		Custom_click(ob.continue_button(), "Continue button");
 		Thread.sleep(15000);
 
 		if (enveronment.equalsIgnoreCase("prod")) {
 			ob.enter_Valid_OTP_prod();
+
 		} else {
 			ob.enter_Valid_OTP();
 		}
@@ -242,19 +237,23 @@ public class Login_Page_Test extends Base_Utility {
 	public void login() throws InterruptedException {
 		ob = new Login_page();
 		ob1 = new Select_Vehicle_Page();
-		if (device.equalsIgnoreCase("realdevice") || device.equalsIgnoreCase("pcloudy")) {
-//			Custom_click(ob1.banner_Img_close(), " Banner Img close");
-			Custom_click(ob.ok(), "OK");
-			Custom_click(ob.process_require_notification(), "Process button require notification access");
-			Custom_click(ob.Allow(), ob.Allow().getText() + "Allow Hero App to send you notifications");
+		try {
+			Thread.sleep(5000);
+			if (ob.process_require_notification().isDisplayed()) {
+				Custom_click(ob.process_require_notification(), " Process button require notification access");
+				Custom_click(ob.allow(), ob.allow().getText() + " Allow Hero App to send you notifications");
+			}
+		} catch (Exception e) {
+			Message("No Pop-up is given");
 		}
+
 		if (enveronment.equalsIgnoreCase("prod")) {
 			custom_sendkeys(ob.mobile_No(), config_getdata("prod_mobileno"), "Login with Registerd mobile number");
 		} else {
 			custom_sendkeys(ob.mobile_No(), config_getdata("Stage_mobileno"), "Login with Registerd mobile number");
 		}
-		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
-		Custom_click(ob.continue_button(), "Coninue button");
+		driver.navigate().back();
+		Custom_click(ob.continue_button(), "Continue button");
 		Thread.sleep(15000);
 		if (enveronment.equalsIgnoreCase("prod")) {
 			ob.enter_Valid_OTP_prod();
@@ -265,32 +264,14 @@ public class Login_Page_Test extends Base_Utility {
 		Thread.sleep(5000);
 		Custom_click(ob1.click_first_vehicle(), " Select first vehicle");
 		Custom_click(ob1.continue_button(), "Continue Button after select vehicle");
-		Thread.sleep(2000);
-		if (device.equalsIgnoreCase("emulator")) {
-			Custom_click(ob1.Allow(), ob.Allow().getText() + " Hero App to access your phone call logs");
-			Custom_click(ob1.Allow(), ob.Allow().getText() + " Hero App to access your contacts");
-			Custom_click(ob1.Allow(), ob.Allow().getText() + " Hero App to make and manage phone calls");
-			Custom_click(ob1.Allow(), ob.Allow().getText() + " Hero App to send and view SMS messages");
-			Thread.sleep(2000);
-			Custom_click(ob1.Allow(), ob.Allow().getText()
-					+ " Hero App to find, connect to, and determine the relative position of nearby devices");
-		}
+		Thread.sleep(6000);
 		try {
-			if (ob1.allow_location().isDisplayed()) {
-				Custom_click(ob1.allow_location(), "Allow location");
-				Custom_click(ob1.While_using_the_app(), "While using the app");
-				Custom_click(ob1.Processed(), "Processed ");
-			}
+//			if (ob1.Processed().isDisplayed()) {
+			Custom_click(ob1.Processed(), "Processed ");
+			Custom_click(ob1.Allow(), "Allow location");
+//			}
 		} catch (Exception e) {
 			Message("Allow loction pop is not given");
-		}
-		try {
-			Thread.sleep(5000);
-			if (ob1.banner_Img_close().isDisplayed()) {
-				Custom_click(ob1.banner_Img_close(), " Banner Img close");
-			}
-		} catch (Exception e) {
-			Message("Banner img is not given");
 		}
 
 	}

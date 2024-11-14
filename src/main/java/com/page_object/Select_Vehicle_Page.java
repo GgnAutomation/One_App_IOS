@@ -17,31 +17,27 @@ public class Select_Vehicle_Page extends Base_Utility {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "(//android.widget.ImageView[@resource-id = 'com.customerapp.hero:id/ic_edit'])[1]")
+	@FindBy(xpath = "(//XCUIElementTypeButton[@name])[1]")
 	private WebElement edit_nickame_button;
-	@FindBy(xpath = "//android.widget.EditText[@resource-id = 'com.customerapp.hero:id/text_input_editext']")
+	@FindBy(xpath = "//XCUIElementTypeTextField[@name=' Enter Nickname']")
 	private WebElement edit_nickame_text;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/edit_bike_name_lbl'])[1]")
+	@FindBy(xpath = "(//XCUIElementTypeStaticText[@name])[6]")
 	private WebElement Nick_name;
-	@FindBy(xpath = "//android.widget.TextView[@text = 'Save']")
+	@FindBy(xpath = "//XCUIElementTypeButton[@name='Save']")
 	private WebElement save_button;
-	@FindBy(xpath = "//android.view.ViewGroup[@resource-id = 'com.customerapp.hero:id/btn_lay']")
+	@FindBy(xpath = "//XCUIElementTypeButton[@name='Continue']")
 	private WebElement continue_button;
-	@FindBy(xpath = "(//android.widget.TextView[@resource-id ='com.customerapp.hero:id/primary_veh_lbl'])[1]")
+	@FindBy(xpath = "(//XCUIElementTypeStaticText[contains(@name,'Primary')])[1]")
 	private WebElement click_first_vehicle;
-	@FindBy(xpath = "//android.widget.Button[@resource-id = 'com.android.permissioncontroller:id/permission_allow_foreground_only_button']")
+	@FindBy(xpath = "")
 	private WebElement While_using_the_app;
-	@FindBy(xpath = "//android.widget.TextView[@resource-id = 'com.customerapp.hero:id/lbl1']")
+	@FindBy(xpath = "//XCUIElementTypeStaticText[contains(@name,'We found')]")
 	private WebElement vehicle_info;
-	@FindBy(xpath = "//android.widget.ImageView[@resource-id = 'com.customerapp.hero:id/cross_btn']")
+	@FindBy(xpath = "//XCUIElementTypeButton[@name='close']")
 	private WebElement nick_name_close_button;
-	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_close']")
-	private WebElement video_close_button;
-	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/iv_full']")
-	private WebElement video_full_video;
-	@FindBy(xpath = "//android.widget.Button[@resource-id ='com.android.permissioncontroller:id/permission_allow_button']")
+	@FindBy(xpath = "(//XCUIElementTypeButton[contains(@name,'Allow')])[1]")
 	private WebElement Allow;
-	@FindBy(xpath = "//android.widget.ImageView[@resource-id ='com.customerapp.hero:id/custom_radius_close']")
+	@FindBy(xpath = "")
 	private WebElement banner_Img_close;
 
 	public WebElement edit_nickame_button() {
@@ -75,7 +71,12 @@ public class Select_Vehicle_Page extends Base_Utility {
 	public WebElement click_first_vehicle() {
 		return click_first_vehicle;
 	}
+	@FindBy(xpath = "//*[@name='Done']")
+	private WebElement done;
 
+	public WebElement done() {
+		return done;
+	}
 	public WebElement save_button() {
 		return save_button;
 	}
@@ -96,22 +97,7 @@ public class Select_Vehicle_Page extends Base_Utility {
 		Message("Total number of Vehicles registered in this number is = " + Vehicle_count);
 	}
 
-	public WebElement video_close_button() {
-		return video_close_button;
-	}
-
-	public WebElement video_full_video() {
-		return video_full_video;
-	}
-
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/permission_allow_lbl']")
-	private WebElement allow_location;
-
-	public WebElement allow_location() {
-		return allow_location;
-	}
-
-	@FindBy(xpath = "//android.widget.TextView[@resource-id ='com.customerapp.hero:id/btn_lbl']")
+	@FindBy(xpath = "//XCUIElementTypeButton[@name=' Proceed ']")
 	private WebElement Processed;
 
 	public WebElement Processed() {

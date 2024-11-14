@@ -25,9 +25,9 @@ public class Home_Page_Test extends Base_Utility {
 	public void TC019_Home_page_verify() throws InterruptedException {
 		Message("*********Home_Page_Test*********");
 		ob = new Home_Page();
-//		login = new Login_Page_Test();
-//		login.login();
-		Thread.sleep(10000);
+		login = new Login_Page_Test();
+		login.login();
+		Thread.sleep(3000);
 		VerifyElementPresent(ob.vehicle_img(), "Vehicle Img is");
 		Thread.sleep(2000);
 		ob.all_vehicle_inside_drop_down();

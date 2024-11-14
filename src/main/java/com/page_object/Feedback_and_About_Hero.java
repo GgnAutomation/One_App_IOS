@@ -188,7 +188,7 @@ public class Feedback_and_About_Hero extends Base_Utility{
 			}
 			else
 			{
-				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+//				((AndoidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
 				if(i== (Select_State.size()-1))
 				{
 					Select_State.get(i).click();
@@ -233,7 +233,7 @@ public class Feedback_and_About_Hero extends Base_Utility{
 			}
 			else
 			{
-				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+//				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
 				if(i== (Select_city.size()-1))
 				{
 					Select_city.get(i).click();
@@ -276,7 +276,7 @@ public class Feedback_and_About_Hero extends Base_Utility{
 			}
 			else
 			{
-				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+//				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
 				if(i== (Select_Company.size()-1))
 				{
 					Select_Company.get(i).click();
@@ -311,7 +311,7 @@ public class Feedback_and_About_Hero extends Base_Utility{
 			}
 			else
 			{
-				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+//				((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
 				if(i== (Select_Model.size()-1))
 				{
 					Select_Model.get(i).click();
